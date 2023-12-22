@@ -1,0 +1,91 @@
+@use './_variables.scss' as *;
+
+//@mixins
+//create class capitalize mixin
+@mixin cap{
+    text-transform: capitalize;
+}
+
+@mixin first-letter-cap{
+    &:first-letter{
+        text-transform: capitalize;
+    }
+}
+
+@mixin first-letter-clamp{
+    &:first-letter{
+        font-size: $font-clamp;
+        text-transform: capitalize;
+    }
+}
+
+@mixin title-letter-clamp{
+    &:first-letter{
+        font-size: $title-clamp;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+}
+
+//this maps $font-size to a class
+// example of generated class: .font-sm, font-md, font-lg
+// this first part organizes and renames values in $font-size adding 'font-'
+@function create-font-size-classes() {
+  $classes: ();
+  @each $name, $value in $font-size {
+    $class-name: unquote('.font-' + $name);
+    $class-value: $value;
+    $classes: map-merge($classes, ($class-name: $class-value));
+  }
+  @return $classes;
+}
+
+//this maps $font-size to a class
+// example of generated class: .font-first-cap-xs, .font-first-cap-sm, .font-first-cap-base
+// this first part organizes and renames values in $font-size adding '.font-first-cap-'
+@function create-font-size-first-cap-classes() {
+  $classes: ();
+  @each $name, $value in $font-size {
+    $class-name: unquote('.font-first-cap-' + $name);
+    $class-value: $value;
+    $classes: map-merge($classes, ($class-name: $class-value));
+  }
+  @return $classes;
+}
+
+//create a new map with the new class names and values
+$font-size-classes: create-font-size-classes();
+//create a new map with the new class names and values
+$font-size-first-cap-classes: create-font-size-first-cap-classes();
+
+//loop through the new map and create the classes
+@each $name, $value in $font-size-classes {
+  #{$name} {
+    font-size: $value;
+  }
+}
+
+//loop through the new map and create first letter classes
+@each $name, $value in $font-size-first-cap-classes {
+  #{$name} {
+      &:first-letter{
+        text-transform: capitalize;
+        font-size: $value;
+    }
+  }
+}
+
+//CLASSES
+.capital{
+    @include cap();
+}
+.first-cap{
+    @include first-letter-cap();
+}
+.font-cap-clamp{
+    @include first-letter-clamp();
+}
+
+ .title-cap-clamp{
+    @include title-letter-clamp();
+ }

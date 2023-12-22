@@ -1,0 +1,107 @@
+@use '@/app/styles/_breakpoints.scss' as bp;
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+@use '@/app/styles/_classes.scss' as class;
+@use '@/app/styles/_keyframes.scss' as keyframes;
+
+.default {
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+
+  ol {
+    height: inherit;
+  }
+  li {
+    height: inherit;
+    @extend .font-cap-clamp;
+  }
+  a {
+    height: inherit;
+    @extend .capital;
+  }
+}
+
+.product-list{
+  padding-left: 1rem;
+  @media(width > 767px){
+    padding-left: 2rem;
+  }
+  position: relative;
+  li{
+    padding: 1rem 0;
+
+    &:first-letter{
+      text-transform: capitalize;
+    }
+    @media(width > 676px ){
+      &:nth-child(even){
+          padding: 2rem 0;
+      }
+        }
+
+
+  }
+
+}
+.active{
+  background-color: $primary-tint;
+  //text-decoration: overline underline $secondary;
+  @media (prefers-color-scheme: dark) {
+    background-color: $secondary-tint;
+  }
+}
+
+.nav{ 
+  @extend .default;
+  display: none;
+  line-height:  2;
+
+  @media( width > 767px ) {
+    @include flex.row(center, center);
+    transition: all 0.3s ease-in-out;
+    line-height: unset;
+    gap: 2em;
+    a {
+      color: $primary;
+      height: auto;
+      font-weight: 500;
+
+      @media (prefers-color-scheme: dark) {
+        &:hover {
+          text-shadow: 0px 0px 20px $silver-tint;
+        }
+      }
+      &:hover {
+        transform: scale(1.15);
+        color: $primary;
+      }
+    }
+  }
+}
+
+.mobileNav{
+  display: block;
+  @extend .default;
+  height: auto;
+  margin-top: 5em;
+
+  a {
+    color: $primary;
+    @media (prefers-color-scheme: dark) {
+      color: $primary-tint;
+    }
+  }
+  li {
+    padding: 1rem 0;
+    height: auto;
+    padding: $default-padding-inset;
+    border-bottom: 1px solid $primary;
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid $primary-tint;
+    }
+  }
+}
+

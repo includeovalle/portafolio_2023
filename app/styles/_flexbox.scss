@@ -1,0 +1,39 @@
+$direcions : (row, row-reverse, column, column-reverse);
+$justifys : (flex-start, flex-end, center, space-between, space-around, space-evenly);
+$aligns : (flex-start, flex-end, center, space-between, space-around, stretch);
+
+
+//create a mixin for flexbox
+@mixin flexbox($direction:row, $justify:center, $align:flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}
+@mixin row($justify:center, $align:flex-start) {
+    @include flexbox(row, $justify, $align);
+    @content;
+}
+@mixin rowRev($justify:center, $align:flex-start) {
+    @include flexbox(row-reverse, $justify, $align);
+    @content;
+}
+@mixin col($justify:center, $align:flex-start) {
+    @include flexbox(column, $justify, $align);
+    @content;
+}
+@mixin colRev($justify:center, $align:flex-start) {
+    @include flexbox(column-reverse, $justify, $align);
+    @content;
+}
+
+@mixin rowRev($justify:center, $align:flex-start) {
+    @include flexbox(row-reverse, $justify, $align);
+    @content;
+}
+
+@mixin colRev($justify:center, $align:flex-start) {
+    @include flexbox(column-reverse, $justify, $align);
+    @content;
+}

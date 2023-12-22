@@ -1,0 +1,453 @@
+@use '@/app/styles/_breakpoints.scss' as bp;
+@use '@/app/styles/_mixins.scss' as mixins;
+@use '@/app/styles/_flexbox.scss' as flex;
+@use '@/app/styles/_keyframes.scss' as key;
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_classes.scss' as class;
+
+.default{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: $page-max-width;
+  margin: 0 auto;
+  @include flex.col(flex-start, center);
+}
+
+.blue{
+  background-color: navy;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.footer {
+  width: 100%;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+}
+
+.page-container{
+  @extend .default;
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+  padding: $page-padding;
+}
+
+.inner-container{
+  @extend .default;
+  overflow: auto;
+  min-height: auto;
+  justify-content: unset;
+  align-items: unset;
+  padding: 1rem;
+  flex-grow: 1;
+  //style scrollbar thumb color
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    &-thumb {
+      background-color: $secondary-tint;
+      border-radius: $default-border-radius;
+      height: 10px;
+    }
+
+  }
+}
+
+
+//keymap__section
+.keymap{
+  border-top: 2px solid $secondary-tint;
+  position: relative;
+  padding: $default-padding-inset 0;
+  width: calc(100% - 2*$default-padding-inset);
+  @include flex.col(flex-start, center);
+  @include bp.breakpoint(md, min) {
+    @include flex.row(flex-start, center);
+    width: 100%;
+  }
+  &>*{
+    flex: 10% 0 50%;
+    @include bp.breakpoint(md, min) {
+      flex: 0 0 50%;
+    }
+    &:nth-last-child(1){
+      width: 100%;
+      @extend .font-cap-clamp;
+      text-align: justify;
+    }
+  }
+}
+
+.paragraph {
+  height: auto;
+  width: 100%;
+  position: relative;
+  a{
+    text-decoration: underline;
+    underline-offset: 0.2rem;
+    text-decoration-color: $secondary-tint;
+    box-shadow: 0 3px 0 $secondary-tint;
+
+  }
+}
+.row-container{
+  @include flex.col(flex-start, center);
+  gap: $default-padding;
+  @include bp.breakpoint(md, min) {
+    @include flex.row(flex-start, center);
+    gap: 0;
+  }
+}
+.col-container{
+  @extend .default;
+  position: relative;
+  margin: 1rem auto;
+  @include flex.col(flex-start, center);
+  @media(width > 768px){
+    margin: 2rem auto;
+  }
+}
+.contact-container {
+  @extend .col-container;
+
+}
+
+.center{
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+}
+.two-buttons {
+  @include flex.row(space-around, center);
+  margin-top: $default-padding-inset;
+}
+
+.card {
+  @include flex.col(center, center);
+  height: max-content;
+  min-height: max-content;
+  gap: 1rem;
+
+  @media(width > 767px){
+    @include flex.row(flex-start, flex-start);
+  }
+
+  &> section {
+    transition: all 1s easy-in-out;
+    h2 {
+      color: $white;
+      margin-top: $default-padding-inset;
+      padding: $default-padding-inset;
+      background-color: $secondary;
+      font-size: clamp(.5rem, 5vmax, 1.275rem);
+      text-align: center;
+      border-radius: $default-border-radius;
+    }
+    ul {
+      width: 100%;
+      overflow: hidden;
+      max-height: 150px;
+      list-style-type: square;
+      transition: all 1s easy-in-out;
+      li{
+        padding: $default-padding-inset;
+        display: block;
+        padding-left: 1rem;
+        font-weight: bold;
+        &:before{
+          display: inline-block;
+        }
+      }
+      span {
+        display: block;
+        padding: $default-padding-inset;
+        padding-left: 1rem;
+        &:hover{
+          &:before{
+            @include key.growFont();
+            color: $secondary;
+            content: '\21E8';
+          }
+        }
+        &:before{
+          content: '\21FE';
+          padding: 0 $default-padding-inset;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.banner-container {
+background-color: $primary;
+    height: 10rem;
+    border-radius: $default-border-radius;
+    @include flex.row(center, center);
+  @media( width > 767px ) {
+    gap: 1rem;
+    }
+    &> div {
+      margin: 0 1rem;
+
+      &:first-of-type {
+        text-transform:   uppercase;
+      }
+      &:nth-of-type(2) {
+        width: 1px;
+        height: 50%;
+        border-left: 1px solid $white;
+        background-color: teal;
+      }
+      & img {
+        position: relative !important;
+        width: 35px !important;
+        height: 35px !important;
+      }
+    }
+}
+
+.section-container {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap:  10px;
+  color: white;
+  border-radius: $default-border-radius;
+  min-width: 100px; /* Add a min-width constraint to prevent wrapping on very small screens */
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+    gap:  $default-padding-inset;
+  }
+  &> a {
+    position: relative;
+    @include flex.col(center, center);
+    border-radius: $default-border-radius;
+    min-height: 200px;
+    max-height: 250px;
+    width: 100%;
+    overflow: hidden;
+    background-color: $black;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-position: 10% 50%;
+      border-radius: $default-border-radius;
+    }
+  }
+  & label {
+    padding: $default-padding-inset;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    background-color: $secondary;
+    border-radius: 0 0 $default-border-radius $default-border-radius ;
+    cursor: pointer;
+    & span {
+      display: block;
+      font-size: 70%;
+      margin-top: $default-padding-inset/2;
+      @extend .first-cap;
+    }
+  }
+}
+
+.grid-container {
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  gap: 3em;
+  border-radius: $default-border-radius;
+  min-width: 100px; /* Add a min-width constraint to prevent wrapping on very small screens */
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+    gap:  $default-padding-inset;
+    margin: 2em 0;
+  }
+
+  & article {
+    height: max-content;
+    padding: $default-padding-inset;
+
+    button {
+      border: none;
+      padding: $default-padding-inset;
+      cursor: pointer;
+      background-color: transparent;
+        color: inherit;
+      font-family: inherit;
+    }
+    & label {
+      background-color: $secondary;
+      position: relative;
+      display: block;
+      margin: .5rem 0;
+      text-align: center;
+      color: $white;
+      font-weight: 600;
+      font-size: clamp(.75rem, 2.5vw, 1.2rem); 
+      border-radius: $default-border-radius;
+      @media(width > 767px){
+        margin: 1rem 0;
+      }
+    }
+    &>div> section{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: block;
+      margin-bottom: 1rem;
+      @include flex.row(center, center);
+      gap: .5rem;
+      &.active{
+        background-color: red;
+      }
+      span {
+        border-radius: 50%;
+        background-color: $primary-tint;
+        height: 18px;
+        width: 18px;
+        display: block;
+        color: transparent;
+        cursor: pointer;
+      }
+    }
+
+    &> div{
+      height: 40%;
+      position: relative;
+      width: 100%;
+      border-radius: 2*$default-border-radius;
+      &> button {
+        margin: 1rem;
+        height: 35px;
+        width: 35px;
+        // background-image: url('../../../public/assets/iconos/flecha_gris.svg');
+        background-repeat:no-repeat;
+        background-size: contain;
+        @media(width > 767px){
+          width: 45px;
+          height: 45px;
+        }
+        &:first-of-type{
+          rotate: 180deg;
+        }
+      }
+      @media( width > 767px ) {
+        height: 50%;
+      }
+    }
+    &> section {
+      transition: all 1s easy-in-out;
+      h2 {
+        color: $white;
+        margin-top: $default-padding-inset;
+        padding: $default-padding-inset;
+        background-color: $secondary;
+        font-size: clamp(.5rem, 5vmax, 1.275rem);
+        text-align: center;
+        border-radius: $default-border-radius;
+      }
+      ul {
+        width: 100%;
+        overflow: hidden;
+        max-height: 150px;
+        list-style-type: square;
+        transition: all 1s easy-in-out;
+        li{
+          padding: $default-padding-inset;
+          display: block;
+          padding-left: 1rem;
+          font-weight: bold;
+          &:before{
+            display: inline-block;
+          }
+        }
+        span {
+          display: block;
+          padding: $default-padding-inset;
+          padding-left: 1rem;
+          &:hover{
+            &:before{
+              @include key.growFont();
+              color: $secondary;
+              content: '\21E8';
+            }
+          }
+          &:before{
+            content: '\21FE';
+            padding: 0 $default-padding-inset;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  &> a {
+    position: relative;
+    @include flex.col(center, center);
+    border-radius: $default-border-radius;
+    min-height: 200px;
+    max-height: 250px;
+    width: 100%;
+    overflow: hidden;
+    background-color: $black;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-position: 10% 50%;
+      border-radius: $default-border-radius;
+    }
+  }
+  & label {
+    padding: $default-padding-inset;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    background-color: $secondary;
+    border-radius: 0 0 $default-border-radius $default-border-radius ;
+    cursor: pointer;
+    & span {
+      display: block;
+      font-size: 70%;
+      margin-top: $default-padding-inset/2;
+      @extend .first-cap;
+    }
+  }
+}
+
+.two-columns {
+  position: relative;
+  @include flex.row(center, center);
+  gap: 2rem;
+  & > section {
+        flex: 0 0 calc(50% - 1rem);
+        margin: 0;
+    &a {
+      padding: 0;
+    }
+  }
+}

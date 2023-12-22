@@ -1,0 +1,53 @@
+@use './_variables.scss' as *;
+@use './_flexbox.scss' as flex;
+@use './_mixins.scss' as mixins;
+
+
+body {
+    font-size: $font-clamp;
+    font-weight: 300;
+    min-height: 100dvh;
+    main {
+      position: relative;
+      max-width: $page-max-width;
+      margin: 0 auto;
+      padding: 0 1rem;
+      hr {
+          border-color: $secondary;
+      }
+
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: linear-gradient(90deg, $black 12%, black 82%);
+        color: $primary-tint;
+        dialog {
+            background-color: $black;
+            color: $primary-tint;
+            &::backdrop {
+                background-color: $secondary-tint;
+            }
+        }
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: unset;
+}
+
+html,
+body {
+    max-width: 100vw;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    @media (prefers-color-scheme: dark) {
+        color: $primary-tint;
+    }
+}

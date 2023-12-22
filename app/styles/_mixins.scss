@@ -1,0 +1,8 @@
+@mixin paddinTop($value, $unit) {
+  padding-top: $value+$unit;
+  gap: $value+$unit;
+  @media (min-width < 768px) {
+    padding-top: ($value/2)+$unit;
+    gap: ($value/2)+$unit;
+  }
+}

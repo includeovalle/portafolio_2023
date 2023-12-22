@@ -1,0 +1,32 @@
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+
+.default{
+    @include flex.col(center, flex-start);
+    gap: .5em;
+    border-radius: $default-border-radius;
+    input {
+      border-radius: $default-border-radius/2;
+      border: 0;
+      width: 100%;
+      padding: 1em;
+    }
+
+    textarea:last-of-type{
+      border-radius: $default-border-radius/2;
+      border: 0;
+      width: 100%;
+      font-family: inherit;
+      padding: 1em;
+      min-height: 3em;
+      max-height: 7em;
+      resize: vertical;
+      form-sizing: content;
+    }
+
+    button {
+      background-color: $secondary;
+      padding: .5em 3rem;
+      border-radius: $default-border-radius;
+    }
+}

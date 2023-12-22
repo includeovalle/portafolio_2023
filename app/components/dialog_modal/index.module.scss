@@ -1,0 +1,15 @@
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/breakpoints.scss' as bp;
+@use '@/app/styles/flexbox.scss' as flex;
+.default {
+    width: 50vw;
+    margin-left: 50vw;
+    border: $default-border-radius solid $primary-tint;
+    border-top: 0;
+    border-right: 0;
+    border-radius: $default-border-radius 0 0 $default-border-radius;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    height: 50dvh;
+}
+

@@ -1,0 +1,138 @@
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+@use '@/app/styles/_breakpoints.scss' as bp;
+@use '@/app/styles/_classes.scss' as class;
+
+.default {
+    border: none;
+    background-color: transparent;
+}
+
+.nav{
+    color: $white;
+    @include bp.breakpoint(md, min) {
+        display: none;
+    }
+}
+
+.icon {
+    @extend .default;
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.hamburger{
+    @extend  .default;
+    @include flex.col(flex-start, flex-start);
+    width: $default-button-size;
+    height: $default-button-size;
+    span{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-bottom: 2px solid $primary;
+    }
+    @media(width > 767px){
+        display: none;
+    }
+
+}
+.closeHamburger {
+    @extend  .default;
+    @extend  .first-cap;
+    @include flex.col(center, center);
+    position: absolute;
+    right: 2rem;
+    top: 2em;
+    height:$default-button-size;
+    width: $default-button-size;
+    cursor: pointer;
+    &>span{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid $primary;
+
+        &:nth-child(1){
+            transform: rotate(45deg);
+        }
+        &:nth-child(2){
+            transform: rotate(-45deg);
+        }
+        @media (prefers-color-scheme: dark) {
+            border-bottom: 2px solid $primary-tint;
+        }
+    }
+}
+
+.circle {
+    &__blue {
+    border-radius: 50%;
+    border: 2px navy solid;
+    height: 30px;
+    width: 30px;
+    background-color: cyan;
+    }
+}
+
+.deleteTask {
+    @extend  .closeHamburger;
+    position: relative;
+    right: unset;
+    top: unset;
+    border: 1px groove $secondary;
+}
+.pointerTask {
+    @extend  .deleteTask;
+    pointer-events: none;
+    margin: 0 auto;
+}
+.modalTask {
+    @extend  .default;
+    @extend  .first-cap;
+    background-color: $primary;
+    color: $white;
+    padding: 1rem 2rem;
+    transition: all 300 ease-in-out;
+    width: 100%;
+    &:hover{
+        cursor: pointer;
+        background-color: $primary-tint;
+    }
+}
+
+//placeholder
+%placeholdr{
+    @extend  .first-cap;
+    background-color: transparent;
+}
+
+.modalTable{
+    width: 100%;
+    height: 100%;
+    position: unset;
+    border: none;
+    background-color: transparent;
+    input{
+        @extend  %placeholdr;
+        @extend  .first-cap;
+        border: none;
+        width: 100%;
+        height: 100%;
+        padding: $default-padding-inset;
+    }
+}
+.form-btn{
+    @extend  .default;
+    @extend  .first-cap;
+    background-color: $primary;
+    border-radius: $default-border-radius;
+    color: $white;
+    padding: $default-padding-inset;
+}
+
+.contacto {
+  @extend  .default;
+  @extend  .icon;
+}

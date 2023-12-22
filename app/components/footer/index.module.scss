@@ -1,0 +1,47 @@
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+.default {
+    width: 100%;
+    height: max-content;
+    background-color: $primary;
+    @include flex.col(center, center);
+    gap: 2rem;
+    padding: 2em;
+    form{
+      @include flex.col(center, center);
+      width: 100%;
+      gap: .5em;
+    }
+    section {
+      color: $white;
+      width: 100%;
+      h3 {
+        color: $secondary;
+      }
+    }
+    @media( width > 767px) {
+      @include flex.row(center, center);
+      height: max-content;
+    form {
+      @include flex.col(flex-start, flex-start);
+      width: 45%;
+    }
+    section {
+      font-size: 14px;
+      @include flex.col(flex-start, flex-start);
+      width: 45%;
+      p {
+        padding: .5em 0;
+      }
+    }
+    }
+    @media( width > 1024px) {
+    height: 30dvi;
+    form {
+      width: 25%;
+    }
+    section {
+      width: 25%;
+    }
+  }
+}

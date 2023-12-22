@@ -1,0 +1,44 @@
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_classes.scss' as class;
+@use '@/app/styles/_breakpoints.scss' as bp;
+
+.default{
+    @extend .first-cap;
+}
+
+.center{
+    @extend .default;
+    @extend .first-cap;
+    text-align: center;
+}
+
+.title{
+    @extend .title-cap-clamp;
+    width: 100%;
+    font-weight: 400;
+    @extend .default;
+    font-size: $title-clamp;
+    text-align: center;
+    margin: 1rem 0;
+    border-bottom: 2px solid $secondary;
+    @include bp.breakpoint(md, min) {
+        text-align: left;
+    }
+}
+
+.services-banner{
+    @extend .center;
+    font-size: $title-clamp;
+    text-transform: uppercase;
+    margin: 0 auto;
+    min-height: unset;
+}
+.subtitle{
+    text-transform: uppercase;
+    text-align: center;
+    color: $secondary;
+    margin: 1em;
+    @media(width > 767px){
+        margin: 2rem;
+    }
+}

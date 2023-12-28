@@ -14,12 +14,14 @@
   @include flex.col(flex-start, center);
 }
 
-.blue{
-  background-color: navy;
+.blue {
+  background: $primary;
+  background: linear-gradient(180deg, $primary 0%, $primary-tint 35%, $primary-light 100%);
 }
 
-.orange{
-  background-color: orange;
+.orange {
+  background: $secondary;
+  background: linear-gradient(180deg, $secondary 0%, $secondary-tint 35%, $secondary-light 100%);
 }
 
 .footer {
@@ -188,31 +190,31 @@
 }
 
 .banner-container {
-background-color: $primary;
-    height: 10rem;
-    border-radius: $default-border-radius;
-    @include flex.row(center, center);
+  background-color: $primary;
+  height: 10rem;
+  border-radius: $default-border-radius;
+  @include flex.row(center, center);
   @media( width > 767px ) {
     gap: 1rem;
-    }
-    &> div {
-      margin: 0 1rem;
+  }
+  &> div {
+    margin: 0 1rem;
 
-      &:first-of-type {
-        text-transform:   uppercase;
-      }
-      &:nth-of-type(2) {
-        width: 1px;
-        height: 50%;
-        border-left: 1px solid $white;
-        background-color: teal;
-      }
-      & img {
-        position: relative !important;
-        width: 35px !important;
-        height: 35px !important;
-      }
+    &:first-of-type {
+      text-transform:   uppercase;
     }
+    &:nth-of-type(2) {
+      width: 1px;
+      height: 50%;
+      border-left: 1px solid $white;
+      background-color: teal;
+    }
+    & img {
+      position: relative !important;
+      width: 35px !important;
+      height: 35px !important;
+    }
+  }
 }
 
 .section-container {
@@ -290,7 +292,7 @@ background-color: $primary;
       padding: $default-padding-inset;
       cursor: pointer;
       background-color: transparent;
-        color: inherit;
+      color: inherit;
       font-family: inherit;
     }
     & label {
@@ -444,8 +446,8 @@ background-color: $primary;
   @include flex.row(center, center);
   gap: 2rem;
   & > section {
-        flex: 0 0 calc(50% - 1rem);
-        margin: 0;
+    flex: 0 0 calc(50% - 1rem);
+    margin: 0;
     &a {
       padding: 0;
     }

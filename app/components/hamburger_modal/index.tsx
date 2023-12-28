@@ -2,11 +2,11 @@
 import React, { useRef } from 'react';
 import { Button, Dialog } from '@/app/components/';
 import { childrenInterface } from "@/app/types/";
+import { useBgColor } from '@/app/utils/context';
 
 
 const Index = ({ children }: childrenInterface) => {
-    ;
-
+    const { bgColor } = useBgColor();
     const modalRef = useRef<HTMLDialogElement>(null);
 
     const hamburgerHandler = () => {
@@ -17,9 +17,10 @@ const Index = ({ children }: childrenInterface) => {
         modalRef.current?.close();
     };
 
+    const CurrentTheme = `hamburger__${bgColor}`
     return (
         <>
-            <Button className={'hamburger'} type={'button'} onClick={() => hamburgerHandler()}>
+            <Button className={CurrentTheme} type={'button'} onClick={() => hamburgerHandler()}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,4 +34,3 @@ const Index = ({ children }: childrenInterface) => {
 };
 
 export default Index;
-

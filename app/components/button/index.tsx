@@ -7,8 +7,9 @@ import { ButtonInterface } from '@/app/types';
 const Index = ({ className, type, children, onClick, autoFocus, onHover }: ButtonInterface) => {
 
     const propStyle = className ? styles[className] : styles['default'];
+
     return (
-        <button className={propStyle} type={type} onClick={onClick} autoFocus={autoFocus} onMouseOver={onHover} >
+        <button className={propStyle} type={type} onClick={onClick} autoFocus={autoFocus} onMouseMove={onHover} >
             {children}
         </button>
     );

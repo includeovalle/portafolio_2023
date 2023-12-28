@@ -1,24 +1,38 @@
 "use client"
-import React, { useState } from "react";
-import { Header, OnHoverButton } from '@/app/components/';
+import React from "react";
+import { Header, OnHoverButton, Hamburger } from '@/app/components/';
 import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
-  const [theme, setTheme ] = useState('blue');
 
- const { changeTheme } = useBgColor();
+ const { changeTheme, bgColor, isDark, toggleDarkMode } = useBgColor();
 
   const handleClick = (theme:string) => {
     changeTheme(theme);
   };
+
+  
+  // const handleDark = () => {
+  //   toggleDarkMode()
+  // }
+
   
   return (
 
-    <Header className={'header__space-around'} >
-        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"circle__blue"}/>
-        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="colorChange">orange</OnHoverButton>
+    <Header className={bgColor} >
+      <div>foto</div>
+      <div>
+        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
+        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
         <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className="colorChange">purple</OnHoverButton>
-        <OnHoverButton onClick={() => handleClick('dark')} onHover={()=> handleClick('dark')} className="colorChange">dark</OnHoverButton>
+        <OnHoverButton className={"black"} />
+      </div>
+      <Hamburger>
+        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"circle__blue"}/>
+        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="circle__orange"/>
+        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className="colorChange">purple</OnHoverButton>
+        <OnHoverButton  className="black"/>
+      </Hamburger>
     </Header>
   );
 };

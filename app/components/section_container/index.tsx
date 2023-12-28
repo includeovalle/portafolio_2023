@@ -10,7 +10,6 @@ interface Props {
 }
 const Index = ({ children, className, main = false }: Props) => {
     const propStyle = className ? className : styles['default'];
-    console.log({propStyle});
     return (
         <>
 
@@ -40,7 +39,6 @@ const { bgColor } = useBgColor();
 
 
     useEffect(()=>{
-    console.log({bgColor});
         setCurrentBgColor(styles[bgColor])
     },[bgColor]);
 

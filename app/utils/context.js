@@ -5,11 +5,21 @@ import useLocalStorage from './custom-hooks/localStorage.js';
 
 export const BgColorContext = createContext();
 
-const backgroundOptions = ['blue', 'orange', 'purple', 'dark'];
+const backgroundOptions = ['blue', 'orange', 'purple'];
 
 const BgColorProvider = ({ children }) => {
-  const [bgColor, setBgColor] = useLocalStorage('background', 'blue');
+  //TODO solve how to get the initial value from local storage
+  const [bgColor, setBgColor] = useLocalStorage('background', '');
+  // check localStorage for background using try catch
+  try {
+    var initialTheme = localStorage.getItem('background');
+  }catch {
+    return null;
+  }
 
+    if (!initialTheme) {
+      setBgColor("blue");
+    }
   const changeTheme = (newTheme) => {
     if (backgroundOptions.includes(newTheme)) {
       setBgColor(newTheme);
@@ -17,7 +27,7 @@ const BgColorProvider = ({ children }) => {
   };
 
   return (
-    <BgColorContext.Provider value={{ backgroundOptions, bgColor, changeTheme }}>
+    <BgColorContext.Provider value={{ bgColor, changeTheme }}>
       {children}
     </BgColorContext.Provider>
   );

@@ -20,7 +20,7 @@ body {
 
     @media (prefers-color-scheme: dark) {
         background: linear-gradient(90deg, $black 12%, black 82%);
-        color: $primary-tint;
+        color: $silver;
         dialog {
             background-color: $black;
             color: $primary-tint;

@@ -51,9 +51,24 @@
     color: $silver-tint;
 }
 
-.brand {
-    display: block;
-    color: $primary;
-    background-color: $primary-tint;
+.center{
     text-align: center;
+}
+
+.blue {
+    @extend .center;
+    color: $primary;
+    background-color: $primary-light;
+}
+
+.orange {
+    @extend .center;
+    color: $primary;
+    background-color: $primary-light;
+}
+
+.purple {
+    @extend .center;
+    color: $primary;
+    background-color: $primary-light;
 }

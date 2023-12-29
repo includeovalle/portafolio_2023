@@ -13,13 +13,16 @@ const BgColorProvider = ({ children }) => {
   // check localStorage for background using try catch
   try {
     var initialTheme = localStorage.getItem('background');
-  }catch {
-    return null;
-  }
+    if (!initialTheme) { setBgColor("blue"); }
+  } catch { return null; }
 
-    if (!initialTheme) {
-      setBgColor("blue");
-    }
+  // check localStorage for background using try catch
+  try {
+    var initialDarkmode = localStorage.getItem('darkmode');
+    if (!initialDarkmode) { setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches); }
+  } catch { return null; }
+
+
   const changeTheme = (newTheme) => {
     if (backgroundOptions.includes(newTheme)) {
       setBgColor(newTheme);

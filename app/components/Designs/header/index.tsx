@@ -5,18 +5,16 @@ import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
 
- const { changeTheme, bgColor, isDark, toggleDarkMode } = useBgColor();
+ const { changeTheme, bgColor } = useBgColor();
 
   const handleClick = (theme:string) => {
     changeTheme(theme);
   };
 
-  
   // const handleDark = () => {
-  //   toggleDarkMode()
+  //   changeDarkMode()
   // }
-
-  
+ 
   return (
 
     <Header className={bgColor} >
@@ -24,14 +22,15 @@ const Index = () => {
       <div>
         <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
         <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
-        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className="colorChange">purple</OnHoverButton>
-        <OnHoverButton className={"black"} />
+        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
       </div>
-      <Hamburger>
-        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"circle__blue"}/>
-        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="circle__orange"/>
-        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className="colorChange">purple</OnHoverButton>
-        <OnHoverButton  className="black"/>
+
+      <Hamburger >
+        <div>
+          <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
+          <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
+          <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
+        </div>
       </Hamburger>
     </Header>
   );

@@ -43,9 +43,15 @@
     &__orange{
         @extend  .hamburger;
         &>span{
-            border-bottom: 2px solid $secondary-light;
+            border-bottom: 2px solid $secondary-tint;
         }
+    }
 
+    &__purple{
+        @extend  .hamburger;
+        &>span{
+            border-bottom: 2px solid $tertiary-light;
+        }
     }
 }
 
@@ -71,7 +77,7 @@
             transform: rotate(-45deg);
         }
         @media (prefers-color-scheme: dark) {
-            border-bottom: 2px solid $primary-tint;
+            border-bottom: 2px solid $silver;
         }
     }
 }
@@ -92,6 +98,11 @@
 .orange {
     @extend  .circle;
     background-color: $secondary;
+}
+
+.purple {
+    @extend  .circle;
+    background-color: $tertiary;
 }
 
 .black {

@@ -23,6 +23,11 @@
   background: $secondary;
   background: linear-gradient(180deg, $secondary 0%, $secondary-tint 35%, $secondary-light 100%);
 }
+ 
+.purple {
+  background-color: $tertiary;
+  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 35%, $tertiary-light 100%);
+}
 
 .footer {
   width: 100%;
@@ -43,6 +48,7 @@
   @extend .default;
   overflow: auto;
   min-height: auto;
+  max-width: $page-max-width;
   justify-content: unset;
   align-items: unset;
   padding: 1rem;

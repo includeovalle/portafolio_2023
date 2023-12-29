@@ -4,12 +4,33 @@
 .default {
     width: 50vw;
     margin-left: 50vw;
-    border: $default-border-radius solid $primary-tint;
+    border: $default-border-radius solid;
     border-top: 0;
     border-right: 0;
     border-radius: $default-border-radius 0 0 $default-border-radius;
-    padding: 1rem;
+    padding: 2rem;
     transition: all 0.3s ease-in-out;
     height: 50dvh;
+    &>div{
+        @include flex.col(flex-start, flex-start);
+        gap: 1rem;
+    }
 }
 
+.blue{
+    @extend .default;
+    background-color: $primary-tint;
+    border-color: $primary-light;
+}
+
+.orange {
+    @extend .default;
+    background-color: $secondary-tint;
+    border-color: $secondary-light;
+}
+
+.purple {
+    @extend .default;
+    background-color: $tertiary-tint;
+    border-color: $tertiary-light;
+}

@@ -6,47 +6,18 @@
   padding: 0 2rem;
 }
 
-// .header {
-//   @include flex.row(space-between, center);
-//   z-index: 1;
-//   @include bp.breakpoint(md, min) {
-//     @include flex.row(space-evenly, center);
-//     max-width: map-get($breakpoints, 'xl');
-//     margin: 0 auto;
-//   }
-//
-//   &__two-items{
-//     position: fixed;
-//     width: 100%;
-//     background-color: $primary-tint;
-//     z-index: 1;
-//     div{
-//       max-width: $page-max-width;
-//       height: $header-height;
-//       min-height: $logo-min-height;
-//       width: 100%;
-//       margin: 0 auto;
-//       @include flex.row(space-between, center);
-//       padding: 0  4*$default-padding-inset;
-//     }
-//     @include bp.breakpoint(md, min) {
-//     background-color: $silver-tint;
-//     }
-//   }
-//
-//
-//   &__space-around {
-//     position: relative;
-//     width: 100%;
-//     height: $header-height;
-//   }
-// }
-
-
 .header {
   @include flex.row(space-between, center);
   padding: 1rem 2rem;
+  &>div:nth-child(2) {
+  @include flex.row(space-between, center);
+  gap: 1rem;
+    @media(width < 767px){
+      display: none;
+    }
+  }
 }
+
 .blue{
   @extend .header;
   background-color: $primary;
@@ -55,4 +26,9 @@
 .orange {
   @extend .header;
   background-color: $secondary;
+}
+
+.purple {
+  @extend .header;
+  background-color: $tertiary;
 }

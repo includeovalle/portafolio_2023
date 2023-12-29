@@ -26,7 +26,7 @@ const Index = ({ children }: childrenInterface) => {
                 <span></span>
             </Button>
 
-            <Dialog ref={modalRef} onClick={() => closeModal()}>
+            <Dialog className={bgColor} ref={modalRef} onClick={() => closeModal()}>
                 {children}
             </Dialog>
         </>

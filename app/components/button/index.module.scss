@@ -27,6 +27,8 @@
     @include flex.col(flex-start, flex-start);
     width: $default-button-size;
     height: $default-button-size;
+    position: absolute;
+    right: 2rem;
     span {
         width: 100%;
         height: 100%;
@@ -38,7 +40,9 @@
     }
     &__blue{
         @extend  .hamburger;
-
+        &>span{
+            border-bottom: 2px solid $primary-light;
+        }
     }
     &__orange{
         @extend  .hamburger;
@@ -46,11 +50,10 @@
             border-bottom: 2px solid $secondary-tint;
         }
     }
-
     &__purple{
         @extend  .hamburger;
         &>span{
-            border-bottom: 2px solid $tertiary-light;
+            border-bottom: 2px solid $tertiary-tint;
         }
     }
 }
@@ -79,6 +82,27 @@
         @media (prefers-color-scheme: dark) {
             border-bottom: 2px solid $silver;
         }
+    }
+}
+
+.close-hamburger__blue{
+    @extend  .closeHamburger;
+    > span{
+        border-color: $primary-light;
+    }
+}
+
+.close-hamburger__orange{
+    @extend  .closeHamburger;
+    > span{
+        border-color: $silver-tint;
+    }
+}
+
+.close-hamburger__purple {
+    @extend  .closeHamburger;
+    > span{
+        border-color: $silver;
     }
 }
 

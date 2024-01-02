@@ -16,17 +16,17 @@
 
 .blue {
   background: $primary;
-  background: linear-gradient(180deg, $primary 0%, $primary-tint 35%, $primary-light 100%);
+  background: linear-gradient(180deg, $primary 0%,  $primary-tint 60%, $primary-light 100%);
 }
 
 .orange {
   background: $secondary;
-  background: linear-gradient(180deg, $secondary 0%, $secondary-tint 35%, $secondary-light 100%);
+  background: linear-gradient(180deg, $secondary 0%, $secondary-tint 60%, $secondary-light 100%);
 }
  
 .purple {
   background-color: $tertiary;
-  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 35%, $tertiary-light 100%);
+  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, $tertiary-light 100%);
 }
 
 .footer {
@@ -44,8 +44,7 @@
   padding: $page-padding;
 }
 
-.inner-container{
-  @extend .default;
+.inner-container {
   overflow: auto;
   min-height: auto;
   max-width: $page-max-width;
@@ -138,62 +137,6 @@
   margin-top: $default-padding-inset;
 }
 
-.card {
-  @include flex.col(center, center);
-  height: max-content;
-  min-height: max-content;
-  gap: 1rem;
-
-  @media(width > 767px){
-    @include flex.row(flex-start, flex-start);
-  }
-
-  &> section {
-    transition: all 1s easy-in-out;
-    h2 {
-      color: $white;
-      margin-top: $default-padding-inset;
-      padding: $default-padding-inset;
-      background-color: $secondary;
-      font-size: clamp(.5rem, 5vmax, 1.275rem);
-      text-align: center;
-      border-radius: $default-border-radius;
-    }
-    ul {
-      width: 100%;
-      overflow: hidden;
-      max-height: 150px;
-      list-style-type: square;
-      transition: all 1s easy-in-out;
-      li{
-        padding: $default-padding-inset;
-        display: block;
-        padding-left: 1rem;
-        font-weight: bold;
-        &:before{
-          display: inline-block;
-        }
-      }
-      span {
-        display: block;
-        padding: $default-padding-inset;
-        padding-left: 1rem;
-        &:hover{
-          &:before{
-            @include key.growFont();
-            color: $secondary;
-            content: '\21E8';
-          }
-        }
-        &:before{
-          content: '\21FE';
-          padding: 0 $default-padding-inset;
-          display: inline-block;
-        }
-      }
-    }
-  }
-}
 
 .banner-container {
   background-color: $primary;
@@ -275,177 +218,6 @@
   }
 }
 
-.grid-container {
-  margin: 1em 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  gap: 3em;
-  border-radius: $default-border-radius;
-  min-width: 100px; /* Add a min-width constraint to prevent wrapping on very small screens */
-
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
-    gap:  $default-padding-inset;
-    margin: 2em 0;
-  }
-
-  & article {
-    height: max-content;
-    padding: $default-padding-inset;
-
-    button {
-      border: none;
-      padding: $default-padding-inset;
-      cursor: pointer;
-      background-color: transparent;
-      color: inherit;
-      font-family: inherit;
-    }
-    & label {
-      background-color: $secondary;
-      position: relative;
-      display: block;
-      margin: .5rem 0;
-      text-align: center;
-      color: $white;
-      font-weight: 600;
-      font-size: clamp(.75rem, 2.5vw, 1.2rem); 
-      border-radius: $default-border-radius;
-      @media(width > 767px){
-        margin: 1rem 0;
-      }
-    }
-    &>div> section{
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      display: block;
-      margin-bottom: 1rem;
-      @include flex.row(center, center);
-      gap: .5rem;
-      &.active{
-        background-color: red;
-      }
-      span {
-        border-radius: 50%;
-        background-color: $primary-tint;
-        height: 18px;
-        width: 18px;
-        display: block;
-        color: transparent;
-        cursor: pointer;
-      }
-    }
-
-    &> div{
-      height: 40%;
-      position: relative;
-      width: 100%;
-      border-radius: 2*$default-border-radius;
-      &> button {
-        margin: 1rem;
-        height: 35px;
-        width: 35px;
-        // background-image: url('../../../public/assets/iconos/flecha_gris.svg');
-        background-repeat:no-repeat;
-        background-size: contain;
-        @media(width > 767px){
-          width: 45px;
-          height: 45px;
-        }
-        &:first-of-type{
-          rotate: 180deg;
-        }
-      }
-      @media( width > 767px ) {
-        height: 50%;
-      }
-    }
-    &> section {
-      transition: all 1s easy-in-out;
-      h2 {
-        color: $white;
-        margin-top: $default-padding-inset;
-        padding: $default-padding-inset;
-        background-color: $secondary;
-        font-size: clamp(.5rem, 5vmax, 1.275rem);
-        text-align: center;
-        border-radius: $default-border-radius;
-      }
-      ul {
-        width: 100%;
-        overflow: hidden;
-        max-height: 150px;
-        list-style-type: square;
-        transition: all 1s easy-in-out;
-        li{
-          padding: $default-padding-inset;
-          display: block;
-          padding-left: 1rem;
-          font-weight: bold;
-          &:before{
-            display: inline-block;
-          }
-        }
-        span {
-          display: block;
-          padding: $default-padding-inset;
-          padding-left: 1rem;
-          &:hover{
-            &:before{
-              @include key.growFont();
-              color: $secondary;
-              content: '\21E8';
-            }
-          }
-          &:before{
-            content: '\21FE';
-            padding: 0 $default-padding-inset;
-            display: inline-block;
-          }
-        }
-      }
-    }
-  }
-  &> a {
-    position: relative;
-    @include flex.col(center, center);
-    border-radius: $default-border-radius;
-    min-height: 200px;
-    max-height: 250px;
-    width: 100%;
-    overflow: hidden;
-    background-color: $black;
-    font-size: 30px;
-    text-align: center;
-    color: white;
-    img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background-position: 10% 50%;
-      border-radius: $default-border-radius;
-    }
-  }
-  & label {
-    padding: $default-padding-inset;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    font-size: 14px;
-    background-color: $secondary;
-    border-radius: 0 0 $default-border-radius $default-border-radius ;
-    cursor: pointer;
-    & span {
-      display: block;
-      font-size: 70%;
-      margin-top: $default-padding-inset/2;
-      @extend .first-cap;
-    }
-  }
-}
 
 .two-columns {
   position: relative;

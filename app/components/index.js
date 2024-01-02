@@ -9,10 +9,10 @@ export { default as Ul } from './ul_component/index';
 export { default as Dialog } from './dialog_modal/index';
 export { default as Hamburger } from './hamburger_modal/index';
 export { default as CustomImage } from './image/index';
+export { default as Portrait} from './portrait/index';
 // export { default as Footer } from './footer/index';
 // export { default as Container } from './section_container/index';
 // export { KeymapContainer as KeymapContainer } from './section_container/index';
-// export { InnerContainer as InnerContainer } from './section_container/index';
 // export { CardContainer as CardContainer } from './section_container/index';
 // export { default as Carousel } from './carousel/index'
 // export { ParagraphContainer as ParagraphContainer } from './section_container/index';

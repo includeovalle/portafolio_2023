@@ -3,24 +3,23 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
-import { ImageInterface, SwapStringInterface,  LinkInterface } from "@/app/types/";
+import { ImageInterface, LinkInterface } from "@/app/types/";
+import { useBgColor } from '@/app/utils/context';
 
-interface Props extends ImageInterface, SwapStringInterface,  LinkInterface {
+interface Props extends ImageInterface, LinkInterface {
     width?: number;
     height?: number;
 }
 
 
-const Index = ({ src, alt, links, href, target, width, height, swap, swapString, figcaption, children, className }: Props) => {
-    const propStyle = className ? styles[className] : styles['default'];
+const Index = ({ src, alt, links, href, target, width, height, figcaption, children, className }: Props) => {
+    const { bgColor } = useBgColor();
+
+    const propStyle = className ? styles[bgColor] : styles['default'];
 
     const [currentSrc, setCurrentSrc] = useState(src);
 
     const SIZES = "(max-width: 600px) 100vw, 600px"
-
-    const handleSwap = () => {
-        setCurrentSrc(swap ? swapString || src : src);
-    };
 
     return (
         <figure className={propStyle}>
@@ -33,7 +32,6 @@ const Index = ({ src, alt, links, href, target, width, height, swap, swapString,
                         height={height? height : width/3}
                         sizes={SIZES}
                         priority
-                        onClick={handleSwap}
                     />
                   {figcaption && <figcaption>{children}</figcaption>}
                 </Link>
@@ -48,7 +46,6 @@ const Index = ({ src, alt, links, href, target, width, height, swap, swapString,
                         sizes={SIZES}
                         fill
                         priority
-                        onClick={handleSwap}
                     />
                   {figcaption && <figcaption>{children}</figcaption>}
                 </Link>
@@ -61,7 +58,6 @@ const Index = ({ src, alt, links, href, target, width, height, swap, swapString,
                     height={height? height : width/3}
                     sizes={SIZES}
                     priority
-                    onClick={handleSwap}
                 />
             )}
             {!links && !width && (
@@ -71,7 +67,6 @@ const Index = ({ src, alt, links, href, target, width, height, swap, swapString,
                     sizes={SIZES}
                     fill
                     priority
-                    onClick={handleSwap}
                 />
             )}
             {figcaption && !links && <figcaption>{children}</figcaption>}

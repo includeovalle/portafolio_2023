@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { Header, OnHoverButton, Hamburger } from '@/app/components/';
+import { Header, OnHoverButton, Hamburger, Portrait } from '@/app/components/';
 import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
@@ -11,6 +11,8 @@ const Index = () => {
     changeTheme(theme);
   };
 
+  const text = " Carlos Raul Amaro Ovalle";
+
   // const handleDark = () => {
   //   changeDarkMode()
   // }
@@ -18,7 +20,7 @@ const Index = () => {
   return (
 
     <Header className={bgColor} >
-      <div>foto</div>
+      <Portrait text={text} />
       <div>
         <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
         <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>

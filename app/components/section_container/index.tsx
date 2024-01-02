@@ -36,8 +36,6 @@ export function MainContainer({ children, main = true }: Props) {
     
 const { bgColor } = useBgColor();
 
-
-
     useEffect(()=>{
         setCurrentBgColor(styles[bgColor])
     },[bgColor]);
@@ -49,14 +47,6 @@ const { bgColor } = useBgColor();
     );
 }
 
-
-export function InnerContainer({ children, main = false, className }: Props) {
-    return (
-        <Index className={className} main={main}>
-            {children}
-        </Index>
-    );
-}
 
 export function CardContainer({ children, main = false, className='card' }: Props) {
     return (

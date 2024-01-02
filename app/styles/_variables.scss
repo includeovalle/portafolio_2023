@@ -7,12 +7,12 @@ $silver-tint: rgba(255, 255, 255, .8);
 $black: #343437;
 
 $primary: #031d44;
-$primary-tint: rgba(03, 40, 78, 0.43599438066242124);
-$primary-light: rgb(188, 222, 252, 0.7836134282814688);
+$primary-tint: rgba(3, 40, 78, 0.64);
+$primary-light: rgba( 188, 220, 255, 0.9 );
 
-$secondary:  rgba(253,157,2,1);
-$secondary-tint: rgba(255,183,6,0.7836134282814688);
-$secondary-light: rgba(251,133,0,0.43599438066242124);
+$secondary: rgb(253,157,2);
+$secondary-tint: rgba(255,183,6,0.78);
+$secondary-light: rgba(251,133,0,0.436);
 
 
 $tertiary: rgba(79, 28, 78, 1);
@@ -35,7 +35,7 @@ $default-border-radius: 8px;
 //padding
 $default-padding: 2em;
 $page-padding: .5em 2em;
-$page-max-width: 100dwi;
+$page-max-width: 1200px;
 $default-padding-inset: .5em;
 
 //hero

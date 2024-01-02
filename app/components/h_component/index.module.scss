@@ -26,6 +26,24 @@
     }
 }
 
+.blue {
+    @extend .title;
+    color: $primary-light;
+    border-color: $primary-tint;
+}
+
+.orange {
+    @extend .title;
+    color: crimson;
+    border-color: $secondary-tint;
+}
+
+.purple {
+    @extend .title;
+    color: $purple;
+    border-color: $tertiary-tint;
+}
+
 .services-banner{
     @extend .center;
     font-size: $title-clamp;

@@ -104,13 +104,21 @@
   img{
     filter: drop-shadow(0 0 0.75rem crimson);
   }
+  figcaption{
+    &>div:nth-child(1) { &>div{ >p { > span {
+            color: $secondary-tint;
+          }}}}}
 }
 
 .purple{
   @extend .portrait;
   img{
-    filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+    filter: drop-shadow(0 -6mm 4mm $purple);
   }
+  figcaption{
+    &>div:nth-child(1) { &>div{ >p { > span {
+            color: $tertiary-tint;
+          }}}}}
 }
 
 

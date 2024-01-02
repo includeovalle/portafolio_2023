@@ -38,9 +38,9 @@
     }
     @media(width > 676px ){
       &:nth-child(even){
-          padding: 2rem 0;
+        padding: 2rem 0;
       }
-        }
+    }
 
 
   }
@@ -105,3 +105,68 @@
   }
 }
 
+.header {
+  @extend .default;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  @media(width > 767px){
+  }
+  li{
+    flex: 0 0 calc(50% - 1rem);
+    position: relative;
+    border-bottom: 1px solid $primary;
+    line-height: 1.5;
+      &:hover{
+        &:before{
+          content: '\01f4ab';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 32px;
+          height: 100%;
+          z-index: 1;
+        }
+        text-shadow: 0px 0px 20px $silver-tint;
+      }
+    @media(width > 767px){
+        &:before{
+          content: '\01f4ab';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 32px;
+          height: 100%;
+          z-index: 1;
+        }
+    flex: 0 0 calc(50% - 1rem - 2rem);
+      &:nth-child(odd){
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.blue {
+  @extend .header;
+  li{
+    color: $primary-light;
+    border-color: $primary-light;
+  }
+}
+
+.orange {
+  @extend .header;
+  li{
+    color: crimson;
+    border-color: $secondary-tint;
+  }
+}
+
+.purple {
+  @extend .header;
+  li{
+    color: $silver;
+    border-color: $purple;
+  }
+}

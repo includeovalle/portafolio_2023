@@ -106,7 +106,7 @@
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
-            color: $secondary-tint;
+            color: gold;
           }}}}}
 }
 
@@ -117,7 +117,7 @@
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
-            color: $tertiary-tint;
+            color: $silver-tint;
           }}}}}
 }
 

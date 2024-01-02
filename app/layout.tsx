@@ -26,12 +26,13 @@ export default function RootLayout({
         <BgColorProvider>
           <Header />
           <MainContainer>
-          {children}</MainContainer>
+            {children}
+          </MainContainer>
         </BgColorProvider>
-          <Ptag className={'brand'}> Soultech studio... 🚀</Ptag>
+        <Ptag className={'brand'}> Soultech studio... 🚀</Ptag>
 
-          {//<Analytics />
-          }
+        {//<Analytics />
+        }
       </body>
     </html>
   )

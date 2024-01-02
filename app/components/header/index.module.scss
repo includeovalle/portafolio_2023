@@ -16,7 +16,7 @@
 }
 
 .header {
-  @include flex.col(center, flex-start);
+  @include flex.col(center, center);
   padding: 1rem 2rem;
   position: relative;
   gap: 1rem;

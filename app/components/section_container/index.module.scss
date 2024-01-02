@@ -26,7 +26,7 @@
  
 .purple {
   background-color: $tertiary;
-  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, $tertiary-light 100%);
+  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, crimson 100%);
 }
 
 .footer {
@@ -44,65 +44,6 @@
   padding: $page-padding;
 }
 
-.inner-container {
-  overflow: auto;
-  min-height: auto;
-  max-width: $page-max-width;
-  justify-content: unset;
-  align-items: unset;
-  padding: 1rem;
-  flex-grow: 1;
-  //style scrollbar thumb color
-  &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background-color: transparent;
-    &-thumb {
-      background-color: $secondary-tint;
-      border-radius: $default-border-radius;
-      height: 10px;
-    }
-
-  }
-}
-
-
-//keymap__section
-.keymap{
-  border-top: 2px solid $secondary-tint;
-  position: relative;
-  padding: $default-padding-inset 0;
-  width: calc(100% - 2*$default-padding-inset);
-  @include flex.col(flex-start, center);
-  @include bp.breakpoint(md, min) {
-    @include flex.row(flex-start, center);
-    width: 100%;
-  }
-  &>*{
-    flex: 10% 0 50%;
-    @include bp.breakpoint(md, min) {
-      flex: 0 0 50%;
-    }
-    &:nth-last-child(1){
-      width: 100%;
-      @extend .font-cap-clamp;
-      text-align: justify;
-    }
-  }
-}
-
-.paragraph {
-  height: auto;
-  width: 100%;
-  position: relative;
-  a{
-    text-decoration: underline;
-    underline-offset: 0.2rem;
-    text-decoration-color: $secondary-tint;
-    box-shadow: 0 3px 0 $secondary-tint;
-
-  }
-}
 .row-container{
   @include flex.col(flex-start, center);
   gap: $default-padding;
@@ -111,6 +52,7 @@
     gap: 0;
   }
 }
+
 .col-container{
   @extend .default;
   position: relative;
@@ -122,7 +64,6 @@
 }
 .contact-container {
   @extend .col-container;
-
 }
 
 .center{

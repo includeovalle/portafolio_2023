@@ -5,7 +5,7 @@
 
 body {
     font-size: $font-clamp;
-    font-weight: 300;
+    font-weight: 500;
     min-height: 100dvh;
     main {
       position: relative;
@@ -18,14 +18,14 @@ body {
     }
 
     @media (prefers-color-scheme: dark) {
-        background: linear-gradient(90deg, $black 12%, black 82%);
+        background: linear-gradient(90deg, $black 12%, black 75%);
         color: $silver-tint;
         font-weight: 400;
         dialog {
             background-color: $black;
             color: $primary-tint;
             &::backdrop {
-                background: linear-gradient(90deg, $black 12%, black 82%);
+                background: linear-gradient(90deg, rgba(27, 27, 27, .7) 12%, rgba(37, 37, 37, .9) 82%);
             }
         }
     }

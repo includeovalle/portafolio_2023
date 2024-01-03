@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 // import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google'
 // import { Header, Hero, Footer } from '@/app/components/Designs';
-import { Header } from '@/app/components/Designs'
-import { Ptag, MainContainer } from '@/app/components';
+import { Header, Footer } from '@/app/components/Designs'
+import { MainContainer } from '@/app/components';
 import BgColorProvider from '@/app/utils/context.js';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,9 +27,9 @@ export default function RootLayout({
           <Header />
           <MainContainer>
             {children}
+            <Footer/>
           </MainContainer>
         </BgColorProvider>
-        <Ptag className={'brand'}> Soultech studio... 🚀</Ptag>
 
         {//<Analytics />
         }

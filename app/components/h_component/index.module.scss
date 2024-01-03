@@ -40,8 +40,8 @@
 
 .purple {
     @extend .title;
-    color: $purple;
-    border-color: $secondary-tint;
+    color: $purple-tint;
+    border-color: $tertiary-tint;
 }
 
 .subtitle{

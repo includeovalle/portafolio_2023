@@ -107,10 +107,10 @@
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
             color: gold;
-          }}}}}
+  }}}}}
 }
 
-.purple{
+.purple {
   @extend .portrait;
   img{
     filter: drop-shadow(0 -6mm 4mm $purple);
@@ -118,9 +118,152 @@
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
             color: $silver-tint;
-          }}}}}
+  }}}}}
 }
 
+.card {
+  position: relative;
+  @include flex.col(flex-start, center);
+  margin: 1rem 0;
+  border-radius: 2*$default-border-radius;
+  background-color: $silver;
+  gap: 1rem;
+  max-width: 350px;
+  padding: 1rem;
+  border: 1px solid $primary-light;
+  @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+    figcaption{
+      > p {
+        color: $primary-light;
+      }
+    }
+  }
+  @media( width > 767px ) {
+    flex-direction: column;
+    padding-bottom: unset;
+  }
+  img {
+    position: relative !important;
+    border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
+    max-height: 255px;
+    object-fit: contain;
+    @media(width > 767px){
+      border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
+      min-height: 125px;
+      max-height: 125px;
+    }
+  }
+  figcaption {
+    height: 100%;
+    min-height: 20vh;
+    @include flex.col(space-around, flex-start);
+    border-radius: 0 0 $default-border-radius $default-border-radius;
+    padding-left: 1rem;
+    @media(width > 767px){
+      & h3 {
+        color: $primary-tint;
+        text-align: center;
+      }
+      a {
+        padding-bottom: 1rem;
+      }
+    }
+    & h3 {
+      text-transform: uppercase;
+      color: $black;
+    }
+    a {
+      color: $primary;
+      font-weight: 600;
+      &::first-letter{
+        text-transform: capitalize;
+      }
+      &::after{
+        content: " >";
+        display: inline;
+      }
+    }
+  }
+}
+
+.card__blue {
+  @extend .card;
+  figcaption {
+    > h3{
+      color: $primary-tint;
+    }
+    @media (prefers-color-scheme: dark) {
+    > h3{
+      color: red;
+    }
+    >p {
+    color: $primary-light;
+    }
+    >a{
+      color: $silver-tint;
+    }
+    }
+  }
+}
+
+.card__orange {
+  @extend .card;
+  background-color: $tertiary-light;
+  border-color: $secondary-light;
+    @media (prefers-color-scheme: dark) {
+      background-color: $tertiary-light;
+      border-color: $silver;
+    }
+  figcaption {
+    > h3{
+      color: $primary-tint;
+    }
+    @media (prefers-color-scheme: dark) {
+    > h3{
+      color: $silver-tint;
+    }
+    >p {
+      color: $silver-tint;
+    }
+    >a{
+      color: $silver-tint;
+    }
+    }
+  }
+}
+
+.card__purple {
+  @extend .card;
+  background-color: $tertiary-light;
+  border-color: $purple;
+    @media (prefers-color-scheme: dark) {
+      background-color: $tertiary-light;
+      border-color: $silver;
+    }
+  figcaption {
+    > h3{
+      color: $primary-light;
+    }
+    > p {
+      color: $primary-light;
+    }
+    > a{
+      color: $primary-light;
+    }
+    @media (prefers-color-scheme: dark) {
+    > h3{
+      color: $silver-tint;
+    }
+    >p {
+      color: $silver-tint;
+    }
+    >a{
+      color: $silver-tint;
+    }
+    }
+  }
+}
 
 .error {
   @extend .default;

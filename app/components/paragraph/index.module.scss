@@ -72,3 +72,28 @@
     color: $primary;
     background-color: $primary-light;
 }
+
+.lang {
+    text-align: center;
+    line-height: 2;
+    color: $secondary;
+    &:first-letter{
+        text-transform: uppercase;
+    }
+    &:after{
+        content: " | \01f442 | \01f4d6 | \01f4dd | \01f465 | ";
+    }
+}
+
+.lang__blue{
+    @extend .lang;
+    color: $primary;
+}
+.lang__orange{
+    @extend .lang;
+    color: $secondary;
+}
+.lang__purple{
+    @extend .lang;
+    color: $tertiary;
+}

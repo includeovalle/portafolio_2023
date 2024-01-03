@@ -74,7 +74,7 @@ export function ParagraphContainer({ children, main = false, className='paragrap
 
 export function RowContainer({ children, main = false, className='row-container' }: Props) {
     return (
-        <Index className={className} main={main}>
+        <Index className={styles[className]} main={main}>
             {children}
         </Index>
         );

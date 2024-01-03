@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
 import { ImageInterface, LinkInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
 
 interface Props extends ImageInterface, LinkInterface {
     width?: number;
@@ -13,9 +12,8 @@ interface Props extends ImageInterface, LinkInterface {
 
 
 const Index = ({ src, alt, links, href, target, width, height, figcaption, children, className }: Props) => {
-    const { bgColor } = useBgColor();
 
-    const propStyle = className ? styles[bgColor] : styles['default'];
+    const propStyle = className ? styles[className] : styles['default'];
 
     const [currentSrc, setCurrentSrc] = useState(src);
 

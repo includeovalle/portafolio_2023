@@ -7,16 +7,17 @@ import picture from "@/public/carlos.jpeg";
 
   interface IndexProps {
   text: string;
+  className: string;
 }
 
-const Index = ({text}:IndexProps) => {
+const Index = ({text, className}:IndexProps) => {
 
   const length = text.length;
   const deg = 360 / length;
 
 
   return (
-    <CustomImage className="portrait" figcaption src={picture} alt="carlos raul amaro ovalle">
+    <CustomImage className={className} figcaption src={picture} alt="carlos raul amaro ovalle">
       <div className="overlay">
         <div className="spinning-text">
           <p>

@@ -47,9 +47,11 @@
 .row-container{
   @include flex.col(flex-start, center);
   gap: $default-padding;
+  height: min-content;
+  padding: 0 2rem;
   @include bp.breakpoint(md, min) {
-    @include flex.row(flex-start, center);
-    gap: 0;
+    @include flex.row(center, center);
+    gap: 2rem;
   }
 }
 

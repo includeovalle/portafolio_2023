@@ -48,7 +48,7 @@
     &__orange{
         @extend  .hamburger;
         &>span{
-            border-bottom: 2px solid $secondary-tint;
+            border-bottom: 2px solid crimson;
         }
     }
     &__purple{

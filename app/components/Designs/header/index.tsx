@@ -5,7 +5,7 @@ import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
 
- const { changeTheme, bgColor } = useBgColor();
+  const { changeTheme, bgColor } = useBgColor();
 
   const handleClick = (theme:string) => {
     changeTheme(theme);
@@ -17,20 +17,22 @@ const Index = () => {
   // const handleDark = () => {
   //   changeDarkMode()
   // }
- 
+
   return (
 
     <Header className={bgColor} >
-      <Portrait text={text} />
+      <Portrait className={bgColor} text={text} />
       <div>
         <Htag className={bgColor} type={1}>Habilidades T&#233;cnicas</Htag>
         <Ul className={bgColor} lis={skills}/>
       </div>
+
       <div>
         <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
         <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
         <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
       </div>
+
       <Hamburger >
         <div>
           <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>

@@ -29,34 +29,46 @@
 .blue {
     @extend .title;
     color: $primary-light;
-    border-color: $primary-tint;
+    border-color: $secondary-light;
 }
 
 .orange {
     @extend .title;
     color: crimson;
-    border-color: $secondary-tint;
+    border-color: $tertiary-light;
 }
 
 .purple {
     @extend .title;
     color: $purple;
-    border-color: $tertiary-tint;
+    border-color: $secondary-tint;
 }
 
-.services-banner{
-    @extend .center;
-    font-size: $title-clamp;
-    text-transform: uppercase;
-    margin: 0 auto;
-    min-height: unset;
-}
 .subtitle{
     text-transform: uppercase;
     text-align: center;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     color: $secondary;
-    margin: 1em;
+    padding: 1em;
     @media(width > 767px){
-        margin: 2rem;
+        padding: 2rem;
     }
+}
+
+.subtitle__blue{
+    @extend .subtitle;
+    color: $primary-light;
+    border-color: $secondary-light;
+}
+
+.subtitle__orange{
+    @extend .subtitle;
+    color: crimson;
+    border-color: $tertiary-light;
+}
+.subtitle__purple{
+    @extend .subtitle;
+    color: $purple;
+    border-color: $secondary-tint;
 }

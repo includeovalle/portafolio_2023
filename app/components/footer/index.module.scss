@@ -46,7 +46,23 @@
   }
 }
  
+.footer{
+  margin-top: 2rem;
+  text-align: center;
+}
 
 .blue{
-  background-color: $primary;
+  @extend .footer;
+  background-color: $primary-light;
+  color: $primary-tint;
+}
+.orange{
+  @extend .footer;
+  background-color: $secondary-light;
+  color: $tertiary-tint;
+}
+.purple{
+  @extend .footer;
+  background-color: crimson;
+  color: $purple-tint;
 }

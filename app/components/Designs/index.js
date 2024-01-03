@@ -2,9 +2,8 @@ export { default as Header } from './header/';
 export { default as Card } from './card/';
 export { default as Title } from './title/';
 export { default as Languages } from './languages/';
+export { default as Footer } from './footer/';
 
-
-// export { default as Footer } from './footer/';
 // export { default as ButtonModal } from './modal/';
 // export { LabelModal as LabelModal } from './modal/';
 // export { default as Modal } from './modal/';

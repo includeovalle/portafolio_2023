@@ -5,38 +5,6 @@
 @use '@/app/styles/_keyframes.scss' as key;
 @use '@/app/styles/_classes.scss';
 
-.default {
-  @include flex.col(center, center);
-  position: relative;
-  border: none;
-  background-color: transparent;
-  height: $hero-height;
-
-  a{
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-  img {
-    object-fit: cover;
-  }
-  figcaption {
-    position: absolute;
-    color: $white;
-    width: 50%;
-    text-align: justify;
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    border-left: 2px solid $white;
-    text-transform: uppercase;
-    text-shadow: $default-text-shadow;
-  }
-  @include bp.breakpoint(md, min) {
-    figcaption {
-      width: 28%;
-    }
-  }
-}
-
 .portrait {
   width: 300px;
   height: 300px;
@@ -239,7 +207,7 @@
   border-color: $purple;
     @media (prefers-color-scheme: dark) {
       background-color: $tertiary-light;
-      border-color: $silver;
+      border-color: $purple-tint;
     }
   figcaption {
     > h3{
@@ -266,22 +234,10 @@
 }
 
 .error {
-  @extend .default;
   width: 60%;
   margin: 0 auto;
   img {
     object-fit: contain;
-  }
-}
-
-
-.noVideo{
-  height: 100%;
-  width: 100%;
-  min-height: 20vh;
-  min-width: 40vw;
-  @include bp.breakpoint(md, min) {
-    min-height: 40vh;
   }
 }
 

@@ -12,8 +12,8 @@ export { default as CustomImage } from './image/index';
 export { default as Portrait} from './portrait/index';
 export { default as Card } from './card/index';
 export { RowContainer as RowContainer } from './section_container/index';
+export { default as Footer } from './footer/index';
 
-// export { default as Footer } from './footer/index';
 // export { default as Container } from './section_container/index';
 // export { KeymapContainer as KeymapContainer } from './section_container/index';
 // export { CardContainer as CardContainer } from './section_container/index';

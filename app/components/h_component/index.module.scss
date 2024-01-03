@@ -41,7 +41,7 @@
 .purple {
     @extend .title;
     color: $purple-tint;
-    border-color: $tertiary-tint;
+    border-color: $tertiary-light;
 }
 
 .subtitle{
@@ -69,6 +69,6 @@
 }
 .subtitle__purple{
     @extend .subtitle;
-    color: $purple;
-    border-color: $secondary-tint;
+    color: $purple-tint;
+    border-color: $tertiary-light;
 }

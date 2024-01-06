@@ -56,7 +56,7 @@ const Index = ({className="default", children}:PropsInterface) => {
   return (
     <>
       <nav onClick={() => handleClick()} className={isOpen? styles["no-display"] : styles[bgColor]}>
-        Cont&#225;cto
+        Contacto
       </nav>
 
       <Dialog className={!isOpen? "no-display": currentTheme} ref={mediaRef} onClick={() => closeModal()}>
@@ -71,4 +71,3 @@ const Index = ({className="default", children}:PropsInterface) => {
 };
 
 export default Index;
-

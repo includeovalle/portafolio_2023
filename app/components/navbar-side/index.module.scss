@@ -17,6 +17,7 @@
   border-radius: 10px 0 0 10px;
   text-align: center;
   background-color: $silver-tint;
+  line-height: 1;
   &:before{
     //content will be an unicode character arrow down
     content: "\25BC";
@@ -35,6 +36,12 @@
   &:before{
     color: $primary-tint;
   }
+  &:hover{
+    color: $primary;
+    &:before{
+      color: $primary;
+    }
+  }
 }
 
 .orange {
@@ -44,6 +51,9 @@
   &:before{
     color: $tertiary-tint;
   }
+  &:hover{
+    color: crimson;
+  }
 }
 
 .purple {
@@ -52,6 +62,12 @@
   border-left: 3px solid $purple;
   &:before{
     color: $purple;
+  }
+  &:hover{
+    color: $tertiary-tint;
+    &:before{
+      color: $tertiary-tint;
+    }
   }
 }
 

@@ -91,3 +91,10 @@
     }
   }
 }
+
+.inner-container{
+      max-width: $page-max-width;
+      background-color: transparent;
+      position: relative;
+      margin: 0 auto;
+}

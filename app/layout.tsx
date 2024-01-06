@@ -2,9 +2,8 @@ import './styles/globals.scss'
 import type { Metadata } from 'next'
 // import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google'
-// import { Header, Hero, Footer } from '@/app/components/Designs';
 import { Header, Footer } from '@/app/components/Designs'
-import { MainContainer } from '@/app/components';
+import { MainContainer, InnerContainer } from '@/app/components';
 import BgColorProvider from '@/app/utils/context.js';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +12,6 @@ const inter = Inter({ subsets: ['latin'] })
 //   title: 'Vapor Ingeniería y Calderas Bienvenidos',
 //   description: 'Equipo Industrial, Calderas de presión, calderas industriales cdmx, Calderas de vapor, servicios industriales',
 // }
-// const HeroImage = () => Hero.home();
 
 export default function RootLayout({
   children,
@@ -26,11 +24,11 @@ export default function RootLayout({
         <BgColorProvider>
           <Header />
           <MainContainer>
-            {children}
+            <InnerContainer>
+            {children}</InnerContainer>
             <Footer/>
           </MainContainer>
         </BgColorProvider>
-
         {//<Analytics />
         }
       </body>

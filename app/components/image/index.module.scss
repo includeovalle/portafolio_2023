@@ -241,3 +241,43 @@
   }
 }
 
+.icon{
+  position: relative;
+  margin-top: 1rem;
+  cursor: pointer;
+  min-width: 25px;
+  height: auto;
+  width: 100%;
+    &:hover {
+      transform: scale(1.05);
+    }
+  @media(width > 767px){
+}
+a {
+  @include flex.row(flex-start, center);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  gap: 25px;
+  top: 0;
+  left: 0;
+  }
+  img {
+    position: relative !important;
+    object-fit: contain;
+    object-position: left;
+    max-width: 25px;
+    @media(width > 767px){
+    max-width: 30px;
+    }
+  }
+  figcaption{
+    position: relative;
+    font-size: 10px;
+    color: $white;
+    width: max-content;
+    @media(width > 767px){
+    font-size: 12px;
+    }
+    }
+  }

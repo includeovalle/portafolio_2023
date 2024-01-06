@@ -1,6 +1,6 @@
 import './styles/globals.scss'
 import type { Metadata } from 'next'
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google'
 import { Header, Footer } from '@/app/components/Designs'
 import { MainContainer, InnerContainer } from '@/app/components';
@@ -29,8 +29,7 @@ export default function RootLayout({
             <Footer/>
           </MainContainer>
         </BgColorProvider>
-        {//<Analytics />
-        }
+        <Analytics /> 
       </body>
     </html>
   )

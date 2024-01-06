@@ -33,8 +33,8 @@ const Index = ({ children, className, main = false }: Props) => {
 export function MainContainer({ children, main = true }: Props) {
 
     const [currentBgColor, setCurrentBgColor ] = useState(styles['default']);
-    
-const { bgColor } = useBgColor();
+
+    const { bgColor } = useBgColor();
 
     useEffect(()=>{
         setCurrentBgColor(styles[bgColor])
@@ -67,6 +67,14 @@ export function KeymapContainer({ children, main = false, className='keymap' }: 
 export function ParagraphContainer({ children, main = false, className='paragraph' }: Props) {
     return (
         <Index className={className} main={main}>
+            {children}
+        </Index>
+    );
+}
+
+export function InnerContainer({ children, main = false, className="inner-container" }: Props) {
+    return (
+        <Index className={styles[className]} main={main}>
             {children}
         </Index>
     );

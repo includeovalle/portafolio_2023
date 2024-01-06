@@ -5,7 +5,11 @@ import {Dialog, CustomImage} from "@/app/components/";
 import { useBgColor } from '@/app/utils/context';
 import { childrenInterface, classNamesInterface } from "@/app/types/";
 import Whatsapp from "@/public/whatsapp.svg";
-
+import Github from "@/public/github.svg";
+import Linkedin from "@/public/linked.svg";
+import Email from "@/public/email.svg";
+import Story from "@/public/storybook.svg";
+import Pdf from "@/public/pdf-icon.svg";
 
 const UseBgColor = () => {
   const { bgColor } = useBgColor();
@@ -31,13 +35,13 @@ const Index = ({className="default", children}:PropsInterface) => {
   };
 
   // detect if user press esc key and set isOpen to false
-  const handleEsc = (e: KeyboardEvent) => { 
+  const handleEsc = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       setIsOpen(false);
     }
   }
- 
- useEffect(() => {
+
+  useEffect(() => {
     // Add event listener when the component mounts
     document.addEventListener('keydown', handleEsc);
 
@@ -45,11 +49,23 @@ const Index = ({className="default", children}:PropsInterface) => {
     return () => {
       document.removeEventListener('keydown', handleEsc);
     };
-  }, [isOpen]); 
+  }, [isOpen]);
+
+  const whatsappAPI = window.matchMedia("(max-width: 768px)").matches? "https://api.whatsapp.com/send?phone=4441934444" :  "https://web.whatsapp.com/send?phone=4441934444"
 
   const MediaInfo = [
-    {image: Whatsapp, alt: "contacto", links:{href: "/", target: "_blank"}}
-    ,{image: Whatsapp, alt: "contacto", links:{href: "/", target: "_blank"}}
+    {image: Whatsapp, alt: "contacto",
+      links:{href:whatsappAPI, target: "_blank"} }
+    ,{image: Github, alt: "repositori del proyecto",
+      links:{href: "https://github.com/includeovalle/portafolio_2023/", target: "_blank"} }
+    ,{image: Linkedin, alt: "contacto linkedin",
+      links:{href: "https://www.linkedin.com/in/carlos-amaro-dev", target: "_blank"}}
+    ,{image: Email, alt: "correo profesional",
+      links:{href: "/", target: "_blank"}}
+    ,{image: Story, alt: "pagina de testeo de componentes",
+      links:{href: "/", target: "_blank"}}
+    ,{image: Pdf, alt: "Resumen profesional",
+      links:{href: "/", target: "_blank"}}
   ]
 
   const currentTheme = `media__${bgColor}`

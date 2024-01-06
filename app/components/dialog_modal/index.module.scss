@@ -43,7 +43,7 @@
 
 .media {
     @include flex.col(flex-start, center);
-    height: 150px;
+    min-height: 150px;
     top:40%;
     border-radius: $default-border-radius 0 0 $default-border-radius;
     border: $default-border-radius solid;

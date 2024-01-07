@@ -61,11 +61,12 @@ const Index = ({className="default", children}:PropsInterface) => {
     ,{image: Linkedin, alt: "contacto linkedin",
       links:{href: "https://www.linkedin.com/in/carlos-amaro-dev", target: "_blank"}}
     ,{image: Email, alt: "correo profesional",
-      links:{href: "/", target: "_blank"}}
+      links:{href: "mailto:carlosovalle@soultech.studio", target: "_blank"}}
     ,{image: Story, alt: "pagina de testeo de componentes",
       links:{href: "/", target: "_blank"}}
+    //TODO find a way to download the pdf
     ,{image: Pdf, alt: "Resumen profesional",
-      links:{href: "/", target: "_blank"}}
+      links:{href: "../../../public/carlos-amaro-resume.pdf", target: "_self"}}
   ]
 
   const currentTheme = `media__${bgColor}`

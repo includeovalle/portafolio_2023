@@ -13,7 +13,6 @@
     border-radius: 50%;
     filter: drop-shadow(16px 6px 20px gray) invert(75%);
   }
-
   figcaption{
     &>div:nth-child(1) {
       //overlay
@@ -32,7 +31,6 @@
       text-align: center; 
       transform-origin:0px 150px;
       background: radial-gradient(circle, transparent 62%, rgba(95,95,93,.7) 5%);
-
       &>div{
         //spinning text
         @include key.spin(70s);
@@ -230,14 +228,6 @@
       color: $silver-tint;
     }
     }
-  }
-}
-
-.error {
-  width: 60%;
-  margin: 0 auto;
-  img {
-    object-fit: contain;
   }
 }
 

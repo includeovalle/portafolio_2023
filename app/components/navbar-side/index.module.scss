@@ -1,0 +1,76 @@
+@use '@/app/styles/_mixins.scss' as mixins;
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+@use '@/app/styles/_breakpoints.scss' as bp;
+@use '@/app/styles/_keyframes.scss' as key;
+@use '@/app/styles/_classes.scss';
+
+.default{
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  cursor: pointer;
+  width: 3rem;
+  top: 40%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-radius: 10px 0 0 10px;
+  text-align: center;
+  background-color: $silver-tint;
+  line-height: 1;
+  &:before{
+    //content will be an unicode character arrow down
+    content: "\25BC";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.blue {
+  @extend .default;
+  color: $primary-tint;
+  border-left: 3px solid $primary-tint;
+  &:before{
+    color: $primary-tint;
+  }
+  &:hover{
+    color: $primary;
+    &:before{
+      color: $primary;
+    }
+  }
+}
+
+.orange {
+  @extend .default;
+  color: $tertiary-tint;
+  border-left: 3px solid $tertiary-tint;
+  &:before{
+    color: $tertiary-tint;
+  }
+  &:hover{
+    color: crimson;
+  }
+}
+
+.purple {
+  @extend .default;
+  color: $purple;
+  border-left: 3px solid $purple;
+  &:before{
+    color: $purple;
+  }
+  &:hover{
+    color: $tertiary-tint;
+    &:before{
+      color: $tertiary-tint;
+    }
+  }
+}
+
+.no-display{
+  display: none;
+}

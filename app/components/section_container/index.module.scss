@@ -29,146 +29,20 @@
   background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, crimson 100%);
 }
 
-.footer {
-  width: 100%;
-  background-color: $primary;
-  display: flex;
-  justify-content: center;
-}
-
-.page-container{
-  @extend .default;
-  width: 100%;
-  height: 100dvh;
-  min-height: 100dvh;
-  padding: $page-padding;
-}
-
 .row-container{
   @include flex.col(flex-start, center);
   gap: $default-padding;
+  height: min-content;
+  padding: 0 2rem;
   @include bp.breakpoint(md, min) {
-    @include flex.row(flex-start, center);
-    gap: 0;
+    @include flex.row(center, center);
+    gap: 2rem;
   }
 }
 
-.col-container{
-  @extend .default;
-  position: relative;
-  margin: 1rem auto;
-  @include flex.col(flex-start, center);
-  @media(width > 768px){
-    margin: 2rem auto;
-  }
-}
-.contact-container {
-  @extend .col-container;
-}
-
-.center{
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-
-}
-.two-buttons {
-  @include flex.row(space-around, center);
-  margin-top: $default-padding-inset;
-}
-
-
-.banner-container {
-  background-color: $primary;
-  height: 10rem;
-  border-radius: $default-border-radius;
-  @include flex.row(center, center);
-  @media( width > 767px ) {
-    gap: 1rem;
-  }
-  &> div {
-    margin: 0 1rem;
-
-    &:first-of-type {
-      text-transform:   uppercase;
-    }
-    &:nth-of-type(2) {
-      width: 1px;
-      height: 50%;
-      border-left: 1px solid $white;
-      background-color: teal;
-    }
-    & img {
-      position: relative !important;
-      width: 35px !important;
-      height: 35px !important;
-    }
-  }
-}
-
-.section-container {
-  margin-top: 2em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-  gap:  10px;
-  color: white;
-  border-radius: $default-border-radius;
-  min-width: 100px; /* Add a min-width constraint to prevent wrapping on very small screens */
-  @media (min-width: 600px) {
-    grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
-    gap:  $default-padding-inset;
-  }
-  &> a {
-    position: relative;
-    @include flex.col(center, center);
-    border-radius: $default-border-radius;
-    min-height: 200px;
-    max-height: 250px;
-    width: 100%;
-    overflow: hidden;
-    background-color: $black;
-    font-size: 30px;
-    text-align: center;
-    color: white;
-    img {
+.inner-container{
+      max-width: $page-max-width;
+      background-color: transparent;
       position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background-position: 10% 50%;
-      border-radius: $default-border-radius;
-    }
-  }
-  & label {
-    padding: $default-padding-inset;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    font-size: 14px;
-    background-color: $secondary;
-    border-radius: 0 0 $default-border-radius $default-border-radius ;
-    cursor: pointer;
-    & span {
-      display: block;
-      font-size: 70%;
-      margin-top: $default-padding-inset/2;
-      @extend .first-cap;
-    }
-  }
-}
-
-
-.two-columns {
-  position: relative;
-  @include flex.row(center, center);
-  gap: 2rem;
-  & > section {
-    flex: 0 0 calc(50% - 1rem);
-    margin: 0;
-    &a {
-      padding: 0;
-    }
-  }
+      margin: 0 auto;
 }

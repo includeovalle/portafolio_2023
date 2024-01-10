@@ -33,8 +33,7 @@ const Index = ({ children, className, main = false }: Props) => {
 export function MainContainer({ children, main = true }: Props) {
 
     const [currentBgColor, setCurrentBgColor ] = useState(styles['default']);
-    
-const { bgColor } = useBgColor();
+    const { bgColor } = useBgColor();
 
     useEffect(()=>{
         setCurrentBgColor(styles[bgColor])
@@ -48,25 +47,9 @@ const { bgColor } = useBgColor();
 }
 
 
-export function CardContainer({ children, main = false, className='card' }: Props) {
+export function InnerContainer({ children, main = false, className="inner-container" }: Props) {
     return (
-        <Index className={className} main={main}>
-            {children}
-        </Index>
-    );
-}
-
-export function KeymapContainer({ children, main = false, className='keymap' }: Props) {
-    return (
-        <Index className={className} main={main}>
-            {children}
-        </Index>
-    );
-}
-
-export function ParagraphContainer({ children, main = false, className='paragraph' }: Props) {
-    return (
-        <Index className={className} main={main}>
+        <Index className={styles[className]} main={main}>
             {children}
         </Index>
     );
@@ -74,15 +57,7 @@ export function ParagraphContainer({ children, main = false, className='paragrap
 
 export function RowContainer({ children, main = false, className='row-container' }: Props) {
     return (
-        <Index className={className} main={main}>
-            {children}
-        </Index>
-        );
-}
-
-export function ColContainer({ children, main = false, className='col-container' }: Props) {
-    return (
-        <Index className={className} main={main}>
+        <Index className={styles[className]} main={main}>
             {children}
         </Index>
         );

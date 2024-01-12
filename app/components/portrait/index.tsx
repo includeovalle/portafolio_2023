@@ -2,12 +2,12 @@ import React from "react";
 import { CustomImage} from "@/app/components";
 import styles from "./index.module.scss";
 import picture from "@/public/carlos.jpeg";
+import { classNamesInterface } from "@/app/types/";
 
 
 
-  interface IndexProps {
+  interface IndexProps extends classNamesInterface {
   text: string;
-  className: string;
 }
 
 const Index = ({text, className}:IndexProps) => {

@@ -21,7 +21,7 @@
   position: relative;
   gap: 1rem;
   text-align: center;
-  @media(width > 767px){
+  @media(width > 768px){
   @include flex.row(space-between, flex-start);
   gap: 2rem;
 }
@@ -29,7 +29,7 @@
   &>div:nth-child(3) {
     @include flex.row(space-between, center);
     gap: 1rem;
-    @media(width < 767px){
+    @media(width < 768px){
       display: none;
     }
   }

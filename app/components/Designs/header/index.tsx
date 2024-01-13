@@ -22,7 +22,7 @@ const Index = () => {
     <Header className={bgColor} >
       <Portrait className={bgColor} text={text} />
       <div>
-        <Title className="subtitle" type={1}>Habilidades T&#233;cnicas</Title>
+        <Title className="subtitle" >Habilidades T&#233;cnicas</Title>
         <Ul className={bgColor} lis={skills}/>
       </div>
 

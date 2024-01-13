@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { Header, OnHoverButton, Hamburger, Portrait, Ul, Htag, CopyButton } from '@/app/components/';
+import { Header, OnHoverButton, Hamburger, Portrait, Ul, Htag } from '@/app/components/';
 import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
@@ -15,12 +15,6 @@ const Index = () => {
 
   const text = " Carlos Raul Amaro Ovalle";
   const skills = [ "Bash" , "AWK" , "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS" , "SASS" , "Javascript" , "Typescript" , "React-js" , "Node-js" , "Git" , "Github", "storybook" ]
-  const Email = "carlosovalle@soultech.studio"
- const buttonText =  "Copiar";
-
-  // const handleDark = () => {
-  //   changeDarkMode()
-  // }
 
   return (
 
@@ -44,8 +38,6 @@ const Index = () => {
           <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
           <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
           </main>
-            {Email}
-          <CopyButton display={buttonText} copyThis={Email}/>
         </div>
       </Hamburger>
     </Header>

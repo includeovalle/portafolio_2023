@@ -4,51 +4,6 @@
 @use '../../styles/_classes.scss';
 
 .default{
-    word-spacing: 2px;
-    & em {
-        color: $secondary;
-        font-style: normal;
-    }
-}
-
-.card{
-    @extend  .title-cap-clamp;
-}
-
-.body{
-  @extend .default;
-  @extend .first-cap;
-  padding: 1rem 1rem 1rem 0;
-  color: $primary;
-    & a{
-        color: inherit;
-    }
-    @media (prefers-color-scheme: dark) {
-        color: $primary-tint;
-    }
-}
-
-.body-tint {
-    @extend .body;
-    color: $primary;
-    margin: 1rem 0;
-    @media( width > 767px ) {
-    margin: 2rem 0;
-    }
-    @media (prefers-color-scheme: dark) {
-        color: $primary-tint;
-    }
-}
-
-.title{
-    @extend .default;
-    @extend .first-cap;
-}
-
-.bold-body{
-    @extend .body;
-    font-weight: 450;
-    color: $silver-tint;
 }
 
 .center{
@@ -95,5 +50,5 @@
 }
 .lang__purple{
     @extend .lang;
-    color: $tertiary;
+    color: $silver-tint;
 }

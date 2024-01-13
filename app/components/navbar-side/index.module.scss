@@ -1,0 +1,82 @@
+@use '@/app/styles/_mixins.scss' as mixins;
+@use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_flexbox.scss' as flex;
+@use '@/app/styles/_breakpoints.scss' as bp;
+@use '@/app/styles/_keyframes.scss' as key;
+@use '@/app/styles/_classes.scss';
+
+.default{
+  padding: .5rem;
+  padding-bottom: 1rem;
+  position: fixed;
+  right: 0;
+  cursor: pointer;
+  top: 40%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-radius: 10px 0 0 10px;
+  text-align: center;
+  background-color: $silver;
+  border: 0;
+  border-left: 3px outset;
+  border-color: $primary-tint;
+  transition: all 0.3s ease-in-out;
+  line-height: 1;
+  &:before{
+    //content will be an unicode character arrow down
+    content: "\25BC";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @media( width > 768px ) {
+  }
+}
+
+.blue {
+  @extend .default;
+  color: $primary-tint;
+  &:before{
+    color: $primary-tint;
+  }
+  &:hover{
+    color: $primary;
+    border-color: $primary-light;
+    &:before{
+      color: $primary;
+    }
+  }
+}
+
+.orange {
+  @extend .default;
+  color: $tertiary-tint;
+  border-left: 3px solid $tertiary-tint;
+  &:before{
+    color: $tertiary-tint;
+  }
+  &:hover{
+    color: crimson;
+  }
+}
+
+.purple {
+  @extend .default;
+  color: $purple;
+  border-left: 3px solid $purple;
+  &:before{
+    color: $purple;
+  }
+  &:hover{
+    color: $tertiary-tint;
+    &:before{
+      color: $tertiary-tint;
+    }
+  }
+}
+
+.no-display{
+  display: none;
+}

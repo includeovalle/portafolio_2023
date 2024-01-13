@@ -1,4 +1,4 @@
-import {Card, Title, Languages} from '@/app/components/Designs'
+import {Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
 import {Htag, RowContainer, Ptag } from '@/app/components/'
 import Logo from '@/public/logo.png'
 
@@ -18,6 +18,8 @@ export default function Home() {
 
   return (
     <>
+      <EmailButton/>
+      <SocialMedia/>
       <Title className="subtitle">proyectos</Title>
       <RowContainer>
         <Card item={item}/>

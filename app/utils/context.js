@@ -10,20 +10,13 @@ const backgroundOptions = ['blue', 'orange', 'purple'];
 const BgColorProvider = ({ children }) => {
   //TODO solve how to get the initial value from local storage
   const [bgColor, setBgColor] = useLocalStorage('background', '');
-  const [isDarkMode, setIsDarkMode] = useLocalStorage('darkmode', '');
+  // const [isDarkMode, setIsDarkMode] = useLocalStorage('darkmode', '');
 
 
-  // check localStorage for background using try catch
+  // check localStorage for background
   try {
     var initialTheme = localStorage.getItem('background');
   } catch { return null; }
-
-  // check localStorage for background using try catch
-  try {
-    var initialDarkmode = localStorage.getItem('darkmode');
-    if (!initialDarkmode) { setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches); }
-  } catch { return null; }
-
   if (!initialTheme) { setBgColor("blue"); }
 
   const changeTheme = (newTheme) => {
@@ -32,14 +25,14 @@ const BgColorProvider = ({ children }) => {
     }
   };
 
-  const changeDarkMode = () => {
-    if (isDarkMode) {
-      setIsDarkMode(!isDarkMode);
-    } 
-  }
+  // const changeDarkMode = () => {
+  //   if (isDarkMode) {
+  //     setIsDarkMode(!isDarkMode);
+  //   } 
+  // }
 
   return (
-    <BgColorContext.Provider value={{ bgColor, changeTheme, changeDarkMode, isDarkMode }}>
+    <BgColorContext.Provider value={{ bgColor, changeTheme}}>
       {children}
     </BgColorContext.Provider>
   );

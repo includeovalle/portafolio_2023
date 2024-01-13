@@ -24,42 +24,12 @@
   }
 }
 
-.product-list{
-  padding-left: 1rem;
-  @media(width > 767px){
-    padding-left: 2rem;
-  }
-  position: relative;
-  li{
-    padding: 1rem 0;
-
-    &:first-letter{
-      text-transform: capitalize;
-    }
-    @media(width > 676px ){
-      &:nth-child(even){
-        padding: 2rem 0;
-      }
-    }
-
-
-  }
-
-}
-.active{
-  background-color: $primary-tint;
-  //text-decoration: overline underline $secondary;
-  @media (prefers-color-scheme: dark) {
-    background-color: $secondary-tint;
-  }
-}
-
 .nav{ 
   @extend .default;
   display: none;
   line-height:  2;
 
-  @media( width > 767px ) {
+  @media( width > 768px ) {
     @include flex.row(center, center);
     transition: all 0.3s ease-in-out;
     line-height: unset;
@@ -107,10 +77,11 @@
 
 .header {
   @extend .default;
-  display: flex;
+  @include flex.row(center, center);
   gap: 1rem;
   flex-wrap: wrap;
-  @media(width > 767px){
+  padding: 1rem;
+  @media(width > 768px){
   }
   li{
     flex: 0 0 calc(50% - 1rem);
@@ -129,7 +100,7 @@
         }
         text-shadow: 0px 0px 20px $silver-tint;
       }
-    @media(width > 767px){
+    @media(width > 768px){
         &:before{
           content: '\01f4ab';
           position: absolute;

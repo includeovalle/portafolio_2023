@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
-import { Header, OnHoverButton, Hamburger, Portrait, Ul, Htag } from '@/app/components/';
+import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
+import {Title} from '@/app/components/Designs';
 import { useBgColor } from '@/app/utils/context';
 
 const Index = () => {
@@ -11,19 +12,17 @@ const Index = () => {
     changeTheme(theme);
   };
 
-  const text = " Carlos Raul Amaro Ovalle";
-  const skills = [ "Bash" , "AWK" , "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS" , "SASS" , "Javascript" , "Typescript" , "React-js" , "Node-js" , "Git" , "Github" ]
 
-  // const handleDark = () => {
-  //   changeDarkMode()
-  // }
+
+  const text = " Carlos Raul Amaro Ovalle";
+  const skills = [ "Bash" , "AWK" , "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS" , "SASS" , "Javascript" , "Typescript" , "React-js" , "Node-js" , "Git" , "Github", "storybook" ]
 
   return (
 
     <Header className={bgColor} >
       <Portrait className={bgColor} text={text} />
       <div>
-        <Htag className={bgColor} type={1}>Habilidades T&#233;cnicas</Htag>
+        <Title className="subtitle" >Habilidades T&#233;cnicas</Title>
         <Ul className={bgColor} lis={skills}/>
       </div>
 

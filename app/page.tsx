@@ -1,8 +1,19 @@
+import {RowContainer} from '@/app/components/'
+import type { Metadata } from 'next'
 import {Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
 import {Htag, RowContainer, Ptag } from '@/app/components/'
 import Logo from '@/public/logo.png'
 
+export const metadata : Metadata = {
+  openGraph: {
+    title: 'Bienvenido a mi página web'
+    , description: 'Soy Carlos Amaro, desarrollador web, me especializo en el desarrollo de aplicaciones web y sitios web. Me gusta trabajar con tecnologías como React, Nextjs, Nodejs, Express, MongoDB, MySQL, TypeScript, JavaScript, HTML, CSS, SASS, entre otras.'
+    , type: 'website'
+  },
+}
+
 export default function Home() {
+
   const item={
     image: Logo
     ,alt: 'proyectos de carlos amaro'

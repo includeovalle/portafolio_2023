@@ -1,8 +1,7 @@
-import {RowContainer} from '@/app/components/'
-import type { Metadata } from 'next'
 import {Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
-import {Htag, RowContainer, Ptag } from '@/app/components/'
+import {RowContainer} from '@/app/components/'
 import Logo from '@/public/logo.png'
+import type { Metadata } from 'next'
 
 export const metadata : Metadata = {
   openGraph: {

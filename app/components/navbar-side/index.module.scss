@@ -6,38 +6,44 @@
 @use '@/app/styles/_classes.scss';
 
 .default{
-  padding: 1rem;
+  padding: .5rem;
+  padding-bottom: 1rem;
   position: fixed;
   right: 0;
   cursor: pointer;
-  width: 3rem;
   top: 40%;
   writing-mode: vertical-rl;
   text-orientation: upright;
   border-radius: 10px 0 0 10px;
   text-align: center;
-  background-color: $silver-tint;
+  background-color: $silver;
+  border: 0;
+  border-left: 3px outset;
+  border-color: $primary-tint;
+  transition: all 0.3s ease-in-out;
   line-height: 1;
   &:before{
     //content will be an unicode character arrow down
     content: "\25BC";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 2px;
     left: 50%;
     transform: translateX(-50%);
+  }
+  @media( width > 768px ) {
   }
 }
 
 .blue {
   @extend .default;
   color: $primary-tint;
-  border-left: 3px solid $primary-tint;
   &:before{
     color: $primary-tint;
   }
   &:hover{
     color: $primary;
+    border-color: $primary-light;
     &:before{
       color: $primary;
     }

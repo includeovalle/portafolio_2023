@@ -30,27 +30,27 @@
         position: relative;
         border-bottom: 2px solid $primary-light;
     }
-    @media(width > 767px){
-        display: none;
+    @media(width > 768px){
+    display: none;
+}
+&__blue{
+    @extend  .hamburger;
+    &>span{
+        border-bottom: 2px solid $primary-light;
     }
-    &__blue{
-        @extend  .hamburger;
-        &>span{
-            border-bottom: 2px solid $primary-light;
-        }
+}
+&__orange{
+    @extend  .hamburger;
+    &>span{
+        border-bottom: 2px solid crimson;
     }
-    &__orange{
-        @extend  .hamburger;
-        &>span{
-            border-bottom: 2px solid crimson;
-        }
+}
+&__purple{
+    @extend  .hamburger;
+    &>span{
+        border-bottom: 2px solid $tertiary-tint;
     }
-    &__purple{
-        @extend  .hamburger;
-        &>span{
-            border-bottom: 2px solid $tertiary-tint;
-        }
-    }
+}
 }
 
 .closeHamburger {
@@ -127,4 +127,50 @@
 .black {
     @extend  .circle;
     background-color: $black;
+}
+
+.copy-text{
+    padding: .5rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    left: 0;
+    cursor: pointer;
+    top: 40%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-radius: 0 10px 10px 0;
+    border: 0;
+    border-right: 3px groove;
+    border-color: $primary-tint;
+    text-align: center;
+    background-color: $silver;
+    line-height: 1;
+    transition: all 0.3s ease-in-out;
+    &:before{
+        //content will be an unicode character arrow down
+        content: "\25BC";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.copy-text__blue {
+    @extend  .copy-text;
+    color: $primary-tint;
+    &:hover{
+        color: $primary;
+        border-color: $primary-light;
+    }
+    &:active{
+        color: $primary;
+    }
+}
+
+.copy-text__orange {
+    @extend  .copy-text;
+    color: $tertiary-tint;
+    border-color: $tertiary-tint;
 }

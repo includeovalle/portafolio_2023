@@ -1,6 +1,7 @@
-import {Card, Title, Languages, SocialMedia} from '@/app/components/Designs'
 import {RowContainer} from '@/app/components/'
 import type { Metadata } from 'next'
+import {Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
+import {Htag, RowContainer, Ptag } from '@/app/components/'
 import Logo from '@/public/logo.png'
 
 export const metadata : Metadata = {
@@ -28,6 +29,7 @@ export default function Home() {
 
   return (
     <>
+      <EmailButton/>
       <SocialMedia/>
       <Title className="subtitle">proyectos</Title>
       <RowContainer>

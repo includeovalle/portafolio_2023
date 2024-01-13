@@ -140,12 +140,22 @@
     text-orientation: upright;
     border-radius: 0 10px 10px 0;
     border: 0;
-    border-right: 3px groove;
+    border: 3px groove;
+    border-top: 0px;
     border-color: $primary-tint;
     text-align: center;
     background-color: $silver;
     line-height: 1;
     transition: all 0.3s ease-in-out;
+
+    @media (width > 768px){
+    left: unset;
+    right: 2.7rem;
+    top: calc(1rem + 45px);
+    writing-mode: unset;
+    text-orientation: upright;
+    border-radius: 0 0 10px 10px;
+    }
     &:before{
         //content will be an unicode character arrow down
         content: "\25BC";
@@ -173,4 +183,16 @@
     @extend  .copy-text;
     color: $tertiary-tint;
     border-color: $tertiary-tint;
+    &:hover{
+        color: crimson;
+    }
+}
+
+.copy-text__purple {
+    @extend  .copy-text;
+    color: $purple;
+    border-color: $purple;
+    &:hover{
+        color: $tertiary-tint;
+    }
 }

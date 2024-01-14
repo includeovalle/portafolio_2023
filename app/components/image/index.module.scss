@@ -72,8 +72,8 @@
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
-            color: gold;
-  }}}}}
+      color: gold;
+    }}}}}
 }
 
 .purple {
@@ -83,12 +83,13 @@
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
-            color: $silver-tint;
-  }}}}}
+      color: $silver-tint;
+    }}}}}
 }
 
 .card {
   position: relative;
+
   @include flex.col(flex-start, center);
   margin: 1rem 0;
   border-radius: 2*$default-border-radius;
@@ -99,13 +100,12 @@
   border: 1px solid $primary-light;
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
+
     figcaption{
       > p {
         color: $primary-light;
         max-width: 320px;
-        padding: 1rem;
         @media( width > 768px ) {
-          padding: 1rem 0;
         }
       }
     }
@@ -120,42 +120,50 @@
     max-height: 255px;
     object-fit: contain;
     @media(width > 768px){
-      border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
-      min-height: 125px;
-      max-height: 125px;
-    }
+    border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
+    min-height: 125px;
+    max-height: 125px;
   }
-  figcaption {
-    height: 100%;
-    min-height: 20vh;
-    @include flex.col(space-around, flex-start);
-    border-radius: 0 0 $default-border-radius $default-border-radius;
-    padding-left: 1rem;
-    @media(width > 768px){
-      & h3 {
-        color: $primary-tint;
-        text-align: center;
-      }
-      a {
-        padding-bottom: 1rem;
-      }
+}
+figcaption {
+  height: 100%;
+  min-height: 20vh;
+  @include flex.col(space-around, flex-start);
+  border-radius: 0 0 $default-border-radius $default-border-radius;
+  padding-left: 1rem;
+
+  & p {
+    padding: 1rem;
+    @media(width > 768px) {
+        padding: 1rem 0;
     }
+    }
+    @media(width > 768px){
     & h3 {
-      text-transform: uppercase;
-      color: $black;
+      color: $primary-tint;
     }
     a {
-      color: $primary;
-      font-weight: 600;
-      &::first-letter{
-        text-transform: capitalize;
-      }
-      &::after{
-        content: " >";
-        display: inline;
-      }
+      padding-bottom: 1rem;
     }
   }
+  & h3 {
+    text-transform: uppercase;
+    color: $black;
+    text-align: center;
+  }
+  a {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: underline;
+    &::first-letter{
+      text-transform: capitalize;
+    }
+    &::after{
+      content: " >";
+      display: inline;
+    }
+  }
+}
 }
 
 .card__blue {
@@ -165,15 +173,15 @@
       color: $primary-tint;
     }
     @media (prefers-color-scheme: dark) {
-    > h3{
-      color: red;
-    }
-    >p {
-    color: $primary-light;
-    }
-    >a{
-      color: $silver-tint;
-    }
+      > h3{
+        color: red;
+      }
+      >p {
+        color: $primary-light;
+      }
+      >a{
+        color: $silver-tint;
+      }
     }
   }
 }
@@ -182,24 +190,24 @@
   @extend .card;
   background-color: $tertiary-light;
   border-color: $secondary-light;
-    @media (prefers-color-scheme: dark) {
-      background-color: $tertiary-light;
-      border-color: $silver;
-    }
+  @media (prefers-color-scheme: dark) {
+    background-color: $tertiary-light;
+    border-color: $silver;
+  }
   figcaption {
     > h3{
       color: $primary-tint;
     }
     @media (prefers-color-scheme: dark) {
-    > h3{
-      color: $silver-tint;
-    }
-    >p {
-      color: $silver-tint;
-    }
-    >a{
-      color: $silver-tint;
-    }
+      > h3{
+        color: $silver-tint;
+      }
+      >p {
+        color: $silver-tint;
+      }
+      >a{
+        color: $silver-tint;
+      }
     }
   }
 }
@@ -208,10 +216,10 @@
   @extend .card;
   background-color: $tertiary-light;
   border-color: $purple;
-    @media (prefers-color-scheme: dark) {
-      background-color: $tertiary-light;
-      border-color: $purple-tint;
-    }
+  @media (prefers-color-scheme: dark) {
+    background-color: $tertiary-light;
+    border-color: $purple-tint;
+  }
   figcaption {
     > h3{
       color: $primary-light;
@@ -221,17 +229,18 @@
     }
     > a{
       color: $primary-light;
+      text-decoration-color: $silver-tint;
     }
     @media (prefers-color-scheme: dark) {
-    > h3{
-      color: $silver-tint;
-    }
-    >p {
-      color: $silver-tint;
-    }
-    >a{
-      color: $silver-tint;
-    }
+      > h3{
+        color: $silver-tint;
+      }
+      >p {
+        color: $silver-tint;
+      }
+      >a{
+        color: $silver-tint;
+      }
     }
   }
 }
@@ -243,9 +252,9 @@
   min-width: 25px;
   height: auto;
   width: 100%;
-    &:hover {
-      transform: scale(1.05);
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
   @media(width > 768px){
 }
 a {
@@ -264,15 +273,15 @@ a {
     max-width: 25px;
     @media(width > 768px){
     max-width: 30px;
-    }
   }
-  figcaption{
-    position: relative;
-    font-size: 10px;
-    color: $white;
-    width: max-content;
-    @media(width > 768px){
-    font-size: 12px;
-    }
-    }
+}
+figcaption{
+  position: relative;
+  font-size: 10px;
+  color: $white;
+  width: max-content;
+  @media(width > 768px){
+  font-size: 12px;
   }
+  }
+}

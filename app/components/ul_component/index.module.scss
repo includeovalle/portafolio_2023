@@ -77,9 +77,10 @@
 
 .header {
   @extend .default;
-  @include flex.row(center, center);
+  @include flex.row(space-between, center);
   gap: 1rem;
   flex-wrap: wrap;
+  padding: 1rem;
   @media(width > 768px){
   }
   li{

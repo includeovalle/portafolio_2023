@@ -1,5 +1,7 @@
+
 import { Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
 import { RowContainer } from '@/app/components/'
+
 import Logo from '@/public/logo.png'
 import type { Metadata } from 'next'
 

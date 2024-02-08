@@ -8,6 +8,7 @@ const Index = () => {
   const currentTheme = `lang__${bgColor}`;
   return (
     <>
+      <br />
       <Ptag className={currentTheme}>ingles</Ptag>
       <Ptag className={currentTheme}>portugues</Ptag>
       <Ptag className={currentTheme}>español</Ptag>

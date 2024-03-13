@@ -1,15 +1,8 @@
 @use '@/app/styles/_breakpoints.scss' as bp;
 @use '@/app/styles/_flexbox.scss' as flex;
 @use '@/app/styles/_variables.scss' as *;
+@use '@/app/styles/_keyframes.scss' as keyframes;
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .default {
   padding: 0 2rem;

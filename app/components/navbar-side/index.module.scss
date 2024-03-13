@@ -6,6 +6,7 @@
 @use '@/app/styles/_classes.scss';
 
 .default{
+@include key.Flash();
   padding: .5rem;
   padding-bottom: 1rem;
   position: fixed;

@@ -2,6 +2,7 @@
 @use '@/app/styles/_flexbox.scss' as flex;
 @use '@/app/styles/_breakpoints.scss' as bp;
 @use '@/app/styles/_classes.scss' as class;
+@use '@/app/styles/_keyframes.scss' as key;
 
 .default {
     border: none;
@@ -25,6 +26,7 @@
     top: 1rem;
     right: 2rem;
     span {
+    @include key.Flash();
         width: 100%;
         height: 100%;
         position: relative;
@@ -130,6 +132,7 @@
 }
 
 .copy-text{
+    @include key.Flash();
     padding: .5rem;
     padding-bottom: 1rem;
     position: fixed;
@@ -146,6 +149,18 @@
     background-color: $silver;
     line-height: 1;
     transition: all 0.3s ease-in-out;
+
+    @media (width > 768px){
+    left: unset;
+    right: 2.7rem;
+    top: calc(1rem + 45px);
+    position: fixed;
+    writing-mode: unset;
+    text-orientation: upright;
+    border-radius: 0 0 10px 10px;
+    border: 3px groove;
+    border-top: 0px;
+    }
     &:before{
         //content will be an unicode character arrow down
         content: "\25BC";
@@ -173,4 +188,16 @@
     @extend  .copy-text;
     color: $tertiary-tint;
     border-color: $tertiary-tint;
+    &:hover{
+        color: crimson;
+    }
+}
+
+.copy-text__purple {
+    @extend  .copy-text;
+    color: $purple;
+    border-color: $purple;
+    &:hover{
+        color: $tertiary-tint;
+    }
 }

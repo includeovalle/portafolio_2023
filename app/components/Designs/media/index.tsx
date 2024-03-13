@@ -12,7 +12,7 @@ import Pdf from "@/public/pdf-icon.svg";
 const Index = () => {
   const whatsappAPI = window.matchMedia("(max-width: 768px)").matches? "https://api.whatsapp.com/send?phone=4441934444" :  "https://web.whatsapp.com/send?phone=4441934444"
 
- const text = "Contacto";
+ const text = "Links";
 
   const MediaInfo = [
     {image: Whatsapp, alt: "contacto",
@@ -24,10 +24,9 @@ const Index = () => {
     ,{image: Email, alt: "correo profesional",
       links:{href: "mailto:carlosovalle@soultech.studio", target: "_blank"}}
     ,{image: Story, alt: "pagina de testeo de componentes",
-      links:{href: "/", target: "_blank"}}
-    //TODO find a way to download the pdf
+      links:{href: "https://portafolio-2023-dayu.vercel.app/?path=/docs/configure-your-project--docs", target: "_blank"}}
     ,{image: Pdf, alt: "Resumen profesional",
-      links:{href: "../../../public/carlos-amaro-resume.pdf", target: "_self"}}
+      links:{href: "/carlos-amaro-resume.pdf", target: "_self"}}
   ]
 
   return (

@@ -10,7 +10,7 @@ const Index = () => {
     <>
       <br />
       <Ptag className={currentTheme}>ingles</Ptag>
-      <Ptag className={currentTheme}>portugues</Ptag>
+      <Ptag className={currentTheme}>portugu&#233;s</Ptag>
       <Ptag className={currentTheme}>español</Ptag>
     </>
   );

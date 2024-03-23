@@ -16,16 +16,14 @@ export const metadata: Metadata = {
 export default function Home() {
 
   const item = {
-    image: Logo
+    src: Logo
     , alt: 'proyectos de carlos amaro'
     , body: "En esta ocasión el cliente necesitaba una página web para su negocio, se le creo un sitio web con un diseño que se ajusto a su conveniencia, se le dio de alta en google my business, a su vez configuramos el correo electrónico con el dominio de su sitio web"
     , title: 'Vapor Ingenieria y Calderas'
     , className: 'card'
-    , link: {
-      url: 'https://www.vaporingenieriaycalderas.mx/'
-      , name: 'Revisa el proyecto'
-      , target: '_blank'
-    }
+    , href: 'https://www.vaporingenieriaycalderas.mx/'
+    , text: 'Revisa el proyecto'
+    , target: '_blank'
   }
 
   return (

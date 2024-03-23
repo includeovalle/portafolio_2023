@@ -25,9 +25,8 @@ const Index = () => {
       links:{href: "mailto:carlosovalle@soultech.studio", target: "_blank"}}
     ,{image: Story, alt: "pagina de testeo de componentes",
       links:{href: "https://portafolio-2023-dayu.vercel.app/?path=/docs/configure-your-project--docs", target: "_blank"}}
-    //TODO find a way to download the pdf
-    // ,{image: Pdf, alt: "Resumen profesional",
-    //   links:{href: "../../../public/carlos-amaro-resume.pdf", target: "_self"}}
+    ,{image: Pdf, alt: "Resumen profesional",
+      links:{href: "/carlos-amaro-resume.pdf", target: "_self"}}
   ]
 
   return (

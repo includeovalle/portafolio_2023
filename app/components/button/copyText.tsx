@@ -20,7 +20,7 @@ const Index = ({ display, copyThis, className = "copy-text" }: Props) => {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(copyText);
-      alert(`Se copió [ ctrl + C ]\n mi correo [${copyText}]\n en tu dispositivo.`);
+      alert(`Se copió el texto:\n ${copyText}`);
     } catch (err) {
       console.error('Unable to copy to clipboard', err);
     }

@@ -1,12 +1,14 @@
 import React from "react";
 import { CustomImage } from "@/app/components/";
-import { ImageInterface } from "@/app/types/";
+import { ImageInterface, LinkInterface  } from "@/app/types/";
 
+interface IndexProps extends ImageInterface, LinkInterface{
+}
 
-const Index = ({ className = "card", alt, src, children }: ImageInterface) => {
+const Index = ({ className = "card", alt, src, children, links, href, text, target, figcaption }: IndexProps) => {
 
     return (
-        <CustomImage links href="https:www.vaporingenieriaycalderas.mx" target="_blank" className={className} src={src} alt={alt} figcaption={true}>
+        <CustomImage className={className} src={src} alt={alt} figcaption={true} links={links} href={href} target={target} text={text} >
             {children}
         </CustomImage>
     );

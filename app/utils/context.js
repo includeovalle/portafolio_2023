@@ -25,12 +25,6 @@ const BgColorProvider = ({ children }) => {
     }
   };
 
-  // const changeDarkMode = () => {
-  //   if (isDarkMode) {
-  //     setIsDarkMode(!isDarkMode);
-  //   } 
-  // }
-
   return (
     <BgColorContext.Provider value={{ bgColor, changeTheme}}>
       {children}

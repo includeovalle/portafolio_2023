@@ -13,7 +13,6 @@ const LanguageProvider = ({ children }: childrenInterface) => {
     return 'en'; // or any other default
   });
 
-  console.log('language', language);
   useEffect(() => {
     if (language === 'en-US') {
       setLanguage('en');
@@ -21,7 +20,6 @@ const LanguageProvider = ({ children }: childrenInterface) => {
     if (language === 'es') {
       setLanguage('es');
     }
-    console.log('language', language);
   }, [language]);
 
   return (

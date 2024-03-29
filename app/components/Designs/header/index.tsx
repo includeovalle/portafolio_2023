@@ -15,19 +15,16 @@ const Index = () => {
   };
 
 
-  console.log(currentLanguage, "index man");
 
-  const text = " Carlos Raul Amaro Ovalle";
-  const skills = [ "Bash" , "AWK" , "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS" , "SASS" , "Javascript" , "Typescript" , "React-js" , "Node-js" , "Git" , "Github", "storybook" ]
 
 
   return (
 
     <Header className={bgColor} >
-      <Portrait className={bgColor} text={text} />
+      <Portrait className={bgColor} text={currentLanguage.header.portrait} />
       <div>
-        <Title className="subtitle" >Habilidades T&#233;cnicas</Title>
-        <Ul className={bgColor} lis={skills}/>
+        <Title className="subtitle" >{currentLanguage.header.title}</Title>
+        <Ul className={bgColor} lis={currentLanguage.header.skills}/>
       </div>
 
       <div>

@@ -1,12 +1,13 @@
 "use client"
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import esp from "@/app/copy/esp";
 import eng from "@/app/copy/eng";
 import po from "@/app/copy/por";
+
 import { childrenInterface } from "@/app/types"
 
-export const LanguageContext = createContext("en");
-
+// Update the type of LanguageContext
+export const LanguageContext = createContext<any>({});
 
 const LanguageList = {
   'en': eng,
@@ -14,41 +15,27 @@ const LanguageList = {
   'pt': po
 };
 
-let currentLanguage = LanguageList['en'];
+let currentLanguage = LanguageList['en']
 
 const LanguageProvider = ({ children }: childrenInterface) => {
   const [UserBrowserLanguage, setUserBrowserLanguage] = useState(() => {
     if (typeof window !== 'undefined') {
-      return window.navigator.UserBrowserLanguage;
+      return window.navigator.language;
     }
     // Return a default UserBrowserLanguage (optional)
     return 'en'; // or any other default
-
   });
 
-  // check how UserBrowserLanguage startsWith
-  if (UserBrowserLanguage.startsWith('en')) {
+if (UserBrowserLanguage.startsWith('en')) {
     currentLanguage = LanguageList['en'];
-  }
-  if (UserBrowserLanguage.startsWith('es')) {
+} else if (UserBrowserLanguage.startsWith('es')) {
     currentLanguage = LanguageList['es'];
-  }
-  if (UserBrowserLanguage.startsWith('pt')) {
+} else if (UserBrowserLanguage.startsWith('pt')) {
     currentLanguage = LanguageList['pt'];
-  }
-
-
-  // useEffect(() => {
-  //   if (UserBrowserLanguage === 'en-US') {
-  //     setUserBrowserLanguage('en');
-  //   }
-  //   if (UserBrowserLanguage === 'es') {
-  //     setUserBrowserLanguage('es');
-  //   }
-  //   console.log({UserBrowserLanguage});
-  // }, [UserBrowserLanguage]);
-  //
-  const changeLanguage = UserBrowserLanguage;
+} else {
+    // Default language in case none of the conditions match
+    currentLanguage = LanguageList['en']; // Or any other default language
+}
 
   return (
     <html lang={UserBrowserLanguage}>

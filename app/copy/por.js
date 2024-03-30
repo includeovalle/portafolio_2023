@@ -24,6 +24,10 @@ const language = {
       }
     }
   }
+  , networks: {
+    copyEmail: "Copiar email"
+    , alert: "E-mail copiado para a área de transferência"
+  }
   , footer: {
     languages: ["português", "espanhol", "inglês"]
   }

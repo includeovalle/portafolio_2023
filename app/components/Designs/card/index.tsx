@@ -1,32 +1,28 @@
 "use client"
 import React from "react";
 import { Card, Ptag } from "@/app/components/";
-import { ImageInterface, LinkInterface  } from "@/app/types/";
 import { useBgColor } from '@/app/utils/context';
+import { useLanguage } from '@/app/utils/language';
+import { RowContainer } from '@/app/components/'
 
-interface Item extends ImageInterface, LinkInterface{
-  title: string;
-  body: string;
-  className?: string;
-}
 
-interface IndexProps {
-  item: Item;
-}
 
-const Index: React.FC<IndexProps> = ({ item }) => {
+const Index = () => {
   const { bgColor } = useBgColor();
+  const { currentLanguage } = useLanguage();
 
-  const { src, alt, title, body, text, href, target, className } = item;
-
+  const { image, alt, title, body, className, link } = currentLanguage["projects"].vic;
+  const { text, href, target } = link;
   const currentTheme = `${className}__${bgColor}`;
 
   return (
-    <Card className={currentTheme} src={src} alt={alt} text={text} href={href} target={target} links={true} figcaption={true}>
-      <h3>{title}</h3>
-      <Ptag className={'body'}>{body}</Ptag>
-      <a >{text}</a>
-    </Card>
+    <RowContainer>
+      <Card className={currentTheme} src={image} alt={alt} text={text} href={href} target={target} links={true} figcaption={true}>
+        <h3>{title}</h3>
+        <Ptag className={'body'}>{body}</Ptag>
+        <a >{text}</a>
+      </Card>
+    </RowContainer>
   );
 };
 

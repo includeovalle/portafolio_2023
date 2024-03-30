@@ -1,6 +1,6 @@
  'use client'
  import React from "react";
- import { Ptag, Footer } from "@/app/components/";
+ import { Footer } from "@/app/components/";
 import { useBgColor } from '@/app/utils/context';
 
  const Index = () => {

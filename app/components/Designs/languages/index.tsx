@@ -2,16 +2,20 @@
 import React from "react";
 import { Ptag } from '@/app/components/'
 import { useBgColor } from '@/app/utils/context';
+import { useLanguage } from '@/app/utils/language';
 
 const Index = () => {
   const { bgColor } = useBgColor();
+  const { currentLanguage } = useLanguage();
   const currentTheme = `lang__${bgColor}`;
   return (
     <>
       <br />
-      <Ptag className={currentTheme}>ingles</Ptag>
-      <Ptag className={currentTheme}>portugu&#233;s</Ptag>
-      <Ptag className={currentTheme}>español</Ptag>
+      {
+      currentLanguage.footer.languages.map((item: string) => (
+      <Ptag key={item} className={currentTheme}>{item}</Ptag>
+        ))
+      }
     </>
   );
 };

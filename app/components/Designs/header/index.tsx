@@ -3,29 +3,30 @@ import React from "react";
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
 import { Title, EmailButton } from '@/app/components/Designs';
 import { useBgColor } from '@/app/utils/context';
+import { useLanguage } from '@/app/utils/language';
 
 const Index = () => {
 
   const { changeTheme, bgColor } = useBgColor();
+  const { currentLanguage } = useLanguage();
 
   const handleClick = (theme: string) => {
     changeTheme(theme);
   };
 
-
-
-  const TEXT = " Carlos Raul Amaro Ovalle";
-  const SKILLS = ["Bash", "AWK", "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS", "SASS", "Javascript", "Typescript", "React-js", "Node-js", "Git", "Github", "storybook"];
   const COLORS = ["blue", "purple", "orange"]
-  const TITLE ="Habilidades Técnicas";
+
+  const TitleTag = () => Title.Header()
+
 
   return (
 
     <Header className={bgColor} >
-      <Portrait className={bgColor} text={TEXT} />
+      <Portrait className={bgColor} text={currentLanguage.header.portrait} />
       <div>
-        <Title className="subtitle" >{TITLE}</Title>
-        <Ul className={bgColor} lis={SKILLS} />
+        <TitleTag />
+        <Ul className={bgColor} lis={currentLanguage.header.skills}/>
+
       </div>
 
       <div>

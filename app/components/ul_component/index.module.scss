@@ -84,6 +84,7 @@
   @media(width > 768px){
   }
   li{
+    @include keyframes.bounceTop();
     flex: 0 0 calc(50% - 1rem);
     position: relative;
     border-bottom: 1px solid $primary;

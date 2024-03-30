@@ -1,6 +1,5 @@
 import React from "react";
 import { CustomImage} from "@/app/components";
-import styles from "./index.module.scss";
 import picture from "@/public/carlos.jpeg";
 import { classNamesInterface } from "@/app/types/";
 
@@ -17,7 +16,7 @@ const Index = ({text, className}:IndexProps) => {
 
 
   return (
-    <CustomImage className={className} figcaption src={picture} alt="carlos raul amaro ovalle">
+    <CustomImage className={className} figcaption={true} src={picture} alt="carlos raul amaro ovalle">
       <div className="overlay">
         <div className="spinning-text">
           <p>

@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
-import {Title} from '@/app/components/Designs';
+import { Title, EmailButton } from '@/app/components/Designs';
 import { useBgColor } from '@/app/utils/context';
 import { useLanguage } from '@/app/utils/language';
 
@@ -10,11 +10,11 @@ const Index = () => {
   const { changeTheme, bgColor } = useBgColor();
   const { currentLanguage } = useLanguage();
 
-  const handleClick = (theme:string) => {
+  const handleClick = (theme: string) => {
     changeTheme(theme);
   };
 
-
+  const COLORS = ["blue", "purple", "orange"]
 
 
 
@@ -25,20 +25,31 @@ const Index = () => {
       <div>
         <Title className="subtitle" >{currentLanguage.header.title}</Title>
         <Ul className={bgColor} lis={currentLanguage.header.skills}/>
+
       </div>
 
       <div>
-        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
-        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
-        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
+        {
+          COLORS.map((color: string) => {
+            return (
+              <OnHoverButton key={color} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+            )
+          })
+        }
       </div>
 
       <Hamburger >
         <div>
-          <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
-          <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
-          <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
+          {
+            COLORS.map((color: string, index: number) => {
+              return (
+                <OnHoverButton key={index} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+              )
+            })
+          }
         </div>
+        <EmailButton />
+
       </Hamburger>
     </Header>
   );

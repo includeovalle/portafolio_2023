@@ -2,6 +2,7 @@
 @use '@/app/styles/_flexbox.scss' as flex;
 @use '@/app/styles/_breakpoints.scss' as bp;
 @use '@/app/styles/_classes.scss' as class;
+@use '@/app/styles/_keyframes.scss' as key;
 
 .default {
     border: none;
@@ -25,6 +26,7 @@
     top: 1rem;
     right: 2rem;
     span {
+    @include key.Flash();
         width: 100%;
         height: 100%;
         position: relative;
@@ -130,6 +132,7 @@
 }
 
 .copy-text{
+    @include key.Flash();
     padding: .5rem;
     padding-bottom: 1rem;
     position: fixed;

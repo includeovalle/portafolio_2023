@@ -16,7 +16,6 @@ const Index = () => {
       <Ptag key={item} className={currentTheme}>{item}</Ptag>
         ))
       }
-
     </>
   );
 };

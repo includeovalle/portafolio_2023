@@ -16,6 +16,7 @@ const Index = () => {
 
   const COLORS = ["blue", "purple", "orange"]
 
+  const TitleTag = () => Title.Header()
 
 
   return (
@@ -23,7 +24,7 @@ const Index = () => {
     <Header className={bgColor} >
       <Portrait className={bgColor} text={currentLanguage.header.portrait} />
       <div>
-        <Title className="subtitle" >{currentLanguage.header.title}</Title>
+        <TitleTag />
         <Ul className={bgColor} lis={currentLanguage.header.skills}/>
 
       </div>

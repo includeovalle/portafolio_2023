@@ -1,8 +1,5 @@
+import { Card, ProjectsTag, LanguagesTag, Languages, SocialMedia, EmailButton } from '@/app/components/Designs';
 
-import { Card, Title, Languages, SocialMedia, EmailButton } from '@/app/components/Designs'
-import { RowContainer } from '@/app/components/'
-
-import Logo from '@/public/logo.png'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,26 +12,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
 
-  const item = {
-    image: Logo
-    , alt: 'proyectso carlos raul amaro ovalle'
-    , body: "En esta ocasión el cliente necesitaba una página web para su negocio, se le creo un sitio web con un diseño que se ajusto a su conveniencia, se le dio de alta en google my business, a su vez configuramos el correo electrónico con el dominio de su sitio web"
-    , title: 'Vapor Ingenieria y Calderas'
-    , className: 'card'
-    , href: 'https://www.vaporingenieriaycalderas.mx/'
-    , text: 'Revisa el proyecto'
-    , target: '_blank'
-  }
 
   return (
     <>
       <EmailButton />
       <SocialMedia />
-      <Title className="subtitle">proyectos</Title>
-      <RowContainer>
-        <Card item={item} />
-      </RowContainer>
-      <Title className="subtitle">idiomas</Title>
+      <ProjectsTag />
+      <Card />
+      <LanguagesTag />
       <Languages />
 
     </>

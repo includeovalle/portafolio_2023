@@ -1,42 +1,29 @@
 "use client"
 import React from "react";
 import { Card, Ptag } from "@/app/components/";
-import { StaticImageData } from "next/image";
 import { useBgColor } from '@/app/utils/context';
+import { useLanguage } from '@/app/utils/language';
+import { RowContainer } from '@/app/components/'
 
-interface Item {
-  title: string;
-  body: string;
-  image: StaticImageData;
-  alt: string;
-  className?: string;
-  link?: {
-    name?: string;
-    url?: string;
-    target?: string;
-  };
-}
 
-interface IndexProps {
-    item: Item;
-}
 
-const Index: React.FC<IndexProps> = ({ item }) => {
+const Index = () => {
   const { bgColor } = useBgColor();
+  const { currentLanguage } = useLanguage();
 
-const { image, alt, title, body, link, className } = item;
-
-  const { url = "", name = "", target = "" } = link ?? {};
-
+  const { image, alt, title, body, className, link } = currentLanguage["projects"].vic;
+  const { text, href, target } = link;
   const currentTheme = `${className}__${bgColor}`;
 
-    return (
-        <Card className={currentTheme} src={image} alt={alt}>
-            <h3>{title}</h3>
-            <Ptag className={'body'}>{body}</Ptag>
-            <a href={url} target={target}>{name}</a>
-        </Card>
-    );
+  return (
+    <RowContainer>
+      <Card className={currentTheme} src={image} alt={alt} text={text} href={href} target={target} links={true} figcaption={true}>
+        <h3>{title}</h3>
+        <Ptag className={'body'}>{body}</Ptag>
+        <a >{text}</a>
+      </Card>
+    </RowContainer>
+  );
 };
 
 export default Index;

@@ -8,7 +8,7 @@ import { useLanguage } from '@/app/utils/language';
 const Index = () => {
 
   const { changeTheme, bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
+  const { CURRENTLANGUAGE } = useLanguage();
 
   const handleClick = (theme: string) => {
     changeTheme(theme);
@@ -22,10 +22,10 @@ const Index = () => {
   return (
 
     <Header className={bgColor} >
-      <Portrait className={bgColor} text={currentLanguage.header.portrait} />
+      <Portrait className={bgColor} text={CURRENTLANGUAGE.header.portrait} />
       <div>
         <TitleTag />
-        <Ul className={bgColor} lis={currentLanguage.header.skills}/>
+        <Ul className={bgColor} lis={CURRENTLANGUAGE.header.skills}/>
 
       </div>
 

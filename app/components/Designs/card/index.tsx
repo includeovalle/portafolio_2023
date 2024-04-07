@@ -9,9 +9,9 @@ import { RowContainer } from '@/app/components/'
 
 const Index = () => {
   const { bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
+  const { CURRENTLANGUAGE } = useLanguage();
 
-  const { image, alt, title, body, className, link } = currentLanguage["projects"].vic;
+  const { image, alt, title, body, className, link } = CURRENTLANGUAGE["projects"].vic;
   const { text, href, target } = link;
   const currentTheme = `${className}__${bgColor}`;
 

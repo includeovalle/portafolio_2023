@@ -15,7 +15,7 @@ const LanguageList = {
   'pt': po
 };
 
-let currentLanguage = LanguageList['en']
+let CURRENTLANGUAGE = LanguageList['en']
 
 const LanguageProvider = ({ children }: childrenInterface) => {
   const [UserBrowserLanguage, setUserBrowserLanguage] = useState(() => {
@@ -27,19 +27,19 @@ const LanguageProvider = ({ children }: childrenInterface) => {
   });
 
 if (UserBrowserLanguage.startsWith('en')) {
-    currentLanguage = LanguageList['en'];
+    CURRENTLANGUAGE = LanguageList['en'];
 } else if (UserBrowserLanguage.startsWith('es')) {
-    currentLanguage = LanguageList['es'];
+    CURRENTLANGUAGE = LanguageList['es'];
 } else if (UserBrowserLanguage.startsWith('pt')) {
-    currentLanguage = LanguageList['pt'];
+    CURRENTLANGUAGE = LanguageList['pt'];
 } else {
     // Default language in case none of the conditions match
-    currentLanguage = LanguageList['en']; // Or any other default language
+    CURRENTLANGUAGE = LanguageList['en']; // Or any other default language
 }
 
   return (
     <html lang={UserBrowserLanguage}>
-      <LanguageContext.Provider value={{currentLanguage}}>
+      <LanguageContext.Provider value={{CURRENTLANGUAGE}}>
         {children}
       </LanguageContext.Provider>
     </html>

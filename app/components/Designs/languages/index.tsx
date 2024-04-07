@@ -6,13 +6,13 @@ import { useLanguage } from '@/app/utils/language';
 
 const Index = () => {
   const { bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
+  const { CURRENTLANGUAGE } = useLanguage();
   const currentTheme = `lang__${bgColor}`;
   return (
     <>
       <br />
       {
-      currentLanguage.footer.languages.map((item: string) => (
+      CURRENTLANGUAGE.footer.languages.map((item: string) => (
       <Ptag key={item} className={currentTheme}>{item}</Ptag>
         ))
       }

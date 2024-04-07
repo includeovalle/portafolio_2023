@@ -1,4 +1,4 @@
-import { Card, ProjectsTag, LanguagesTag, Languages, SocialMedia, EmailButton } from '@/app/components/Designs';
+import { Card, ProjectsTag, LanguagesTag, AboutMeTag, Languages, SocialMedia, EmailButton, AboutMe } from '@/app/components/Designs';
 
 import type { Metadata } from 'next'
 
@@ -19,8 +19,11 @@ export default function Home() {
       <SocialMedia />
       <ProjectsTag />
       <Card />
+      <AboutMeTag />
+      <AboutMe />
       <LanguagesTag />
       <Languages />
+      
 
     </>
   )

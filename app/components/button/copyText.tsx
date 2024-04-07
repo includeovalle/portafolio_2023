@@ -15,14 +15,14 @@ const Index = ({ display, copyThis, className = "copy-text" }: Props) => {
   const copyText = copyThis ? copyThis : "";
 
   const { bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
+  const { CURRENTLANGUAGE } = useLanguage();
 
   const currentTheme = `${className}__${bgColor}`;
 
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(copyText);
-      alert(`${currentLanguage["networks"].alert}\n ${copyText}`);
+      alert(`${CURRENTLANGUAGE["networks"].alert}\n ${copyText}`);
     } catch (err) {
       console.error('Unable to copy to clipboard', err);
     }

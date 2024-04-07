@@ -195,9 +195,11 @@
     }
 
 
+  }
     @media (prefers-color-scheme: dark) {
+    & figcaption{
       > h3{
-        color: red;
+        color: crimson;
       }
       >p {
         color: $primary-light;
@@ -253,7 +255,7 @@
         color: $silver;
       }
       >p {
-        color: $silver;
+        color: $silver-tint;
       }
       >a{
         color: $silver;
@@ -283,7 +285,7 @@
     }
   }
   @media (prefers-color-scheme: dark) {
-    background-color: $tertiary-light;
+    background-color: transparent;
     border-color: $purple-tint;
   }
   figcaption {

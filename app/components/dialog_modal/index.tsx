@@ -6,14 +6,11 @@ import React, { forwardRef, ForwardedRef } from 'react';
 const Index = forwardRef(({ closeBtn, onClick, children, className="default" }: DialogInterface, ref:ForwardedRef<HTMLDialogElement>) => {
 
     return (
-            <dialog ref={ref} onClick={onClick} className={styles[className]}>
+            <dialog ref={ref} className={styles[className]}>
                 <CloseButton onClick={onClick}>{closeBtn}</CloseButton>
                 {children}
             </dialog>
     )
 });
 
-Index.displayName = 'Dialog';
 export default Index;
-
-

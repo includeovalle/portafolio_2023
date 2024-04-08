@@ -1,6 +1,5 @@
 @use '@/app/styles/_mixins.scss' as mixins;
 @use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_flexbox.scss' as flex;
 @use '@/app/styles/_breakpoints.scss' as bp;
 @use '@/app/styles/_keyframes.scss' as key;
 @use '@/app/styles/_classes.scss';
@@ -23,6 +22,11 @@
   border-color: $primary-tint;
   transition: all 0.3s ease-in-out;
   line-height: 1;
+  & >div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
   &:before{
     //content will be an unicode character arrow down
     content: "\25BC";
@@ -78,6 +82,69 @@
   }
 }
 
+.media {
+    position: relative;
+    @include key.wooble();
+    min-height: 150px;
+    top:40%;
+    border-radius: $default-border-radius;
+    border: $default-border-radius solid;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    width: 80px;
+    padding: $default-padding-inset;
+    margin-left: calc( 100% - 80px);
+    z-index: 1;
+    button{
+        transition: all 0.3s ease-in-out;
+        right: 5px;
+        z-index: 1;
+        span{
+            border-color: $primary-tint;
+        }
+    }
+    &:hover{
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+        button{
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+            right: 7px;
+        }
+    }
+}
+
+.media__blue {
+    @extend .media;
+    border-color: $primary-tint;
+    background-color: $primary-light;
+}
+
+
+.media__orange {
+    @extend .media;
+    border-color: $secondary-light;
+    background-color: $silver-tint;
+    transition: all 0.3s ease-in-out;
+    button{
+        span{
+            border-color: $secondary-light;
+        }
+    }
+}
+
+.media__purple {
+    @extend .media;
+    border-color: $purple;
+    background-color: $silver-tint;
+    transition: all 0.3s ease-in-out;
+    button{
+        span{
+            border-color: $purple-tint;
+        }
+    }
+}
 .no-display{
   display: none;
 }

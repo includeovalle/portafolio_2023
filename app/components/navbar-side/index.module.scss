@@ -83,7 +83,7 @@
 }
 
 .media {
-    position: relative;
+    position: fixed;
     @include key.wooble();
     min-height: 150px;
     top:40%;

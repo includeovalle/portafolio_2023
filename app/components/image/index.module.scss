@@ -9,8 +9,10 @@
   width: 300px;
   height: 300px;
   position: relative;
-  img{
+  @media(width > 768px){
     @include key.shakeBottom();
+}
+  img{
     border-radius: 50%;
     filter: drop-shadow(16px 6px 20px gray) invert(75%);
     }

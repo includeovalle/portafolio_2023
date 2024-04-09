@@ -25,16 +25,20 @@ const Index = {
     );
   }
   , Header: () => {
-    const { currentLanguage } = useLanguage();
-    return Index.H1({ text: currentLanguage["titles"].title });
+    const { CURRENTLANGUAGE } = useLanguage();
+    return Index.H1({ text: CURRENTLANGUAGE["titles"].title });
   }
   , Projects: () => {
-    const { currentLanguage } = useLanguage();
-    return Index.H2({ text: currentLanguage["titles"].projects });
+    const { CURRENTLANGUAGE } = useLanguage();
+    return Index.H2({ text: CURRENTLANGUAGE["titles"].projects });
   }
   , Languages: () => {
-  const { currentLanguage } = useLanguage();
-  return Index.H2({ text: currentLanguage["titles"].languages });
+  const { CURRENTLANGUAGE } = useLanguage();
+  return Index.H2({ text: CURRENTLANGUAGE["titles"].languages });
+  }
+  , AboutMe: () => {
+  const { CURRENTLANGUAGE } = useLanguage();
+  return Index.H2({ text: CURRENTLANGUAGE["titles"].aboutme });
   }
 }
 
@@ -43,3 +47,4 @@ export default Index;
 export const HeaderTag = Index.Header;
 export const ProjectsTag = Index.Projects;
 export const LanguagesTag = Index.Languages;
+export const AboutMeTag = Index.AboutMe;

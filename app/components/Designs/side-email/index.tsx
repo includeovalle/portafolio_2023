@@ -7,8 +7,8 @@ const Email = "carlosovalle@soultech.studio"
 
 
 const Index = () => {
-  const { currentLanguage } = useLanguage();
-  const buttonText = currentLanguage["networks"].copyEmail;
+  const { CURRENTLANGUAGE } = useLanguage();
+  const buttonText = CURRENTLANGUAGE["networks"].copyEmail;
 
   return (
     <>

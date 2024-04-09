@@ -5,6 +5,7 @@ const language = {
     projects: "Proyectos"
     , languages: "Idiomas"
     , title: "Hablidades Técnicas"
+    , aboutme: "Acerca de mí"
   }
   , header: {
      portrait: "Carlos Raul Amaro Ovalle "
@@ -24,6 +25,7 @@ const language = {
     }
     }
   }
+  , aboutme: "Soy un desarrollador de software enfocado principalmente en la web. He trabajado remoto los últimos 3 años. Me encanta aprender e implementar lo aprendido. Desde que comencé en el mundo del desarrollo de software, mis ratos libres se modificaron; sin darme cuenta: pase de leer novelas clásicas a leer documentaciones técnicas, pase de revisar en redes sociales a resolver dudas en comunidades de desarrollo. Poseo iniciativa propia y disfruto cuando encuentro una solución a un problema."
   , networks: {
     copyEmail: "Copiar email"
     , alert: "Correo copiado al portapapeles"

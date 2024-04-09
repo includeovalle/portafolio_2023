@@ -58,6 +58,32 @@
 .lang__purple {
     @extend .lang;
     color: $silver-tint;
-  background-color: $tertiary-light;
+    background-color: $tertiary-light;
     border-bottom: 1px solid $purple-tint;
+}
+
+.about {
+    padding: 0 2rem;
+}
+
+.about__blue{
+    @extend .about;
+    color: $primary;
+    @media (prefers-color-scheme: dark) {
+        color: $primary-light;
+    }
+        
+    }
+
+.about__orange{
+    @extend .about;
+    color: crimson;
+    @media (prefers-color-scheme: dark) {
+        color: $silver-tint;
+    }
+}
+
+.about__purple{
+    @extend .about;
+    color: $silver;
 }

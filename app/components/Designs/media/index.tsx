@@ -15,7 +15,8 @@ const Index = () => {
   const text = "Links";
 
   const MediaInfo = [
-    { image: Whatsapp , alt: "contacto", links: { href: whatsappAPI , target: "_blank" }
+    {
+      image: Whatsapp, alt: "contacto", links: { href: whatsappAPI, target: "_blank" }
     }
     , {
       image: Github, alt: "repositori del proyecto",
@@ -46,9 +47,13 @@ const Index = () => {
         {
           MediaInfo.map((item, index) => {
             if (item.iframe) {
-              return (<><IfraModal src={item.links.href} onClick > <CustomImage className="icon" key={index} src={item.image} alt={item.alt}/> </IfraModal></>)
-      
-
+              return (
+                <>
+                  <IfraModal src={item.links.href} >
+                    <CustomImage className="icon" key={index} src={item.image} alt={item.alt} />
+                  </IfraModal>
+                </>
+              )
             } else {
               return (
                 <CustomImage key={index} src={item.image} className={"icon"} alt={item.alt} links={true} href={item.links.href} target={item.links.target} />

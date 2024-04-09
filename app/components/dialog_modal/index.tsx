@@ -13,4 +13,5 @@ const Index = forwardRef(({ closeBtn, onClick, children, className="default" }: 
     )
 });
 
+Index.displayName = 'Dialog';
 export default Index;

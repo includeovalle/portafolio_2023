@@ -5,6 +5,7 @@ const language = {
     projects: "Projects"
     , languages: "Languages"
     , title: "Technical Skills"
+    , aboutme: "About me"
   }
   , header: {
     portrait: "Carlos Amaro "
@@ -24,6 +25,7 @@ const language = {
       }
     }
   }
+  , aboutme: "As a web-focused software developer with three years of remote work experience, I am deeply passionate about continuous learning and practical implementation. My journey into the realm of software development has seamlessly transformed my leisure time; I've transitioned from indulging in classic literature to delving into technical documentation and from browsing social media to actively participating in developer communities. Driven by a strong sense of initiative, I derive immense satisfaction from problem-solving and finding innovative solutions."
   , networks: {
     copyEmail: "Copy email"
     , alert: "Email copied to clipboard"

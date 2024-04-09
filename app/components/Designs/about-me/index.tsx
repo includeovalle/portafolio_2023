@@ -7,15 +7,14 @@ import { useLanguage } from '@/app/utils/language';
 const Index = () => {
   const { bgColor } = useBgColor();
   const { CURRENTLANGUAGE } = useLanguage();
-  const currentTheme = `lang__${bgColor}`;
+  const CURRENTTHEME = `about__${bgColor}`;
+  const ABOUTME = CURRENTLANGUAGE.aboutme;
+
   return (
     <>
       <br />
-      {
-      CURRENTLANGUAGE.footer.languages.map((item: string) => (
-      <Ptag key={item} className={currentTheme}>{item}</Ptag>
-        ))
-      }
+      <Ptag  className={CURRENTTHEME}>{ABOUTME}</Ptag>
+      <br />
     </>
   );
 };

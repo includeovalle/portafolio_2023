@@ -1,23 +1,12 @@
 "use client"
 // context.js
-import React, { createContext, useContext } from 'react';
-import useLocalStorage from './custom-hooks/localStorage.js';
+import React, { useState,  createContext, useContext } from 'react';
 
 export const BgColorContext = createContext();
-
 const backgroundOptions = ['blue', 'orange', 'purple'];
 
 const BgColorProvider = ({ children }) => {
-  //TODO solve how to get the initial value from local storage
-  const [bgColor, setBgColor] = useLocalStorage('background', '');
-  // const [isDarkMode, setIsDarkMode] = useLocalStorage('darkmode', '');
-
-
-  // check localStorage for background
-  try {
-    var initialTheme = localStorage.getItem('background');
-  } catch { return null; }
-  if (!initialTheme) { setBgColor("blue"); }
+  const [bgColor, setBgColor] = useState("blue");
 
   const changeTheme = (newTheme) => {
     if (backgroundOptions.includes(newTheme)) {

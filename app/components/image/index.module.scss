@@ -90,6 +90,7 @@
 
   .card {
     position: relative;
+    cursor: pointer;
 
     @include flex.col(flex-start, center);
     margin: 1rem 0;
@@ -138,13 +139,13 @@
       @media(width > 768px) {
       padding: 1rem 0;
       }
+      &:last-of-type {
+        padding-bottom: 1rem;
+      }
       }
       @media(width > 768px){
       & h3 {
         color: $primary-tint;
-      }
-      a {
-        padding-bottom: 1rem;
       }
     }
     & h3 {
@@ -178,20 +179,21 @@
       > p {
         color: $primary-tint;
         transition: 1.75s ease;
-      }
-      > a{
-        color: $primary-tint;
-        text-decoration-color: $silver-tint;
-        transition: 2.25s ease;
+        &:last-of-type {
+          color: crimson;
+        }
       }
     }
   }
-  figcaption {
+  & figcaption {
     > h3{
       color: $primary-tint;
     }
     > p {
       color: $primary;
+        &:last-of-type {
+        text-decoration: underline;
+        }
     }
 
 

@@ -3,7 +3,7 @@ import React from "react";
 import { Htag } from '@/app/components/'
 import { classNamesInterface } from '@/app/types/';
 import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import es from '@/app/copy/esp';
 
 interface IndexProps extends classNamesInterface {
   text: string;
@@ -25,16 +25,13 @@ const Index = {
     );
   }
   , Header: () => {
-    const { currentLanguage } = useLanguage();
-    return Index.H1({ text: currentLanguage["titles"].title });
+    return Index.H1({ text: es["titles"].title });
   }
   , Projects: () => {
-    const { currentLanguage } = useLanguage();
-    return Index.H2({ text: currentLanguage["titles"].projects });
+    return Index.H2({ text: es["titles"].projects });
   }
   , Languages: () => {
-  const { currentLanguage } = useLanguage();
-  return Index.H2({ text: currentLanguage["titles"].languages });
+  return Index.H2({ text: es["titles"].languages });
   }
 }
 

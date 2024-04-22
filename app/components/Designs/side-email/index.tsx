@@ -1,14 +1,12 @@
-"use client"
 import React from "react";
 import { CopyButton } from "@/app/components";
-import { useLanguage } from '@/app/utils/language';
+import es from "@/app/copy/esp";
 
-const Email = "carlosovalle@soultech.studio"
+const Email = "carlosovalle@soultech.studiok"
 
 
 const Index = () => {
-  const { currentLanguage } = useLanguage();
-  const buttonText = currentLanguage["networks"].copyEmail;
+  const buttonText = es["networks"].copyEmail;
 
   return (
     <>

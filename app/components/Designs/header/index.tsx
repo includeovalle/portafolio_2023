@@ -3,12 +3,11 @@ import React from "react";
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
 import { Title, EmailButton } from '@/app/components/Designs';
 import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import  es from '@/app/copy/esp';
 
 const Index = () => {
 
   const { changeTheme, bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
 
   const handleClick = (theme: string) => {
     changeTheme(theme);
@@ -22,10 +21,10 @@ const Index = () => {
   return (
 
     <Header className={bgColor} >
-      <Portrait className={bgColor} text={currentLanguage.header.portrait} />
+      <Portrait className={bgColor} text={es.header.portrait} />
       <div>
         <TitleTag />
-        <Ul className={bgColor} lis={currentLanguage.header.skills}/>
+        <Ul className={bgColor} lis={es.header.skills}/>
 
       </div>
 

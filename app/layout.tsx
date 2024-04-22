@@ -20,19 +20,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <LanguageContext>
+    <html>
       <body className={inter.className}>
-        <BgColorProvider>
-          <Header />
-          <MainContainer>
-            <InnerContainer>
-              {children}
-            </InnerContainer>
-            <Footer />
-          </MainContainer>
-        </BgColorProvider>
+        <LanguageContext>
+          <BgColorProvider>
+            <Header />
+            <MainContainer>
+              <InnerContainer>
+                {children}
+              </InnerContainer>
+              <Footer />
+            </MainContainer>
+          </BgColorProvider>
+        </LanguageContext>
         <Analytics />
       </body>
-    </LanguageContext>
+    </html>
   )
 }

@@ -1,7 +1,7 @@
  'use client'
  import React from "react";
  import { Footer } from "@/app/components/";
-import { useBgColor } from '@/app/utils/context';
+ import { useBgColor } from '@/app/utils/context';
 
  const Index = () => {
  const { bgColor} = useBgColor();

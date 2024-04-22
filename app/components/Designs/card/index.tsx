@@ -2,25 +2,24 @@
 import React from "react";
 import { Card, Ptag } from "@/app/components/";
 import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import es from '@/app/copy/esp';
 import { RowContainer } from '@/app/components/'
 
 
 
 const Index = () => {
   const { bgColor } = useBgColor();
-  const { currentLanguage } = useLanguage();
 
-  const { image, alt, title, body, className, link } = currentLanguage["projects"].vic;
+  const { image, alt, title, body, className, link } = es["projects"].vic;
   const { text, href, target } = link;
   const currentTheme = `${className}__${bgColor}`;
 
   return (
     <RowContainer>
-      <Card className={currentTheme} src={image} alt={alt} text={text} href={href} target={target} links={true} figcaption={true}>
+      <Card className={currentTheme} src={image} alt={alt} href={href} target={target} links={true} figcaption={true}>
         <h3>{title}</h3>
         <Ptag className={'body'}>{body}</Ptag>
-        <a >{text}</a>
+        <Ptag >{text}</Ptag>
       </Card>
     </RowContainer>
   );

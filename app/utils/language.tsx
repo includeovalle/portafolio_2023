@@ -38,11 +38,9 @@ if (UserBrowserLanguage.startsWith('en')) {
 }
 
   return (
-    <html lang={UserBrowserLanguage}>
       <LanguageContext.Provider value={{currentLanguage}}>
         {children}
       </LanguageContext.Provider>
-    </html>
   );
 };
 

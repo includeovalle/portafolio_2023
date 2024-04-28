@@ -1,15 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
- async redirects() {
-    return [
-      // Basic redirect
-      {
-        source: '/',
-        destination: '/es?theme=blue',
-        permanent: true,
-      },
-      ]
-      }
+const nextConfig = { 
+  i18n: {
+    locales: ['en', 'es', 'pt'],
+    defaultLocale: 'es',
+  },
 }
-
 module.exports = nextConfig

@@ -29,7 +29,7 @@ interface CloseButtonInterface extends ButtonInterface {
     closeBtn?: JSX.Element
 }
 
-export const CloseButton = ({ onClick, className = "closeHamburger", closeBtn, autoFocus }: CloseButtonInterface) => {
+export const CloseButton = ({ onClick, className = "close-hamburger", closeBtn, autoFocus }: CloseButtonInterface) => {
 
     const searchParams = useSearchParams();
     const bgColor = searchParams.get("theme") || "blue";

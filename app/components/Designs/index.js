@@ -1,6 +1,5 @@
 export { default as Header } from './header/';
 export { default as Card } from './card/';
-export { default as Title } from './title/';
 export { HeaderTag as HeaderTag } from './title/';
 export { ProjectsTag as ProjectsTag } from './title/';
 export { LanguagesTag as LanguagesTag } from './title/';

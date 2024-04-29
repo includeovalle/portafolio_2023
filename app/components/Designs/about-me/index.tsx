@@ -1,14 +1,14 @@
-"use client"
 import React from "react";
 import { Ptag } from '@/app/components/'
-import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import { DictionaryInterface } from "@/app/types/";
 
-const Index = () => {
-  const { bgColor } = useBgColor();
-  const { CURRENTLANGUAGE } = useLanguage();
-  const CURRENTTHEME = `about__${bgColor}`;
-  const ABOUTME = CURRENTLANGUAGE.aboutme;
+interface IndexProps extends DictionaryInterface {
+  theme: string;
+}
+
+export default function Index({theme, lang}: IndexProps) {
+  const CURRENTTHEME = `about__${theme}`;
+  const ABOUTME = lang.aboutme;
 
   return (
     <>
@@ -18,6 +18,3 @@ const Index = () => {
     </>
   );
 };
-
-export default Index;
-

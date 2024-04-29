@@ -2,9 +2,8 @@
 import React, { useRef } from "react";
 import styles from "./index.module.scss";
 import { CloseButton } from "@/app/components/";
-import { childrenInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
-
+import { useSearchParams } from 'next/navigation';
+import { childrenInterface, classNamesInterface } from "@/app/types/";
 
 interface PropsInterface extends childrenInterface {
   buttonText?: string
@@ -12,7 +11,7 @@ interface PropsInterface extends childrenInterface {
 
 const Index = ({ buttonText, children }: PropsInterface) => {
 
-  const { bgColor } = useBgColor();
+  const bgColor = useSearchParams().get("theme") || "blue";
   const mediaRef = useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {

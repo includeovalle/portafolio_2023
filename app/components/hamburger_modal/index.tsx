@@ -2,11 +2,11 @@
 import React, { useRef } from 'react';
 import { Button, Dialog } from '@/app/components/';
 import { childrenInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
+import { useSearchParams } from 'next/navigation';
 
 
 const Index = ({ children }: childrenInterface) => {
-    const { bgColor } = useBgColor();
+    const bgColor = useSearchParams().get("theme") || "blue";
     const modalRef = useRef<HTMLDialogElement>(null);
 
     const hamburgerHandler = () => {

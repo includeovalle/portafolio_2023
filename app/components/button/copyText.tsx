@@ -1,28 +1,27 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React from "react";
 import { Button } from '@/app/components/';
-import { classNamesInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import { classNamesInterface, DictionaryInterface } from "@/app/types/";
+import {useSearchParams} from 'next/navigation';
 
-interface Props extends classNamesInterface {
+interface Props extends classNamesInterface, DictionaryInterface { 
   display: string;
   copyThis: string;
 }
 
-const Index = ({ display, copyThis, className = "copy-text" }: Props) => {
+const Index = ({ display, copyThis, className = "copy-text" , lang}: Props) => {
+
 
   const copyText = copyThis ? copyThis : "";
 
-  const { bgColor } = useBgColor();
-  const { CURRENTLANGUAGE } = useLanguage();
+  const bgColor = useSearchParams().get("theme");
 
   const currentTheme = `${className}__${bgColor}`;
 
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(copyText);
-      alert(`${CURRENTLANGUAGE["networks"].alert}\n ${copyText}`);
+      alert(`${lang["networks"].alert}\n ${copyText}`);
     } catch (err) {
       console.error('Unable to copy to clipboard', err);
     }

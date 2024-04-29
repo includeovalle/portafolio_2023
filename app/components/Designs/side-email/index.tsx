@@ -1,19 +1,17 @@
-"use client"
 import React from "react";
 import { CopyButton } from "@/app/components";
-import { useLanguage } from '@/app/utils/language';
+import { DictionaryInterface } from "@/app/types";
 
 const Email = "carlosovalle@soultech.studio"
 
+const Index = ({lang}: DictionaryInterface) => {
 
-const Index = () => {
-  const { CURRENTLANGUAGE } = useLanguage();
-  const buttonText = CURRENTLANGUAGE["networks"].copyEmail;
+  const buttonText = lang["networks"].copyEmail;
 
   return (
     <>
 
-      <CopyButton display={buttonText} copyThis={Email} />
+      <CopyButton display={buttonText} copyThis={Email} lang={lang}/>
 
     </>
   );

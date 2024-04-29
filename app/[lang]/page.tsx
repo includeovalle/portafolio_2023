@@ -1,4 +1,4 @@
-import { Header, Card, ProjectsTag, LanguagesTag, Languages, SocialMedia, EmailButton, Footer } from '@/app/components/Designs';;
+import { Header, Card, ProjectsTag, LanguagesTag, Languages, SocialMedia, EmailButton, Footer, AboutMe, AboutMeTag } from '@/app/components/Designs';;
 import { MainContainer, InnerContainer } from '@/app/components';
 import { Metadata } from 'next'
 import { getDictionary} from "./dictionaries"
@@ -30,6 +30,8 @@ export default async function Home({ searchParams, params }: Props) {
           <SocialMedia />
           <ProjectsTag theme={bgColor} lang={lang} />
           <Card theme={bgColor} lang={lang} />
+          <AboutMeTag theme={bgColor} lang={lang} />
+          <AboutMe theme={bgColor} lang={lang} />
           <LanguagesTag theme={bgColor} lang={lang} />
           <Languages theme={bgColor} lang={lang} />
         </InnerContainer >

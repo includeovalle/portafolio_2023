@@ -36,7 +36,7 @@ export const CloseButton = ({ onClick, className = "closeHamburger", closeBtn, a
 
      const closeBtnDefault = closeBtn ? closeBtn : <Spans />;
 
-    const CurrentTheme = `close-hamburger__${bgColor}`
+    const CurrentTheme = `${className}__${bgColor}`
 
     return (
         <Index type={'button'} className={CurrentTheme} onClick={onClick} autoFocus={autoFocus}>

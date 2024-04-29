@@ -3,6 +3,7 @@
     "projects": "Projetos",
     "languages": "Linguagens",
     "title": "Habilidades Técnicas"
+    , "aboutme": "Acerca de mim"
   },
   "header": {
     "portrait": "Raul Amaro",
@@ -37,7 +38,8 @@
         "target": "_blank"
       }
     }
-  },
+  }
+  , "aboutme": "Como desenvolvedor de software focado principalmente na web, com três anos de experiência trabalhando remotamente, tenho uma paixão profunda pela aprendizagem contínua e pela implementação prática. Minha jornada no mundo do desenvolvimento de software transformou meu tempo livre de forma imperceptível: fiz a transição da leitura de romances clássicos para a imersão na documentação técnica e das redes sociais para a participação ativa em comunidades de desenvolvimento. Impulsionado por uma forte iniciativa pessoal, encontro imenso prazer em resolver problemas e encontrar soluções inovadoras.",
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "E-mail copiado para a área de transferência"

@@ -10,11 +10,9 @@ interface Props extends DictionaryInterface {
 }
 
 
-
 const Index = ({theme, lang } : Props) => {
 
   const COLORS = ["blue", "purple", "orange"];
-
 
   // colorHandler is a function that handles default theme
   colorHandler( );

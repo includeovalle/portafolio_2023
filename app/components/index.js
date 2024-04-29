@@ -16,3 +16,4 @@ export { default as Footer } from './footer/index';
 export { InnerContainer as InnerContainer } from './section_container/index';
 export { default as SocialMedia } from './navbar-side/index';
 export { default as CopyButton } from './button/copyText';
+export { default as IfraModal } from './iframe-modal/'

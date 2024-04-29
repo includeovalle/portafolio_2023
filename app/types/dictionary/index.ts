@@ -1,8 +1,9 @@
 export default interface Props {
   lang: {
-    titles: { projects: string; languages: string; title: string };
+    titles: { projects: string; languages: string; title: string; aboutme:string;};
     header: { portrait: string; skills: string[] };
     projects: { vic: Project };
+    aboutme: string;
     networks: { copyEmail: string; alert: string };
     footer: { languages: string[] };
   };

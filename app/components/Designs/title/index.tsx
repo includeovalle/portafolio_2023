@@ -39,3 +39,7 @@ export const LanguagesTag = ({theme, lang}: PropsInterface) => {
   const text = lang["titles"].languages;
   return H2({ text, theme });
 }
+export const AboutMeTag = ({theme, lang}: PropsInterface) => {
+  const text=  lang["titles"].aboutme 
+  return H2({text, theme});
+  }

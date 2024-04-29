@@ -29,8 +29,8 @@ const Index = ({ buttonText, children }: PropsInterface) => {
       <nav onClick={() => handleClick()} className={styles[bgColor]}>
         {buttonText}
       </nav>
-        <dialog className={styles[currentTheme]} ref={mediaRef}>
-        <CloseButton onClick={closeModal}></CloseButton>
+        <dialog onClick={()=> closeModal()} className={styles[currentTheme]} ref={mediaRef}>
+        <CloseButton />
           {children}
         </dialog>
     </>

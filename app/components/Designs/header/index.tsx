@@ -1,30 +1,31 @@
 "use client"
-import React from "react";
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
-import { Title, EmailButton } from '@/app/components/Designs';
-import { useBgColor } from '@/app/utils/context';
-import  es from '@/app/copy/esp';
+import Link from 'next/link';
+import { HeaderTag, EmailButton } from '@/app/components/Designs';
+import colorHandler from '@/app/utils/colorHandler';
+import { DictionaryInterface } from "@/app/types/";
 
-const Index = () => {
+interface Props extends DictionaryInterface {
+  theme: string;
+}
 
-  const { changeTheme, bgColor } = useBgColor();
 
-  const handleClick = (theme: string) => {
-    changeTheme(theme);
-  };
 
-  const COLORS = ["blue", "purple", "orange"]
+const Index = ({theme, lang } : Props) => {
 
-  const TitleTag = () => Title.Header()
+  const COLORS = ["blue", "purple", "orange"];
 
+
+  // colorHandler is a function that handles default theme
+  colorHandler( );
 
   return (
 
-    <Header className={bgColor} >
-      <Portrait className={bgColor} text={es.header.portrait} />
+    <Header className={theme} >
+      <Portrait className={theme} text={lang.header.portrait} />
       <div>
-        <TitleTag />
-        <Ul className={bgColor} lis={es.header.skills}/>
+        <HeaderTag theme={theme} lang={lang} />
+        <Ul className={theme} lis={lang.header.skills}/>
 
       </div>
 
@@ -32,7 +33,9 @@ const Index = () => {
         {
           COLORS.map((color: string) => {
             return (
-              <OnHoverButton key={color} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+              <Link key={color} href={`?theme=${color}`}>
+                <OnHoverButton className={color} />
+              </Link>
             )
           })
         }
@@ -43,13 +46,14 @@ const Index = () => {
           {
             COLORS.map((color: string, index: number) => {
               return (
-                <OnHoverButton key={index} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+              <Link key={color} href={`?theme=${color}`}>
+                <OnHoverButton key={index} className={color} />
+              </Link>
               )
             })
           }
         </div>
-        <EmailButton />
-
+        <EmailButton lang={lang} />
       </Hamburger>
     </Header>
   );

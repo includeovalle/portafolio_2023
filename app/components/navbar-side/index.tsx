@@ -2,13 +2,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import { Dialog } from "@/app/components/";
-import { useBgColor } from '@/app/utils/context';
+import { useSearchParams } from 'next/navigation';
 import { childrenInterface, classNamesInterface } from "@/app/types/";
 
-const UseBgColor = () => {
-  const { bgColor } = useBgColor();
-  return bgColor;
-}
 
 interface PropsInterface extends childrenInterface, classNamesInterface {
   buttonText?: string
@@ -17,7 +13,7 @@ interface PropsInterface extends childrenInterface, classNamesInterface {
 const Index = ({ className = "media", children, buttonText }: PropsInterface) => {
 
   const [isOpen, setIsOpen] = useState(false);
-  const bgColor = UseBgColor();
+  const bgColor = useSearchParams().get("theme") || "blue";
   const mediaRef = React.useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {

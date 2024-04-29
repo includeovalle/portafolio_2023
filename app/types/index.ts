@@ -13,3 +13,4 @@ export type { default as LabelInterface } from './label';
 export type { default as ParagraphInterface } from './paragraph';
 export type { default as TextContentInterface } from './textContainer';
 export type { default as ArrayInterface } from './dataArray/';
+export type { default as DictionaryInterface } from './dictionary'

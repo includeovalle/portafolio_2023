@@ -1,42 +1,41 @@
-"use client"
 import React from "react";
 import { Htag } from '@/app/components/'
-import { classNamesInterface } from '@/app/types/';
-import { useBgColor } from '@/app/utils/context';
-import es from '@/app/copy/esp';
+import { classNamesInterface, DictionaryInterface } from '@/app/types/';
 
 interface IndexProps extends classNamesInterface {
   text: string;
+  theme: string;
 };
 
-const Index = {
-  H1: ({ text, className = "subtitle" }: IndexProps) => {
-    const { bgColor } = useBgColor();
-    const currentTheme = `${className}__${bgColor}`;
-    return (
-      <Htag type={1} className={currentTheme}> {text}</Htag>
-    );
-  }
-  , H2: ({ text, className = "subtitle" }: IndexProps) => {
-    const { bgColor } = useBgColor();
-    const currentTheme = `${className}__${bgColor}`;
-    return (
-      <Htag type={2} className={currentTheme}> {text}</Htag>
-    );
-  }
-  , Header: () => {
-    return Index.H1({ text: es["titles"].title });
-  }
-  , Projects: () => {
-    return Index.H2({ text: es["titles"].projects });
-  }
-  , Languages: () => {
-  return Index.H2({ text: es["titles"].languages });
-  }
+interface PropsInterface extends DictionaryInterface {
+  theme: string;
 }
 
-export default Index;
+const H1 = ({ text, theme, className = "subtitle" }: IndexProps) => {
+  const currentTheme = `${className}__${theme}`;
+  return (
+    <Htag type={1} className={currentTheme}> {text}</Htag>
+  );
+}
 
-export const HeaderTag = Index.Header;
-export const ProjectsTag = Index.Projects;
-export const LanguagesTag = Index.Languages;
+const H2 = ({ text, theme, className = "subtitle" }: IndexProps) => {
+  const currentTheme = `${className}__${theme}`;
+  return (
+    <Htag type={2} className={currentTheme}> {text}</Htag>
+  );
+}
+
+export const HeaderTag = ({ theme, lang }: PropsInterface) => {
+  const text = lang["titles"].title;
+  return H1({ text, theme });
+}
+
+export const ProjectsTag = ({ theme, lang }: PropsInterface) => {
+  const text = lang["titles"].projects;
+  return H2({ text, theme });
+}
+
+export const LanguagesTag = ({theme, lang}: PropsInterface) => {
+  const text = lang["titles"].languages;
+  return H2({ text, theme });
+}

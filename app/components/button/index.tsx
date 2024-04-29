@@ -1,13 +1,9 @@
 "use client"
 import React from 'react';
 import styles from "./index.module.scss";
-import { useBgColor } from '@/app/utils/context';
+import { useSearchParams } from 'next/navigation';
 import { ButtonInterface } from '@/app/types';
 
-const UseContext = () => {
-    const { bgColor } = useBgColor();
-    return bgColor;
-}
 
 const Index = ({ className, type, children, onClick, autoFocus, onHover }: ButtonInterface) => {
 
@@ -33,9 +29,11 @@ interface CloseButtonInterface extends ButtonInterface {
     closeBtn?: JSX.Element
 }
 
-export const closeButton = ({ onClick, className = "closeHamburger", closeBtn, autoFocus }: CloseButtonInterface) => {
+export const CloseButton = ({ onClick, className = "closeHamburger", closeBtn, autoFocus }: CloseButtonInterface) => {
 
-    const bgColor = UseContext();
+    const searchParams = useSearchParams();
+    const bgColor = searchParams.get("theme") || "blue";
+
      const closeBtnDefault = closeBtn ? closeBtn : <Spans />;
 
     const CurrentTheme = `close-hamburger__${bgColor}`

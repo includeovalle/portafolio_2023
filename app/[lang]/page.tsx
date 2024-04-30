@@ -19,7 +19,7 @@ export default async function Home({ searchParams, params }: Props) {
 
   const lang = await getDictionary(language)
 
-  const bgColor = (searchParams as unknown as { theme: string }).theme || "blue";
+  const bgColor = (searchParams as unknown as { theme: "blue"| "orange"| "purple" }).theme || "blue";
 
   return (
     <>

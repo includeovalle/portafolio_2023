@@ -1,7 +1,11 @@
  import React from "react";
- import { Footer } from "@/app/components/";
+ import  Footer  from "../../footer";
 
- const Index = ({theme}:{theme:string}) => {
+ interface IndexProps {
+   theme: "blue" | "purple" | "orange";
+ }
+
+ const Index = ({theme}: IndexProps) => {
    return (
      <Footer className={theme}>
        <p> Soultech studio... 🚀</p>

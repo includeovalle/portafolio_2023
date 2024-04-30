@@ -2,6 +2,7 @@
 @use '../../styles/_flexbox.scss' as flex;
 @use '../../styles/_variables.scss' as *;
 @use '../../styles/_classes.scss';
+@use '../../styles/_keyframes.scss' as keyframes;
 
 .default{
 }
@@ -32,6 +33,7 @@
     text-align: center;
     line-height: 2;
     color: $secondary;
+    border-bottom: 1px solid $secondary;
     &:first-letter{
         text-transform: uppercase;
     }
@@ -40,15 +42,48 @@
     }
 }
 
-.lang__blue{
+.lang__blue {
     @extend .lang;
     color: $primary;
+    border: 1px solid $primary-light;
 }
-.lang__orange{
-    @extend .lang;
-    color: $secondary;
-}
-.lang__purple{
+
+.lang__orange {
     @extend .lang;
     color: $silver-tint;
+    background-color: $tertiary-light;
+    border-bottom: 1px solid $silver-tint;
+}
+
+.lang__purple {
+    @extend .lang;
+    color: $silver-tint;
+    background-color: $tertiary-light;
+    border-bottom: 1px solid $purple-tint;
+}
+
+.about {
+    padding: 0 2rem;
+}
+
+.about__blue{
+    @extend .about;
+    color: $primary;
+    @media (prefers-color-scheme: dark) {
+        color: $primary-light;
+    }
+        
+    }
+
+.about__orange{
+    @extend .about;
+    color: crimson;
+    @media (prefers-color-scheme: dark) {
+        color: $silver-tint;
+    }
+}
+
+.about__purple{
+    @extend .about;
+    color: $silver;
 }

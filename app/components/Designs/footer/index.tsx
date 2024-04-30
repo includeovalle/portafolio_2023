@@ -1,14 +1,9 @@
- 'use client'
  import React from "react";
- import { Ptag, Footer } from "@/app/components/";
-import { useBgColor } from '@/app/utils/context';
+ import { Footer } from "@/app/components/";
 
- const Index = () => {
- const { bgColor} = useBgColor();
-
-
+ const Index = ({theme}:{theme:string}) => {
    return (
-     <Footer className={bgColor}>
+     <Footer className={theme}>
        <p> Soultech studio... 🚀</p>
      </Footer>
    );

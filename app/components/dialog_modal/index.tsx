@@ -7,7 +7,7 @@ const Index = forwardRef(({ closeBtn, onClick, children, className="default" }: 
 
     return (
             <dialog ref={ref} onClick={onClick} className={styles[className]}>
-                <CloseButton onClick={onClick}>{closeBtn}</CloseButton>
+                <CloseButton >{closeBtn}</CloseButton>
                 {children}
             </dialog>
     )
@@ -15,5 +15,3 @@ const Index = forwardRef(({ closeBtn, onClick, children, className="default" }: 
 
 Index.displayName = 'Dialog';
 export default Index;
-
-

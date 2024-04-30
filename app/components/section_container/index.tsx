@@ -1,14 +1,13 @@
-"use client"
-import React, { useState,  useEffect } from 'react';
+import React from 'react';
 import styles from "./index.module.scss";
-import { useBgColor} from '@/app/utils/context';
 
 interface Props {
     children?: React.ReactNode;
     className?: string;
     main?: boolean;
+    theme?: string;
 }
-const Index = ({ children, className, main = false }: Props) => {
+export default function Index({ children, className, main = false }: Props) {
     const propStyle = className ? className : styles['default'];
     return (
         <>
@@ -30,14 +29,11 @@ const Index = ({ children, className, main = false }: Props) => {
 };
 
 
-export function MainContainer({ children, main = true }: Props) {
+export function MainContainer({ children, main = true, theme}: Props) {
 
-    const [currentBgColor, setCurrentBgColor ] = useState(styles['default']);
-    const { bgColor } = useBgColor();
 
-    useEffect(()=>{
-        setCurrentBgColor(styles[bgColor])
-    },[bgColor]);
+    const  currentBgColor = theme ? styles[theme] : styles['default'];
+
 
     return (
         <Index main={main} className={currentBgColor}>
@@ -62,5 +58,3 @@ export function RowContainer({ children, main = false, className='row-container'
         </Index>
         );
 }
-
-export default Index;

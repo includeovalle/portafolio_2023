@@ -1,15 +1,17 @@
 import React from "react";
 import { CopyButton } from "@/app/components";
+import { DictionaryInterface } from "@/app/types";
 
 const Email = "carlosovalle@soultech.studio"
-const buttonText =`Copiar Email`;
 
-const Index = () => {
+const Index = ({lang}: DictionaryInterface) => {
+
+  const buttonText = lang["networks"].copyEmail;
 
   return (
     <>
 
-      <CopyButton display={buttonText} copyThis={Email} />
+      <CopyButton display={buttonText} copyThis={Email} lang={lang}/>
 
     </>
   );

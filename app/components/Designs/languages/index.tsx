@@ -1,16 +1,22 @@
 "use client"
 import React from "react";
 import { Ptag } from '@/app/components/'
-import { useBgColor } from '@/app/utils/context';
+import { DictionaryInterface } from "@/app/types/";
 
-const Index = () => {
-  const { bgColor } = useBgColor();
-  const currentTheme = `lang__${bgColor}`;
+interface Props extends DictionaryInterface {
+  theme: string;
+}
+
+const Index = ({theme, lang } : Props) => {
+  const currentTheme = `lang__${theme}`;
   return (
     <>
-      <Ptag className={currentTheme}>ingles</Ptag>
-      <Ptag className={currentTheme}>portugues</Ptag>
-      <Ptag className={currentTheme}>español</Ptag>
+      <br />
+      {
+      lang.footer.languages.map((item: string) => (
+      <Ptag key={item} className={currentTheme}>{item}</Ptag>
+        ))
+      }
     </>
   );
 };

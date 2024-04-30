@@ -1,43 +1,57 @@
 "use client"
-import React from "react";
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
-import {Title} from '@/app/components/Designs';
-import { useBgColor } from '@/app/utils/context';
+import Link from 'next/link';
+import { HeaderTag, EmailButton } from '@/app/components/Designs';
+import colorHandler from '@/app/utils/colorHandler';
+import { DictionaryInterface } from "@/app/types/";
 
-const Index = () => {
-
-  const { changeTheme, bgColor } = useBgColor();
-
-  const handleClick = (theme:string) => {
-    changeTheme(theme);
-  };
+interface Props extends DictionaryInterface {
+  theme: string;
+}
 
 
+const Index = ({theme, lang } : Props) => {
 
-  const text = " Carlos Raul Amaro Ovalle";
-  const skills = [ "Bash" , "AWK" , "Html", "Styled-Components", "Next-js", "Gatsby-js", "CSS" , "SASS" , "Javascript" , "Typescript" , "React-js" , "Node-js" , "Git" , "Github", "storybook" ]
+  const COLORS = ["blue", "purple", "orange"];
+
+  // colorHandler is a function that handles default theme
+  colorHandler( );
 
   return (
 
-    <Header className={bgColor} >
-      <Portrait className={bgColor} text={text} />
+    <Header className={theme} >
+      <Portrait className={theme} text={lang.header.portrait} />
       <div>
-        <Title className="subtitle" >Habilidades T&#233;cnicas</Title>
-        <Ul className={bgColor} lis={skills}/>
+        <HeaderTag theme={theme} lang={lang} />
+        <Ul className={theme} lis={lang.header.skills}/>
+
       </div>
 
       <div>
-        <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
-        <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
-        <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
+        {
+          COLORS.map((color: string) => {
+            return (
+              <Link key={color} href={`?theme=${color}`}>
+                <OnHoverButton className={color} />
+              </Link>
+            )
+          })
+        }
       </div>
 
       <Hamburger >
         <div>
-          <OnHoverButton onClick={() => handleClick('blue')} onHover={() => handleClick('blue')} className={"blue"}/>
-          <OnHoverButton onClick={() => handleClick('orange')} onHover={()=> handleClick('orange')} className="orange"/>
-          <OnHoverButton onClick={() => handleClick('purple')} onHover={()=> handleClick('purple')} className='purple'/>
+          {
+            COLORS.map((color: string, index: number) => {
+              return (
+              <Link key={color} href={`?theme=${color}`}>
+                <OnHoverButton key={index} className={color} />
+              </Link>
+              )
+            })
+          }
         </div>
+        <EmailButton lang={lang} />
       </Hamburger>
     </Header>
   );

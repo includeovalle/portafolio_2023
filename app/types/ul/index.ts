@@ -1,6 +1,6 @@
-import { classNamesInterface, childrenInterface, ListInterface,  LinkInterface} from '@/app/types/'
+import { classNamesInterface, childrenInterface, ListInterface } from '@/app/types/'
 
-export default interface Props extends classNamesInterface, ListInterface, LinkInterface, childrenInterface {
+export default interface Props extends classNamesInterface, ListInterface, childrenInterface {
     onClick?: () => void;
     links?: boolean;
     exact?: boolean

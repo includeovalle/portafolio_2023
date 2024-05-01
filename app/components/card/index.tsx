@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'next/link';
-import { CustomImage } from "@/app/components/";
+import { CustomImage } from "../";
 import { ImageInterface } from "@/app/types/";
 
 interface IndexProps extends ImageInterface {

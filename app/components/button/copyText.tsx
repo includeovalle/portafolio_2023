@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button } from '@/app/components/';
+import { Button } from '../';
 import { classNamesInterface, DictionaryInterface } from "@/app/types/";
 import {useSearchParams} from 'next/navigation';
 

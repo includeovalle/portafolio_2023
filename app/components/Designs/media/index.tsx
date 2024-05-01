@@ -1,11 +1,11 @@
 import React from "react";
-import { SocialMedia, CustomImage } from "@/app/components/";
-import Whatsapp from "@/public/whatsapp.svg";
-import Github from "@/public/github.svg";
-import Linkedin from "@/public/linked.svg";
-import Email from "@/public/email.svg";
-import Story from "@/public/storybook.svg";
-import Pdf from "@/public/pdf-icon.svg";
+import { SocialMedia, CustomImage } from '../../';
+import Whatsapp from "/public/whatsapp.svg";
+import Github from "/public/github.svg";
+import Linkedin from "/public/linked.svg";
+import Email from "/public/email.svg";
+import Story from "/public/storybook.svg";
+import Pdf from "/public/pdf-icon.svg";
 
 //TODO: add to the dictionary
 const Index = () => {

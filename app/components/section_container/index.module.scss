@@ -1,9 +1,9 @@
-@use '@/app/styles/_breakpoints.scss' as bp;
-@use '@/app/styles/_mixins.scss' as mixins;
-@use '@/app/styles/_flexbox.scss' as flex;
-@use '@/app/styles/_keyframes.scss' as key;
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_classes.scss' as class;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_mixins.scss' as mixins;
+@use '/app/styles/_flexbox.scss' as flex;
+@use '/app/styles/_keyframes.scss' as key;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_classes.scss' as class;
 
 .default{
   position: relative;

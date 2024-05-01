@@ -1,5 +1,5 @@
 import React from "react";
-import { CopyButton } from "@/app/components";
+import { CopyButton } from '../../';
 import { DictionaryInterface } from "@/app/types";
 
 const Email = "carlosovalle@soultech.studio"

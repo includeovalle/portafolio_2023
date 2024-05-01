@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, Ptag } from "@/app/components/";
-import IMAGE from '@/public/logo.png';
-import { RowContainer } from '@/app/components/'
+import { Card, Ptag } from '../../';
+import IMAGE from '/public/logo.png';
+import { RowContainer } from '../../'
 import { DictionaryInterface } from "@/app/types/";
 
 interface Props extends DictionaryInterface {

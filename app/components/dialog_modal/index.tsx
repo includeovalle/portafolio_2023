@@ -1,5 +1,5 @@
 import styles from "./index.module.scss"
-import { CloseButton } from '@/app/components/';
+import { CloseButton } from '../';
 import { DialogInterface } from "@/app/types/";
 import React, { forwardRef, ForwardedRef } from 'react';
 

@@ -1,7 +1,7 @@
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/breakpoints.scss' as bp;
-@use '@/app/styles/_keyframes.scss' as key;
-@use '@/app/styles/flexbox.scss' as flex;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/breakpoints.scss' as bp;
+@use '/app/styles/_keyframes.scss' as key;
+@use '/app/styles/flexbox.scss' as flex;
 
 .default {
     @include key.wooble();

@@ -1,8 +1,8 @@
 "use client"
-import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
+import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '../../';
 import Link from 'next/link';
-import { HeaderTag, EmailButton } from '@/app/components/Designs';
-import colorHandler from '@/app/utils/colorHandler';
+import { TitleTag, EmailButton } from '../';
+import colorHandler from '../../../utils/colorHandler';
 import { DictionaryInterface } from "@/app/types/";
 
 interface Props extends DictionaryInterface {
@@ -13,6 +13,7 @@ interface Props extends DictionaryInterface {
 const Index = ({theme, lang } : Props) => {
 
   const COLORS = ["blue", "purple", "orange"];
+  const TITLETAG = lang["titles"].title;
 
   // colorHandler is a function that handles default theme
   colorHandler( );
@@ -22,7 +23,7 @@ const Index = ({theme, lang } : Props) => {
     <Header className={theme} >
       <Portrait className={theme} text={lang.header.portrait} />
       <div>
-        <HeaderTag theme={theme} lang={lang} />
+        <TitleTag theme={theme} text={TITLETAG} />
         <Ul className={theme} lis={lang.header.skills}/>
 
       </div>

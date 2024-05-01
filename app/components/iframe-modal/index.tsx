@@ -1,5 +1,5 @@
 "use client"
-import { CloseButton } from "@/app/components/";
+import { CloseButton } from "../";
 import React, { useRef } from "react";
 import styles from "./index.module.scss";
 import { childrenInterface } from "@/app/types/"

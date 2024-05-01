@@ -1,39 +1,44 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import  Index  from '../app/components/Designs/footer/index';
+import  {Footer}  from '../app/components/Designs/';
 
 const meta = {
-  title: 'Example/Footer',
-  component: Index,
+  title: 'Footer',
+  component: Footer,
 
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
-    theme: { control: 'select', options: ['blue', 'purple', 'orange'] },
+    theme: { control: 'select',
+      options: ['blue', 'purple', 'orange'],
+      description:"Footer component"
+      , table: {
+        type: { summary: 'text' },
+        defaultValue: { summary: 'blue' },
+      }
+    },
   },
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
-    theme: 'blue' || 'purple' ||  'orange',
-    default: 'blue',
   },
-} satisfies Meta<typeof Index>;
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const FooterBlueTheme: Story = {
+export const FooterBlueThemeStory: Story = {
   args: {
     theme: 'blue',
   },
 };
 
-export const FooterPurpleTheme: Story = {
+export const FooterPurpleThemeStory: Story = {
   args: {
     theme: 'purple',
   },
 };
 
-export const FooterOrangeTheme: Story = {
+export const FooterOrangeThemeStory: Story = {
   args: {
     theme: 'orange',
   },

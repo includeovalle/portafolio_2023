@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef } from 'react';
-import { Button, Dialog } from '@/app/components/';
+import { Button, Dialog } from '../';
 import { childrenInterface } from "@/app/types/";
 import { useSearchParams } from 'next/navigation';
 

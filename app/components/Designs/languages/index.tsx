@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { Ptag } from '@/app/components/'
+import { Ptag } from '../../'
 import { DictionaryInterface } from "@/app/types/";
 
 interface Props extends DictionaryInterface {

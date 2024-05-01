@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from "react";
 import styles from "./index.module.scss";
-import { CloseButton } from "@/app/components/";
+import { CloseButton } from "../";
 import { useSearchParams } from 'next/navigation';
 import { childrenInterface, classNamesInterface } from "@/app/types/";
 

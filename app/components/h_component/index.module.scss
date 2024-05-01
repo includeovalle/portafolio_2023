@@ -1,6 +1,6 @@
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_classes.scss' as class;
-@use '@/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_classes.scss' as class;
+@use '/app/styles/_breakpoints.scss' as bp;
 
 .default{
     @extend .first-cap;

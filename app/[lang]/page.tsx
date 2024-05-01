@@ -1,4 +1,4 @@
-import { Header, Card, ProjectsTag, LanguagesTag, Languages, SocialMedia, EmailButton, Footer, AboutMe, AboutMeTag } from '@/app/components/Designs';;
+import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe } from '@/app/components/Designs';;
 import { MainContainer, InnerContainer } from '@/app/components';
 import { Metadata } from 'next'
 import { getDictionary} from "./dictionaries"
@@ -21,6 +21,10 @@ export default async function Home({ searchParams, params }: Props) {
 
   const bgColor = (searchParams as unknown as { theme: "blue"| "orange"| "purple" }).theme || "blue";
 
+  const PROJECTSTITLE = lang["titles"].projects;
+  const ABOUTMETITLE = lang["titles"].aboutme;
+  const LANGTITLE = lang["titles"].languages;
+
   return (
     <>
       <Header theme={bgColor} lang={lang} />
@@ -28,11 +32,11 @@ export default async function Home({ searchParams, params }: Props) {
         <InnerContainer>
           <EmailButton lang={lang} />
           <SocialMedia />
-          <ProjectsTag theme={bgColor} lang={lang} />
+          <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} lang={lang} />
-          <AboutMeTag theme={bgColor} lang={lang} />
+          <SubtitleTag theme={bgColor} text={ABOUTMETITLE} />
           <AboutMe theme={bgColor} lang={lang} />
-          <LanguagesTag theme={bgColor} lang={lang} />
+          <SubtitleTag theme={bgColor} text={LANGTITLE}/>
           <Languages theme={bgColor} lang={lang} />
         </InnerContainer >
       </MainContainer>

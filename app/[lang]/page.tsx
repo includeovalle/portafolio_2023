@@ -24,20 +24,25 @@ export default async function Home({ searchParams, params }: Props) {
   const PROJECTSTITLE = lang["titles"].projects;
   const ABOUTMETITLE = lang["titles"].aboutme;
   const LANGTITLE = lang["titles"].languages;
+  const DISPLAY = lang["networks"].copyEmail;
+  const ALERT = lang["networks"].alert;
+  const LANGUAGES = lang["footer"].languages;
 
   return (
     <>
-      <Header theme={bgColor} lang={lang} />
+      <Header theme={bgColor} lang={lang}
+        display={DISPLAY} alert={ALERT}
+      />
       <MainContainer theme={bgColor}>
         <InnerContainer>
-          <EmailButton lang={lang} />
+          <EmailButton display={DISPLAY} alert={ALERT} />
           <SocialMedia />
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} lang={lang} />
           <SubtitleTag theme={bgColor} text={ABOUTMETITLE} />
           <AboutMe theme={bgColor} lang={lang} />
           <SubtitleTag theme={bgColor} text={LANGTITLE}/>
-          <Languages theme={bgColor} lang={lang} />
+          <Languages theme={bgColor} languages={LANGUAGES} />
         </InnerContainer >
       </MainContainer>
       <Footer theme={bgColor} />

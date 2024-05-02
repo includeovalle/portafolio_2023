@@ -7,10 +7,12 @@ import { DictionaryInterface } from "@/app/types/";
 
 interface Props extends DictionaryInterface {
   theme: string;
+  display: string;
+  alert: string;
 }
 
 
-const Index = ({theme, lang } : Props) => {
+const Index = ({theme, lang, display, alert } : Props) => {
 
   const COLORS = ["blue", "purple", "orange"];
   const TITLETAG = lang["titles"].title;
@@ -52,7 +54,7 @@ const Index = ({theme, lang } : Props) => {
             })
           }
         </div>
-        <EmailButton lang={lang} />
+        <EmailButton display={display} alert={alert} />
       </Hamburger>
     </Header>
   );

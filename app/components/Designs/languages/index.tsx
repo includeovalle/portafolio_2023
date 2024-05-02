@@ -1,19 +1,18 @@
-"use client"
 import React from "react";
 import { Ptag } from '../../'
-import { DictionaryInterface } from "@/app/types/";
 
-interface Props extends DictionaryInterface {
+interface Props {
   theme: string;
+  languages: string[];
 }
 
-const Index = ({theme, lang } : Props) => {
+const Index = ({theme, languages } : Props) => {
   const currentTheme = `lang__${theme}`;
   return (
     <>
       <br />
       {
-      lang.footer.languages.map((item: string) => (
+      languages.map((item: string) => (
       <Ptag key={item} className={currentTheme}>{item}</Ptag>
         ))
       }

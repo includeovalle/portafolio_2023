@@ -16,16 +16,19 @@
 
 .blue {
   background: $primary;
+  min-height: 30vh;
   background: linear-gradient(180deg, $primary 0%,  $primary-tint 60%, $primary-light 100%);
 }
 
 .orange {
   background: $secondary;
+  min-height: 30vh;
   background: linear-gradient(180deg, $secondary 0%, $secondary-tint 60%, $secondary-light 100%);
 }
  
 .purple {
   background-color: $tertiary;
+  min-height: 30vh;
   background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, crimson 100%);
 }
 

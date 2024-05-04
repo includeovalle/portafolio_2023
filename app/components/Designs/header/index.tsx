@@ -3,19 +3,20 @@ import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '../../';
 import Link from 'next/link';
 import { TitleTag, EmailButton } from '../';
 import colorHandler from '../../../utils/colorHandler';
-import { DictionaryInterface } from "@/app/types/";
 
-interface Props extends DictionaryInterface {
+interface Props {
   theme: string;
   display: string;
   alert: string;
+  portrait: string
+  title: string;
+  skills: string[];
 }
 
 
-const Index = ({theme, lang, display, alert } : Props) => {
+const Index = ({theme, display, alert, portrait, title, skills } : Props) => {
 
   const COLORS = ["blue", "purple", "orange"];
-  const TITLETAG = lang["titles"].title;
 
   // colorHandler is a function that handles default theme
   colorHandler( );
@@ -23,10 +24,10 @@ const Index = ({theme, lang, display, alert } : Props) => {
   return (
 
     <Header className={theme} >
-      <Portrait className={theme} text={lang.header.portrait} />
+      <Portrait className={theme} text={portrait} />
       <div>
-        <TitleTag theme={theme} text={TITLETAG} />
-        <Ul className={theme} lis={lang.header.skills}/>
+        <TitleTag theme={theme} text={title} />
+        <Ul className={theme} lis={skills}/>
 
       </div>
 

@@ -2,19 +2,27 @@ import React from "react";
 import { Card, Ptag } from '../../';
 import IMAGE from '/public/logo.png';
 import { RowContainer } from '../../'
-import { DictionaryInterface } from "@/app/types/";
 
-interface Props extends DictionaryInterface {
+interface Props  {
   theme: string;
+  card: {
+    alt: string;
+    title: string;
+    body: string;
+    link: {
+      text: string;
+      href: string;
+      target: string;
+    }
+  }
 }
 
-const Index = ({theme, lang}: Props) => {
+const Index = ({theme,card}: Props) => {
 
-
-  const { alt, title, body, className, link } = lang["projects"].vic;
+  const { alt, title, body, link } = card;
   const { text, href, target } = link;
   const bgColor = theme;
-  const currentTheme = `${className}__${bgColor}`;
+  const currentTheme = `card__${bgColor}`;
 
   return (
     <RowContainer>

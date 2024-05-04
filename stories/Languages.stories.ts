@@ -1,42 +1,69 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import  {Languages}  from '../app/components/Designs/';
+import { Ptag } from '../app/components/';
 
 const meta = {
-  title: 'SpokenLanguages',
-  component: Languages,
+  title: 'Spoken Languages',
+  component: Ptag,
 
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   argTypes: {
-    theme: { control: 'select',
-      options: ['blue', 'purple', 'orange'],
-      description:"inherited theme"
+    className: {
+      control: 'select'
+      , options: ['lang__blue', 'lang__purple', 'lang__orange']
+      , description: 'The class name of the component'
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'blue' },
-      }
-    },
-    languages : {
-      control: 'object' ,
-      description:"list of languages to be displayed in the component"
+        defaultValue: { summary: 'lang__blue' },
+      },
+    }
+    , children: {
+      control: 'text'
+      , description: 'The text of the component'
       , table: {
-        type: { summary: 'array' },
-        defaultValue: { summary: '["es","en"]' },
-      }
-    },
+        type: { summary: 'string' },
+        defaultValue: { summary: 'English' },
+      },
+    }
+    , title: {
+      control: 'text'
+      , description: 'The title of the component'
+      , table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'on hover tag' },
+      },
+    }
   },
+
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof Languages>;
+} satisfies Meta<typeof Ptag>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LanguagesThemeStory: Story = {
+export const EnglishLanguagesThemeStory: Story = {
   args: {
-    theme: 'blue',
-    languages: ['en', 'es']
+    className: 'lang__blue'
+    , children: 'English'
+    , title: 'on hover tag'
+  },
+};
+
+export const SpanishLanguagesThemeStory: Story = {
+  args: {
+    className: 'lang__blue'
+    , children: 'Español'
+    , title: 'tag de desplazamiento'
+  },
+};
+
+export const PortugueseLanguagesThemeStory: Story = {
+  args: {
+    className: 'lang__orange'
+    , children: 'Português'
+    , title: 'tag de deslocamento'
   },
 };

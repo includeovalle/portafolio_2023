@@ -93,6 +93,11 @@
   .card {
     position: relative;
     cursor: pointer;
+    &:focus {
+    outline: 3px dashed $white;
+    border-radius: 2*$default-border-radius;
+    border: 3px solid $primary;
+    }
 
     @include flex.col(flex-start, center);
     margin: 1rem 0;

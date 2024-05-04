@@ -1,19 +1,18 @@
 import React from "react";
 import { Ptag } from '../../'
-import { DictionaryInterface } from "@/app/types/";
 
-interface IndexProps extends DictionaryInterface {
+interface IndexProps {
   theme: string;
+  text: string;
 }
 
-export default function Index({theme, lang}: IndexProps) {
+export default function Index({theme, text}: IndexProps) {
   const CURRENTTHEME = `about__${theme}`;
-  const ABOUTME = lang.aboutme;
 
   return (
     <>
       <br />
-      <Ptag  className={CURRENTTHEME}>{ABOUTME}</Ptag>
+      <Ptag  className={CURRENTTHEME}>{text}</Ptag>
       <br />
     </>
   );

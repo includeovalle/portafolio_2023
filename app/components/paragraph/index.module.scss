@@ -30,12 +30,17 @@
 }
 
 .lang {
+    display: block;
     text-align: center;
     line-height: 2;
     color: $secondary;
     border-bottom: 1px solid $secondary;
     &:first-letter{
         text-transform: uppercase;
+    }
+    &:focus{
+        border: dashed white 2px;
+        color: crimson;
     }
     &:after{
         content: " | \01f442 | \01f4d6 | \01f4dd | \01f465 | ";
@@ -57,9 +62,12 @@
 
 .lang__purple {
     @extend .lang;
-    color: $silver-tint;
+    color: $silver;
     background-color: $tertiary-light;
     border-bottom: 1px solid $purple-tint;
+    &:focus{
+        color: $white;
+    }
 }
 
 .about {
@@ -80,6 +88,10 @@
     color: crimson;
     @media (prefers-color-scheme: dark) {
         color: $silver-tint;
+    }
+    &:focus{
+        color: $white;
+        background-color: transparent;
     }
 }
 

@@ -53,6 +53,7 @@ const Index = ({ src, alt, links, href, target, width, height, figcaption, child
                     src={src}
                     alt={alt}
                     fill
+                    sizes="100%"
                     priority
                 />
             )}

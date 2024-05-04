@@ -1,11 +1,11 @@
 export default interface Props {
   lang: {
-    titles: { projects: string; languages: string; title: string; aboutme:string;};
+    titles: { projects: string; languages: string; title: string; aboutme: string; };
     header: { portrait: string; skills: string[] };
     projects: { vic: Project };
     aboutme: string;
     networks: { copyEmail: string; alert: string };
-    footer: { languages: string[] };
+    footer: { languages: Language[] };
   };
 }
 
@@ -20,4 +20,10 @@ interface Project {
     text: string;
     target: string;
   };
+}
+
+export interface Language {
+  title: string;
+  text: string;
+  lang: string;
 }

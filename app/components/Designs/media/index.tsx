@@ -31,7 +31,7 @@ const Index = () => {
     }
     , {
       image: Story, alt: "pagina de testeo de componentes",
-      links: { href: "https://portafolio-2023-dayu.vercel.app/?path=/docs/configure-your-project--docs", target: "_blank" }
+      links: { href: "https://portafolio-2023-dayu.vercel.app/", target: "_blank" }
     }
     , {
       image: Pdf, alt: "Resumen profesional",

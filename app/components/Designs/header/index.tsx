@@ -2,6 +2,7 @@
 import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '../../';
 import Link from 'next/link';
 import { TitleTag, EmailButton } from '../';
+import ButtonStyle from '../../button/index.module.scss';
 import colorHandler from '../../../utils/colorHandler';
 
 interface Props {
@@ -35,8 +36,7 @@ const Index = ({theme, display, alert, portrait, title, skills } : Props) => {
         {
           COLORS.map((color: string) => {
             return (
-              <Link key={color} href={`?theme=${color}`}>
-                <OnHoverButton className={color} />
+              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
               </Link>
             )
           })
@@ -48,8 +48,7 @@ const Index = ({theme, display, alert, portrait, title, skills } : Props) => {
           {
             COLORS.map((color: string, index: number) => {
               return (
-              <Link key={color} href={`?theme=${color}`}>
-                <OnHoverButton key={index} className={color} />
+              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
               </Link>
               )
             })

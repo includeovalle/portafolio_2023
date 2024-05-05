@@ -46,6 +46,7 @@
     transform: translateX(-50%);
   }
   @media( width > 768px ) {
+    top: 20%;
   }
 }
 
@@ -128,6 +129,10 @@
             right: 7px;
         }
     }
+    &:focus{
+        outline: 2px solid $white;
+    }
+
 }
 
 .media__blue {

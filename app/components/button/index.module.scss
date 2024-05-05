@@ -81,6 +81,9 @@
             border-bottom: 2px solid $silver;
         }
     }
+    &:focus{
+            outline: 2px solid $white;
+    }
 }
 
 .close-hamburger__blue{

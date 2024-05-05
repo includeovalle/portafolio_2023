@@ -332,6 +332,11 @@
   &:hover {
     transform: scale(1.05);
   }
+  &>a:focus {
+    >img{
+      outline: 2px solid $white;
+    }
+  }
   @media(width > 768px){
 }
 a {

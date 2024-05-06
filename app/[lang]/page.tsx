@@ -32,17 +32,18 @@ export default async function Home({ searchParams, params }: Props) {
   const SKILLS = lang["header"].skills;
   const CARD = lang["projects"].vic
   const ABOUTME = lang["aboutme"];
+  const EMAIL = "carlosovalle@soultech.studio"
 
   return (
     <>
-      <Header theme={bgColor} title={MAINTITLE}
-        display={DISPLAY} alert={ALERT}
-        portrait={PORTRAIT}
-        skills={SKILLS}
+      <Header theme={bgColor} 
+        title={MAINTITLE}
+        display={DISPLAY} alert={ALERT} copyThis={EMAIL}
+        portrait={PORTRAIT} skills={SKILLS} 
       />
       <MainContainer theme={bgColor}>
         <InnerContainer>
-          <EmailButton display={DISPLAY} alert={ALERT} />
+          <EmailButton display={DISPLAY} alert={ALERT} copyThis={EMAIL}/>
           <SocialMedia />
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} card={CARD} />

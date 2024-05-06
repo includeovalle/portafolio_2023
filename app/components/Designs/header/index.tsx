@@ -1,5 +1,5 @@
 "use client"
-import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '../../';
+import { Header, Hamburger, Portrait, Ul } from '../../';
 import Link from 'next/link';
 import { TitleTag, EmailButton } from '../';
 import ButtonStyle from '../../button/index.module.scss';
@@ -9,13 +9,14 @@ interface Props {
   theme: string;
   display: string;
   alert: string;
+  copyThis: string;
   portrait: string
   title: string;
   skills: string[];
 }
 
 
-const Index = ({theme, display, alert, portrait, title, skills } : Props) => {
+const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Props) => {
 
   const COLORS = ["blue", "purple", "orange"];
 
@@ -54,7 +55,7 @@ const Index = ({theme, display, alert, portrait, title, skills } : Props) => {
             })
           }
         </div>
-        <EmailButton display={display} alert={alert} />
+        <EmailButton display={display} alert={alert} copyThis={copyThis} />
       </Hamburger>
     </Header>
   );

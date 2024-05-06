@@ -35,6 +35,7 @@
     line-height: 2;
     color: $secondary;
     border-bottom: 1px solid $secondary;
+    padding: $default-padding-inset;
     &:first-letter{
         text-transform: uppercase;
     }
@@ -57,7 +58,7 @@
     @extend .lang;
     color: $silver-tint;
     background-color: $tertiary-light;
-    border-bottom: 1px solid $silver-tint;
+    border-bottom: 1px solid $secondary-light;
 }
 
 .lang__purple {
@@ -71,7 +72,10 @@
 }
 
 .about {
-    padding: 0 2rem;
+    padding: $default-padding-inset 2.5rem;
+    @media( width > 768px ) {
+        padding: $default-padding-inset 1rem;
+    }
 }
 
 .about__blue{

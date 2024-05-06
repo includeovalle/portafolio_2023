@@ -31,4 +31,3 @@ const Index = ({ theme, languages }: Props) => {
 };
 
 export default Index;
-

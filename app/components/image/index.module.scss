@@ -10,169 +10,169 @@
   height: 300px;
   position: relative;
   @media(width > 768px){
-    @include key.shakeBottom();
+  @include key.shakeBottom();
 }
-  img{
+img{
+  border-radius: 50%;
+  filter: drop-shadow(16px 6px 20px gray) invert(75%);
+}
+figcaption{
+  &>div:nth-child(1) {
+    //overlay
+    position: relative;
+    left:0;
+    top:0;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    transition: 1.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(229, 137, 53, 1);
     border-radius: 50%;
-    filter: drop-shadow(16px 6px 20px gray) invert(75%);
-    }
-    figcaption{
-      &>div:nth-child(1) {
-        //overlay
-        position: relative;
-        left:0;
-        top:0;
-        width: 300px;
-        height: 300px;
-        overflow: hidden;
-        transition: 1.5s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgba(229, 137, 53, 1);
-        border-radius: 50%;
-        text-align: center; 
-        transform-origin:0px 150px;
-        background: radial-gradient(circle, transparent 62%, rgba(95,95,93,.7) 5%);
-        &>div{
-          //spinning text
-          @include key.spin(70s);
+    text-align: center; 
+    transform-origin:0px 150px;
+    background: radial-gradient(circle, transparent 62%, rgba(95,95,93,.7) 5%);
+    &>div{
+      //spinning text
+      @include key.spin(70s);
+      transition: 1.5s ease;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      color: $silver;
+      >p {
+        > span {
           transition: 1.5s ease;
           position: absolute;
-          width: 100%;
-          height: 100%;
-          margin: 0;
-          color: $silver;
-          >p {
-            > span {
-              transition: 1.5s ease;
-              position: absolute;
-              top: 0;
-              left: 50%;
-              transform-origin:0px 150px;
-              &:first-letter {
-                font-size: .9rem;
-                text-transform: capitalize;
-              }
-            }
+          top: 0;
+          left: 50%;
+          transform-origin:0px 150px;
+          &:first-letter {
+            font-size: .9rem;
+            text-transform: capitalize;
           }
         }
       }
     }
   }
+}
+}
 
-  .blue{
-    @extend .portrait;
-    img{
-      filter: drop-shadow(0 -6mm 4mm $primary-light);
-    }
+.blue{
+  @extend .portrait;
+  img{
+    filter: drop-shadow(0 -6mm 4mm $primary-light);
   }
+}
 
-  .orange{
-    @extend .portrait;
-    img{
-      filter: drop-shadow(0 0 0.75rem crimson);
-    }
-    figcaption{
-      &>div:nth-child(1) { &>div{ >p { > span {
-        color: gold;
-      }}}}}
+.orange{
+  @extend .portrait;
+  img{
+    filter: drop-shadow(0 0 0.75rem crimson);
   }
+  figcaption{
+    &>div:nth-child(1) { &>div{ >p { > span {
+      color: gold;
+    }}}}}
+}
 
-  .purple {
-    @extend .portrait;
-    img{
-      filter: drop-shadow(0 -6mm 4mm $purple);
-    }
-    figcaption{
-      &>div:nth-child(1) { &>div{ >p { > span {
-        color: $silver-tint;
-      }}}}}
+.purple {
+  @extend .portrait;
+  img{
+    filter: drop-shadow(0 -6mm 4mm $purple);
   }
+  figcaption{
+    &>div:nth-child(1) { &>div{ >p { > span {
+      color: $silver-tint;
+    }}}}}
+}
 
-  .card {
-    position: relative;
-    cursor: pointer;
-    &:focus {
+.card {
+  position: relative;
+  cursor: pointer;
+  &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;
     border: 3px solid $primary;
-    }
+  }
 
-    @include flex.col(flex-start, center);
-    margin: 1rem 0;
-    border-radius: 2*$default-border-radius;
-    background-color: $silver;
-    gap: 1rem;
-    max-width: 295px;
-    padding: 1rem;
-    border: 1px solid $primary-light;
-    @media (prefers-color-scheme: dark) {
-      background-color: transparent;
+  @include flex.col(flex-start, center);
+  margin: 1rem 0;
+  border-radius: 2*$default-border-radius;
+  background-color: $silver;
+  gap: 1rem;
+  max-width: 295px;
+  padding: 1rem;
+  border: 1px solid $primary-light;
+  @media (prefers-color-scheme: dark) {
+    background-color: transparent;
 
-      figcaption{
-        > p {
-          color: $primary-light;
-          max-width: 320px;
-          @media( width > 768px ) {
-          }
+    figcaption{
+      > p {
+        color: $primary-light;
+        max-width: 320px;
+        @media( width > 768px ) {
         }
       }
     }
-    @media( width > 768px ) {
-      flex-direction: column;
-      padding-bottom: unset;
-    }
-    img {
-      position: relative !important;
-      border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
-      max-height: 255px;
-      object-fit: contain;
-      @media(width > 768px){
-      border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
-      min-height: 125px;
-      max-height: 125px;
-    }
   }
-  figcaption {
-    height: 100%;
-    min-height: 20vh;
-    @include flex.col(space-around, flex-start);
-    border-radius: 0 0 $default-border-radius $default-border-radius;
-    padding-left: 1rem;
+  @media( width > 768px ) {
+    flex-direction: column;
+    padding-bottom: unset;
+  }
+  img {
+    position: relative !important;
+    border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
+    max-height: 255px;
+    object-fit: contain;
+    @media(width > 768px){
+    border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
+    min-height: 125px;
+    max-height: 125px;
+  }
+}
+figcaption {
+  height: 100%;
+  min-height: 20vh;
+  @include flex.col(space-around, flex-start);
+  border-radius: 0 0 $default-border-radius $default-border-radius;
+  padding-left: 1rem;
 
-    & p {
-      padding: 1rem;
-      @media(width > 768px) {
-      padding: 1rem 0;
-      }
-      &:last-of-type {
-        padding-bottom: 1rem;
-      }
-      }
-      @media(width > 768px){
-      & h3 {
-        color: $primary-tint;
-      }
+  & p {
+    padding: 1rem;
+    @media(width > 768px) {
+    padding: 1rem 0;
     }
-    & h3 {
-      text-transform: uppercase;
-      color: $black;
-      text-align: center;
-    }
-    a {
-      color: $primary;
-      font-weight: 600;
-      text-decoration: underline;
-      &::first-letter{
-        text-transform: capitalize;
-      }
-      &::after{
-        content: " >";
-        display: inline;
-      }
+    &:last-of-type {
+      padding-bottom: 1rem;
     }
   }
+  @media(width > 768px){
+  & h3 {
+    color: $primary-tint;
+  }
+}
+& h3 {
+  text-transform: uppercase;
+  color: $black;
+  text-align: center;
+}
+a {
+  color: $primary;
+  font-weight: 600;
+  text-decoration: underline;
+  &::first-letter{
+    text-transform: capitalize;
+  }
+  &::after{
+    content: " >";
+    display: inline;
+  }
+}
+}
 }
 
 .card__blue {
@@ -198,14 +198,14 @@
     }
     > p {
       color: $primary;
-        &:last-of-type {
+      &:last-of-type {
         text-decoration: underline;
-        }
+      }
     }
 
 
   }
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     & figcaption{
       > h3{
         color: crimson;
@@ -224,7 +224,17 @@
   @extend .card;
   background-color: $tertiary-light;
   border-color: $secondary-light;
-
+  & figcaption {
+    > h3{
+      color: crimson;
+    }
+    > p {
+      color: $tertiary-tint;
+      &:last-of-type {
+        text-decoration: underline;
+      }
+    }
+  }
 
   &:hover{
     & figcaption{
@@ -236,23 +246,6 @@
         color: $secondary-light;
         transition: 1.75s ease;
       }
-      > a{
-        color: $secondary-light;
-        text-decoration-color: $silver-tint;
-        transition: 2.35s ease;
-      }
-    }
-  }
-  & figcaption {
-    > h3{
-      color: crimson;
-    }
-    > p {
-      color: $tertiary-tint;
-    }
-    > a{
-      color: $tertiary-tint;
-      text-decoration-color: $secondary-light;
     }
   }
 
@@ -277,6 +270,33 @@
   @extend .card;
   background-color: $tertiary-light;
   border-color: $purple;
+  figcaption {
+    > h3{
+      color: $purple-tint;
+    }
+    > p {
+      color: $primary-light;
+      &:last-of-type {
+        text-decoration: underline;
+      }
+
+    }
+    > a{
+      color: $primary-light;
+      text-decoration-color: $silver-tint;
+    }
+    @media (prefers-color-scheme: dark) {
+      > h3{
+        color: $silver-tint;
+      }
+      >p {
+        color: $silver-tint;
+      }
+      >a{
+        color: $silver-tint;
+      }
+    }
+  }
   &:hover{
     background-color: transparent;
     transition: 2s ease;
@@ -297,29 +317,6 @@
     background-color: transparent;
     border-color: $purple-tint;
   }
-  figcaption {
-    > h3{
-      color: $purple-tint;
-    }
-    > p {
-      color: $primary-light;
-    }
-    > a{
-      color: $primary-light;
-      text-decoration-color: $silver-tint;
-    }
-    @media (prefers-color-scheme: dark) {
-      > h3{
-        color: $silver-tint;
-      }
-      >p {
-        color: $silver-tint;
-      }
-      >a{
-        color: $silver-tint;
-      }
-    }
-  }
 }
 
 .icon{
@@ -328,42 +325,41 @@
   cursor: pointer;
   min-width: 25px;
   height: auto;
-  width: 100%;
+  width: max-content;
   &:hover {
     transform: scale(1.05);
   }
   &>a:focus {
+    outline: 2px solid $white;
     >img{
-      outline: 2px solid $white;
+      @include key.Flash();
     }
   }
-  @media(width > 768px){
-}
-a {
-  @include flex.row(flex-start, center);
-  position: relative;
-  height: 100%;
-  width: 100%;
-  gap: 25px;
-  top: 0;
-  left: 0;
+  a {
+    @include flex.row(flex-start, center);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    gap: 25px;
+    top: 0;
+    left: 0;
+    }
+    img {
+      position: relative !important;
+      object-fit: contain;
+      object-position: left;
+      max-width: 25px;
+      @media(width > 768px){
+      max-width: 30px;
+    }
   }
-  img {
-    position: relative !important;
-    object-fit: contain;
-    object-position: left;
-    max-width: 25px;
+  figcaption{
+    position: relative;
+    font-size: 10px;
+    color: $white;
+    width: max-content;
     @media(width > 768px){
-    max-width: 30px;
+    font-size: 12px;
+    }
+    }
   }
-}
-figcaption{
-  position: relative;
-  font-size: 10px;
-  color: $white;
-  width: max-content;
-  @media(width > 768px){
-  font-size: 12px;
-  }
-  }
-}

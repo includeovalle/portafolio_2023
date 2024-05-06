@@ -26,6 +26,12 @@
     top: 1rem;
     right: 2rem;
     z-index: 2;
+    &:focus{
+        outline: 2px solid $white;
+        &>span{
+            @include key.Flash();
+        }
+    }
     span {
     @include key.Flash();
         width: 100%;
@@ -97,6 +103,12 @@
     @extend  .closeHamburger;
     > span{
         border-color: $silver-tint;
+    }
+    &:focus{
+        outline: 2px solid $secondary;
+            >span{
+                @include key.Flash();
+            }
     }
 }
 

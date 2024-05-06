@@ -89,6 +89,7 @@
     position: relative;
     border-bottom: 1px solid $primary;
     line-height: 1.5;
+    padding: $default-padding-inset;
       &:hover{
         &:before{
           content: '\01f4ab';
@@ -131,7 +132,7 @@
   @extend .header;
   li{
     color: crimson;
-    border-color: $secondary-tint;
+    border-color: $secondary-light;
   }
 }
 

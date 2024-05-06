@@ -112,6 +112,9 @@
     padding: $default-padding-inset;
     margin-left: calc( 100% - 80px);
     z-index: 1;
+  @media( width > 768px ) {
+    top: 20%;
+  }
     button{
         transition: all 0.3s ease-in-out;
         right: 5px;
@@ -129,10 +132,6 @@
             right: 7px;
         }
     }
-    &:focus{
-        outline: 2px solid $white;
-    }
-
 }
 
 .media__blue {
@@ -145,7 +144,7 @@
 .media__orange {
     @extend .media;
     border-color: $secondary-light;
-    background-color: $silver-tint;
+    background-color: $silver;
     transition: all 0.3s ease-in-out;
     button{
         span{
@@ -157,7 +156,7 @@
 .media__purple {
     @extend .media;
     border-color: $purple;
-    background-color: $silver-tint;
+    background-color: $silver;
     transition: all 0.3s ease-in-out;
     button{
         span{
@@ -165,6 +164,7 @@
         }
     }
 }
+
 .no-display{
   display: none;
 }

@@ -42,8 +42,34 @@
   "networks": {
     "copyEmail": "Copy email",
     "alert": "Email copied to clipboard"
-  },
-  "footer": {
+  }
+  , "media": {
+    "whatsapp": {
+       "alt": "contact carlos raul amaro ovalle",
+      "links": { "href": "https://api.whatsapp.com/send?phone=4441934444" , "target": "_blank" }
+    }
+    , "github":{
+       "alt": "project repo for webpage carlosraul.am",
+      "links": { "href": "https://github.com/includeovalle/portafolio_2023/", "target": "_blank" }
+    }
+    , "linkedin":{
+       "alt": " check my linkedin carlos raul amaro dev",
+      "links": { "href": "https://www.linkedin.com/in/carlos-amaro-dev", "target": "_blank" }
+    }
+    , "email":{
+       "alt": "professional email carlosraul@soultech.studio",
+      "links": { "href": "mailto:carlosovalle@soultech.studio", "target": "_blank" }
+    }
+    , "story":{
+       "alt": "carlos raul am storybook webpage",
+      "links": { "href": "https://portafolio-2023-dayu.vercel.app/", "target": "_blank" }
+    }
+    , "resume":{
+       "alt": "carlos raul amaro resume in pdf format",
+       "links": { "href": "/carlos-amaro-resume-en.pdf", "target": "_blank" }
+    }
+  }
+  ,"footer": {
     "languages": [
       {
         "title": "English language",

@@ -4,6 +4,50 @@ export default interface Props {
     header: { portrait: string; skills: string[] };
     projects: { vic: Project };
     aboutme: string;
+    media: {
+      whatsapp: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+      github: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+      linkedin: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+      email: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+      storybook: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+      resume: {
+        alt: string;
+        links: {
+          href: string;
+          target: string;
+        }
+      }
+    }
     networks: { copyEmail: string; alert: string };
     footer: { languages: Language[] };
   };

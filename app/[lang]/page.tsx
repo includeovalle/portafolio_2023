@@ -33,6 +33,7 @@ export default async function Home({ searchParams, params }: Props) {
   const CARD = lang["projects"].vic
   const ABOUTME = lang["aboutme"];
   const EMAIL = "carlosovalle@soultech.studio"
+  const MEDIAINFO = lang["media"]
 
   return (
     <>
@@ -44,7 +45,7 @@ export default async function Home({ searchParams, params }: Props) {
       <MainContainer theme={bgColor}>
         <InnerContainer>
           <EmailButton display={DISPLAY} alert={ALERT} copyThis={EMAIL}/>
-          <SocialMedia />
+          <SocialMedia mediaInfo={MEDIAINFO}/>
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} card={CARD} />
           <SubtitleTag theme={bgColor} text={ABOUTMETITLE} />

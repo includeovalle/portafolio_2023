@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: 'https://www.carlosraul.am/padding-top: ',
+      url: 'https://www.carlosraul.am/pt: ',
       lastModified: new Date(),
     },
   ]

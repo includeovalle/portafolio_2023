@@ -1,7 +1,7 @@
 "use client"
-import { Header, Hamburger, Portrait, Ul } from '../../';
+import { Header, Hamburger, Portrait } from '../../';
 import Link from 'next/link';
-import { TitleTag, EmailButton } from '../';
+import { EmailButton } from '../';
 import ButtonStyle from '../../button/index.module.scss';
 import colorHandler from '../../../utils/colorHandler';
 
@@ -11,14 +11,12 @@ interface Props {
   alert: string;
   copyThis: string;
   portrait: string
-  title: string;
-  skills: string[];
 }
 
 
-const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Props) => {
+const Index = ({theme, display, alert, portrait, copyThis } : Props) => {
 
-  const COLORS = ["blue", "purple", "orange"];
+  const COLORS = ["primary", "secondary", "tertiary"];
 
   // colorHandler is a function that handles default theme
   colorHandler( );
@@ -27,12 +25,6 @@ const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Pro
 
     <Header className={theme} >
       <Portrait className={theme} text={portrait} />
-      <div>
-        <TitleTag theme={theme} text={title} />
-        <Ul className={theme} lis={skills}/>
-
-      </div>
-
       <div>
         {
           COLORS.map((color: string) => {

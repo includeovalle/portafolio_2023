@@ -120,7 +120,7 @@
   }
 }
 
-.blue {
+.primary {
   @extend .header;
   li{
     color: $primary-light;
@@ -128,18 +128,18 @@
   }
 }
 
-.orange {
+.tertiary {
   @extend .header;
   li{
-    color: crimson;
+    color: primary-light;
     border-color: $secondary-light;
   }
 }
 
-.purple {
+.secondary {
   @extend .header;
   li{
     color: $silver;
-    border-color: $purple;
+    border-color: $secondary;
   }
 }

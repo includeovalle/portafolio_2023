@@ -42,19 +42,19 @@
     @media(width > 768px){
     display: none;
 }
-&__blue{
+&__primary{
     @extend  .hamburger;
     &>span{
         border-bottom: 2px solid $primary-light;
     }
 }
-&__orange{
+&__tertiary{
     @extend  .hamburger;
     &>span{
-        border-bottom: 2px solid crimson;
+        border-bottom: 2px solid primary-light;
     }
 }
-&__purple{
+&__secondary{
     @extend  .hamburger;
     &>span{
         border-bottom: 2px solid $tertiary-tint;
@@ -92,14 +92,14 @@
     }
 }
 
-.close-hamburger__blue{
+.close-hamburger__primary{
     @extend  .closeHamburger;
     > span{
         border-color: $primary-light;
     }
 }
 
-.close-hamburger__orange{
+.close-hamburger__tertiary{
     @extend  .closeHamburger;
     > span{
         border-color: $silver-tint;
@@ -112,7 +112,7 @@
     }
 }
 
-.close-hamburger__purple {
+.close-hamburger__secondary {
     @extend  .closeHamburger;
     > span{
         border-color: $silver;
@@ -130,19 +130,19 @@
     }
 }
 
-.blue {
+.primary {
     @extend  .circle;
     background-color: $primary;
 }
 
-.orange {
-    @extend  .circle;
-    background-color: $secondary;
-}
-
-.purple {
+.tertiary {
     @extend  .circle;
     background-color: $tertiary;
+}
+
+.secondary {
+    @extend  .circle;
+    background-color: $secondary;
 }
 
 .black {
@@ -196,7 +196,7 @@
     }
 }
 
-.copy-text__blue {
+.copy-text__primary {
     @extend  .copy-text;
     color: $primary-tint;
     @media (prefers-color-scheme: dark) {
@@ -212,21 +212,21 @@
     }
 }
 
-.copy-text__orange {
+.copy-text__tertiary {
     @extend  .copy-text;
     color: $tertiary-tint;
     border-color: $tertiary-tint;
     &:hover{
-        color: crimson;
+        color: primary-light;
     }
 }
 
-.copy-text__purple {
+.copy-text__secondary {
     @extend  .copy-text;
-    color: $purple;
-    border-color: $purple;
+    color: $secondary;
+    border-color: $secondary;
     @media (prefers-color-scheme: dark) {
-        color: $purple-tint;
+        color: $secondary-tint;
     }
     &:hover{
         color: $tertiary-tint;

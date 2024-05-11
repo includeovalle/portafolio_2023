@@ -1,5 +1,5 @@
-import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe } from '@/app/components/Designs';;
-import { MainContainer, InnerContainer } from '@/app/components';
+import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe , TitleTag } from '@/app/components/Designs';;
+import { MainContainer, InnerContainer, Ul } from '@/app/components';
 import { Metadata } from 'next'
 import { getDictionary } from "./dictionaries"
 import { type Locale } from "../../i18n-config";
@@ -19,7 +19,7 @@ export default async function Home({ searchParams, params }: Props) {
 
   const lang = await getDictionary(language)
 
-  const bgColor = (searchParams as unknown as { theme: "blue" | "orange" | "purple" }).theme || "blue";
+  const bgColor = (searchParams as unknown as { theme: "primary" | "tertiary" | "secondary" }).theme || "primary";
 
   const MAINTITLE = lang["titles"].title;
   const PROJECTSTITLE = lang["titles"].projects;
@@ -37,21 +37,22 @@ export default async function Home({ searchParams, params }: Props) {
 
   return (
     <>
-      <Header theme={bgColor} 
-        title={MAINTITLE}
-        display={DISPLAY} alert={ALERT} copyThis={EMAIL}
-        portrait={PORTRAIT} skills={SKILLS} 
-      />
       <MainContainer theme={bgColor}>
+      <Header theme={bgColor} 
+        display={DISPLAY} alert={ALERT} copyThis={EMAIL}
+        portrait={PORTRAIT} 
+        />
         <InnerContainer>
+          <TitleTag theme={bgColor} text={ABOUTMETITLE} />
+          <AboutMe theme={bgColor} text={ABOUTME} />
+        <SubtitleTag theme={bgColor} text={MAINTITLE} />
+        <Ul className={bgColor} lis={SKILLS}/>
+          <SubtitleTag theme={bgColor} text={LANGTITLE} />
+          <Languages theme={bgColor} languages={LANGUAGES} />
           <EmailButton display={DISPLAY} alert={ALERT} copyThis={EMAIL}/>
           <SocialMedia mediaInfo={MEDIAINFO}/>
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} card={CARD} />
-          <SubtitleTag theme={bgColor} text={ABOUTMETITLE} />
-          <AboutMe theme={bgColor} text={ABOUTME} />
-          <SubtitleTag theme={bgColor} text={LANGTITLE} />
-          <Languages theme={bgColor} languages={LANGUAGES} />
         </InnerContainer >
       </MainContainer>
       <Footer theme={bgColor} />

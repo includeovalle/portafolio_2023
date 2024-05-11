@@ -21,19 +21,19 @@
     }
 }
 
-.blue{
+.primary{
     @extend .default;
     background-color: $primary-tint;
     border-color: $primary-light;
 }
 
-.orange {
+.tertiary {
     @extend .default;
     background-color: $secondary-tint;
     border-color: $secondary-light;
 }
 
-.purple {
+.secondary {
     @extend .default;
     background-color: $tertiary-tint;
     border-color: $tertiary-light;

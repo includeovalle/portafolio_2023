@@ -9,18 +9,18 @@
   text-align: center;
 }
 
-.blue{
+.primary{
   @extend .footer;
-  background-color: $primary-light;
-  color: $primary-tint;
+  background-color: $secondary;
+  color: $white;
 }
-.orange{
+.tertiary{
   @extend .footer;
-  background-color: $secondary-light;
+  background-color: $primary;
   color: $tertiary-tint;
 }
-.purple{
+.secondary{
   @extend .footer;
-  background-color: crimson;
+  background-color: $tertiary;
   color: $white;
 }

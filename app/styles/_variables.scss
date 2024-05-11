@@ -1,26 +1,36 @@
+// #13005a
+// #00337c
+// #03c988
+// #
+// #eee
+// #787a91
+// #0f044c
+// #
+// #
+// #352f44
+// #5c5470
+// #b9b4c7
+
+
 //color
 $white: #fff;
 
 $silver: #BEBFC5;
 $silver-tint: rgba(255, 255, 255, .8);
-$purple: rgb(160, 0, 210);
-$purple-tint: #e45cdd;
 
 $black: #343437;
 
-$primary: #031d44;
-$primary-tint: rgba(3, 40, 78, 0.64);
-$primary-light: rgba( 188, 220, 255, 0.9 );
+$primary: #d9d9d9;
+$primary-tint: #0f044c;
+$primary-light: #00337c;
 
-$secondary: rgb(253,157,2);
-$secondary-tint: rgba(255,183,6,0.78);
-$secondary-light: gold;
+$secondary: #5c5470;
+$secondary-tint: #e45cdd;
+$secondary-light:  rgb(160, 0, 210);
 
-
-$tertiary: rgba(79, 28, 78, 1);
-$tertiary-tint: rgba(179, 29, 29, 0.7836134282814688);
-$tertiary-light: rgba(218, 73, 73, 0.43599438066242124);
-
+$tertiary: #13005a;
+$tertiary-tint: #00337c;
+$tertiary-light: #03c988;
 // $secondary: rgb(248, 31, 11);
 // $secondary-tint: rgba(227,61,51,.2);
 
@@ -77,4 +87,6 @@ $breakpoints: (
 'xl': 1200px,
 'xxl': 1400px
 );
+
+
 

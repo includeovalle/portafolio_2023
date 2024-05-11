@@ -26,21 +26,21 @@
     }
 }
 
-.blue {
+.primary {
     @extend .title;
     color: $primary-light;
-    border-color: $secondary-light;
+    border-color: $primary-light;
 }
 
-.orange {
+.tertiary {
     @extend .title;
-    color: crimson;
+    color: $tertiary-light;
     border-color: $tertiary-light;
 }
 
-.purple {
+.secondary {
     @extend .title;
-    color: $purple-tint;
+    color: $secondary-light;
     border-color: $tertiary-light;
 }
 
@@ -56,19 +56,20 @@
     }
 }
 
-.subtitle__blue{
+.subtitle__primary{
     @extend .subtitle;
-    color: $primary-light;
-    border-color: $secondary-light;
+    color: $primary-tint;
+    border-color: $primary-light;
 }
 
-.subtitle__orange{
+.subtitle__tertiary{
     @extend .subtitle;
-    color: crimson;
-    border-color: $tertiary-light;
+    color: $tertiary-light;
+    border-color: $tertiary-tint;
 }
-.subtitle__purple{
+
+.subtitle__secondary{
     @extend .subtitle;
-    color: $purple-tint;
-    border-color: $tertiary-light;
+    color: $secondary-tint;
+    border-color: $secondary-light;
 }

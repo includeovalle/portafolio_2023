@@ -2,12 +2,12 @@
 import { useEffect } from 'react';
 import {useSearchParams, useRouter } from "next/navigation";
 
-const LIST = ["blue", "purple", "orange"];
+const LIST = ["primary", "secondary", "tertiary"];
 
 export default function Index() {
 
   const searchParams = useSearchParams();
-  const theme = searchParams.get("theme")|| "blue"
+  const theme = searchParams.get("theme")|| "primary"
   const router = useRouter();
   // get default Locales
 

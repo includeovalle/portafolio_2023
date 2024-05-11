@@ -61,28 +61,28 @@ figcaption{
 }
 }
 
-.blue{
+.primary{
   @extend .portrait;
   img{
     filter: drop-shadow(0 -6mm 4mm $primary-light);
   }
 }
 
-.orange{
+.tertiary{
   @extend .portrait;
   img{
-    filter: drop-shadow(0 0 0.75rem crimson);
+    filter: drop-shadow(0 0 0.75rem $primary-light);
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
-      color: gold;
+      color: $white;
     }}}}}
 }
 
-.purple {
+.secondary {
   @extend .portrait;
   img{
-    filter: drop-shadow(0 -6mm 4mm $purple);
+    filter: drop-shadow(0 -6mm 4mm $secondary);
   }
   figcaption{
     &>div:nth-child(1) { &>div{ >p { > span {
@@ -175,19 +175,19 @@ a {
 }
 }
 
-.card__blue {
+.card__primary {
   @extend .card;
   &:hover {
     & figcaption {
       > h3 {
-        color: crimson;
+        color: primary-light;
         transition: 1.25s ease;
       }
       > p {
         color: $primary-tint;
         transition: 1.75s ease;
         &:last-of-type {
-          color: crimson;
+          color: primary-light;
         }
       }
     }
@@ -208,7 +208,7 @@ a {
   @media (prefers-color-scheme: dark) {
     & figcaption{
       > h3{
-        color: crimson;
+        color: primary-light;
       }
       >p {
         color: $primary-light;
@@ -220,13 +220,13 @@ a {
   }
 }
 
-.card__orange {
+.card__tertiary {
   @extend .card;
   background-color: $tertiary-light;
   border-color: $secondary-light;
   & figcaption {
     > h3{
-      color: crimson;
+      color: primary-light;
     }
     > p {
       color: $tertiary-tint;
@@ -266,13 +266,13 @@ a {
   }
 }
 
-.card__purple {
+.card__secondary {
   @extend .card;
   background-color: $tertiary-light;
-  border-color: $purple;
+  border-color: $secondary;
   figcaption {
     > h3{
-      color: $purple-tint;
+      color: $secondary-tint;
     }
     > p {
       color: $primary-light;
@@ -302,20 +302,20 @@ a {
     transition: 2s ease;
     & figcaption{
       > h3{
-        color: $purple-tint;
+        color: $secondary-tint;
       }
       > p {
         color: $primary-light;
       }
       > a{
-        color: $purple-tint;
+        color: $secondary-tint;
         text-decoration-color: $silver-tint;
       }
     }
   }
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
-    border-color: $purple-tint;
+    border-color: $secondary-tint;
   }
 }
 

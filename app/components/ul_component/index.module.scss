@@ -80,31 +80,37 @@
   @include flex.row(space-between, center);
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: $default-padding-inset 4*$default-padding-inset $default-padding-inset 4*$default-padding-inset;
+  @include keyframes.bounceTop();
   @media(width > 768px){
   }
   li{
-    @include keyframes.bounceTop();
     flex: 0 0 calc(50% - 1rem);
     position: relative;
     border-bottom: 1px solid $primary;
     line-height: 1.5;
     padding: $default-padding-inset;
+    text-align: center;
       &:hover{
+        text-shadow: 0px 0px 20px $silver-tint;
+        @include keyframes.growFont();
+        font-weight: 800;
         &:before{
-          content: '\01f4ab';
+          content: '\270e';
           position: absolute;
+          font-weight: 500;
           top: 0;
           left: 0;
           width: 32px;
           height: 100%;
+          transition: all 0.5s ease-in-out;
           z-index: 1;
+          @include keyframes.arrowAtitention();
         }
-        text-shadow: 0px 0px 20px $silver-tint;
       }
     @media(width > 768px){
         &:before{
-          content: '\01f4ab';
+          content: '\270F';
           position: absolute;
           top: 0;
           left: 0;
@@ -125,13 +131,16 @@
   li{
     color: $primary-light;
     border-color: $primary-light;
+    &:hover{
+      text-shadow: 0px 0px 20px $silver-tint;
+    }
   }
 }
 
 .tertiary {
   @extend .header;
   li{
-    color: primary-light;
+    color: $primary-light;
     border-color: $secondary-light;
   }
 }
@@ -140,6 +149,8 @@
   @extend .header;
   li{
     color: $silver;
-    border-color: $secondary;
+    border-color: $secondary-light;
+    text-shadow: 0px 0px 40px $secondary-tint;
+    text-align: center;
   }
 }

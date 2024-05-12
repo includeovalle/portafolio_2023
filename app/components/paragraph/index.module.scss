@@ -72,22 +72,21 @@
 .about {
     padding: $default-padding-inset 2.5rem;
     @media( width > 768px ) {
-        padding: $default-padding-inset 1rem;
+  padding: $default-padding-inset 4*$default-padding-inset $default-padding-inset 4*$default-padding-inset;
     }
 }
 
 .about__primary{
     @extend .about;
-    color: $primary;
+    color: $primary-light;
     @media (prefers-color-scheme: dark) {
         color: $primary-light;
     }
-        
     }
 
 .about__tertiary{
     @extend .about;
-    color: primary-light;
+    color: $tertiary-tint;
     @media (prefers-color-scheme: dark) {
         color: $silver-tint;
     }

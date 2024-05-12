@@ -64,8 +64,8 @@
 
 .subtitle__tertiary{
     @extend .subtitle;
-    color: $tertiary-light;
-    border-color: $tertiary-tint;
+    color: $tertiary-tint;
+    border-color: $tertiary-light;
 }
 
 .subtitle__secondary{

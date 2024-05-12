@@ -10,6 +10,72 @@
   }
 }
 
+@mixin shadowChange($color) {
+  animation: shadowChange 1.75s infinite alternate;
+@keyframes shadowChange {
+  from {
+    filter: drop-shadow(0 0mm 1mm $color);
+  }
+  to {
+    filter: drop-shadow(0 0mm 4mm $color);
+  }
+}
+}
+
+@mixin arrowAtitention(){
+
+animation: shake-left 1.2s steps(2, start) infinite both;
+  @keyframes shake-left {
+0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+}
+
+
+@mixin growFont(){
+    animation: GrowFont 2s 2;
+    @keyframes GrowFont {
+        0% {
+            font-weight: 600;
+        }
+        50% {
+            font-weight: 1000;
+        }
+        100% {
+            font-weight: 700;
+        }
+      
+    }
+}
 
 @mixin bounceTop() {
   animation: bounce-top 0.9s both;

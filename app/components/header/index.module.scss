@@ -15,10 +15,8 @@
   gap: 1rem;
   text-align: center;
   @media(width > 768px){
-  @include flex.row(space-between, flex-start);
-    position: fixed;
+  @include flex.row(center, center);
     width: 100%;
-    z-index: 1;
 }
 
   &>div {

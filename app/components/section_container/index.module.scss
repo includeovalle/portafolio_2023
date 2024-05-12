@@ -15,7 +15,6 @@
 }
 
 .primary {
-  position: relative;
   background-color: $primary;
   min-height: 30vh;
   background: linear-gradient(180deg, $primary 45%,   $secondary 100%);
@@ -32,16 +31,6 @@
   background-color: $tertiary;
   min-height: 30vh;
   background: linear-gradient(180deg, $tertiary 45%,  $primary 100%);
-}
-.row-container{
-  @include flex.col(flex-start, center);
-  gap: $default-padding;
-  height: min-content;
-  padding: 0 2rem;
-  @include bp.breakpoint(md, min) {
-    @include flex.row(center, center);
-    gap: 2rem;
-  }
 }
 
 .inner-container{

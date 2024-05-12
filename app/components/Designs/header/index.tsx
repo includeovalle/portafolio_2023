@@ -39,7 +39,7 @@ const Index = ({theme, display, alert, portrait, copyThis } : Props) => {
       <Hamburger >
         <div>
           {
-            COLORS.map((color: string, index: number) => {
+            COLORS.map((color: string) => {
               return (
               <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
               </Link>
@@ -47,7 +47,6 @@ const Index = ({theme, display, alert, portrait, copyThis } : Props) => {
             })
           }
         </div>
-        <EmailButton display={display} alert={alert} copyThis={copyThis} />
       </Hamburger>
     </Header>
   );

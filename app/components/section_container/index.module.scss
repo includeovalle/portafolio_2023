@@ -11,6 +11,7 @@
   height: 100%;
   max-width: $page-max-width;
   margin: 0 auto;
+    padding: $default-padding-inset $default-padding;
   @include flex.col(flex-start, center);
 }
 

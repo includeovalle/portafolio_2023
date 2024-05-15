@@ -82,8 +82,8 @@ figcaption{
     &>div:nth-child(1) { 
       background: radial-gradient(circle, transparent 60%, $tertiary-light 10%);
       &>div{ >p { > span {
-      color: $primary-tint;
-    }}}}}
+        color: $primary-tint;
+      }}}}}
 }
 
 .secondary {
@@ -95,42 +95,46 @@ figcaption{
     &>div:nth-child(1) { 
       background: radial-gradient(circle, transparent 60%, $secondary-light 10%);
       &>div{ >p { > span {
-      color: $silver-tint;
-    }}}}}
+        color: $silver-tint;
+      }}}}}
 }
 
 .card {
+  @include flex.col(flex-start, center);
   position: relative;
   cursor: pointer;
+  margin: $default-padding 0;
+  border-radius: 2*$default-border-radius;
+  background-color: $silver-tint;
+  gap: 1rem;
+  padding: $default-padding-inset $default-padding;
+  border: 1px solid $primary-light;
+  transition: .75 ease-in-out;
   &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;
     border: 3px solid $primary;
   }
+  &:hover {
+    transition: .75 ease-in-out;
+  }
 
-  @include flex.col(flex-start, center);
-  margin: 1rem 0;
-  border-radius: 2*$default-border-radius;
-  background-color: $silver;
-  gap: 1rem;
-  max-width: 295px;
-  padding: 1rem;
-  border: 1px solid $primary-light;
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
 
     figcaption{
       > p {
         color: $primary-light;
-        max-width: 320px;
         @media( width > 768px ) {
         }
       }
     }
   }
+
   @media( width > 768px ) {
     flex-direction: column;
     padding-bottom: unset;
+    max-width: 285px;
   }
   img {
     position: relative !important;
@@ -148,26 +152,22 @@ figcaption {
   min-height: 20vh;
   @include flex.col(space-around, flex-start);
   border-radius: 0 0 $default-border-radius $default-border-radius;
-  padding-left: 1rem;
 
   & p {
     padding: 1rem;
-    @media(width > 768px) {
-    padding: 1rem 0;
-    }
+    transition: 0.75s ease;
     &:last-of-type {
-      padding-bottom: 1rem;
+      padding: 0;
+      margin-bottom: 1rem;
     }
   }
-  @media(width > 768px){
   & h3 {
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.75s ease;
+    @media(width > 768px){
     color: $primary-tint;
   }
-}
-& h3 {
-  text-transform: uppercase;
-  color: $black;
-  text-align: center;
 }
 a {
   color: $primary;
@@ -187,16 +187,18 @@ a {
 .card__primary {
   @extend .card;
   &:hover {
+    border-color: $secondary-light;
+    background-color: $silver;
     & figcaption {
       > h3 {
-        color: primary-light;
         transition: 1.25s ease;
+        color: $secondary-light;
       }
       > p {
-        color: $primary-tint;
+        color: $primary-light;
         transition: 1.75s ease;
         &:last-of-type {
-          color: primary-light;
+          color: $secondary-light;
         }
       }
     }
@@ -206,7 +208,7 @@ a {
       color: $primary-tint;
     }
     > p {
-      color: $primary;
+      color: $primary-tint;
       &:last-of-type {
         text-decoration: underline;
       }
@@ -235,25 +237,29 @@ a {
   border-color: $secondary-light;
   & figcaption {
     > h3{
-      color: primary-light;
+      color: $tertiary;
     }
     > p {
-      color: $tertiary-tint;
+      color: $tertiary;
       &:last-of-type {
         text-decoration: underline;
+        color: $secondary-light;
       }
     }
   }
 
   &:hover{
+    background-color: $silver-tint;
     & figcaption{
       > h3{
         color: $secondary-light;
-        transition: 1s ease;
       }
       > p {
-        color: $secondary-light;
-        transition: 1.75s ease;
+        color: $primary-tint;
+        &:last-of-type {
+          text-decoration: underline;
+          color: $secondary-light;
+        }
       }
     }
   }
@@ -277,11 +283,11 @@ a {
 
 .card__secondary {
   @extend .card;
-  background-color: $tertiary-light;
-  border-color: $secondary;
+  background-color: $silver-tint;
+  border-color: $secondary-light;
   figcaption {
     > h3{
-      color: $secondary-tint;
+      color: $tertiary;
     }
     > p {
       color: $primary-light;
@@ -307,14 +313,16 @@ a {
     }
   }
   &:hover{
-    background-color: transparent;
-    transition: 2s ease;
+    border-color: $tertiary-light;
+    background-color: $tertiary-light;
     & figcaption{
       > h3{
-        color: $secondary-tint;
+        color: $secondary-light;
       }
       > p {
-        color: $primary-light;
+        &:last-of-type {
+          color: $secondary-light;
+        }
       }
       > a{
         color: $secondary-tint;

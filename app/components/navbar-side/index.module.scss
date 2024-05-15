@@ -50,7 +50,7 @@
   }
 }
 
-.blue {
+.primary {
   @extend .default;
   color: $primary-tint;
   @media (prefers-color-scheme: dark) {
@@ -68,7 +68,7 @@
   }
 }
 
-.orange {
+.tertiary {
   @extend .default;
   color: $tertiary-tint;
   border-left: 3px solid $tertiary-tint;
@@ -76,19 +76,19 @@
     color: $tertiary-tint;
   }
   &:hover{
-    color: crimson;
+    color: primary-light;
   }
 }
 
-.purple {
+.secondary {
   @extend .default;
-  color: $purple;
-  border-left: 3px solid $purple;
+  color: $secondary;
+  border-left: 3px solid $secondary;
   @media (prefers-color-scheme: dark) {
-    color: $purple-tint;
+    color: $secondary-tint;
   }
   &:before{
-    color: $purple;
+    color: $secondary;
   }
   &:hover{
     color: $tertiary-tint;
@@ -134,14 +134,14 @@
     }
 }
 
-.media__blue {
+.media__primary {
     @extend .media;
     border-color: $primary-tint;
     background-color: $primary-light;
 }
 
 
-.media__orange {
+.media__tertiary {
     @extend .media;
     border-color: $secondary-light;
     background-color: $silver;
@@ -153,14 +153,14 @@
     }
 }
 
-.media__purple {
+.media__secondary {
     @extend .media;
-    border-color: $purple;
+    border-color: $secondary;
     background-color: $silver;
     transition: all 0.3s ease-in-out;
     button{
         span{
-            border-color: $purple-tint;
+            border-color: $secondary-tint;
         }
     }
 }

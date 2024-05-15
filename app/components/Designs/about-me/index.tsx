@@ -11,9 +11,7 @@ export default function Index({theme, text}: IndexProps) {
 
   return (
     <>
-      <br />
       <Ptag  className={CURRENTTHEME}>{text}</Ptag>
-      <br />
     </>
   );
 };

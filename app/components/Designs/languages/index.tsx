@@ -1,32 +1,39 @@
 import React from "react";
 import Link from 'next/link';
-import styles from '../../paragraph/index.module.scss'
 import { Language } from "@/app/types/dictionary";
+import styles from '../../anchors/index.module.scss'
 
 
 interface Props {
   theme: string;
   languages: Language[];
+  currentLang: string;
 }
 
-const Index = ({ theme, languages }: Props) => {
-  const currentTheme = `lang__${theme}`;
+const Index = ({ theme, languages, currentLang }: Props) => {
   return (
-    <>
-      <br />
+      <nav className={styles[theme]} >
       {
-        languages.map((lang: Language, key: number) => {
-          const currentLang = lang.lang
-          const currentRoute = `/${currentLang}?theme=${theme}`
+        languages.map((lang: Language) => {
+
+          const LANGUAGE = lang.href
+          const CURRENTROUTE = `/${LANGUAGE}?theme=${theme}`
+          const CURRENTTHEME = `active__${theme}`
           return (
-            <Link className={styles[currentTheme]} href={currentRoute} key={key} >
-              <p title={lang.title} >{lang.text}</p>
+            <Link tabIndex={0}
+              href={CURRENTROUTE}
+              key={lang.href}
+              className={currentLang===lang.href ? styles[CURRENTTHEME] : ""}
+              title={lang.title}
+              aria-roledescription={lang.ariaRole}
+            >
+              {lang.href}
             </Link>
           )
         }
         )
       }
-    </>
+      </nav>
   );
 };
 

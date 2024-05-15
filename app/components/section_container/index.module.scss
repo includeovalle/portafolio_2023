@@ -11,40 +11,32 @@
   height: 100%;
   max-width: $page-max-width;
   margin: 0 auto;
+    padding: $default-padding-inset $default-padding;
   @include flex.col(flex-start, center);
 }
 
-.blue {
-  background: $primary;
+.primary {
+  background-color: $primary;
   min-height: 30vh;
-  background: linear-gradient(180deg, $primary 0%,  $primary-tint 60%, $primary-light 100%);
+  background: linear-gradient(180deg, $primary 45%,   $secondary 100%);
 }
 
-.orange {
-  background: $secondary;
-  min-height: 30vh;
-  background: linear-gradient(180deg, $secondary 0%, $secondary-tint 60%, $secondary-light 100%);
-}
  
-.purple {
+.secondary {
+  background-color: $secondary;
+  min-height: 30vh;
+  background: linear-gradient(180deg, $secondary 45%, $tertiary 100%);
+}
+
+.tertiary {
   background-color: $tertiary;
   min-height: 30vh;
-  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, crimson 100%);
-}
-
-.row-container{
-  @include flex.col(flex-start, center);
-  gap: $default-padding;
-  height: min-content;
-  padding: 0 2rem;
-  @include bp.breakpoint(md, min) {
-    @include flex.row(center, center);
-    gap: 2rem;
-  }
+  background: linear-gradient(180deg, $tertiary 45%,  $primary 100%);
 }
 
 .inner-container{
       max-width: $page-max-width;
+      min-width: 350px;
       background-color: transparent;
       position: relative;
       margin: 0 auto;

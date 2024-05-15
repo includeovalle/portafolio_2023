@@ -9,11 +9,11 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     theme: { control: 'select',
-      options: ['blue', 'purple', 'orange'],
+      options: ['primary', 'secondary', 'tertiary'],
       description:"Footer component"
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'blue' },
+        defaultValue: { summary: 'primary' },
       }
     },
   },
@@ -26,20 +26,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const FooterBlueThemeStory: Story = {
+export const FooterprimaryThemeStory: Story = {
   args: {
-    theme: 'blue',
+    theme: 'primary',
   },
 };
 
-export const FooterPurpleThemeStory: Story = {
+export const FootersecondaryThemeStory: Story = {
   args: {
-    theme: 'purple',
+    theme: 'secondary',
   },
 };
 
-export const FooterOrangeThemeStory: Story = {
+export const FootertertiaryThemeStory: Story = {
   args: {
-    theme: 'orange',
+    theme: 'tertiary',
   },
 };

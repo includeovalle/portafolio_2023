@@ -80,31 +80,40 @@
   @include flex.row(space-between, center);
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: $default-padding-inset $default-padding $default-padding-inset $default-padding;
+  @include keyframes.bounceTop();
   @media(width > 768px){
   }
   li{
-    @include keyframes.bounceTop();
     flex: 0 0 calc(50% - 1rem);
     position: relative;
     border-bottom: 1px solid $primary;
     line-height: 1.5;
     padding: $default-padding-inset;
+    text-align: center;
+    &:nth-last-child(1){
+      border-bottom: none;
+    }
       &:hover{
+        @include keyframes.growFont();
+        font-weight: 800;
         &:before{
-          content: '\01f4ab';
+          content: '\270e';
           position: absolute;
-          top: 0;
+          font-weight: 500;
+          top: 10%;
           left: 0;
+          font-size: 115%;
           width: 32px;
           height: 100%;
+          transition: all 0.5s ease-in-out;
           z-index: 1;
+          @include keyframes.arrowAtitention();
         }
-        text-shadow: 0px 0px 20px $silver-tint;
       }
     @media(width > 768px){
         &:before{
-          content: '\01f4ab';
+          content: '\270F';
           position: absolute;
           top: 0;
           left: 0;
@@ -120,26 +129,37 @@
   }
 }
 
-.blue {
+.primary {
   @extend .header;
   li{
     color: $primary-light;
     border-color: $primary-light;
+    &:hover{
+      color: $primary-light;
+    }
   }
 }
 
-.orange {
+.tertiary {
   @extend .header;
   li{
-    color: crimson;
-    border-color: $secondary-light;
+    color: $tertiary-light;
+    border-color: $tertiary-light;
+    &:hover{
+      color: $tertiary-tint;
+    }
   }
 }
 
-.purple {
+.secondary {
   @extend .header;
   li{
     color: $silver;
-    border-color: $purple;
+    border-color: $secondary-light;
+    text-shadow: 0px 0px 40px $secondary-light;
+    text-align: center;
+    &:hover{
+      color: $secondary-tint;
+    }
   }
 }

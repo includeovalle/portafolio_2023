@@ -4,26 +4,24 @@
 @use '../../styles/_classes.scss';
 @use '../../styles/_keyframes.scss' as keyframes;
 
-.default{
-}
 
 .center{
     text-align: center;
 }
 
-.blue {
+.primary {
     @extend .center;
     color: $primary;
     background-color: $primary-light;
 }
 
-.orange {
+.tertiary {
     @extend .center;
     color: $primary;
     background-color: $primary-light;
 }
 
-.purple {
+.secondary {
     @extend .center;
     color: $primary;
     background-color: $primary-light;
@@ -41,65 +39,59 @@
     }
     &:focus{
         border: dashed white 2px;
-        color: crimson;
+        color: primary-light;
     }
     &:after{
         content: " | \01f442 | \01f4d6 | \01f4dd | \01f465 | ";
     }
 }
 
-.lang__blue {
+.lang__primary {
     @extend .lang;
     color: $primary;
     border: 1px solid $primary-light;
 }
 
-.lang__orange {
+.lang__tertiary {
     @extend .lang;
     color: $silver-tint;
-    background-color: $tertiary-light;
     border-bottom: 1px solid $secondary-light;
 }
 
-.lang__purple {
+.lang__secondary {
     @extend .lang;
     color: $silver;
-    background-color: $tertiary-light;
-    border-bottom: 1px solid $purple-tint;
+    border-bottom: 1px solid $secondary-tint;
     &:focus{
         color: $white;
     }
 }
 
 .about {
-    padding: $default-padding-inset 2.5rem;
+    padding: $default-padding-inset $default-padding;
+  @include keyframes.bounceTop();
     @media( width > 768px ) {
-        padding: $default-padding-inset 1rem;
+  padding: $default-padding-inset 4*$default-padding-inset $default-padding-inset 4*$default-padding-inset;
     }
 }
 
-.about__blue{
+.about__primary{
     @extend .about;
-    color: $primary;
+    color: $primary-light;
     @media (prefers-color-scheme: dark) {
         color: $primary-light;
     }
-        
     }
 
-.about__orange{
+.about__tertiary{
     @extend .about;
-    color: crimson;
+    color: $tertiary-light;
     @media (prefers-color-scheme: dark) {
         color: $silver-tint;
     }
-    &:focus{
-        color: $white;
-        background-color: transparent;
-    }
 }
 
-.about__purple{
+.about__secondary{
     @extend .about;
     color: $silver;
 }

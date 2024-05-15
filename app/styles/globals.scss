@@ -13,10 +13,7 @@ body {
     main {
       position: relative;
       margin: 0 auto;
-      hr {
-          border-color: $secondary;
-      }
-
+        min-width: 350px;
     }
 
     @media (prefers-color-scheme: dark) {

@@ -21,22 +21,22 @@
     }
 }
 
-.blue{
+.primary{
     @extend .default;
     background-color: $primary-tint;
     border-color: $primary-light;
 }
 
-.orange {
-    @extend .default;
-    background-color: $secondary-tint;
-    border-color: $secondary-light;
-}
-
-.purple {
+.tertiary {
     @extend .default;
     background-color: $tertiary-tint;
     border-color: $tertiary-light;
+}
+
+.secondary {
+    @extend .default;
+    background-color: $secondary-tint;
+    border-color: $secondary-light;
 }
 
 .no-display{

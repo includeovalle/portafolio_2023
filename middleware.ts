@@ -65,7 +65,7 @@ export function middleware(request: NextRequest) {
     // The new URL is now /en-US/products
     return NextResponse.redirect(
       new URL(
-        `/${locale}?theme=blue`,
+        `/${locale}?theme=primary`,
         request.url,
       ),
     );

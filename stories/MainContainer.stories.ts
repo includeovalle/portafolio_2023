@@ -9,11 +9,11 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     theme: { control: 'select',
-      options: ['blue', 'purple', 'orange'],
+      options: ['primary', 'secondary', 'tertiary'],
       description:"Inherited class"
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'blue' },
+        defaultValue: { summary: 'primary' },
       }
     },
   }
@@ -29,23 +29,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MainContainerBlueThemeStory: Story = {
+export const MainContainerprimaryThemeStory: Story = {
   args: {
-    theme: 'blue',
+    theme: 'primary',
     main: true,
   },
 };
 
-export const MainContainerPurpleThemeStory: Story = {
+export const MainContainersecondaryThemeStory: Story = {
   args: {
-    theme: 'purple',
+    theme: 'secondary',
     main: true,
   },
 };
 
-export const MainContainerOrangeThemeStory: Story = {
+export const MainContainertertiaryThemeStory: Story = {
   args: {
-    theme: 'orange',
+    theme: 'tertiary',
     main: true,
   },
 };

@@ -2,7 +2,7 @@
  import {Footer}  from "../../";
 
  interface IndexProps {
-   theme: "blue" | "purple" | "orange";
+   theme: "primary" | "secondary" | "tertiary";
  }
 
  const Index = ({theme}: IndexProps) => {

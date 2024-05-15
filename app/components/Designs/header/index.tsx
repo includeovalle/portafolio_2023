@@ -1,24 +1,24 @@
 "use client"
-import { Header, Hamburger, Portrait, Ul } from '../../';
+import { Header, Hamburger, Portrait } from '../../';
 import Link from 'next/link';
-import { TitleTag, EmailButton } from '../';
+import { Languages } from '../';
 import ButtonStyle from '../../button/index.module.scss';
 import colorHandler from '../../../utils/colorHandler';
+import { Language } from "@/app/types/dictionary";
 
 interface Props {
   theme: string;
   display: string;
   alert: string;
   copyThis: string;
-  portrait: string
-  title: string;
-  skills: string[];
+  languages: Language[];
+  currentLang: string;
 }
 
 
-const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Props) => {
+const Index = ({theme, languages, currentLang} : Props) => {
 
-  const COLORS = ["blue", "purple", "orange"];
+  const COLORS = ["primary", "secondary", "tertiary"];
 
   // colorHandler is a function that handles default theme
   colorHandler( );
@@ -26,13 +26,9 @@ const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Pro
   return (
 
     <Header className={theme} >
-      <Portrait className={theme} text={portrait} />
       <div>
-        <TitleTag theme={theme} text={title} />
-        <Ul className={theme} lis={skills}/>
-
+      <Languages theme={theme} languages={languages} currentLang={currentLang}/>
       </div>
-
       <div>
         {
           COLORS.map((color: string) => {
@@ -47,7 +43,7 @@ const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Pro
       <Hamburger >
         <div>
           {
-            COLORS.map((color: string, index: number) => {
+            COLORS.map((color: string) => {
               return (
               <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
               </Link>
@@ -55,7 +51,6 @@ const Index = ({theme, display, alert, portrait, title, skills, copyThis } : Pro
             })
           }
         </div>
-        <EmailButton display={display} alert={alert} copyThis={copyThis} />
       </Hamburger>
     </Header>
   );

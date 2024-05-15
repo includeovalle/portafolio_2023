@@ -1,20 +1,22 @@
 "use client"
 import { Header, Hamburger, Portrait } from '../../';
 import Link from 'next/link';
-import { EmailButton } from '../';
+import { Languages } from '../';
 import ButtonStyle from '../../button/index.module.scss';
 import colorHandler from '../../../utils/colorHandler';
+import { Language } from "@/app/types/dictionary";
 
 interface Props {
   theme: string;
   display: string;
   alert: string;
   copyThis: string;
-  portrait: string
+  languages: Language[];
+  currentLang: string;
 }
 
 
-const Index = ({theme, display, alert, portrait, copyThis } : Props) => {
+const Index = ({theme, languages, currentLang} : Props) => {
 
   const COLORS = ["primary", "secondary", "tertiary"];
 
@@ -24,7 +26,9 @@ const Index = ({theme, display, alert, portrait, copyThis } : Props) => {
   return (
 
     <Header className={theme} >
-      <Portrait className={theme} text={portrait} />
+      <div>
+      <Languages theme={theme} languages={languages} currentLang={currentLang}/>
+      </div>
       <div>
         {
           COLORS.map((color: string) => {

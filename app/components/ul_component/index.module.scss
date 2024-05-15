@@ -80,7 +80,7 @@
   @include flex.row(space-between, center);
   gap: 1rem;
   flex-wrap: wrap;
-  padding: $default-padding-inset 4*$default-padding-inset $default-padding-inset 4*$default-padding-inset;
+  padding: $default-padding-inset $default-padding $default-padding-inset $default-padding;
   @include keyframes.bounceTop();
   @media(width > 768px){
   }
@@ -91,16 +91,19 @@
     line-height: 1.5;
     padding: $default-padding-inset;
     text-align: center;
+    &:nth-last-child(1){
+      border-bottom: none;
+    }
       &:hover{
-        text-shadow: 0px 0px 20px $silver-tint;
         @include keyframes.growFont();
         font-weight: 800;
         &:before{
           content: '\270e';
           position: absolute;
           font-weight: 500;
-          top: 0;
+          top: 10%;
           left: 0;
+          font-size: 115%;
           width: 32px;
           height: 100%;
           transition: all 0.5s ease-in-out;
@@ -132,7 +135,7 @@
     color: $primary-light;
     border-color: $primary-light;
     &:hover{
-      text-shadow: 0px 0px 20px $silver-tint;
+      color: $primary-light;
     }
   }
 }
@@ -140,8 +143,11 @@
 .tertiary {
   @extend .header;
   li{
-    color: $primary-light;
-    border-color: $secondary-light;
+    color: $tertiary-light;
+    border-color: $tertiary-light;
+    &:hover{
+      color: $tertiary-tint;
+    }
   }
 }
 
@@ -150,7 +156,10 @@
   li{
     color: $silver;
     border-color: $secondary-light;
-    text-shadow: 0px 0px 40px $secondary-tint;
+    text-shadow: 0px 0px 40px $secondary-light;
     text-align: center;
+    &:hover{
+      color: $secondary-tint;
+    }
   }
 }

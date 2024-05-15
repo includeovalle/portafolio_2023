@@ -67,7 +67,7 @@ interface Project {
 }
 
 export interface Language {
-  title: string;
-  text: string;
-  lang: string;
+    href: string;
+    title: string;
+    ariaRole: string;
 }

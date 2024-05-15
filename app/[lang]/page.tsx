@@ -1,5 +1,5 @@
 import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe , TitleTag } from '@/app/components/Designs';;
-import { MainContainer, InnerContainer, Ul } from '@/app/components';
+import { MainContainer, InnerContainer, Ul, Portrait  } from '@/app/components';
 import { Metadata } from 'next'
 import { getDictionary } from "./dictionaries"
 import { type Locale } from "../../i18n-config";
@@ -33,24 +33,21 @@ export default async function Home({ searchParams, params }: Props) {
   const CARD = lang["projects"].vic
   const ABOUTME = lang["aboutme"];
   const EMAIL = "carlosovalle@soultech.studio"
-  const MEDIAINFO = lang["media"]
 
   return (
     <>
       <MainContainer theme={bgColor}>
       <Header theme={bgColor} 
         display={DISPLAY} alert={ALERT} copyThis={EMAIL}
-        portrait={PORTRAIT} 
+          languages={LANGUAGES} currentLang={language}
         />
         <InnerContainer>
+          <br />
+      <Portrait className={bgColor} text={PORTRAIT} />
           <TitleTag theme={bgColor} text={ABOUTMETITLE} />
           <AboutMe theme={bgColor} text={ABOUTME} />
         <SubtitleTag theme={bgColor} text={MAINTITLE} />
         <Ul className={bgColor} lis={SKILLS}/>
-          <SubtitleTag theme={bgColor} text={LANGTITLE} />
-          <Languages theme={bgColor} languages={LANGUAGES} />
-          <EmailButton display={DISPLAY} alert={ALERT} copyThis={EMAIL}/>
-          <SocialMedia mediaInfo={MEDIAINFO}/>
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} card={CARD} />
         </InnerContainer >

@@ -1,0 +1,91 @@
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_flexbox.scss' as flex;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_classes.scss' as class;
+@use '/app/styles/_keyframes.scss' as key;
+
+.header{
+  font-size: 1rem;
+  @include flex.row(flex-start, center);
+  gap: 2*$default-padding-inset;
+  text-transform: uppercase;
+  }
+
+  .primary {
+    @extend .header;
+    a{
+    color: $primary-tint;
+    &:visited {
+      color: $primary-tint;
+    }
+    &:hover {
+      color: $primary-light;
+    }
+    &:focus{
+      border: 2px solid $silver-tint;
+    }
+  }
+  }
+
+  .secondary {
+    @extend .header;
+    a{
+    color: $secondary-tint;
+
+    &:visited {
+      color: $secondary-tint;
+    }
+    &:hover {
+      color: $silver;
+    }
+    &:focus{
+      border: 2px solid $secondary-light;
+    }
+  }
+}
+
+  .tertiary {
+    @extend .header;
+    a{
+    color: $tertiary-light;
+
+    &:visited {
+      color: $tertiary-light;
+    }
+    &:hover {
+      color: $tertiary-tint;
+    }
+    &:focus{
+      border: 2px solid $tertiary-light;
+    }
+  }
+}
+  .active{ 
+    color: $white;
+    text-decoration: underline;
+    padding: .4mm;
+    border-radius: $default-border-radius;
+    &:focus{
+      border: 2px solid $silver-tint;
+    }
+  }
+
+  .active__primary{
+    @extend .active;
+    @include key.shadowChange($color: $primary-light,  $duration: .6s);
+    border: 2px solid $silver-tint;
+    border-radius: $default-border-radius;
+
+  }
+
+  .active__secondary{
+    @extend .active;
+    @include key.shadowChange($color: $black, $duration: .6s);
+    border: 2px solid $secondary-light;
+  }
+
+  .active__tertiary{
+    @extend .active;
+    @include key.shadowChange($color: $tertiary-tint,  $duration: .6s);
+    border: 2px solid $tertiary-light;
+  }

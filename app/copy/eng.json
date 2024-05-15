@@ -72,19 +72,19 @@
   ,"footer": {
     "languages": [
       {
-        "title": "English language",
-        "text": "EN",
-        "lang": "en"
+        "title": "Current language is English",
+        "href": "en",
+        "ariaRole": "assistant to change the language of the application"
       },
       {
-        "title": "Spanish Language",
-        "text": "switch to ES",
-        "lang": "es"
+        "title": "Click to change to Spanish language",
+        "href": "es",
+        "ariaRole": "assistant to change the language of the application"
       },
       {
-        "title": "Portuguese language",
-        "text": "switch to PT",
-        "lang": "pt"
+        "title": "Click to change to Portuguese language",
+        "href": "pt",
+        "ariaRole": "assistant to change the language of the application"
       }
     ]
   }

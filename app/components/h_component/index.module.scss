@@ -1,6 +1,7 @@
 @use '/app/styles/_variables.scss' as *;
 @use '/app/styles/_classes.scss' as class;
 @use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_keyframes.scss' as keyframes;
 
 .default{
     @extend .first-cap;
@@ -13,17 +14,13 @@
 }
 
 .title{
-    @extend .title-cap-clamp;
-    width: 100%;
-    font-weight: 400;
-    @extend .default;
-    font-size: $title-clamp;
+    text-transform: uppercase;
+    @include keyframes.bounceTop();
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     text-align: center;
     margin: 1rem 0;
-    border-bottom: 2px solid $secondary;
-    @include bp.breakpoint(md, min) {
-        text-align: left;
-    }
+    padding: 1em;
 }
 
 .primary {
@@ -35,13 +32,12 @@
 .tertiary {
     @extend .title;
     color: $tertiary-light;
-    border-color: $tertiary-light;
 }
 
 .secondary {
     @extend .title;
-    color: $secondary-light;
-    border-color: $tertiary-light;
+    color: $secondary-tint;
+    border-color: $secondary-light;
 }
 
 .subtitle{

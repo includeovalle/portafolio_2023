@@ -10,16 +10,19 @@
   }
 }
 
-@mixin shadowChange($color) {
-  animation: shadowChange 1.75s infinite alternate;
-@keyframes shadowChange {
-  from {
-    filter: drop-shadow(0 0mm 1mm $color);
+@mixin shadowChange($color, $animate: true, $duration: 1.75s) {
+  @if $animate {
+    animation: shadowChange $duration infinite alternate;
   }
-  to {
-    filter: drop-shadow(0 0mm 4mm $color);
+
+  @keyframes shadowChange {
+    from {
+      filter: drop-shadow(0 0mm .5mm $color);
+    }
+    to {
+      filter: drop-shadow(0 0mm 1.2mm $color);
+    }
   }
-}
 }
 
 @mixin arrowAtitention(){

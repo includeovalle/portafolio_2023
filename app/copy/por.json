@@ -6,7 +6,7 @@
     "aboutme": "Acerca de mim"
   },
   "header": {
-    "portrait": "Raul Amaro",
+    "portrait": "Raul Amaro ",
     "skills": [
       "Bash",
       "AWK",
@@ -72,19 +72,19 @@
   , "footer": {
     "languages": [
       {
-        "title": "Língua Português",
-        "text": "pt",
-        "lang": "pt"
+        "title": "Clica para mudar para idioma Inglês",
+        "href": "en",
+        "ariaRole": "assistente para mudar idioma do aplicativo"
       },
       {
-        "title": "Língua Espanhola",
-        "text": "Mudar o idioma para ES",
-        "lang": "es"
+        "title": "Clica para mudar para idioma Espanhol",
+        "href": "es",
+        "ariaRole": "assistente para mudar idioma do aplicativo"
       },
       {
-        "title": "Língua Inglesa",
-        "text": "Mudar o idioma para EN",
-        "lang": "en"
+        "title": "Idioma atual Português",
+        "href": "pt",
+        "ariaRole": "assistente para mudar idioma do aplicativo"
       }
     ]
   }

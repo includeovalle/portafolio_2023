@@ -37,7 +37,7 @@
         width: 100%;
         height: 100%;
         position: relative;
-        border-bottom: 2px solid $primary-light;
+        border-top: 2px solid $primary-light;
     }
     @media(width > 768px){
     display: none;
@@ -48,13 +48,13 @@
 &__tertiary{
     @extend  .hamburger;
     &>span{
-        border-bottom: 2px solid $tertiary-light;
+        border-top: 2px solid $tertiary-light;
     }
 }
 &__secondary{
     @extend  .hamburger;
     &>span{
-        border-bottom: 3px solid $secondary-light;
+        border-top: 3px solid $secondary-light;
     }
 }
 }
@@ -73,7 +73,7 @@
         position: absolute;
         width: 100%;
         height: auto;
-        border-bottom: 2px solid $primary-tint;
+        border-top: 2px solid $primary-tint;
         &:nth-child(1){
             transform: rotate(45deg);
         }
@@ -81,7 +81,7 @@
             transform: rotate(-45deg);
         }
         @media (prefers-color-scheme: dark) {
-            border-bottom: 2px solid $silver;
+            border-top: 2px solid $silver;
         }
     }
     &:focus{

@@ -109,6 +109,7 @@ figcaption{
   gap: 1rem;
   padding: $default-padding-inset $default-padding;
   border: 1px solid $primary-light;
+  max-width: 255px;
   transition: .75 ease-in-out;
   &:focus {
     outline: 3px dashed $white;

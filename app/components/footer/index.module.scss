@@ -3,24 +3,84 @@
 .default {
   color: teal;
 }
- 
+
 .footer{
-  padding: 2rem;
+  padding: 1rem;
+  padding-top: 0;
   text-align: center;
+  @include flex.col(center, center);
+  gap: 1rem;
+  & section {
+    @include flex.row(space-evenly, center);
+    gap: 1rem;
+
+  }
+  & h3{
+   &:first-letter{
+     text-transform: capitalize;
+   }
+  }
+  & div {
+    & input{
+      padding: $default-padding-inset;
+      border-radius: $default-border-radius;
+    }
+    & button{
+      padding: $default-padding-inset;
+      border-radius: $default-border-radius;
+    }
+    @include flex.col(flex-start, center);
+    gap: 1rem;
+  }
 }
 
 .primary{
   @extend .footer;
   background-color: $secondary;
   color: $white;
+
+  & input{ border-color: $secondary-tint; color: $secondary-light; }
+  & button{ border-color: $secondary-tint;
+    background-color: $secondary-tint;
+    border-style: groove;
+    color: $secondary-light;
+    font-weight: 600;
+    &:first-letter{ text-transform: capitalize; }
+  }
+  & a{ color: $secondary-tint; }
 }
 .tertiary{
   @extend .footer;
   background-color: $primary;
-  color: $tertiary-tint;
+  color: $primary-light;
+
+  & input{ border-color: $primary-tint; 
+  color: $primary-light;
 }
+  & button{ border-color: $primary-tint;
+    background-color: $primary-tint;
+    border-style: groove;
+    color: $primary;
+    font-weight: 600;
+    &:first-letter{ text-transform: capitalize; }
+  }
+  & a{ color: $primary-tint; }
+}
+
 .secondary{
   @extend .footer;
   background-color: $tertiary;
-  color: $white;
+  color: $tertiary-light;
+
+  & input{ border-color: $tertiary-tint; 
+  color: $tertiary-tint;
+}
+  & button{ border-color: $tertiary-tint;
+    background-color: $tertiary-tint;
+    border-style: groove;
+    color: $tertiary;
+    font-weight: 600;
+    &:first-letter{ text-transform: capitalize; }
+  }
+  & a{ color: $tertiary-tint; }
 }

@@ -30,6 +30,7 @@
 .tertiary {
     @extend .default;
     background-color: $tertiary-tint;
+    color: $tertiary-tint;
     border-color: $tertiary-light;
 }
 
@@ -42,5 +43,13 @@
 .no-display{
     display: none;
     position: unset;
+}
+
+.input__primary{
+    @extend .primary;
+    & a{
+        color: $primary;
+    }
+    height: 50px;
 }
 

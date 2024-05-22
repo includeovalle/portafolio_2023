@@ -10,8 +10,8 @@
   height: 220px;
   position: relative;
   margin: 50px auto 0;
-  @media(width > 768px){
   @include key.shakeBottom();
+  @media(width >= 768px){
 }
 img{
   border-radius: 50%;
@@ -109,7 +109,6 @@ figcaption{
   gap: 1rem;
   padding: $default-padding-inset $default-padding;
   border: 1px solid $primary-light;
-  transition: .75 ease-in-out;
   &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;
@@ -131,7 +130,7 @@ figcaption{
     }
   }
 
-  @media( width > 768px ) {
+  @media( width >= 768px ) {
     flex-direction: column;
     padding-bottom: unset;
     max-width: 285px;
@@ -141,7 +140,7 @@ figcaption{
     border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
     max-height: 255px;
     object-fit: contain;
-    @media(width > 768px){
+    @media(width >= 768px){
     border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
     min-height: 125px;
     max-height: 125px;
@@ -165,7 +164,7 @@ figcaption {
     text-transform: uppercase;
     text-align: center;
     transition: 0.75s ease;
-    @media(width > 768px){
+    @media(width >= 768px){
     color: $primary-tint;
   }
 }

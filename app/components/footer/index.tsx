@@ -5,7 +5,7 @@ import { HeaderInterface } from "@/app/types/";
 
 const Index = ({ children, className="default" }:HeaderInterface) => {
     return (
-        <footer id='footer' className={styles[className]} >
+        <footer className={styles[className]} >
             {children}
         </footer>
     );

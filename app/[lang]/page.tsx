@@ -24,15 +24,15 @@ export default async function Home({ searchParams, params }: Props) {
   const MAINTITLE = lang["titles"].title;
   const PROJECTSTITLE = lang["titles"].projects;
   const ABOUTMETITLE = lang["titles"].aboutme;
-  const LANGTITLE = lang["titles"].languages;
   const DISPLAY = lang["networks"].copyEmail;
   const ALERT = lang["networks"].alert;
-  const LANGUAGES = lang["footer"].languages;
+  const LANGUAGES = lang["languages"];
   const PORTRAIT = lang["header"].portrait;
   const SKILLS = lang["header"].skills;
   const CARD = lang["projects"].vic
   const ABOUTME = lang["aboutme"];
   const EMAIL = "carlosovalle@soultech.studio"
+  const FOOTER = lang["footer"];
 
   return (
     <>
@@ -52,7 +52,7 @@ export default async function Home({ searchParams, params }: Props) {
           <Card theme={bgColor} card={CARD} />
         </InnerContainer >
       </MainContainer>
-      <Footer theme={bgColor} />
+      <Footer theme={bgColor} content={FOOTER} />
     </>
   )
 }

@@ -7,30 +7,41 @@
 .footer{
   padding: 1rem;
   padding-top: 0;
+  text-transform: uppercase;
   text-align: center;
+  background-color: $silver-tint;
   @include flex.col(center, center);
   gap: 1rem;
-  & section {
-    @include flex.row(space-evenly, center);
-    gap: 1rem;
 
+  & h3 {
+    margin: 1rem 0 0 0;
   }
-  & h3{
-   &:first-letter{
-     text-transform: capitalize;
-   }
+  & section {
+    width: 100%;
+    @include flex.row(center, flex-start);
+    gap: 10rem;
   }
   & div {
-    & input{
-      padding: $default-padding-inset;
+    @include flex.col(flex-start,flex-start);
+    gap: 1rem;
+  }
+  ul {
+    list-style: none;
+  }
+  &>div {
+      @include flex.row(center, center);
+      gap: 1rem;
+    & textarea{
       border-radius: $default-border-radius;
+      padding: 2*$default-padding-inset;
+      max-width: calc(100dvi - 16rem);
+      min-height: 4rem;
+      min-width: 10rem;
     }
     & button{
       padding: $default-padding-inset;
       border-radius: $default-border-radius;
     }
-    @include flex.col(flex-start, center);
-    gap: 1rem;
   }
 }
 
@@ -39,11 +50,12 @@
   background-color: $secondary;
   color: $white;
 
-  & input{ border-color: $secondary-tint; color: $secondary-light; }
+  & textarea{ border-color: $secondary-tint; color: $secondary-light; }
   & button{ border-color: $secondary-tint;
     background-color: $secondary-tint;
     border-style: groove;
     color: $secondary-light;
+    cursor: pointer;
     font-weight: 600;
     &:first-letter{ text-transform: capitalize; }
   }
@@ -54,7 +66,7 @@
   background-color: $primary;
   color: $primary-light;
 
-  & input{ border-color: $primary-tint; 
+  & textarea{ border-color: $primary-tint; 
   color: $primary-light;
 }
   & button{ border-color: $primary-tint;
@@ -72,8 +84,7 @@
   background-color: $tertiary;
   color: $tertiary-light;
 
-  & input{ border-color: $tertiary-tint; 
-  color: $tertiary-tint;
+  & textarea{ border-color: $tertiary-tint; color: $primary-light;
 }
   & button{ border-color: $tertiary-tint;
     background-color: $tertiary-tint;

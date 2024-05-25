@@ -80,6 +80,26 @@ animation: shake-left 1.2s steps(2, start) infinite both;
     }
 }
 
+@mixin textIN() {
+  animation: text-in 0.7s both;
+
+  @keyframes text-in {
+0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }}
+}
+
 @mixin bounceTop() {
   animation: bounce-top 0.9s both;
 
@@ -210,6 +230,22 @@ animation: shake-left 1.2s steps(2, start) infinite both;
   }
 }
 
+
+@mixin slideIN(){
+ animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+@keyframes slide-in-left {
+0% {
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+            transform: translateX(0);
+    opacity: 1;
+  }}
+}
+
+
 @mixin wooble(){
     animation: scale-in-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
@@ -230,6 +266,7 @@ animation: shake-left 1.2s steps(2, start) infinite both;
   }
 }
 }
+
 
 @mixin shakeBottom(){
   animation: shake-bottom .7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;

@@ -4,52 +4,9 @@ export default interface Props {
     header: { portrait: string; skills: string[] };
     projects: { vic: Project };
     aboutme: string;
-    media: {
-      whatsapp: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-      github: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-      linkedin: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-      email: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-      storybook: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-      resume: {
-        alt: string;
-        links: {
-          href: string;
-          target: string;
-        }
-      }
-    }
+    languages: Language[]
     networks: { copyEmail: string; alert: string };
-    footer: { languages: Language[] };
+    footer: FooterInterface;
   };
 }
 
@@ -66,6 +23,36 @@ interface Project {
   };
 }
 
+interface Link {
+  text: string;
+  alt: string;
+  href: string;
+  target?: string; // Optional target attribute
+}
+
+interface ProjectLink extends Link {
+  title: string;
+}
+
+
+interface AboutMe extends Link {
+  title: string;
+}
+
+interface Project {
+  title: string;
+  links: ProjectLink[];
+}
+
+interface Footer {
+  title: string;
+  placeholder: string;
+  button: string;
+  about: {
+    project: Project;
+    aboutme: AboutMe;
+  };
+}
 export interface Language {
     href: string;
     title: string;

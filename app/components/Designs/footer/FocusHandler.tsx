@@ -2,7 +2,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Dialog } from '../../';
 
-const Index = () => {
+interface IndexProps {
+  placeholder: string;
+  textButton: string;
+}
+
+const Index = ({placeholder, textButton}) => {
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -31,8 +36,11 @@ const closeHandler = () => {
   return (
 
     <>
-      <input type="text" />
-      <button onClick={onFocusHandler}>  enviar</button>
+      <textarea cols={30} rows={6}
+        placeholder={placeholder}
+      />
+
+      <button onClick={onFocusHandler}>{textButton}</button>
       <Dialog onClick={()=>closeHandler()} ref={modalRef} className="input__primary">
         {
           isClient ? <a href="https://mail.google.com/mail/?view=cm&fs=1&to=carlosovalle@soultech.studio&subject&body=Hi there, I'm contacting you from your website about...">Contact Us</a>

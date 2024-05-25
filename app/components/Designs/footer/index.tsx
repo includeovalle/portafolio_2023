@@ -1,50 +1,80 @@
 import React from "react";
 import Link from "next/link";
-import { Footer, Ul } from "../../";
+import { Footer, Ul, CustomImage } from "../../";
 import Input from "./FocusHandler";
+import { FooterInterface } from "../../../types/dictionary";
+
+import Github from "/public/github.svg";
+import Story from "/public/storybook.svg";
+import Linkedin from "/public/linked.svg";
+import Email from "/public/email.svg";
+import Whatsapp from "/public/whatsapp.svg";
+import Pdf from "/public/pdf-icon.svg";
 
 interface IndexProps {
   theme: "primary" | "secondary" | "tertiary";
+  content: FooterInterface
 }
 
-const Index = ({ theme }: IndexProps) => {
+const Index = ({ theme, content }: IndexProps) => {
+
   // <Link href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKHQdLbxgWJLPSKVBsWGVgSDTmMXHzlGMGxSmJNPhMBwWVFmHKxZMHJPQMGcvwwfRDWXTML"
   //   target="_blank"
   // />
 
+  const { title, placeholder, button, about: { project: { title: PROJECTTITLE, links: PROJECTLINKS }, aboutme:{ title: ABOUTMETITILE, links: ABOUTMELINKS} } } = content;
 
-  const thisRepo = [
-    "github repo", "storybook"
-  ]
+  const ProjectLinks = [Github, Story]
+const AboutMeLinks = [Linkedin, Pdf]
 
-  const contactMe = [
-    "github repo", "storybook"
-  ]
 
   return (
     <Footer className={theme}>
+        <h3>{title}</h3>
       <div>
-
-        <h3>contact</h3>
-        <Input/>
-
+        <Input placeholder={placeholder} textButton={button} />
       </div>
 
       <section>
         <div>
-          <h3>about this project</h3>
-          <Ul  lis={thisRepo} links={true} />
+          <h3>{PROJECTTITLE}</h3>
+          <ul>
+              {
+              ProjectLinks.map((item, index)=> {
+                const newLink = PROJECTLINKS[index]
+                const newItem= {...item, ...newLink}
+                const className=`icon__${theme}`
+                return (
+                <li key={index}>
+                  <CustomImage src={newItem.src}  alt={newItem.alt} links target={newItem.target} href={newItem.href} figcaption  className={className} >
+                        {newItem.text}
+                  </CustomImage>
+                    </li>
+              )})
+            }
+          </ul>
         </div >
 
         <div>
-          <h3>about me</h3>
-          <Ul>
-            <Link href="/"><li></li></Link>
-            <li></li>
-          </Ul>
+          <h3>{ABOUTMETITILE}</h3>
+          <ul>
+              {
+              AboutMeLinks.map((item, index)=> {
+                const newLink = ABOUTMELINKS[index]
+                const newItem= {...item, ...newLink}
+                const className=`icon__${theme}`
+                return (
+                <li key={index}>
+                  <CustomImage src={newItem.src}  alt={newItem.alt} links target={newItem.target} href={newItem.href} figcaption  className={className} >
+                        {newItem.text}
+                  </CustomImage>
+                  </li>
+              )})
+            }
+          </ul>
         </div >
-      </section>
 
+</section>
       <Link href='https://www.soultech.studio' target="_blank">
         <p> Soultech studio... 🚀</p>
       </Link>

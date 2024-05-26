@@ -109,7 +109,9 @@
   gap: 1rem;
   padding: $default-padding-inset $default-padding;
   border: 1px solid $primary-light;
+
   max-width: 285px;
+
   &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;

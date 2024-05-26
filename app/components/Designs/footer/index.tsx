@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Footer, CustomImage } from "../../";
 import Input from "./FocusHandler";
-import { FooterInterface } from "../../../types/dictionary";
+import  {FooterInterface}  from "../../../types/dictionary";
 
 import Github from "/public/github.svg";
 import Story from "/public/storybook.svg";
@@ -10,8 +10,8 @@ import Linkedin from "/public/linked.svg";
 import Pdf from "/public/pdf-icon.svg";
 
 interface IndexProps {
-  theme: "primary" | "secondary" | "tertiary";
-  content: FooterInterface
+  theme: string;
+  content: FooterInterface;
 }
 
 const Index = ({ theme, content }: IndexProps) => {

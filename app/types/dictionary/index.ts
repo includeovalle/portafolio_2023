@@ -26,33 +26,26 @@ interface Project {
 interface Link {
   text: string;
   alt: string;
-  href: string;
-  target?: string; // Optional target attribute
+  href?: string;
+  target?: string;
 }
 
-interface ProjectLink extends Link {
+interface AboutSection {
   title: string;
+  links: Link[];
 }
 
-
-interface AboutMe extends Link {
-  title: string;
-}
-
-interface Project {
-  title: string;
-  links: ProjectLink[];
-}
-
-interface Footer {
+export interface FooterInterface {
   title: string;
   placeholder: string;
   button: string;
   about: {
-    project: Project;
-    aboutme: AboutMe;
+    project: AboutSection;
+    aboutme: AboutSection;
   };
 }
+
+
 export interface Language {
     href: string;
     title: string;

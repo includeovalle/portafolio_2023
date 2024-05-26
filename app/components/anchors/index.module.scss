@@ -73,7 +73,7 @@
   .active__primary{
     @extend .active;
     @include key.shadowChange($color: $primary-light,  $duration: .6s);
-    border: 2px solid $silver-tint;
+    border: 2px solid $primary-light;
     border-radius: $default-border-radius;
 
   }
@@ -81,7 +81,7 @@
   .active__secondary{
     @extend .active;
     @include key.shadowChange($color: $black, $duration: .6s);
-    border: 2px solid $secondary-light;
+    border: 2px solid $secondary-tint;
   }
 
   .active__tertiary{

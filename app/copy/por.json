@@ -43,49 +43,61 @@
     "copyEmail": "Copiar email",
     "alert": "E-mail copiado para a área de transferência"
   }
-  , "media": {
-    "whatsapp": {
-       "alt": "enviar messagem ao carlos raul amaro ovalle",
-      "links": { "href": "https://api.whatsapp.com/send?phone=4441934444" , "target": "_blank" }
+  , "languages": [
+    {
+      "title": "Clica para mudar para idioma Inglês",
+      "href": "en",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
+    },
+    {
+      "title": "Clica para mudar para idioma Espanhol",
+      "href": "es",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
+    },
+    {
+      "title": "Idioma atual Português",
+      "href": "pt",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
     }
-    , "github":{
-       "alt": "repositorio do projecto carlosraul.am",
-      "links": { "href": "https://github.com/includeovalle/portafolio_2023/", "target": "_blank" }
-    }
-    , "linkedin":{
-       "alt": "contacto linkedin carlos raul amaro dev",
-      "links": { "href": "https://www.linkedin.com/in/carlos-amaro-dev", "target": "_blank" }
-    }
-    , "email":{
-       "alt": "correo profissional carlosraul@soultech.studio",
-      "links": { "href": "mailto:carlosovalle@soultech.studio", "target": "_blank" }
-    }
-    , "story":{
-       "alt": "pagina de storybook",
-      "links": { "href": "https://portafolio-2023-dayu.vercel.app/", "target": "_blank" }
-    }
-    , "resume":{
-       "alt": "Currículo profissional",
-      "links": { "href": "/carlos-amaro-resume-pt.pdf", "target": "_blank" }
-    }
-  }
+  ]
   , "footer": {
-    "languages": [
-      {
-        "title": "Clica para mudar para idioma Inglês",
-        "href": "en",
-        "ariaRole": "assistente para mudar idioma do aplicativo"
-      },
-      {
-        "title": "Clica para mudar para idioma Espanhol",
-        "href": "es",
-        "ariaRole": "assistente para mudar idioma do aplicativo"
-      },
-      {
-        "title": "Idioma atual Português",
-        "href": "pt",
-        "ariaRole": "assistente para mudar idioma do aplicativo"
+    "title": "contato"
+    , "placeholder": "Digite sua mensagem"
+    , "button": "Enviar"
+    , "about": {
+      "project": {
+        "title": "Links do projeto",
+        "links": [
+           {
+            "text": "github"
+            , "alt": "repositorio do projecto carlosraul.am",
+            "links": { "href": "https://github.com/includeovalle/portafolio_2023/", "target": "_blank" }
+          }
+          , {
+            "text": "storybook"
+            , "alt": "pagina de storybook",
+            "links": { "href": "https://portafolio-2023-dayu.vercel.app/", "target": "_blank" }
+          }
+        ]
       }
-    ]
+, "aboutme":{
+  "title": "Meu perfil profissional"
+  , "links": [
+      {
+      "text":"linkedin"
+      , "alt":  "contacto linkedin carlos raul amaro dev"
+      ,"href": "https://www.linkedin.com/in/carlos-amaro-dev"
+      , "target": "_blank"
+    }
+    ,  {
+      "text":"resume"
+      , "alt":  "Currículo profissional"
+      ,"href": "/carlos-amaro-resume-pt.pdf"
+      , "target": "_blank"
+    }
+  ]
+}
+
+    }
   }
 }

@@ -25,6 +25,7 @@ const Index = ({ src, alt, links, href, target, width, height, figcaption, child
                         height={height? height : width/3}
                         priority
                     />
+            {figcaption && <figcaption>{children}</figcaption>}
                 </Link>
             )}
             {links && !width && (
@@ -37,9 +38,11 @@ const Index = ({ src, alt, links, href, target, width, height, figcaption, child
                         fill
                         priority
                     />
+            {figcaption && <figcaption>{children}</figcaption>}
                 </Link>
             )}
             {!links && width && (
+                <>
                 <Image
                     src={src}
                     alt={alt}
@@ -47,8 +50,11 @@ const Index = ({ src, alt, links, href, target, width, height, figcaption, child
                     height={height? height : width/3}
                     priority
                 />
+            {figcaption && <figcaption>{children}</figcaption>}
+                </>
             )}
             {!links && !width && (
+                <>
                 <Image
                     src={src}
                     alt={alt}
@@ -56,8 +62,9 @@ const Index = ({ src, alt, links, href, target, width, height, figcaption, child
                     sizes="100%"
                     priority
                 />
-            )}
             {figcaption && <figcaption>{children}</figcaption>}
+                </>
+            )}
         </figure>
     );
 };

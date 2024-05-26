@@ -142,6 +142,7 @@
 .primary {
     @extend  .circle;
     background-color: $primary;
+    border-color: $secondary;
 }
 
 .tertiary {

@@ -30,6 +30,7 @@
 .tertiary {
     @extend .default;
     background-color: $tertiary-tint;
+    color: $tertiary-tint;
     border-color: $tertiary-light;
 }
 
@@ -44,3 +45,38 @@
     position: unset;
 }
 
+.input{
+    height:  min-content;
+    @include key.slideIN();
+    justify-content: flex-end;
+    width: min-content;
+    padding: $default-padding-inset;
+    & figure:nth-child(2){
+            margin-top: 3.5rem;
+        }
+}
+
+.input__primary{
+    @extend .primary;
+    @extend .input;
+
+    & a{
+        color: $primary;
+    }
+}
+
+.input__secondary{
+    @extend .secondary;
+    @extend .input;
+    & a{
+        color: $secondary;
+    }
+}
+
+.input__tertiary{
+    @extend .tertiary;
+    @extend .input;
+    & a{
+        color: $tertiary;
+    }
+}

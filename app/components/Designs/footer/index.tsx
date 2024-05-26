@@ -1,14 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { Footer, Ul, CustomImage } from "../../";
+import { Footer, CustomImage } from "../../";
 import Input from "./FocusHandler";
 import { FooterInterface } from "../../../types/dictionary";
 
 import Github from "/public/github.svg";
 import Story from "/public/storybook.svg";
 import Linkedin from "/public/linked.svg";
-import Email from "/public/email.svg";
-import Whatsapp from "/public/whatsapp.svg";
 import Pdf from "/public/pdf-icon.svg";
 
 interface IndexProps {
@@ -17,10 +15,6 @@ interface IndexProps {
 }
 
 const Index = ({ theme, content }: IndexProps) => {
-
-  // <Link href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKHQdLbxgWJLPSKVBsWGVgSDTmMXHzlGMGxSmJNPhMBwWVFmHKxZMHJPQMGcvwwfRDWXTML"
-  //   target="_blank"
-  // />
 
   const { title, placeholder, button, about: { project: { title: PROJECTTITLE, links: PROJECTLINKS }, aboutme:{ title: ABOUTMETITILE, links: ABOUTMELINKS} } } = content;
 
@@ -32,7 +26,7 @@ const AboutMeLinks = [Linkedin, Pdf]
     <Footer className={theme}>
         <h3>{title}</h3>
       <div>
-        <Input placeholder={placeholder} textButton={button} />
+        <Input placeholder={placeholder} textButton={button} theme={theme} />
       </div>
 
       <section>

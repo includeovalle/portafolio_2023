@@ -354,7 +354,6 @@
   }
   a {
     @include flex.row(flex-start, center);
-    @include key.slideIN();
     position: relative;
     background-color: transparent;
     gap: 25px;

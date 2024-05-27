@@ -39,6 +39,11 @@ export interface FooterInterface {
   title: string;
   placeholder: string;
   button: string;
+  popup: {
+    email: string;
+    whatsapp: string;
+    gmail: string;
+  }
   about: {
     project: AboutSection;
     aboutme: AboutSection;

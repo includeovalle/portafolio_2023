@@ -9,9 +9,14 @@ interface IndexProps {
   placeholder: string;
   textButton: string;
   theme: string;
+  popup: {
+    whatsapp: string;
+    email: string;
+    gmail: string;
+  }
 }
 
-const Index = ({ placeholder, textButton, theme }: IndexProps) => {
+const Index = ({ placeholder, textButton, theme, popup }: IndexProps) => {
 
   const [isClient, setIsClient] = useState(false);
   const [message, setMessage] = useState('');
@@ -28,7 +33,7 @@ const Index = ({ placeholder, textButton, theme }: IndexProps) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const onFocusHandler = () => {
-    modalRef.current?.show();
+    modalRef.current?.showModal();
     setMessage(textAreaRef.current?.value || '');
   }
 
@@ -42,6 +47,8 @@ const Index = ({ placeholder, textButton, theme }: IndexProps) => {
     : `https://api.whatsapp.com/send?phone=4441934444&text=${encodedMessage}`;
   const deviceEmail = `mailto:carlosovalle@soultech.studio?body=${encodedMessage}`
   const gmailHref = deviceWidth > 768 ? `https://mail.google.com/mail/?view=cm&fs=1&to=carlosovalle@soultech.studio&body=${encodedMessage}` : ``
+
+  const className= `icon__${theme}`
 
   useEffect(() => {
     setIsClient(true);
@@ -66,18 +73,16 @@ const Index = ({ placeholder, textButton, theme }: IndexProps) => {
         {
           isClient ? (
             <>
-              <CustomImage src={WHATSAPP} links figcaption href={whatsappHref} alt="carlos raul amaro whatsapp" className="icon">
-                use
-                Whatsapp
+              <CustomImage src={WHATSAPP} links figcaption href={whatsappHref} alt="carlos raul amaro whatsapp" className={className}>
+                {popup.whatsapp}
               </CustomImage>
-              <CustomImage src={EMAIL} links figcaption href={deviceEmail} alt="carlos raul amaro emaill" className="icon">
-                use
-                Email
+              <CustomImage src={EMAIL} links figcaption href={deviceEmail} alt="carlos raul amaro emaill" className={className}>
+                {popup.email}
               </CustomImage>
               {
                 deviceWidth > 768 ? (
-<CustomImage src={GMAIL} links figcaption href={gmailHref} alt="carlos raul amaro gmail" className="icon">
-                    use Gmail
+<CustomImage src={GMAIL} links figcaption href={gmailHref} alt="carlos raul amaro gmail" className={className}>
+                  {popup.gmail}
               </CustomImage>
                 ) : (
                   <div></div>

@@ -64,11 +64,16 @@
     "title": "Contact me"
     , "placeholder": "Type your message here"
     , "button": "Send"
+    , "popup" : {
+      "email": "Contact using device email"
+      , "whatsapp": "Contact using whatsapp"
+      , "gmail": "Contact using gmail"
+    }
     , "about": {
       "project": {
         "title": "Project links",
         "links": [
-           {
+          {
             "text": "github"
             , "alt": "repositorio do projecto carlosraul.am"
             , "href": "https://github.com/includeovalle/portafolio_2023/"
@@ -85,11 +90,11 @@
       , "aboutme": {
         "title": "Links about me",
         "links": [
-         {
+          {
             "text": "Linkedin",
             "alt": " check my linkedin carlos raul amaro dev",
-           "href": "https://www.linkedin.com/in/carlos-amaro-dev"
-           , "target": "_blank"
+            "href": "https://www.linkedin.com/in/carlos-amaro-dev"
+            , "target": "_blank"
           }
           , {
             "text": "Download resume",

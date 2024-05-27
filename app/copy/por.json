@@ -64,8 +64,13 @@
     "title": "contato"
     , "placeholder": "Digite sua mensagem"
     , "button": "Enviar"
+    , "popup" : {
+      "email": "Enviar com e-mail do dispositivo"
+      , "whatsapp": "Enviar mensagem via whatsapp"
+      , "gmail": "Enviar mensagem via gmail web"
+    }
     , "about": {
-      "project": {
+       "project": {
         "title": "Links do projeto",
         "links": [
            {

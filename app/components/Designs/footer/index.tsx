@@ -16,7 +16,7 @@ interface IndexProps {
 
 const Index = ({ theme, content }: IndexProps) => {
 
-  const { title, placeholder, button, about: { project: { title: PROJECTTITLE, links: PROJECTLINKS }, aboutme:{ title: ABOUTMETITILE, links: ABOUTMELINKS} } } = content;
+  const { title, placeholder, button, popup , about: { project: { title: PROJECTTITLE, links: PROJECTLINKS }, aboutme:{ title: ABOUTMETITILE, links: ABOUTMELINKS} } } = content;
 
   const ProjectLinks = [Github, Story]
 const AboutMeLinks = [Linkedin, Pdf]
@@ -26,7 +26,7 @@ const AboutMeLinks = [Linkedin, Pdf]
     <Footer className={theme}>
         <h3>{title}</h3>
       <div>
-        <Input placeholder={placeholder} textButton={button} theme={theme} />
+        <Input placeholder={placeholder} textButton={button} theme={theme} popup={popup} />
       </div>
 
       <section>

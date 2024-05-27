@@ -64,6 +64,11 @@
     "title": "Contácteme"
     , "placeholder": "Escribe tu mensaje aquí"
     , "button": "Enviar"
+    , "popup": {
+      "email": "Enviar usando correo electrónico del dispositivo"
+      , "whatsapp": "Enviar usando whatsapp"
+      , "gmail": "Enviar usando gmail"
+    }
     , "about": {
       "project": {
         "title": "Links del proyecto",

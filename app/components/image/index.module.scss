@@ -9,9 +9,11 @@
   width: 220px;
   height: 220px;
   position: relative;
-  margin: 50px auto 0;
+  margin: 150px auto;
   @include key.shakeBottom();
   @media(width >= 768px){
+  margin: 250px auto;
+
 }
 img{
   border-radius: 50%;

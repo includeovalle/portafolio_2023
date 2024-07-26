@@ -18,7 +18,7 @@
   background-color: $primary;
   z-index: 1;
   @media(width > 768px){
-    @include flex.row(space-between, flex-start);
+    @include flex.row(space-evenly, flex-start);
     }
 
     &>div:first-of-type {

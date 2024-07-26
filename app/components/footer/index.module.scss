@@ -51,13 +51,13 @@
 .primary{
   @extend .footer;
   background-color: $secondary;
-  color: $white;
+  color: $secondary-tint;
 
   & textarea{ border-color: $secondary-tint; color: $secondary-light; }
   & button{ border-color: $secondary-tint;
     background-color: $secondary-tint;
     border-style: groove;
-    color: $secondary-light;
+    color: $secondary;
     cursor: pointer;
     font-weight: 600;
     &:first-letter{ text-transform: capitalize; }
@@ -90,7 +90,7 @@
   & textarea{ border-color: $tertiary-tint; color: $primary-light;
 }
   & button{ border-color: $tertiary-tint;
-    background-color: $tertiary-tint;
+    background-color: $tertiary-light;
     border-style: groove;
     color: $tertiary;
     font-weight: 600;

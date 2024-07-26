@@ -12,91 +12,87 @@
   margin: 50px auto 0;
   @include key.shakeBottom();
   @media(width >= 768px){
-  }
-  img{
-    border-radius: 50%;
-  }
-  figcaption{
-    &>div:nth-child(1) {
-      //overlay
-      position: relative;
-      left:0;
-      top:0;
-      width: 220px;
-      height: 220px;
-      overflow: hidden;
+}
+img{
+  border-radius: 50%;
+}
+figcaption{
+  //overlay
+  position: relative;
+  left:0;
+  top:0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  transition: 1.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(229, 137, 53, 1);
+  border-radius: 50%;
+  text-align: center; 
+  background: radial-gradient(circle, transparent 60%, rgba(95,95,93,.7) 10%);
+  &>div{
+    //spinning text
+    @include key.spin(70s);
+    transition: 1.5s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: $primary;
+    > span {
       transition: 1.5s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: rgba(229, 137, 53, 1);
-      border-radius: 50%;
-      text-align: center; 
-      background: radial-gradient(circle, transparent 60%, rgba(95,95,93,.7) 10%);
-      &>div{
-        //spinning text
-        @include key.spin(70s);
-        transition: 1.5s ease;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        color: $primary;
-        >p {
-          > span {
-            transition: 1.5s ease;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform-origin:0px 110px;
-            &:first-letter {
-              font-size: .9rem;
-              text-transform: capitalize;
-            }
-          }
-        }
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform-origin:0px 110px;
+      &:first-letter {
+        font-size: .9rem;
+        text-transform: capitalize;
       }
     }
   }
 }
+}
 
 .primary{
   @extend .portrait;
-  img{
-    @include key.shadowChange($tertiary-light);
-  }
   figcaption{
-    &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $primary-light 10%);
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $primary-light 80%);
     }
   }
-
 }
 
-.tertiary{
+.tertiary {
   @extend .portrait;
-  img{
-    @include key.shadowChange($secondary-tint);
-  }
   figcaption{
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
     &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $tertiary-light 10%);
-      &>div{ >p { > span {
-            color: $primary-tint;
-  }}}}}
+      background: radial-gradient(circle, transparent 50%, $tertiary-light 80%);
+    }
+  }
 }
 
 .secondary {
   @extend .portrait;
-  img{
-    @include key.shadowChange($color: $tertiary-light);
-  }
   figcaption{
-    &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $secondary-light 10%);
-      &>div{ >p { > span {
-            color: $silver-tint;
-  }}}}}
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $secondary-light 80%);
+    }
+  }
 }
 
 .card {
@@ -143,46 +139,46 @@
     max-height: 255px;
     object-fit: contain;
     @media(width >= 768px){
-      border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
-      min-height: 125px;
-      max-height: 125px;
-    }
+    border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
+    min-height: 125px;
+    max-height: 125px;
   }
-  figcaption {
-    height: 100%;
-    min-height: 20vh;
-    @include flex.col(space-around, flex-start);
-    border-radius: 0 0 $default-border-radius $default-border-radius;
+}
+figcaption {
+  height: 100%;
+  min-height: 20vh;
+  @include flex.col(space-around, flex-start);
+  border-radius: 0 0 $default-border-radius $default-border-radius;
 
-    & p {
-      padding: 1rem;
-      transition: 0.75s ease;
-      &:last-of-type {
-        padding: 0;
-        margin-bottom: 1rem;
-      }
-    }
-    & h3 {
-      text-transform: uppercase;
-      text-align: center;
-      transition: 0.75s ease;
-      @media(width >= 768px){
-        color: $primary-tint;
-      }
-    }
-    a {
-      color: $primary;
-      font-weight: 600;
-      text-decoration: underline;
-      &::first-letter{
-        text-transform: capitalize;
-      }
-      &::after{
-        content: " >";
-        display: inline;
-      }
+  & p {
+    padding: 1rem;
+    transition: 0.75s ease;
+    &:last-of-type {
+      padding: 0;
+      margin-bottom: 1rem;
     }
   }
+  & h3 {
+    text-transform: uppercase;
+    text-align: center;
+    transition: 0.75s ease;
+    @media(width >= 768px){
+    color: $primary-tint;
+  }
+}
+a {
+  color: $primary;
+  font-weight: 600;
+  text-decoration: underline;
+  &::first-letter{
+    text-transform: capitalize;
+  }
+  &::after{
+    content: " >";
+    display: inline;
+  }
+}
+}
 }
 
 .card__primary {
@@ -196,12 +192,9 @@
         color: $secondary-light;
       }
       > p {
-        color: $primary-light;
         transition: 1.75s ease;
-        &:last-of-type {
           color: $secondary-light;
         }
-      }
     }
   }
   & figcaption {
@@ -256,12 +249,8 @@
         color: $secondary-light;
       }
       > p {
-        color: $primary-tint;
-        &:last-of-type {
-          text-decoration: underline;
           color: $secondary-light;
         }
-      }
     }
   }
 
@@ -284,7 +273,7 @@
 
 .card__secondary {
   @extend .card;
-  background-color: $silver-tint;
+  background-color: transparent;
   border-color: $secondary-light;
   figcaption {
     > h3{
@@ -321,9 +310,7 @@
         color: $secondary-light;
       }
       > p {
-        &:last-of-type {
           color: $secondary-light;
-        }
       }
       > a{
         color: $secondary-tint;
@@ -376,17 +363,17 @@
     width: $default-button-size;
     max-width: 25px;
     @media(width > 768px){
-      max-width: 30px;
-    }
+    max-width: 30px;
   }
-  figcaption{
-    position: relative;
-    font-size: 10px;
-    color: $white;
-    width: max-content;
-    @media(width > 768px){
-      font-size: 12px;
-    }
+}
+figcaption{
+  position: relative;
+  font-size: 10px;
+  color: $white;
+  width: max-content;
+  @media(width > 768px){
+  font-size: 12px;
+  }
   }
 }
 

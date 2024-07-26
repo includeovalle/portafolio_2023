@@ -1,16 +1,24 @@
 import React from "react";
-import { CustomImage } from "@/app/components/";
-import { ImageInterface, LinkInterface  } from "@/app/types/";
+import Link from 'next/link';
+import { CustomImage } from "../";
+import styles from "../image/index.module.scss";
+import { ImageInterface } from "@/app/types/";
 
-interface IndexProps extends ImageInterface, LinkInterface{
+interface IndexProps extends ImageInterface {
+    links?: boolean;
+    href: string;
+    target?: string;
 }
 
-const Index = ({ className = "card", alt, src, children, links, href, text, target, figcaption }: IndexProps) => {
+const Index = ({ className = "card", alt, src, children, links, href, target, figcaption }: IndexProps) => {
+    const currentLink = "/";
 
     return (
-        <CustomImage className={className} src={src} alt={alt} figcaption={true} links={links} href={href} target={target} text={text} >
+        <Link className={styles[className]}  href={links ? href : currentLink} target={target}>
+        <CustomImage  src={src} alt={alt} figcaption={figcaption} >
             {children}
         </CustomImage>
+        </Link>
     );
 };
 

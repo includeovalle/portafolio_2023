@@ -1,26 +1,35 @@
-"use client"
 import React from "react";
-import { Card, Ptag } from "@/app/components/";
-import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
-import { RowContainer } from '@/app/components/'
+import { Card, Ptag } from '../../';
+import IMAGE from '/public/logo.png';
+import { RowContainer } from '../../'
 
+interface Props  {
+  theme: string;
+  card: {
+    alt: string;
+    title: string;
+    body: string;
+    link: {
+      text: string;
+      href: string;
+      target: string;
+    }
+  }
+}
 
+const Index = ({theme,card}: Props) => {
 
-const Index = () => {
-  const { bgColor } = useBgColor();
-  const { CURRENTLANGUAGE } = useLanguage();
-
-  const { image, alt, title, body, className, link } = CURRENTLANGUAGE["projects"].vic;
+  const { alt, title, body, link } = card;
   const { text, href, target } = link;
-  const currentTheme = `${className}__${bgColor}`;
+  const bgColor = theme;
+  const currentTheme = `card__${bgColor}`;
 
   return (
     <RowContainer>
-      <Card className={currentTheme} src={image} alt={alt} text={text} href={href} target={target} links={true} figcaption={true}>
+      <Card className={currentTheme} src={IMAGE} alt={alt} href={href} target={target} links={true} figcaption={true}>
         <h3>{title}</h3>
         <Ptag className={'body'}>{body}</Ptag>
-        <a >{text}</a>
+        <Ptag >{text}</Ptag>
       </Card>
     </RowContainer>
   );

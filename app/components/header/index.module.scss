@@ -1,7 +1,7 @@
-@use '@/app/styles/_breakpoints.scss' as bp;
-@use '@/app/styles/_flexbox.scss' as flex;
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_keyframes.scss' as keyframes;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_flexbox.scss' as flex;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_keyframes.scss' as keyframes;
 
 
 .default {
@@ -11,52 +11,60 @@
 .header {
   @include flex.col(center, center);
   padding: 1rem 2rem;
-  position: relative;
+  position: fixed;
   gap: 1rem;
   text-align: center;
+  width: 100%;
+  background-color: $primary;
+  z-index: 1;
   @media(width > 768px){
-  @include flex.row(space-between, flex-start);
-  gap: 2rem;
-}
+    @include flex.row(space-between, flex-start);
+    }
 
-  &>div:nth-child(3) {
-    @include flex.row(space-between, center);
-    gap: 1rem;
-    @media(width < 768px){
+    &>div:first-of-type {
+      @include flex.row(center, center);
+      gap: 1rem;
+      @media(width > 768px){
+      @include flex.row(space-between, center);
+    }
+    }
+    &>div:last-of-type {
       display: none;
+      @media(width > 768px){
+      @include flex.row(space-between, center);
+      gap: 2*$default-padding-inset;
     }
   }
-
 }
 
-.blue{
+.primary{
   @extend .header;
   background-color: $primary;
-  &>div:nth-child(1) {
-    &>div{
-      color: $primary-light;
-    }
+&>div:nth-child(1) {
+  &>div{
+    color: $primary-light;
   }
 }
-
-.orange {
-  @extend .header;
-  background-color: $secondary;
-  &>div:nth-child(1) {
-    &>div{
-      color: $primary-light;
-    }
-  }
 }
 
-.purple {
+.tertiary {
   @extend .header;
   background-color: $tertiary;
-  &>div:nth-child(1) {
-    &>div{
-      color: $primary-light;
-    }
+&>div:nth-child(1) {
+  &>div{
+    color: $primary-light;
   }
+}
+}
+
+.secondary {
+    @extend .header;
+    background-color: $secondary;
+    &>div:nth-child(1) {
+      &>div{
+        color: $primary-light;
+      }
+    }
 }
 
 

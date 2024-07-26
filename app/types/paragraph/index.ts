@@ -1,3 +1,5 @@
 import { childrenInterface, classNamesInterface} from  '@/app/types';
 
-export default interface Props extends childrenInterface, classNamesInterface { }
+export default interface Props extends childrenInterface, classNamesInterface {
+  title?: string;
+}

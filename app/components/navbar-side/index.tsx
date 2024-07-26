@@ -1,10 +1,9 @@
 "use client"
 import React, { useRef } from "react";
 import styles from "./index.module.scss";
-import { CloseButton } from "@/app/components/";
-import { childrenInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
-
+import { CloseButton } from "../";
+import { useSearchParams } from 'next/navigation';
+import { childrenInterface, classNamesInterface } from "@/app/types/";
 
 interface PropsInterface extends childrenInterface {
   buttonText?: string
@@ -12,7 +11,7 @@ interface PropsInterface extends childrenInterface {
 
 const Index = ({ buttonText, children }: PropsInterface) => {
 
-  const { bgColor } = useBgColor();
+  const bgColor = useSearchParams().get("theme") || "primary";
   const mediaRef = useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {
@@ -27,11 +26,11 @@ const Index = ({ buttonText, children }: PropsInterface) => {
 
   return (
     <>
-      <nav onClick={() => handleClick()} className={styles[bgColor]}>
+      <button role="button" tabIndex={0} onClick={() => handleClick()} className={styles[bgColor]}>
         {buttonText}
-      </nav>
-        <dialog className={styles[currentTheme]} ref={mediaRef}>
-        <CloseButton onClick={closeModal}></CloseButton>
+      </button>
+        <dialog onClick={()=> closeModal()} className={styles[currentTheme]} ref={mediaRef}>
+        <CloseButton  autoFocus/>
           {children}
         </dialog>
     </>

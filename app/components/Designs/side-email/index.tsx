@@ -1,20 +1,16 @@
-"use client"
 import React from "react";
-import { CopyButton } from "@/app/components";
-import { useLanguage } from '@/app/utils/language';
+import { CopyButton } from '../../';
 
-const Email = "carlosovalle@soultech.studio"
+interface IndexProps {
+  display: string;
+  alert: string;
+  copyThis: string;
+}
 
-
-const Index = () => {
-  const { CURRENTLANGUAGE } = useLanguage();
-  const buttonText = CURRENTLANGUAGE["networks"].copyEmail;
-
+const Index = ({ display, alert, copyThis }: IndexProps) => {
   return (
     <>
-
-      <CopyButton display={buttonText} copyThis={Email} />
-
+      <CopyButton display={display} copyThis={copyThis} alertText={alert} />
     </>
   );
 };

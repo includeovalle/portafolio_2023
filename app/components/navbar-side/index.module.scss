@@ -1,8 +1,8 @@
-@use '@/app/styles/_mixins.scss' as mixins;
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_breakpoints.scss' as bp;
-@use '@/app/styles/_keyframes.scss' as key;
-@use '@/app/styles/_classes.scss';
+@use '/app/styles/_mixins.scss' as mixins;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_keyframes.scss' as key;
+@use '/app/styles/_classes.scss';
 
 .default{
 @include key.Flash();
@@ -22,6 +22,9 @@
   border-color: $primary-tint;
   transition: all 0.3s ease-in-out;
   line-height: 1;
+  &:focus{
+    outline: 2px solid $white;
+  }
 
   & >div {
     position: relative;
@@ -43,10 +46,11 @@
     transform: translateX(-50%);
   }
   @media( width > 768px ) {
+    top: 20%;
   }
 }
 
-.blue {
+.primary {
   @extend .default;
   color: $primary-tint;
   @media (prefers-color-scheme: dark) {
@@ -64,7 +68,7 @@
   }
 }
 
-.orange {
+.tertiary {
   @extend .default;
   color: $tertiary-tint;
   border-left: 3px solid $tertiary-tint;
@@ -72,19 +76,19 @@
     color: $tertiary-tint;
   }
   &:hover{
-    color: crimson;
+    color: primary-light;
   }
 }
 
-.purple {
+.secondary {
   @extend .default;
-  color: $purple;
-  border-left: 3px solid $purple;
+  color: $secondary;
+  border-left: 3px solid $secondary;
   @media (prefers-color-scheme: dark) {
-    color: $purple-tint;
+    color: $secondary-tint;
   }
   &:before{
-    color: $purple;
+    color: $secondary;
   }
   &:hover{
     color: $tertiary-tint;
@@ -108,6 +112,9 @@
     padding: $default-padding-inset;
     margin-left: calc( 100% - 80px);
     z-index: 1;
+  @media( width > 768px ) {
+    top: 20%;
+  }
     button{
         transition: all 0.3s ease-in-out;
         right: 5px;
@@ -127,17 +134,17 @@
     }
 }
 
-.media__blue {
+.media__primary {
     @extend .media;
     border-color: $primary-tint;
     background-color: $primary-light;
 }
 
 
-.media__orange {
+.media__tertiary {
     @extend .media;
     border-color: $secondary-light;
-    background-color: $silver-tint;
+    background-color: $silver;
     transition: all 0.3s ease-in-out;
     button{
         span{
@@ -146,17 +153,18 @@
     }
 }
 
-.media__purple {
+.media__secondary {
     @extend .media;
-    border-color: $purple;
-    background-color: $silver-tint;
+    border-color: $secondary;
+    background-color: $silver;
     transition: all 0.3s ease-in-out;
     button{
         span{
-            border-color: $purple-tint;
+            border-color: $secondary-tint;
         }
     }
 }
+
 .no-display{
   display: none;
 }

@@ -1,24 +1,40 @@
-"use client"
 import React from "react";
-import { Ptag } from '@/app/components/'
-import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import Link from 'next/link';
+import { Language } from "@/app/types/dictionary";
+import styles from '../../anchors/index.module.scss'
 
-const Index = () => {
-  const { bgColor } = useBgColor();
-  const { CURRENTLANGUAGE } = useLanguage();
-  const currentTheme = `lang__${bgColor}`;
+
+interface Props {
+  theme: string;
+  languages: Language[];
+  currentLang: string;
+}
+
+const Index = ({ theme, languages, currentLang }: Props) => {
   return (
-    <>
-      <br />
+      <nav className={styles[theme]} >
       {
-      CURRENTLANGUAGE.footer.languages.map((item: string) => (
-      <Ptag key={item} className={currentTheme}>{item}</Ptag>
-        ))
+        languages.map((lang: Language) => {
+
+          const LANGUAGE = lang.href
+          const CURRENTROUTE = `/${LANGUAGE}?theme=${theme}`
+          const CURRENTTHEME = `active__${theme}`
+          return (
+            <Link tabIndex={0}
+              href={CURRENTROUTE}
+              key={lang.href}
+              className={currentLang===lang.href ? styles[CURRENTTHEME] : ""}
+              title={lang.title}
+              aria-roledescription={lang.ariaRole}
+            >
+              {lang.href}
+            </Link>
+          )
+        }
+        )
       }
-    </>
+      </nav>
   );
 };
 
 export default Index;
-

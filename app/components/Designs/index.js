@@ -1,10 +1,7 @@
 export { default as Header } from './header/';
 export { default as Card } from './card/';
-export { default as Title } from './title/';
-export { HeaderTag as HeaderTag } from './title/';
-export { ProjectsTag as ProjectsTag } from './title/';
-export { LanguagesTag as LanguagesTag } from './title/';
-export { AboutMeTag as AboutMeTag} from './title/';
+export { TitleTag as TitleTag } from './title/';
+export { SubtitleTag as SubtitleTag } from './title/';
 export { default as Languages } from './languages/';
 export { default as Footer } from './footer/';
 export { default as SocialMedia } from './media/';

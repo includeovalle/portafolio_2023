@@ -1,39 +1,40 @@
 "use client"
-import React from "react";
-import { Header, OnHoverButton, Hamburger, Portrait, Ul } from '@/app/components/';
-import { Title, EmailButton } from '@/app/components/Designs';
-import { useBgColor } from '@/app/utils/context';
-import { useLanguage } from '@/app/utils/language';
+import { Header, Hamburger, Portrait } from '../../';
+import Link from 'next/link';
+import { Languages } from '../';
+import ButtonStyle from '../../button/index.module.scss';
+import colorHandler from '../../../utils/colorHandler';
+import { Language } from "@/app/types/dictionary";
 
-const Index = () => {
+interface Props {
+  theme: string;
+  display: string;
+  alert: string;
+  copyThis: string;
+  languages: Language[];
+  currentLang: string;
+}
 
-  const { changeTheme, bgColor } = useBgColor();
-  const { CURRENTLANGUAGE } = useLanguage();
 
-  const handleClick = (theme: string) => {
-    changeTheme(theme);
-  };
+const Index = ({theme, languages, currentLang} : Props) => {
 
-  const COLORS = ["blue", "purple", "orange"]
+  const COLORS = ["primary", "secondary", "tertiary"];
 
-  const TitleTag = () => Title.Header()
-
+  // colorHandler is a function that handles default theme
+  colorHandler( );
 
   return (
 
-    <Header className={bgColor} >
-      <Portrait className={bgColor} text={CURRENTLANGUAGE.header.portrait} />
+    <Header className={theme} >
       <div>
-        <TitleTag />
-        <Ul className={bgColor} lis={CURRENTLANGUAGE.header.skills}/>
-
+      <Languages theme={theme} languages={languages} currentLang={currentLang}/>
       </div>
-
       <div>
         {
           COLORS.map((color: string) => {
             return (
-              <OnHoverButton key={color} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
+              </Link>
             )
           })
         }
@@ -42,15 +43,14 @@ const Index = () => {
       <Hamburger >
         <div>
           {
-            COLORS.map((color: string, index: number) => {
+            COLORS.map((color: string) => {
               return (
-                <OnHoverButton key={index} onClick={() => handleClick(color)} onHover={() => handleClick(color)} className={color} />
+              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
+              </Link>
               )
             })
           }
         </div>
-        <EmailButton />
-
       </Hamburger>
     </Header>
   );

@@ -1,6 +1,6 @@
 import React from "react";
-import { CustomImage} from "@/app/components";
-import picture from "@/public/carlos.jpeg";
+import { CustomImage} from "../";
+import picture from "/public/carlos.webp";
 import { classNamesInterface } from "@/app/types/";
 
 

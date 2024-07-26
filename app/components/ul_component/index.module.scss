@@ -94,7 +94,7 @@
     }
       &:hover{
         @include keyframes.growFont();
-        font-weight: 800;
+        font-weight: 700;
         &:before{
           content: '\270e';
           position: absolute;
@@ -148,9 +148,8 @@
 .secondary {
   @extend .header;
   li{
-    color: $silver;
-    border-color: $secondary-light;
-    text-shadow: 0px 0px 40px $secondary-light;
+    color: $secondary-light;
+    border-color: $secondary-tint;
     text-align: center;
     &:hover{
       color: $secondary-tint;

@@ -29,14 +29,13 @@
 
 .tertiary {
     @extend .default;
-    background-color: $tertiary-tint;
-    color: $tertiary-tint;
+    background-color: $tertiary;
     border-color: $tertiary-light;
 }
 
 .secondary {
     @extend .default;
-    background-color: $secondary-tint;
+    background-color: $secondary;
     border-color: $secondary-light;
 }
 

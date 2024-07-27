@@ -24,6 +24,7 @@ export default async function Home({ searchParams, params }: Props) {
   const MAINTITLE = lang["titles"].title;
   const PROJECTSTITLE = lang["titles"].projects;
   const ABOUTMETITLE = lang["titles"].aboutme;
+  const CONTACTOTITLE = lang["titles"].contact;
   const DISPLAY = lang["networks"].copyEmail;
   const ALERT = lang["networks"].alert;
   const LANGUAGES = lang["languages"];
@@ -50,9 +51,10 @@ export default async function Home({ searchParams, params }: Props) {
         <Ul className={bgColor} lis={SKILLS}/>
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
           <Card theme={bgColor} card={CARD} />
+          <SubtitleTag theme={bgColor} text={CONTACTOTITLE} />
         </InnerContainer >
+        <Footer theme={bgColor} content={FOOTER} />
       </MainContainer>
-      <Footer theme={bgColor} content={FOOTER} />
     </>
   )
 }

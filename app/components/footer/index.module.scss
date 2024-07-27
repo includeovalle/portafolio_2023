@@ -10,7 +10,7 @@
   text-align: center;
   background-color: $silver-tint;
   @include flex.col(center, center);
-  gap: 1rem;
+  gap: $default-padding;
 
   & section {
     width: 100%;

@@ -105,7 +105,7 @@ figcaption{
   border-radius: 2*$default-border-radius;
   background-color: $silver-tint;
   gap: 1rem;
-  padding: $default-padding-inset $default-padding;
+  padding: $default-padding-inset 2*$default-padding-inset;
   border: 1px solid $primary-light;
 
   max-width: 285px;

@@ -9,51 +9,49 @@
   width: 220px;
   height: 220px;
   position: relative;
-  margin: 50px auto 0;
-  @media(width > 768px){
+  margin: 150px auto;
   @include key.shakeBottom();
+  @media(width >= 768px){
+  margin: 250px auto;
+
 }
 img{
   border-radius: 50%;
 }
 figcaption{
-  &>div:nth-child(1) {
-    //overlay
-    position: relative;
-    left:0;
-    top:0;
-    width: 220px;
-    height: 220px;
-    overflow: hidden;
+  //overlay
+  position: relative;
+  left:0;
+  top:0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  transition: 1.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(229, 137, 53, 1);
+  border-radius: 50%;
+  text-align: center; 
+  background: radial-gradient(circle, transparent 60%, rgba(95,95,93,.7) 10%);
+  &>div{
+    //spinning text
+    @include key.spin(70s);
     transition: 1.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(229, 137, 53, 1);
-    border-radius: 50%;
-    text-align: center; 
-    background: radial-gradient(circle, transparent 60%, rgba(95,95,93,.7) 10%);
-    &>div{
-      //spinning text
-      @include key.spin(70s);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: $primary;
+    > span {
       transition: 1.5s ease;
       position: absolute;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      color: $primary;
-      >p {
-        > span {
-          transition: 1.5s ease;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform-origin:0px 110px;
-          &:first-letter {
-            font-size: .9rem;
-            text-transform: capitalize;
-          }
-        }
+      top: 0;
+      left: 50%;
+      transform-origin:0px 110px;
+      &:first-letter {
+        font-size: .9rem;
+        text-transform: capitalize;
       }
     }
   }
@@ -62,41 +60,41 @@ figcaption{
 
 .primary{
   @extend .portrait;
-  img{
-    @include key.shadowChange($tertiary-light);
-  }
   figcaption{
-    &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $primary-light 10%);
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $primary-light 80%);
     }
   }
-
 }
 
-.tertiary{
+.tertiary {
   @extend .portrait;
-  img{
-    @include key.shadowChange($secondary-tint);
-  }
   figcaption{
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
     &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $tertiary-light 10%);
-      &>div{ >p { > span {
-        color: $primary-tint;
-      }}}}}
+      background: radial-gradient(circle, transparent 50%, $tertiary-light 80%);
+    }
+  }
 }
 
 .secondary {
   @extend .portrait;
-  img{
-    @include key.shadowChange($color: $tertiary-light);
-  }
   figcaption{
-    &>div:nth-child(1) { 
-      background: radial-gradient(circle, transparent 60%, $secondary-light 10%);
-      &>div{ >p { > span {
-        color: $silver-tint;
-      }}}}}
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $secondary-light 80%);
+    }
+  }
 }
 
 .card {
@@ -109,8 +107,9 @@ figcaption{
   gap: 1rem;
   padding: $default-padding-inset $default-padding;
   border: 1px solid $primary-light;
-  max-width: 255px;
-  transition: .75 ease-in-out;
+
+  max-width: 285px;
+
   &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;
@@ -132,17 +131,16 @@ figcaption{
     }
   }
 
-  @media( width > 768px ) {
+  @media( width >= 768px ) {
     flex-direction: column;
     padding-bottom: unset;
-    max-width: 285px;
   }
   img {
     position: relative !important;
     border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
     max-height: 255px;
     object-fit: contain;
-    @media(width > 768px){
+    @media(width >= 768px){
     border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
     min-height: 125px;
     max-height: 125px;
@@ -166,7 +164,7 @@ figcaption {
     text-transform: uppercase;
     text-align: center;
     transition: 0.75s ease;
-    @media(width > 768px){
+    @media(width >= 768px){
     color: $primary-tint;
   }
 }
@@ -196,12 +194,9 @@ a {
         color: $secondary-light;
       }
       > p {
-        color: $primary-light;
         transition: 1.75s ease;
-        &:last-of-type {
           color: $secondary-light;
         }
-      }
     }
   }
   & figcaption {
@@ -256,12 +251,8 @@ a {
         color: $secondary-light;
       }
       > p {
-        color: $primary-tint;
-        &:last-of-type {
-          text-decoration: underline;
           color: $secondary-light;
         }
-      }
     }
   }
 
@@ -284,7 +275,7 @@ a {
 
 .card__secondary {
   @extend .card;
-  background-color: $silver-tint;
+  background-color: transparent;
   border-color: $secondary-light;
   figcaption {
     > h3{
@@ -321,9 +312,7 @@ a {
         color: $secondary-light;
       }
       > p {
-        &:last-of-type {
           color: $secondary-light;
-        }
       }
       > a{
         color: $secondary-tint;
@@ -338,11 +327,12 @@ a {
 }
 
 .icon{
+  @include flex.row(flex-start, center);
+  gap: $default-padding-inset;
   position: relative;
   margin-top: 1rem;
   cursor: pointer;
   min-width: 25px;
-  height: auto;
   width: max-content;
   &:hover {
     transform: scale(1.05);
@@ -356,28 +346,79 @@ a {
   a {
     @include flex.row(flex-start, center);
     position: relative;
-    height: 100%;
-    width: 100%;
+    background-color: transparent;
     gap: 25px;
+    padding: $default-padding-inset;
+    width: max-content;
     top: 0;
     left: 0;
-    }
-    img {
-      position: relative !important;
-      object-fit: contain;
-      object-position: left;
-      max-width: 25px;
-      @media(width > 768px){
-      max-width: 30px;
+    &:hover {
+      border-radius: $default-border-radius;
     }
   }
-  figcaption{
-    position: relative;
-    font-size: 10px;
-    color: $white;
-    width: max-content;
+  img {
+    position: relative !important;
+    object-fit: contain;
+    background-color: transparent;
+    object-position: left;
+    height: $default-button-size;
+    width: $default-button-size;
+    max-width: 25px;
     @media(width > 768px){
-    font-size: 12px;
-    }
+    max-width: 30px;
+  }
+}
+figcaption{
+  position: relative;
+  font-size: 10px;
+  color: $white;
+  width: max-content;
+  @media(width > 768px){
+  font-size: 12px;
+  }
+  }
+}
+
+.icon__primary {
+  @extend .icon;
+  a {
+    &:hover {
+      background-color: $secondary-light;
+      border: 1px solid $primary;
     }
   }
+  figcaption {
+    color: $secondary-tint;
+  }
+}
+
+.icon__tertiary {
+  @extend .icon;
+  a {
+    &:hover {
+      background-color: $silver-tint;
+      border: 1px solid $tertiary;
+    }
+  }
+  figcaption {
+    color: $primary-tint;
+  }
+}
+
+.icon__secondary {
+  @extend .icon;
+  color: $tertiary;
+  figcaption {
+    color: $tertiary-light;
+  }
+  a {
+    &:hover {
+      background-color: $tertiary-tint;
+      color: $white;
+      border: 1px solid $primary;
+      &>figcaption {
+        color: $white;
+      }
+    }
+  }
+}

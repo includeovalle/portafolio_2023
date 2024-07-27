@@ -82,8 +82,6 @@
   flex-wrap: wrap;
   padding: $default-padding-inset $default-padding $default-padding-inset $default-padding;
   @include keyframes.bounceTop();
-  @media(width > 768px){
-  }
   li{
     flex: 0 0 calc(50% - 1rem);
     position: relative;
@@ -96,7 +94,7 @@
     }
       &:hover{
         @include keyframes.growFont();
-        font-weight: 800;
+        font-weight: 700;
         &:before{
           content: '\270e';
           position: absolute;
@@ -108,7 +106,6 @@
           height: 100%;
           transition: all 0.5s ease-in-out;
           z-index: 1;
-          @include keyframes.arrowAtitention();
         }
       }
     @media(width > 768px){
@@ -122,9 +119,6 @@
           z-index: 1;
         }
     flex: 0 0 calc(50% - 1rem - 2rem);
-      &:nth-child(odd){
-        margin-right: 1rem;
-      }
     }
   }
 }
@@ -154,9 +148,8 @@
 .secondary {
   @extend .header;
   li{
-    color: $silver;
-    border-color: $secondary-light;
-    text-shadow: 0px 0px 40px $secondary-light;
+    color: $secondary-light;
+    border-color: $secondary-tint;
     text-align: center;
     &:hover{
       color: $secondary-tint;

@@ -30,6 +30,7 @@
 .tertiary {
     @extend .default;
     background-color: $tertiary-tint;
+    color: $tertiary-tint;
     border-color: $tertiary-light;
 }
 
@@ -44,3 +45,52 @@
     position: unset;
 }
 
+.input{
+    height:  min-content;
+    @include key.slideIN();
+    justify-content: flex-end;
+    width: min-content;
+    margin: 0;
+    width: 100%;
+    margin-top: 110dvi;
+    @media( width >= 768px ) {
+        width: min-content;
+        bottom: 0;
+        margin-top: 30%;
+        margin-left: calc(50vw + 100px);
+    }
+    padding: $default-padding-inset;
+    & figure:nth-child(2){
+            margin-top: 3.5rem;
+        }
+}
+
+.input__primary{
+    @extend .primary;
+    @extend .input;
+
+    & a{
+        color: $primary;
+    }
+}
+
+.input__secondary{
+    @extend .secondary;
+    @extend .input;
+    & figure{
+    & a{
+        color: $tertiary;
+        & figcaption{
+            color: $tertiary;
+        }
+    }
+    }
+    }
+
+.input__tertiary{
+    @extend .tertiary;
+    @extend .input;
+    & a{
+        color: $tertiary;
+    }
+}

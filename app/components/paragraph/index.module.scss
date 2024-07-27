@@ -69,7 +69,6 @@
 
 .about {
     padding: $default-padding-inset $default-padding;
-  @include keyframes.bounceTop();
     @media( width > 768px ) {
   padding: $default-padding-inset 4*$default-padding-inset $default-padding-inset 4*$default-padding-inset;
     }
@@ -93,5 +92,5 @@
 
 .about__secondary{
     @extend .about;
-    color: $silver;
+    color: $secondary-light;
 }

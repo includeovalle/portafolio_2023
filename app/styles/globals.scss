@@ -47,7 +47,7 @@ body {
 
 a {
     text-decoration: none;
-    cursor: pointer;
+    cursor: crosshair;
     @media (prefers-color-scheme: dark) {
         color: $primary-tint;
     }

@@ -18,20 +18,23 @@
 .primary {
   background-color: $primary;
   min-height: 30vh;
-  background: linear-gradient(180deg, $primary 45%,   $secondary 100%);
+  background: linear-gradient(180deg, $primary 45%,  $secondary 80%, $secondary 100%);
 }
 
+.last{
+  margin-bottom: 0;
+}
  
 .secondary {
   background-color: $secondary;
   min-height: 30vh;
-  background: linear-gradient(180deg, $secondary 45%, $tertiary 100%);
+  background: linear-gradient(180deg, $secondary 45%, $tertiary 80%, $tertiary 100%);
 }
 
 .tertiary {
   background-color: $tertiary;
   min-height: 30vh;
-  background: linear-gradient(180deg, $tertiary 45%,  $primary 100%);
+  background: linear-gradient(180deg, $tertiary 45%,  $primary 80%,  $primary 100%);
 }
 
 .inner-container{

@@ -19,8 +19,8 @@
     border-top: 2px solid;
     border-bottom: 2px solid;
     text-align: center;
-    padding: 1em;
-    margin-top: $default-padding-inset;
+    padding: $default-padding;
+    margin: $default-padding 0;
 }
 
 .primary {
@@ -46,10 +46,8 @@
     border-top: 2px solid;
     border-bottom: 2px solid;
     color: $secondary;
-    padding: 1em;
-    @media(width > 768px){
-        padding: 2rem;
-    }
+    padding: $default-padding;
+    margin: $default-padding 0;
 }
 
 .subtitle__primary{

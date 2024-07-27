@@ -5,17 +5,13 @@
 }
 
 .footer{
-  padding: 1rem;
-  padding-top: 0;
+  padding: $default-padding;
   text-transform: uppercase;
   text-align: center;
   background-color: $silver-tint;
   @include flex.col(center, center);
   gap: 1rem;
 
-  & h3 {
-    margin: 1rem 0 0 0;
-  }
   & section {
     width: 100%;
     @include flex.row(center, flex-start);

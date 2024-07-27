@@ -68,7 +68,7 @@
     top: 2em;
     height:$default-button-size;
     width: $default-button-size;
-    cursor: pointer;
+    cursor: crosshair;
     &>span{
         position: absolute;
         width: 100%;
@@ -133,7 +133,7 @@
     height: 30px;
     width: 30px;
     border: 2px $silver-tint solid;
-    cursor: pointer;
+    cursor: crosshair;
     &:focus{
         outline: 2px solid $white;
     }
@@ -166,7 +166,7 @@
     padding-bottom: 1rem;
     position: fixed;
     left: 0;
-    cursor: pointer;
+    cursor: crosshair;
     top: 40%;
     writing-mode: vertical-rl;
     text-orientation: upright;

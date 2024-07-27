@@ -100,7 +100,7 @@ figcaption{
 .card {
   @include flex.col(flex-start, center);
   position: relative;
-  cursor: pointer;
+  cursor: crosshair;
   margin: $default-padding 0;
   border-radius: 2*$default-border-radius;
   background-color: $silver-tint;
@@ -331,7 +331,7 @@ a {
   gap: $default-padding-inset;
   position: relative;
   margin-top: 1rem;
-  cursor: pointer;
+  cursor: crosshair;
   min-width: 25px;
   width: max-content;
   &:hover {
@@ -383,8 +383,8 @@ figcaption{
   @extend .icon;
   a {
     &:hover {
-      background-color: $secondary-light;
-      border: 1px solid $primary;
+      background-color: $secondary;
+      border: 1px solid $secondary-tint;
     }
   }
   figcaption {
@@ -396,12 +396,12 @@ figcaption{
   @extend .icon;
   a {
     &:hover {
-      background-color: $silver-tint;
+      background-color: $primary-tint;
       border: 1px solid $tertiary;
     }
   }
   figcaption {
-    color: $primary-tint;
+    color: $primary-light;
   }
 }
 
@@ -417,7 +417,7 @@ figcaption{
       color: $white;
       border: 1px solid $primary;
       &>figcaption {
-        color: $white;
+        color: $tertiary;
       }
     }
   }

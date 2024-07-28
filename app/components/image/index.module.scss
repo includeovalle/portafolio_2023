@@ -327,35 +327,32 @@ a {
 }
 
 .icon{
-  @include flex.row(flex-start, center);
-  gap: $default-padding-inset;
-  position: relative;
-  margin-top: 1rem;
-  cursor: crosshair;
-  min-width: 25px;
-  width: max-content;
   &:hover {
     transform: scale(1.05);
   }
-  &>a:focus {
+  &:focus {
     outline: 2px solid $white;
     >img{
       @include key.Flash();
     }
   }
-  a {
     @include flex.row(flex-start, center);
     position: relative;
     background-color: transparent;
     gap: 25px;
     padding: $default-padding-inset;
-    width: max-content;
+    transition: .3s;
+    width: 100%;
     top: 0;
     left: 0;
-    &:hover {
-      border-radius: $default-border-radius;
-    }
-  }
+    border-radius: $default-border-radius;
+  & figure {
+  @include flex.row(flex-start, center);
+  gap: $default-padding-inset;
+  position: relative;
+  cursor: crosshair;
+  min-width: 25px;
+  width: max-content;
   img {
     position: relative !important;
     object-fit: contain;
@@ -378,47 +375,44 @@ figcaption{
   }
   }
 }
+}
 
 .icon__primary {
   @extend .icon;
-  a {
-    &:hover {
-      background-color: $secondary;
-      border: 1px solid $secondary-tint;
-    }
+  &:hover {
+    background-color: $secondary;
+    border: 1px solid $secondary-tint;
   }
-  figcaption {
-    color: $secondary-tint;
+  & figure {
+    figcaption {
+      color: $secondary-tint;
+    }
   }
 }
 
 .icon__tertiary {
   @extend .icon;
-  a {
-    &:hover {
-      background-color: $primary-tint;
-      border: 1px solid $tertiary;
-    }
+  &:hover {
+    background-color: $primary-tint;
+    border: 1px solid $primary;
   }
-  figcaption {
-    color: $primary-light;
+  & figure {
+    figcaption {
+      color: $primary-light;
+    }
   }
 }
 
 .icon__secondary {
   @extend .icon;
-  color: $tertiary;
-  figcaption {
-    color: $tertiary-light;
+  &:hover {
+    background-color: $tertiary-tint;
+    border: 1px solid $tertiary;
+    & figure {figcaption { color: $tertiary}}
   }
-  a {
-    &:hover {
-      background-color: $tertiary-tint;
-      color: $white;
-      border: 1px solid $primary;
-      &>figcaption {
-        color: $tertiary;
-      }
-    }
+  & figure{
+    figcaption {
+      color: $tertiary-light;
+    } 
   }
 }

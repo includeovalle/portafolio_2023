@@ -5,17 +5,13 @@
 }
 
 .footer{
-  padding: 1rem;
-  padding-top: 0;
+  padding: $default-padding;
   text-transform: uppercase;
   text-align: center;
   background-color: $silver-tint;
   @include flex.col(center, center);
-  gap: 1rem;
+  gap: $default-padding;
 
-  & h3 {
-    margin: 1rem 0 0 0;
-  }
   & section {
     width: 100%;
     @include flex.row(center, flex-start);
@@ -35,6 +31,7 @@
       @include flex.row(center, center);
       gap: 1rem;
     & textarea{
+      font-weight: 600;
       border-radius: $default-border-radius;
       padding: 2*$default-padding-inset;
       max-width: calc(100dvi - 16rem);
@@ -44,6 +41,7 @@
     & button{
       padding: $default-padding-inset;
       border-radius: $default-border-radius;
+      cursor: crosshair;
     }
   }
 }
@@ -58,28 +56,40 @@
     background-color: $secondary-tint;
     border-style: groove;
     color: $secondary;
-    cursor: pointer;
+    cursor: crosshair;
     font-weight: 600;
     &:first-letter{ text-transform: capitalize; }
   }
-  & a{ color: $secondary-tint; }
+  & a{ color: $secondary-tint; 
+      &:hover{
+        color: $secondary-light;
+      }
+    }
 }
+
 .tertiary{
   @extend .footer;
   background-color: $primary;
   color: $primary-light;
 
   & textarea{ border-color: $primary-tint; 
-  color: $primary-light;
+  color: $primary;
 }
   & button{ border-color: $primary-tint;
     background-color: $primary-tint;
     border-style: groove;
     color: $primary;
     font-weight: 600;
+      &:hover{
+        color: $primary-light;
+      }
     &:first-letter{ text-transform: capitalize; }
   }
-  & a{ color: $primary-tint; }
+  & a{ color: $primary-tint;
+      &:hover{
+        color: $primary-light;
+      }
+    }
 }
 
 .secondary{
@@ -87,14 +97,22 @@
   background-color: $tertiary;
   color: $tertiary-light;
 
-  & textarea{ border-color: $tertiary-tint; color: $primary-light;
+  & textarea{ border-color: $tertiary-tint; color: $tertiary;
 }
   & button{ border-color: $tertiary-tint;
     background-color: $tertiary-light;
     border-style: groove;
     color: $tertiary;
     font-weight: 600;
+      &:hover{
+        color: $black;
+        border-color: $white;
+      }
     &:first-letter{ text-transform: capitalize; }
   }
-  & a{ color: $tertiary-tint; }
+  & a{ color: $tertiary-light; 
+      &:hover{
+        color: $white;
+      }
+    }
 }

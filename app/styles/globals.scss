@@ -7,8 +7,10 @@ body {
     font-size: $font-clamp;
     font-weight: 500;
     min-height: 100dvh;
+        cursor: url('../../public/cursor.png');
     > * {
         transition: all .2s ease-in-out;
+        cursor: url('../../public/cursor.png'), default;
         }
     main {
       position: relative;
@@ -45,7 +47,7 @@ body {
 
 a {
     text-decoration: none;
-    cursor: pointer;
+    cursor: crosshair;
     @media (prefers-color-scheme: dark) {
         color: $primary-tint;
     }

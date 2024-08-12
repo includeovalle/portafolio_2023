@@ -22,6 +22,8 @@
     @include flex.col(flex-start, flex-start);
     width: $default-button-size;
     height: $default-button-size;
+    background-image: url('../../../public/brush.svg');
+    background-size: contain;
     position: absolute;
     top: 1rem;
     right: 2rem;
@@ -47,15 +49,11 @@
 }
 &__tertiary{
     @extend  .hamburger;
-    &>span{
-        border-top: 2px solid $tertiary-light;
-    }
+    background-image: url('../../../public/brush-pink.svg');
 }
 &__secondary{
     @extend  .hamburger;
-    &>span{
-        border-top: 3px solid $secondary-light;
-    }
+    background-image: url('../../../public/brush-blue.svg');
 }
 }
 

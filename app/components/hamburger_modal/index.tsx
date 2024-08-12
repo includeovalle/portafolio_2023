@@ -21,9 +21,6 @@ const Index = ({ children }: childrenInterface) => {
     return (
         <>
             <Button className={CurrentTheme} type={'button'} onClick={() => hamburgerHandler()}>
-                <span></span>
-                <span></span>
-                <span></span>
             </Button>
 
             <Dialog className={bgColor} ref={modalRef} onClick={() => closeModal()}>

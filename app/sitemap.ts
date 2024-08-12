@@ -3,6 +3,10 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
+      url: 'https://carlosraul.am',
+      lastModified: new Date(),
+    },
+    {
       url: 'https://www.carlosraul.am',
       lastModified: new Date(),
     },
@@ -15,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: 'https://www.carlosraul.am/pt: ',
+      url: 'https://www.carlosraul.am/pt',
       lastModified: new Date(),
     },
   ]

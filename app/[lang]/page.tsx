@@ -1,4 +1,4 @@
-import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe , TitleTag } from '@/app/components/Designs';;
+import { Header, Card, SubtitleTag, Languages, SocialMedia, EmailButton, Footer, AboutMe , TitleTag, Background } from '@/app/components/Designs';;
 import { MainContainer, InnerContainer, Ul, Portrait  } from '@/app/components';
 import { Metadata } from 'next'
 import { getDictionary } from "./dictionaries"
@@ -38,6 +38,7 @@ export default async function Home({ searchParams, params }: Props) {
   return (
     <>
       <MainContainer theme={bgColor}>
+      <Background theme={bgColor}></Background>
       <Header theme={bgColor} 
         display={DISPLAY} alert={ALERT} copyThis={EMAIL}
           languages={LANGUAGES} currentLang={language}

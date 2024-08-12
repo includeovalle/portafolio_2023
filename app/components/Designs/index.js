@@ -7,3 +7,4 @@ export { default as Footer } from './footer/';
 export { default as SocialMedia } from './media/';
 export { default as EmailButton } from './side-email/';
 export { default as AboutMe } from './about-me/';
+export { default as Background } from './background/';

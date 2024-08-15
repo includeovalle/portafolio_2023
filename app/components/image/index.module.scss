@@ -105,49 +105,66 @@ figcaption{
   border-radius: 2*$default-border-radius;
   background-color: $silver-tint;
   gap: 1rem;
+  height: 100%;
   padding: $default-padding-inset 2*$default-padding-inset;
   border: 1px solid $primary-light;
+  min-width: 220px;
+  max-width: 235px;
 
-  max-width: 285px;
-
+  @media( width = 768px ) {
+    height: 480px;
+    & figure {
+      gap: .5rem;
+    }
+  }
+  @media( width > 768px ) {
+    height: 480px;
+    flex-direction: column;
+    max-width: 255px;
+    gap: 2rem;
+  }
   &:focus {
     outline: 3px dashed $white;
     border-radius: 2*$default-border-radius;
     border: 3px solid $primary;
-  }
-  &:hover {
-    transition: .75 ease-in-out;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: transparent;
-
-    figcaption{
-      > p {
-        color: $primary-light;
-        @media( width > 768px ) {
-        }
-      }
+    & img {
+      transition: .75s ease-in-out;
+      border-radius: 2*$default-border-radius;
     }
   }
 
-  @media( width >= 768px ) {
-    flex-direction: column;
-    padding-bottom: unset;
+  &:hover {
+    transition: .75s ease-in-out;
+    & img {
+      transition: .75s ease-in-out;
+      border-radius: 2*$default-border-radius;
+    }
   }
-  img {
+
+  & img {
     position: relative !important;
-    border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
-    max-height: 255px;
+    height: 100%;
+    max-height: 95px;
     object-fit: contain;
+    margin-bottom: 2*$default-padding-inset;
+    flex: 1 1 25%;
     @media(width >= 768px){
-    border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
-    min-height: 125px;
     max-height: 125px;
+    }
+    }
+    @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+
+    figcaption{
+    > p {
+    color: $primary-light;
+    @media( width > 768px ) {
+    }
   }
 }
-figcaption {
-  height: 100%;
+}
+
+& figcaption {
   min-height: 20vh;
   @include flex.col(space-around, flex-start);
   border-radius: 0 0 $default-border-radius $default-border-radius;
@@ -162,6 +179,7 @@ figcaption {
   }
   & h3 {
     text-transform: uppercase;
+    width: 100%;
     text-align: center;
     transition: 0.75s ease;
     @media(width >= 768px){
@@ -195,8 +213,8 @@ a {
       }
       > p {
         transition: 1.75s ease;
-          color: $secondary-light;
-        }
+        color: $secondary-light;
+      }
     }
   }
   & figcaption {
@@ -251,8 +269,8 @@ a {
         color: $secondary-light;
       }
       > p {
-          color: $secondary-light;
-        }
+        color: $secondary-light;
+      }
     }
   }
 
@@ -312,7 +330,7 @@ a {
         color: $secondary-light;
       }
       > p {
-          color: $secondary-light;
+        color: $secondary-light;
       }
       > a{
         color: $secondary-tint;
@@ -336,45 +354,45 @@ a {
       @include key.Flash();
     }
   }
-    @include flex.row(flex-start, center);
-    position: relative;
-    background-color: transparent;
-    gap: 25px;
-    padding: $default-padding-inset;
-    transition: .3s;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-radius: $default-border-radius;
-  & figure {
   @include flex.row(flex-start, center);
-  gap: $default-padding-inset;
   position: relative;
-  cursor: crosshair;
-  min-width: 25px;
-  width: max-content;
-  img {
-    position: relative !important;
-    object-fit: contain;
-    background-color: transparent;
-    object-position: left;
-    height: $default-button-size;
-    width: $default-button-size;
-    max-width: 25px;
+  background-color: transparent;
+  gap: 25px;
+  padding: $default-padding-inset;
+  transition: .3s;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: $default-border-radius;
+  & figure {
+    @include flex.row(flex-start, center);
+    gap: $default-padding-inset;
+    position: relative;
+    cursor: crosshair;
+    min-width: 25px;
+    width: max-content;
+    img {
+      position: relative !important;
+      object-fit: contain;
+      background-color: transparent;
+      object-position: left;
+      height: $default-button-size;
+      width: $default-button-size;
+      max-width: 25px;
+      @media(width > 768px){
+      max-width: 30px;
+    }
+  }
+  figcaption{
+    position: relative;
+    font-size: 10px;
+    color: $white;
+    width: max-content;
     @media(width > 768px){
-    max-width: 30px;
+    font-size: 12px;
+    }
+    }
   }
-}
-figcaption{
-  position: relative;
-  font-size: 10px;
-  color: $white;
-  width: max-content;
-  @media(width > 768px){
-  font-size: 12px;
-  }
-  }
-}
 }
 
 .icon__primary {

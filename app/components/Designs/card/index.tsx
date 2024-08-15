@@ -11,7 +11,7 @@ import { RowContainer } from '../../';
 const PROJECTS = [LOGO,  BODA, GAME];
 interface Props {
   theme: string;
-  cards: Project[]; // Make this optional to allow a default value
+  cards?: Project[]; // Make this optional to allow a default value
 }
 
 const Index = ({ theme, cards = [] }: Props) => { // Provide a default empty array

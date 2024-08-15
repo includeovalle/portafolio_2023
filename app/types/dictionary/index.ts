@@ -15,7 +15,7 @@ export interface Project {
   image: string;
   alt: string;
   body: string;
-  className: string;
+  className?: string;
   link: {
     href: string;
     text: string;

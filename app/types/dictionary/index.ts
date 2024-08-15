@@ -2,7 +2,7 @@ export default interface Props {
   lang: {
     titles: { projects: string; languages: string; title: string; aboutme: string; };
     header: { portrait: string; skills: string[] };
-    projects: { vic: Project };
+    projects: Project[];
     aboutme: string;
     languages: Language[]
     networks: { copyEmail: string; alert: string };
@@ -10,7 +10,7 @@ export default interface Props {
   };
 }
 
-interface Project {
+export interface Project {
   title: string;
   image: string;
   alt: string;

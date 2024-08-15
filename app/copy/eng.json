@@ -26,8 +26,8 @@
       "storybook"
     ]
   },
-  "projects": {
-    "vic": {
+  "projects": [
+    {
       "title": "Steam Engineering and Boilers",
       "image": "../../public/logo.png",
       "alt": "projects carlos amaro",
@@ -38,7 +38,7 @@
         "target": "_blank"
       }
     }
-  },
+  ],
   "aboutme": " I am a seasoned software developer with four years of experience, including three years of remote work. I have effectively collaborated with global teams to develop detailed and high-quality software solutions. My main area of expertise is frontend development, although my efforts have also led me to gain deep knowledge in other areas of the development process. ",
   "networks": {
     "copyEmail": "Copy email",

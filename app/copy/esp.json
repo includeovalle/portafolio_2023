@@ -26,10 +26,10 @@
       "storybook"
     ]
   },
-  "projects": {
-    "vic": {
+  "projects": [
+     {
       "title": "Vapor Ingenieria y Calderas",
-      "image": "/public/logo.png",
+      "image": "/logo.png",
       "alt": "proyectos carlos raul amaro ovalle",
       "body": "En esta ocasión el cliente necesitaba una página web para su negocio, se le creo un sitio web con un diseño que se ajusto a su conveniencia, se le dio de alta en google my business, a su vez configuramos el correo electrónico con el dominio de su sitio web",
       "link": {
@@ -38,8 +38,31 @@
         "target": "_blank"
       }
     }
-  },
-  "aboutme": "Soy un desarrollador de software experimentado, con cuatro años de experiencia en el campo, tres de estos años he trabajado remoto. Durante mi tiempo trabajando he colaborado con equipos de todo el mundo para desarrollar softaware al detalle. Mi ramo principal es el frontend, aunque mi esfuerzo me ha llevado a profundizar en el desarrollo en el servidor.",
+    ,{
+      "title": "Invitación de boda",
+      "image": "/boda.png",
+      "alt": "freelance carlos raul amaro ovalle",
+      "body": "Tuve un rol clave en la construcción de esta invitación digital. Este proyecto cumplió su cometido durante el evento, y ha servido de puente para otros proyectos. Esta invitación en particular tiene un gran valor personal.",
+      "link": {
+        "href": "https://creacionesdigitales.mx/nuestra-boda-adriana-y-david/",
+        "text": "Revisa la invitación",
+        "target": "_blank"
+      }
+    }
+    ,{
+      "title": "Juego web",
+      "image": "/juego.png",
+      "alt": "fullstack dev carlos raul amaro ovalle",
+      "body": "Mi primer aplicación fullstack, este proyecto cuenta con firmado ssh y fue el dns fue configurado con nginx. Es un proyecto en construccion pero puedes revisar el progreso. ",
+      "link": {
+        "href": "https://www.eduba.lat",
+        "text": "No olvides registrarte",
+        "target": "_blank"
+      }
+
+    }
+  ],
+  "aboutme": "Soy un desarrollador de frontend experimentado, con cuatro años de experiencia en el campo, tres de estos años he trabajado remoto con equipos de Estados Unidos. Esto me ha permitido trabajar con equipos de todo el mundo. Mis años en el desarrollo de software me han permitido conocer todo tipo de personas y equipos.  Mi ramo principal es el frontend, aunque mi esfuerzo me ha llevado a profundizar en el desarrollo en el servidor.",
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "Correo copiado al portapapeles"

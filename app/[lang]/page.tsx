@@ -30,7 +30,7 @@ export default async function Home({ searchParams, params }: Props) {
   const LANGUAGES = lang["languages"];
   const PORTRAIT = lang["header"].portrait;
   const SKILLS = lang["header"].skills;
-  const CARD = lang["projects"].vic
+  const CARD = lang["projects"];
   const ABOUTME = lang["aboutme"];
   const EMAIL = "carlosovalle@soultech.studio"
   const FOOTER = lang["footer"];
@@ -51,7 +51,7 @@ export default async function Home({ searchParams, params }: Props) {
         <SubtitleTag theme={bgColor} text={MAINTITLE} />
         <Ul className={bgColor} lis={SKILLS}/>
           <SubtitleTag theme={bgColor} text={PROJECTSTITLE} />
-          <Card theme={bgColor} card={CARD} />
+          <Card theme={bgColor} cards={CARD} />
           <SubtitleTag theme={bgColor} text={CONTACTOTITLE} />
         </InnerContainer >
         <Footer theme={bgColor} content={FOOTER} />

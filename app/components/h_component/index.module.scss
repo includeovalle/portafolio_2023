@@ -1,6 +1,7 @@
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_classes.scss' as class;
-@use '@/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_classes.scss' as class;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_keyframes.scss' as keyframes;
 
 .default{
     @extend .first-cap;
@@ -13,35 +14,30 @@
 }
 
 .title{
-    @extend .title-cap-clamp;
-    width: 100%;
-    font-weight: 400;
-    @extend .default;
-    font-size: $title-clamp;
+    text-transform: uppercase;
+  @include keyframes.textIN();
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     text-align: center;
-    margin: 1rem 0;
-    border-bottom: 2px solid $secondary;
-    @include bp.breakpoint(md, min) {
-        text-align: left;
-    }
+    padding: $default-padding;
+    margin: $default-padding 0;
 }
 
-.blue {
+.primary {
     @extend .title;
     color: $primary-light;
+    border-color: $primary-light;
+}
+
+.tertiary {
+    @extend .title;
+    color: $tertiary-light;
+}
+
+.secondary {
+    @extend .title;
+    color: $secondary-tint;
     border-color: $secondary-light;
-}
-
-.orange {
-    @extend .title;
-    color: crimson;
-    border-color: $tertiary-light;
-}
-
-.purple {
-    @extend .title;
-    color: $purple-tint;
-    border-color: $tertiary-light;
 }
 
 .subtitle{
@@ -50,25 +46,24 @@
     border-top: 2px solid;
     border-bottom: 2px solid;
     color: $secondary;
-    padding: 1em;
-    @media(width > 768px){
-        padding: 2rem;
-    }
+    padding: $default-padding;
+    margin: $default-padding 0;
 }
 
-.subtitle__blue{
+.subtitle__primary{
     @extend .subtitle;
-    color: $primary-light;
+    color: $primary-tint;
+    border-color: $primary-light;
+}
+
+.subtitle__tertiary{
+    @extend .subtitle;
+    color: $tertiary-tint;
+    border-color: $tertiary-light;
+}
+
+.subtitle__secondary{
+    @extend .subtitle;
+    color: $secondary-tint;
     border-color: $secondary-light;
-}
-
-.subtitle__orange{
-    @extend .subtitle;
-    color: crimson;
-    border-color: $tertiary-light;
-}
-.subtitle__purple{
-    @extend .subtitle;
-    color: $purple-tint;
-    border-color: $tertiary-light;
 }

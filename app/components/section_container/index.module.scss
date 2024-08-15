@@ -1,9 +1,9 @@
-@use '@/app/styles/_breakpoints.scss' as bp;
-@use '@/app/styles/_mixins.scss' as mixins;
-@use '@/app/styles/_flexbox.scss' as flex;
-@use '@/app/styles/_keyframes.scss' as key;
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_classes.scss' as class;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_mixins.scss' as mixins;
+@use '/app/styles/_flexbox.scss' as flex;
+@use '/app/styles/_keyframes.scss' as key;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_classes.scss' as class;
 
 .default{
   position: relative;
@@ -11,33 +11,30 @@
   height: 100%;
   max-width: $page-max-width;
   margin: 0 auto;
+    padding: $default-padding-inset $default-padding;
   @include flex.col(flex-start, center);
 }
 
-.blue {
-  background: $primary;
-  background: linear-gradient(180deg, $primary 0%,  $primary-tint 60%, $primary-light 100%);
+.primary {
+  background-color: $primary;
+  min-height: 30vh;
+  background: linear-gradient(180deg, $primary 45%,  $secondary 80%, $secondary 100%);
 }
 
-.orange {
-  background: $secondary;
-  background: linear-gradient(180deg, $secondary 0%, $secondary-tint 60%, $secondary-light 100%);
+.last{
+  margin-bottom: 0;
 }
  
-.purple {
-  background-color: $tertiary;
-  background: linear-gradient(180deg, $tertiary 0%, $tertiary-tint 60%, crimson 100%);
+.secondary {
+  background-color: $secondary;
+  min-height: 30vh;
+  background: linear-gradient(180deg, $secondary 45%, $tertiary 80%, $tertiary 100%);
 }
 
-.row-container{
-  @include flex.col(flex-start, center);
-  gap: $default-padding;
-  height: min-content;
-  padding: 0 2rem;
-  @include bp.breakpoint(md, min) {
-    @include flex.row(center, center);
-    gap: 2rem;
-  }
+.tertiary {
+  background-color: $tertiary;
+  min-height: 30vh;
+  background: linear-gradient(180deg, $tertiary 45%,  $primary 80%,  $primary 100%);
 }
 
 .inner-container{

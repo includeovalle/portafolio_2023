@@ -1,0 +1,111 @@
+{
+  "titles": {
+    "projects": "Projects",
+    "languages": "Languages",
+    "aboutme": "About me",
+    "contact": "Contact",
+    "title": "Technical Skills"
+  },
+  "header": {
+    "portrait": "Carlos Amaro ",
+    "skills": [
+      "Bash",
+      "AWK",
+      "Html",
+      "Styled-Components",
+      "Next-js",
+      "Gatsby-js",
+      "CSS",
+      "SASS",
+      "Javascript",
+      "Typescript",
+      "React-js",
+      "Node-js",
+      "Git",
+      "Github",
+      "storybook"
+    ]
+  },
+  "projects": {
+    "vic": {
+      "title": "Steam Engineering and Boilers",
+      "image": "../../public/logo.png",
+      "alt": "projects carlos amaro",
+      "body": "This time the client needed a website for his business, we create a website for him with a design that suited his convenience, his bussines was registered on google my business, we setup   his profesional email as well.",
+      "link": {
+        "href": "https://www.vaporingenieriaycalderas.mx/",
+        "text": "Take a look at the website",
+        "target": "_blank"
+      }
+    }
+  },
+  "aboutme": " I am a seasoned software developer with four years of experience, including three years of remote work. I have effectively collaborated with global teams to develop detailed and high-quality software solutions. My main area of expertise is frontend development, although my efforts have also led me to gain deep knowledge in other areas of the development process. ",
+  "networks": {
+    "copyEmail": "Copy email",
+    "alert": "Email copied to clipboard"
+  }
+  , "languages": [
+    {
+      "title": "Current language is English",
+      "href": "en",
+      "ariaRole": "assistant to change the language of the application"
+    },
+    {
+      "title": "Click to change to Spanish language",
+      "href": "es",
+      "ariaRole": "assistant to change the language of the application"
+    },
+    {
+      "title": "Click to change to Portuguese language",
+      "href": "pt",
+      "ariaRole": "assistant to change the language of the application"
+    }
+  ]
+  , "footer": {
+    "title": "Contact me"
+    , "placeholder": "Type your message here"
+    , "button": "Send"
+    , "popup" : {
+      "email": "Contact using device email"
+      , "whatsapp": "Contact using whatsapp"
+      , "gmail": "Contact using gmail"
+    }
+    , "about": {
+      "project": {
+        "title": "Project links",
+        "links": [
+          {
+            "text": "github"
+            , "alt": "repositorio do projecto carlosraul.am"
+            , "href": "https://github.com/includeovalle/portafolio_2023/"
+            , "target": "_blank"
+          }
+          , {
+            "text": "storybook"
+            , "alt": "pagina de storybook"
+            , "href": "https://portafolio-2023-dayu.vercel.app/"
+            , "target": "_blank" 
+          }
+        ]
+      }
+      , "aboutme": {
+        "title": "Links about me",
+        "links": [
+          {
+            "text": "Linkedin",
+            "alt": " check my linkedin carlos raul amaro dev",
+            "href": "https://www.linkedin.com/in/carlos-amaro-dev"
+            , "target": "_blank"
+          }
+          , {
+            "text": "Download resume",
+            "alt": "carlos raul amaro resume in pdf format"
+            , "href": "/carlos-amaro-resume-en.pdf"
+            , "target": "_blank"
+          }
+        ]
+      }
+
+    }
+  }
+}

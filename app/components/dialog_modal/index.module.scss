@@ -1,7 +1,7 @@
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/breakpoints.scss' as bp;
-@use '@/app/styles/_keyframes.scss' as key;
-@use '@/app/styles/flexbox.scss' as flex;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/breakpoints.scss' as bp;
+@use '/app/styles/_keyframes.scss' as key;
+@use '/app/styles/flexbox.scss' as flex;
 
 .default {
     @include key.wooble();
@@ -12,6 +12,7 @@
     border-right: 0;
     border-radius: $default-border-radius 0 0 $default-border-radius;
     padding: 2rem;
+    padding-left: 3rem;
     transition: all ease-in-out;
     height: 50dvh;
     &>div{
@@ -20,22 +21,22 @@
     }
 }
 
-.blue{
+.primary{
     @extend .default;
     background-color: $primary-tint;
     border-color: $primary-light;
 }
 
-.orange {
+.tertiary {
     @extend .default;
-    background-color: $secondary-tint;
-    border-color: $secondary-light;
+    background-color: $tertiary;
+    border-color: $tertiary-light;
 }
 
-.purple {
+.secondary {
     @extend .default;
-    background-color: $tertiary-tint;
-    border-color: $tertiary-light;
+    background-color: $secondary;
+    border-color: $secondary-light;
 }
 
 .no-display{
@@ -43,67 +44,53 @@
     position: unset;
 }
 
-.media {
-    @include flex.col(flex-start, center);
-    @include key.wooble();
-    min-height: 150px;
-    top:40%;
-    border-radius: $default-border-radius 0 0 $default-border-radius;
-    border: $default-border-radius solid;
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 0;
-    width: 80px;
-    padding: $default-padding-inset;
-    margin-left: calc( 100% - 80px);
-    z-index: 1;
-    position: fixed;
-    button{
-        transition: all 0.3s ease-in-out;
-        right: 5px;
-        z-index: 2;
-        span{
-            border-color: $primary-tint;
-        }
+.input{
+    height:  min-content;
+    @include key.slideIN();
+    justify-content: flex-end;
+    width: min-content;
+    margin: 0;
+    width: 100%;
+    margin-top: 110dvi;
+    padding: clamp($default-padding-inset, 50vw, 1rem);
+    padding-top: $default-padding;
+    @media( width >= 768px ) {
+        width: min-content;
+        bottom: 0;
+        margin-top: 30%;
+        margin-left: calc(50vw + 100px);
     }
-    &:hover{
-        transform: scale(1.05);
-        transition: all 0.3s ease-in-out;
-        button{
-            transform: scale(1.05);
-            transition: all 0.3s ease-in-out;
-            right: 7px;
+    & figure:nth-child(2){
+            margin-top: 3.5rem;
         }
+}
+
+.input__primary{
+    @extend .primary;
+    @extend .input;
+
+    & a{
+        color: $primary;
     }
 }
 
-.media__blue {
-    @extend .media;
-    border-color: $primary-tint;
-    background-color: $primary-light;
-}
-
-
-.media__orange {
-    @extend .media;
-    border-color: $secondary-light;
-    background-color: $silver-tint;
-    transition: all 0.3s ease-in-out;
-    button{
-        span{
-            border-color: $secondary-light;
+.input__secondary{
+    @extend .secondary;
+    @extend .input;
+    & figure{
+    & a{
+        color: $tertiary;
+        & figcaption{
+            color: $tertiary;
         }
     }
-}
+    }
+    }
 
-.media__purple {
-    @extend .media;
-    border-color: $purple;
-    background-color: $silver-tint;
-    transition: all 0.3s ease-in-out;
-    button{
-        span{
-            border-color: $purple-tint;
-        }
+.input__tertiary{
+    @extend .tertiary;
+    @extend .input;
+    & a{
+        color: $tertiary;
     }
 }

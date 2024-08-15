@@ -1,62 +1,38 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./index.module.scss";
-import { Dialog } from "@/app/components/";
-import { useBgColor } from '@/app/utils/context';
+import { CloseButton } from "../";
+import { useSearchParams } from 'next/navigation';
 import { childrenInterface, classNamesInterface } from "@/app/types/";
 
-const UseBgColor = () => {
-  const { bgColor } = useBgColor();
-  return bgColor;
-}
-
-interface PropsInterface extends childrenInterface, classNamesInterface {
+interface PropsInterface extends childrenInterface {
   buttonText?: string
 }
 
-const Index = ({ className = "media", children, buttonText }: PropsInterface) => {
+const Index = ({ buttonText, children }: PropsInterface) => {
 
-  const [isOpen, setIsOpen] = useState(false);
-  const bgColor = UseBgColor();
-  const mediaRef = React.useRef<HTMLDialogElement>(null);
+  const bgColor = useSearchParams().get("theme") || "primary";
+  const mediaRef = useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {
-    mediaRef.current?.show();
-    setIsOpen(true);
+    mediaRef.current?.showModal();
   };
 
   const closeModal = () => {
     mediaRef.current?.close();
-    setIsOpen(false);
   };
 
-  // detect if user press esc key and set isOpen to false
-  const handleEsc = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      setIsOpen(false);
-    }
-  }
-
-  useEffect(() => {
-    // Add event listener when the component mounts
-    document.addEventListener('keydown', handleEsc);
-
-    // Remove event listener when the component unmounts
-    return () => {
-      document.removeEventListener('keydown', handleEsc);
-    };
-  }, [isOpen]);
-
-  const currentTheme = `${className}__${bgColor}`
+  const currentTheme = `media__${bgColor}`;
 
   return (
     <>
-      <nav onClick={() => handleClick()} className={isOpen ? styles["no-display"] : styles[bgColor]}>
+      <button role="button" tabIndex={0} onClick={() => handleClick()} className={styles[bgColor]}>
         {buttonText}
-      </nav>
-      <Dialog className={!isOpen ? "no-display" : currentTheme} ref={mediaRef} onClick={() => closeModal()}>
-        {children}
-      </Dialog>
+      </button>
+        <dialog onClick={()=> closeModal()} className={styles[currentTheme]} ref={mediaRef}>
+        <CloseButton  autoFocus/>
+          {children}
+        </dialog>
     </>
   );
 };

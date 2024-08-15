@@ -1,16 +1,16 @@
 import React from "react";
-import { CopyButton } from "@/app/components";
+import { CopyButton } from '../../';
 
-const Email = "carlosovalle@soultech.studio"
-const buttonText =`Copiar Email`;
+interface IndexProps {
+  display: string;
+  alert: string;
+  copyThis: string;
+}
 
-const Index = () => {
-
+const Index = ({ display, alert, copyThis }: IndexProps) => {
   return (
     <>
-
-      <CopyButton display={buttonText} copyThis={Email} />
-
+      <CopyButton display={display} copyThis={copyThis} alertText={alert} />
     </>
   );
 };

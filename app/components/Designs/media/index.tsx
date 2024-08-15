@@ -1,42 +1,38 @@
-"use client"
 import React from "react";
-import {SocialMedia, CustomImage} from "@/app/components/";
-import Whatsapp from "@/public/whatsapp.svg";
-import Github from "@/public/github.svg";
-import Linkedin from "@/public/linked.svg";
-import Email from "@/public/email.svg";
-import Story from "@/public/storybook.svg";
-import Pdf from "@/public/pdf-icon.svg";
+import { SocialMedia, CustomImage } from '../../';
+import { StaticImageData } from 'next/image';
+import Whatsapp from "/public/whatsapp.svg";
+import Github from "/public/github.svg";
+import Linkedin from "/public/linked.svg";
+import Email from "/public/email.svg";
+import Story from "/public/storybook.svg";
+import Pdf from "/public/pdf-icon.svg";
 
+//TODO: add to the dictionary
+const Index = ({mediaInfo}:any) => {
+  const text = "Links";
 
-const Index = () => {
-  const whatsappAPI = window.matchMedia("(max-width: 768px)").matches? "https://api.whatsapp.com/send?phone=4441934444" :  "https://web.whatsapp.com/send?phone=4441934444"
-
- const text = "Links";
-
-  const MediaInfo = [
-    {image: Whatsapp, alt: "contacto",
-      links:{href:whatsappAPI, target: "_blank"} }
-    ,{image: Github, alt: "repositori del proyecto",
-      links:{href: "https://github.com/includeovalle/portafolio_2023/", target: "_blank"} }
-    ,{image: Linkedin, alt: "contacto linkedin",
-      links:{href: "https://www.linkedin.com/in/carlos-amaro-dev", target: "_blank"}}
-    ,{image: Email, alt: "correo profesional",
-      links:{href: "mailto:carlosovalle@soultech.studio", target: "_blank"}}
-    ,{image: Story, alt: "pagina de testeo de componentes",
-      links:{href: "https://portafolio-2023-dayu.vercel.app/?path=/docs/configure-your-project--docs", target: "_blank"}}
-    ,{image: Pdf, alt: "Resumen profesional",
-      links:{href: "/carlos-amaro-resume.pdf", target: "_self"}}
-  ]
+type ImageItem = {
+  [key: string]: {
+    image: StaticImageData;
+  };
+};
+  const IMAGES: ImageItem[] =  [{whatsapp:{ image: Whatsapp }}, { github:{ image: Github } }, {linkedin:{ image: Linkedin }}, {email:{ image: Email }}, {story:{ image: Story }}, {resume:{ image: Pdf }}]
 
   return (
     <>
 
       <SocialMedia buttonText={text}>
         {
-          MediaInfo.map((item, index)=> (
-            <CustomImage key={index} src={item.image} className={"icon"} alt={item.alt} links={true} href={item.links.href} target={item.links.target}/>
-          ))
+          IMAGES.map((item, index) => {
+            const key = Object.keys(IMAGES[index]).toString()
+            const DICTIONARY = item[key]
+            const IMAGE= mediaInfo[key]
+            const newItem = {...DICTIONARY, ...IMAGE}
+            return (
+              <CustomImage key={index} src={newItem.image.src} className={"icon"} alt={newItem.alt} links={true} href={newItem.links.href} target={newItem.links.target} />
+          )
+          })
         }
       </SocialMedia>
     </>

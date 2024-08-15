@@ -1,0 +1,110 @@
+{
+  "titles": {
+    "projects": "Proyectos",
+    "languages": "Idiomas",
+    "title": "Habilidades Técnicas",
+    "aboutme": "Acerca de mí",
+    "contact": "Contacto"
+  },
+  "header": {
+    "portrait": "Carlos Raul Amaro Ovalle ",
+    "skills": [
+      "Bash",
+      "AWK",
+      "Html",
+      "Styled-Components",
+      "Next-js",
+      "Gatsby-js",
+      "CSS",
+      "SASS",
+      "Javascript",
+      "Typescript",
+      "React-js",
+      "Node-js",
+      "Git",
+      "Github",
+      "storybook"
+    ]
+  },
+  "projects": {
+    "vic": {
+      "title": "Vapor Ingenieria y Calderas",
+      "image": "/public/logo.png",
+      "alt": "proyectos carlos raul amaro ovalle",
+      "body": "En esta ocasión el cliente necesitaba una página web para su negocio, se le creo un sitio web con un diseño que se ajusto a su conveniencia, se le dio de alta en google my business, a su vez configuramos el correo electrónico con el dominio de su sitio web",
+      "link": {
+        "href": "https://www.vaporingenieriaycalderas.mx/",
+        "text": "Revisa el proyecto",
+        "target": "_blank"
+      }
+    }
+  },
+  "aboutme": "Soy un desarrollador de software experimentado, con cuatro años de experiencia en el campo, tres de estos años he trabajado remoto. Durante mi tiempo trabajando he colaborado con equipos de todo el mundo para desarrollar softaware al detalle. Mi ramo principal es el frontend, aunque mi esfuerzo me ha llevado a profundizar en el desarrollo en el servidor.",
+  "networks": {
+    "copyEmail": "Copiar email",
+    "alert": "Correo copiado al portapapeles"
+  }
+  , "languages": [
+    {
+      "title": "Da clic para cambiar la página idioma Ingles",
+      "href": "en",
+      "ariaRole": "asistente para cambiar el idioma de la aplicación"
+    },
+    {
+      "title": "El idioma actual es Español",
+      "href": "es",
+      "ariaRole": "asistente para cambiar el idioma de la aplicación"
+    },
+    {
+      "title": "Da clic para cambiar la página idioma Portugués",
+      "href": "pt",
+      "ariaRole": "assistant to change the language of the application"
+    }
+  ]
+  , "footer": {
+    "title": "Contácteme"
+    , "placeholder": "Escribe tu mensaje aquí"
+    , "button": "Enviar"
+    , "popup": {
+      "email": "Enviar usando correo electrónico del dispositivo"
+      , "whatsapp": "Enviar usando whatsapp"
+      , "gmail": "Enviar usando gmail"
+    }
+    , "about": {
+      "project": {
+        "title": "Links del proyecto",
+        "links": [
+           {
+            "text": "Github"
+            , "alt": "repositorio do proyecto carlosraul.am",
+            "href": "https://github.com/includeovalle/portafolio_2023/"
+            , "target": "_blank"
+          }
+          , {
+            "text": "storybook"
+            , "alt": "pagina de storybook",
+            "href": "https://portafolio-2023-dayu.vercel.app/"
+            , "target": "_blank"
+          }
+        ]
+      }
+      , "aboutme": {
+        "title": "Perfil profesional",
+        "links": [
+          {
+            "text": "Linkedin",
+            "alt": "Revisa mi perfil en linkedin",
+             "href": "https://www.linkedin.com/in/carlos-amaro-dev"
+             , "target": "_blank"
+          }
+          , {
+            "text": "currículum",
+            "alt": "carlos raul amaro resumen profesional en formato pdf ",
+            "href": "/carlos-amaro-resume.pdf"
+            , "target": "_blank"
+          }
+        ]
+      }
+    }
+  }
+}

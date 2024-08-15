@@ -1,12 +1,12 @@
 'use client'
 import React, { useRef } from 'react';
-import { Button, Dialog } from '@/app/components/';
+import { Button, Dialog } from '../';
 import { childrenInterface } from "@/app/types/";
-import { useBgColor } from '@/app/utils/context';
+import { useSearchParams } from 'next/navigation';
 
 
 const Index = ({ children }: childrenInterface) => {
-    const { bgColor } = useBgColor();
+    const bgColor = useSearchParams().get("theme") || "primary";
     const modalRef = useRef<HTMLDialogElement>(null);
 
     const hamburgerHandler = () => {
@@ -21,9 +21,6 @@ const Index = ({ children }: childrenInterface) => {
     return (
         <>
             <Button className={CurrentTheme} type={'button'} onClick={() => hamburgerHandler()}>
-                <span></span>
-                <span></span>
-                <span></span>
             </Button>
 
             <Dialog className={bgColor} ref={modalRef} onClick={() => closeModal()}>

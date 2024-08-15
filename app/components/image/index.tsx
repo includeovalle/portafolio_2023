@@ -1,5 +1,4 @@
-'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -12,64 +11,66 @@ interface Props extends ImageInterface, LinkInterface {
 
 
 const Index = ({ src, alt, links, href, target, width, height, figcaption, children, className }: Props) => {
-
     const propStyle = className ? styles[className] : styles['default'];
 
-    const [currentSrc, setCurrentSrc] = useState(src);
-
-    const SIZES = "(max-width: 600px) 100vw, 600px"
+    if (links) {
+        return (
+            <Link className={propStyle} href={href || ''} target={target || '_self'} >
+                {width && (
+                    <figure >
+                        <Image
+                            src={src}
+                            alt={alt}
+                            width={width}
+                            height={height ? height : width / 3}
+                            priority
+                        />
+                        <figcaption>{children}</figcaption>
+                    </figure>
+                )}
+                {!width && (
+                    <figure>
+                        <Image
+                            src={src}
+                            alt={alt}
+                            fill
+                            priority
+                        />
+                        {<figcaption>{children}</figcaption>}
+                    </figure>
+                )}
+            </Link>
+        )
+    }
 
     return (
         <figure className={propStyle}>
-            {links && width && (
-                <Link href={href || ''}>
+            {width && (
+                <>
                     <Image
-                        src={currentSrc}
+                        src={src}
                         alt={alt}
                         width={width}
-                        height={height? height : width/3}
-                        sizes={SIZES}
+                        height={height ? height : width / 3}
                         priority
                     />
-                  {figcaption && <figcaption>{children}</figcaption>}
-                </Link>
+                    {figcaption && <figcaption>{children}</figcaption>}
+                </>
             )}
-            {links && !width && (
-                <Link href={href || ''}
-                target={target || '_self'}
-                >
+            {!width && (
+                <>
                     <Image
-                        src={currentSrc}
+                        src={src}
                         alt={alt}
-                        sizes={SIZES}
                         fill
+                        sizes="100%"
                         priority
                     />
-                  {figcaption && <figcaption>{children}</figcaption>}
-                </Link>
+                    {figcaption && <figcaption>{children}</figcaption>}
+                </>
             )}
-            {!links && width && (
-                <Image
-                    src={currentSrc}
-                    alt={alt}
-                    width={width}
-                    height={height? height : width/3}
-                    sizes={SIZES}
-                    priority
-                />
-            )}
-            {!links && !width && (
-                <Image
-                    src={currentSrc}
-                    alt={alt}
-                    sizes={SIZES}
-                    fill
-                    priority
-                />
-            )}
-            {figcaption && !links && <figcaption>{children}</figcaption>}
         </figure>
-    );
+    )
 };
 
 export default Index;

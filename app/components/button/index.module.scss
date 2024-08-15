@@ -1,8 +1,8 @@
-@use '@/app/styles/_variables.scss' as *;
-@use '@/app/styles/_flexbox.scss' as flex;
-@use '@/app/styles/_breakpoints.scss' as bp;
-@use '@/app/styles/_classes.scss' as class;
-@use '@/app/styles/_keyframes.scss' as key;
+@use '/app/styles/_variables.scss' as *;
+@use '/app/styles/_flexbox.scss' as flex;
+@use '/app/styles/_breakpoints.scss' as bp;
+@use '/app/styles/_classes.scss' as class;
+@use '/app/styles/_keyframes.scss' as key;
 
 .default {
     border: none;
@@ -17,41 +17,43 @@
     height: 32px;
 }
 
-.hamburger{
+.hamburger {
     @extend  .default;
     @include flex.col(flex-start, flex-start);
     width: $default-button-size;
     height: $default-button-size;
+    background-image: url('../../../public/brush.svg');
+    background-size: contain;
     position: absolute;
     top: 1rem;
     right: 2rem;
+    z-index: 2;
+    &:focus{
+        outline: 2px solid $white;
+        &>span{
+            @include key.Flash();
+        }
+    }
     span {
     @include key.Flash();
         width: 100%;
         height: 100%;
         position: relative;
-        border-bottom: 2px solid $primary-light;
+        border-top: 2px solid $primary-light;
     }
     @media(width > 768px){
     display: none;
 }
-&__blue{
+&__primary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid $primary-light;
-    }
 }
-&__orange{
+&__tertiary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid crimson;
-    }
+    background-image: url('../../../public/brush-pink.svg');
 }
-&__purple{
+&__secondary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid $tertiary-tint;
-    }
+    background-image: url('../../../public/brush-blue.svg');
 }
 }
 
@@ -64,12 +66,12 @@
     top: 2em;
     height:$default-button-size;
     width: $default-button-size;
-    cursor: pointer;
+    cursor: crosshair;
     &>span{
         position: absolute;
         width: 100%;
         height: auto;
-        border-bottom: 2px solid $primary-tint;
+        border-top: 2px solid $primary-tint;
         &:nth-child(1){
             transform: rotate(45deg);
         }
@@ -77,29 +79,50 @@
             transform: rotate(-45deg);
         }
         @media (prefers-color-scheme: dark) {
-            border-bottom: 2px solid $silver;
+            border-top: 2px solid $silver;
         }
+    }
+    &:focus{
+            outline: 2px solid $white;
     }
 }
 
-.close-hamburger__blue{
+.close-hamburger__primary{
     @extend  .closeHamburger;
     > span{
         border-color: $primary-light;
     }
-}
-
-.close-hamburger__orange{
-    @extend  .closeHamburger;
-    > span{
-        border-color: $silver-tint;
+    &:focus{
+        outline: 2px solid $silver;
+            >span{
+                @include key.Flash();
+            }
     }
 }
 
-.close-hamburger__purple {
+.close-hamburger__tertiary{
     @extend  .closeHamburger;
     > span{
-        border-color: $silver;
+        border-color: $tertiary-light;
+    }
+    &:focus{
+        outline: 2px solid $tertiary;
+            >span{
+                @include key.Flash();
+            }
+    }
+}
+
+.close-hamburger__secondary {
+    @extend  .closeHamburger;
+    > span{
+        border-color: $secondary-light;
+    }
+    &:focus{
+        outline: 2px solid $secondary;
+            >span{
+                @include key.Flash();
+            }
     }
 }
 
@@ -108,22 +131,26 @@
     height: 30px;
     width: 30px;
     border: 2px $silver-tint solid;
-    cursor: pointer;
+    cursor: crosshair;
+    &:focus{
+        outline: 2px solid $white;
+    }
 }
 
-.blue {
+.primary {
     @extend  .circle;
     background-color: $primary;
+    border-color: $secondary;
 }
 
-.orange {
-    @extend  .circle;
-    background-color: $secondary;
-}
-
-.purple {
+.tertiary {
     @extend  .circle;
     background-color: $tertiary;
+}
+
+.secondary {
+    @extend  .circle;
+    background-color: $secondary;
 }
 
 .black {
@@ -137,7 +164,7 @@
     padding-bottom: 1rem;
     position: fixed;
     left: 0;
-    cursor: pointer;
+    cursor: crosshair;
     top: 40%;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -149,6 +176,12 @@
     background-color: $silver;
     line-height: 1;
     transition: all 0.3s ease-in-out;
+    &:focus{
+        outline: 2px solid $white;
+    }
+    @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+    }
 
     @media (width > 768px){
     left: unset;
@@ -158,7 +191,6 @@
     writing-mode: unset;
     text-orientation: upright;
     border-radius: 0 0 10px 10px;
-    border: 3px groove;
     border-top: 0px;
     }
     &:before{
@@ -172,9 +204,13 @@
     }
 }
 
-.copy-text__blue {
+.copy-text__primary {
     @extend  .copy-text;
     color: $primary-tint;
+    @media (prefers-color-scheme: dark) {
+        color: $primary-light;
+        border-color: $primary-light;
+    }
     &:hover{
         color: $primary;
         border-color: $primary-light;
@@ -184,19 +220,22 @@
     }
 }
 
-.copy-text__orange {
+.copy-text__tertiary {
     @extend  .copy-text;
     color: $tertiary-tint;
     border-color: $tertiary-tint;
     &:hover{
-        color: crimson;
+        color: primary-light;
     }
 }
 
-.copy-text__purple {
+.copy-text__secondary {
     @extend  .copy-text;
-    color: $purple;
-    border-color: $purple;
+    color: $secondary;
+    border-color: $secondary;
+    @media (prefers-color-scheme: dark) {
+        color: $secondary-tint;
+    }
     &:hover{
         color: $tertiary-tint;
     }

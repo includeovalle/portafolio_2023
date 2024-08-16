@@ -68,9 +68,7 @@
 }
 
 .about {
-        padding:  $default-padding $default-padding;
-    @media( width > 768px ) {
-    }
+    margin:  $default-padding $default-padding;
 }
 
 .about__primary{

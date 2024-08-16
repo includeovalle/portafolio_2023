@@ -111,16 +111,15 @@ figcaption{
   min-width: 220px;
   max-width: 235px;
 
-  @media( width = 768px ) {
-    height: 480px;
+  @media( width >= 768px ) {
+    height: 500px;
     & figure {
       gap: .5rem;
     }
   }
   @media( width > 768px ) {
-    height: 480px;
     flex-direction: column;
-    max-width: 255px;
+    max-width: 285px;
     gap: 2rem;
   }
   &:focus {
@@ -224,6 +223,7 @@ a {
     > p {
       color: $primary-tint;
       &:last-of-type {
+      color: $primary-tint;
         text-decoration: underline;
       }
     }
@@ -270,6 +270,9 @@ a {
       }
       > p {
         color: $secondary-light;
+    &:last-of-type {
+          color: $black;
+        }
       }
     }
   }
@@ -331,6 +334,9 @@ a {
       }
       > p {
         color: $secondary-light;
+    &:last-of-type {
+          color: $primary;
+        }
       }
       > a{
         color: $secondary-tint;

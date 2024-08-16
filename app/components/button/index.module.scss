@@ -21,6 +21,7 @@
     @extend  .default;
     @include flex.col(flex-start, flex-start);
     width: $default-button-size;
+    @include key.bounceTop();
     height: $default-button-size;
     background-image: url('../../../public/brush.svg');
     background-size: contain;
@@ -128,6 +129,7 @@
 
 .circle {
     border-radius: 50%;
+    @include key.bounceTop();
     height: 30px;
     width: 30px;
     border: 2px $silver-tint solid;

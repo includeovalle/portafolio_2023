@@ -3,7 +3,7 @@ import { Ptag } from '../../'
 
 interface IndexProps {
   theme: string;
-  text: string;
+  text: string[];
 }
 
 export default function Index({theme, text}: IndexProps) {
@@ -11,7 +11,11 @@ export default function Index({theme, text}: IndexProps) {
 
   return (
     <>
-      <Ptag  className={CURRENTTHEME}>{text}</Ptag>
+      {
+        text.map((txt)=> (
+          <Ptag key={txt} className={CURRENTTHEME}>{txt}</Ptag>
+        ))
+      }
     </>
   );
 };

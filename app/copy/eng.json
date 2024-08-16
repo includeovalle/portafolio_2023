@@ -26,20 +26,43 @@
       "storybook"
     ]
   },
-  "projects": {
-    "vic": {
+  "projects": [
+    {
       "title": "Steam Engineering and Boilers",
       "image": "../../public/logo.png",
       "alt": "projects carlos amaro",
-      "body": "This time the client needed a website for his business, we create a website for him with a design that suited his convenience, his bussines was registered on google my business, we setup   his profesional email as well.",
+      "body": "This is a project I work as freelance, the client needed a website for his business. We create a website for him with a design that suited his convenience, we setup his professional email as well.",
       "link": {
         "href": "https://www.vaporingenieriaycalderas.mx/",
         "text": "Take a look at the website",
         "target": "_blank"
       }
     }
-  },
-  "aboutme": " I am a seasoned software developer with four years of experience, including three years of remote work. I have effectively collaborated with global teams to develop detailed and high-quality software solutions. My main area of expertise is frontend development, although my efforts have also led me to gain deep knowledge in other areas of the development process. ",
+    ,{
+      "title": "Wedding digital invite",
+      "image": "/boda.png",
+      "alt": "freelance carlos raul amaro ovalle",
+      "body": "I played a key role in the creation of this digital invitation. This project successfully fulfilled its purpose during the event and has served as a bridge for other projects. This invitation, in particular, holds great personal value.",
+      "link": {
+        "href": "https://creacionesdigitales.mx/nuestra-boda-adriana-y-david/",
+        "text": "Check on the invite",
+        "target": "_blank"
+      }
+    }
+    ,{
+      "title": "Web game",
+      "image": "/juego.png",
+      "alt": "fullstack dev carlos raul amaro ovalle",
+      "body": "This is my first full-stack application, and this project challenged me while getting the app into production. I wanted an app with a simple frontend using HTML, CSS, and JavaScript, served by a backend language, Node.js, using my own VPS.",
+      "link": {
+        "href": "https://www.eduba.lat",
+        "text": "Check on projects progress",
+        "target": "_blank"
+      }
+
+    }
+  ],
+  "aboutme": ["I am a seasoned frontend developer with four years of experience in the field, three of which I have worked remotely with teams from the United States, allowing me to work with teams from all over the world. My years in software development have allowed me to meet all kinds of people, cultures, and teams.", "In recent years, I have deepened my knowledge in the following technologies: React.js, TypeScript, Next.js, Vercel, Git, Sass, CSS, and HTML. This has enabled me to convert Figma designs into pixel-perfect websites.","Although I enjoy working with React.js, I am moving towards using JavaScript web components. In my most recent project, the web game."],
   "networks": {
     "copyEmail": "Copy email",
     "alert": "Email copied to clipboard"

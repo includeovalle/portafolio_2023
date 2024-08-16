@@ -26,20 +26,42 @@
       "storybook"
     ]
   },
-  "projects": {
-    "vic": {
+  "projects": [
+    {
       "title": "Vapor Ingenieria y Calderas",
       "image": "/public/logo.png",
       "alt": "projetos carlos raul amaro ovalle",
-      "body": "Nesta vez, o cliente precisava de um site para o seu negócio, criamos um site para ele com um design que se adequava à sua conveniência, seu negócio foi registrado no Google Negócio, configuramos seu e-mail profissional também.",
+      "body": "Um projeto no qual trabalhei de forma independente. Nesta ocasião, o cliente precisava de um site para o seu negócio. Criamos um site com um design ajustado às suas necessidades e, além disso, configuramos o e-mail com o domínio do site.",
       "link": {
         "href": "https://www.vaporingenieriaycalderas.mx/",
         "text": "Olhe o site",
         "target": "_blank"
       }
     }
-  },
-  "aboutme": " Sou um desenvolvedor de software experiente com quatro anos de experiência, incluindo três anos de trabalho remoto. Colaborei efetivamente com equipes globais para desenvolver soluções de software detalhadas e de alta qualidade. Minha principal área de especialização é o desenvolvimento frontend, embora meus esforços também me tenham levado a adquirir um conhecimento profundo em outras áreas do processo de desenvolvimento.",
+    , {
+      "title": "Convite de casamento",
+      "image": "/boda.png",
+      "alt": "freelancer Carlos Raúl Amaro Ovalle",
+      "body": "Tive um papel fundamental na construção deste convite digital. Este projeto cumpriu seu propósito durante o evento e serviu como ponte para outros projetos. Este convite, em particular, tem um grande valor pessoal.",
+      "link": {
+        "href": "https://creacionesdigitales.mx/nuestra-boda-adriana-y-david/",
+        "text": "Confira o convite",
+        "target": "_blank"
+      }
+    }
+    , {
+      "title": "Jogo web",
+      "image": "/juego.png",
+      "alt": "desenvolvedor fullstack Carlos Raúl Amaro Ovalle",
+      "body": "Minha primeira aplicação fullstack, este projeto representou todo tipo de desafios para colocar o app em produção. Nesta ocasião, eu queria um app com um frontend simples em HTML, CSS e JavaScript, servido com uma linguagem de backend (Node.js) a partir de um VPS.",
+      "link": {
+        "href": "https://www.eduba.lat",
+        "text": "Verificar o progresso",
+        "target": "_blank"
+      }
+}
+  ],
+  "aboutme": [" Sou um desenvolvedor de software experiente com quatro anos de experiência, incluindo três anos de trabalho remoto. Colaborei efetivamente com equipes globais para desenvolver soluções de software detalhadas e de alta qualidade. Minha principal área de especialização é o desenvolvimento frontend, embora meus esforços também me tenham levado a adquirir um conhecimento profundo em outras áreas do processo de desenvolvimento."],
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "E-mail copiado para a área de transferência"
@@ -71,38 +93,40 @@
       , "gmail": "Enviar mensagem via gmail web"
     }
     , "about": {
-       "project": {
+      "project": {
         "title": "Links do projeto",
         "links": [
-           {
-            "text": "github"
+          {
+            "text": "Github"
             , "alt": "repositorio do projecto carlosraul.am",
-            "links": { "href": "https://github.com/includeovalle/portafolio_2023/", "target": "_blank" }
+            "href": "https://github.com/includeovalle/portafolio_2023/"
+            , "target": "_blank"
           }
           , {
             "text": "storybook"
             , "alt": "pagina de storybook",
-            "links": { "href": "https://portafolio-2023-dayu.vercel.app/", "target": "_blank" }
+            "href": "https://portafolio-2023-dayu.vercel.app/"
+            , "target": "_blank"
           }
         ]
       }
-, "aboutme":{
-  "title": "Meu perfil profissional"
-  , "links": [
-      {
-      "text":"linkedin"
-      , "alt":  "contacto linkedin carlos raul amaro dev"
-      ,"href": "https://www.linkedin.com/in/carlos-amaro-dev"
-      , "target": "_blank"
-    }
-    ,  {
-      "text":"resume"
-      , "alt":  "Currículo profissional"
-      ,"href": "/carlos-amaro-resume-pt.pdf"
-      , "target": "_blank"
-    }
-  ]
-}
+      , "aboutme":{
+        "title": "Meu perfil profissional"
+        , "links": [
+          {
+            "text":"linkedin"
+            , "alt":  "contacto linkedin carlos raul amaro dev"
+            ,"href": "https://www.linkedin.com/in/carlos-amaro-dev"
+            , "target": "_blank"
+          }
+          ,  {
+            "text":"resume"
+            , "alt":  "Currículo profissional"
+            ,"href": "/carlos-amaro-resume-pt.pdf"
+            , "target": "_blank"
+          }
+        ]
+      }
 
     }
   }

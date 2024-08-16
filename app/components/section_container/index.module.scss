@@ -21,6 +21,16 @@
   background: linear-gradient(180deg, $primary 45%,  $secondary 80%, $secondary 100%);
 }
 
+.row-container {
+  @include flex.col(flex-start, center);
+  height: 100%;
+  width: 100%;
+  @media (width >= 768px) {
+  flex-direction: row;
+    justify-content: space-around;
+}
+
+}
 .last{
   margin-bottom: 0;
 }

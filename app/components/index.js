@@ -10,7 +10,6 @@ export { default as Dialog } from './dialog_modal/index';
 export { default as Hamburger } from './hamburger_modal/index';
 export { default as CustomImage } from './image/index';
 export { default as Portrait} from './portrait/index';
-export { default as Card } from './card/index';
 export { RowContainer as RowContainer } from './section_container/index';
 export { default as Footer } from './footer/index';
 export { InnerContainer as InnerContainer } from './section_container/index';

@@ -31,7 +31,7 @@
       "title": "Vapor Ingenieria y Calderas",
       "image": "/logo.png",
       "alt": "proyectos carlos raul amaro ovalle",
-      "body": "En esta ocasión el cliente necesitaba una página web para su negocio, se le creo un sitio web con un diseño que se ajusto a su conveniencia, se le dio de alta en google my business, a su vez configuramos el correo electrónico con el dominio de su sitio web",
+      "body": "Un proyecto que trabaje independiente, en esta ocasión el cliente necesitaba una página web para su negocio, le creamos un sitio web con un diseño que se ajusto a su conveniencia, a su vez configuramos el correo electrónico con el dominio de su sitio web." ,
       "link": {
         "href": "https://www.vaporingenieriaycalderas.mx/",
         "text": "Revisa el proyecto",
@@ -53,23 +53,25 @@
       "title": "Juego web",
       "image": "/juego.png",
       "alt": "fullstack dev carlos raul amaro ovalle",
-      "body": "Mi primer aplicación fullstack, este proyecto cuenta con firmado ssh y fue el dns fue configurado con nginx. Es un proyecto en construccion pero puedes revisar el progreso. ",
+      "body": "Mi primer aplicación fullstack, este proyecto ha representado toda clase de retos, para poner la app en producción. En esta ocasión quería una app con un frontend simple html, css y javascript, servida con un lenguaje de backend (node-js) desde una vps.",
       "link": {
         "href": "https://www.eduba.lat",
-        "text": "No olvides registrarte",
+        "text": "Revisar el progreso",
         "target": "_blank"
       }
 
     }
   ],
-  "aboutme": "Soy un desarrollador de frontend experimentado, con cuatro años de experiencia en el campo, tres de estos años he trabajado remoto con equipos de Estados Unidos. Esto me ha permitido trabajar con equipos de todo el mundo. Mis años en el desarrollo de software me han permitido conocer todo tipo de personas y equipos.  Mi ramo principal es el frontend, aunque mi esfuerzo me ha llevado a profundizar en el desarrollo en el servidor.",
+  "aboutme": ["Soy un desarrollador de frontend con cuatro años de experiencia en el campo, tres de estos años he trabajado remoto con equipos de Estados Unidos, lo que me ha permitido trabajar con equipos de todo el mundo. Mis años en el desarrollo de software me han permitido conocer todo tipo de personas culturas y equipos." 
+    , "Durante los últimos años he profundizado en las siguientes tecnologías:  React.js, TypeScript, Next.js, Vercel, Git, Sass, CSS, and HTML. Lo que me ha permitido convertir diseños de Figma en sitios web ajustados al pixel."
+    , "Pese a que disfruto trabajar con react-js, estoy tomando el camino de los web-components de javascript. En mi más reciente proyecto, el juego web."],
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "Correo copiado al portapapeles"
   }
   , "languages": [
     {
-      "title": "Da clic para cambiar la página idioma Ingles",
+      "title": "Da clic para cambiar la página idioma Inglés",
       "href": "en",
       "ariaRole": "asistente para cambiar el idioma de la aplicación"
     },
@@ -81,7 +83,7 @@
     {
       "title": "Da clic para cambiar la página idioma Portugués",
       "href": "pt",
-      "ariaRole": "assistant to change the language of the application"
+      "ariaRole": "asistente para cambiar el idioma de la aplicación"
     }
   ]
   , "footer": {

@@ -3,7 +3,7 @@ export default interface Props {
     titles: { projects: string; languages: string; title: string; aboutme: string; };
     header: { portrait: string; skills: string[] };
     projects: Project[];
-    aboutme: string;
+    aboutme: string[];
     languages: Language[]
     networks: { copyEmail: string; alert: string };
     footer: FooterInterface;

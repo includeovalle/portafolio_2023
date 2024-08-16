@@ -61,7 +61,9 @@
       }
 }
   ],
-  "aboutme": [" Sou um desenvolvedor de software experiente com quatro anos de experiência, incluindo três anos de trabalho remoto. Colaborei efetivamente com equipes globais para desenvolver soluções de software detalhadas e de alta qualidade. Minha principal área de especialização é o desenvolvimento frontend, embora meus esforços também me tenham levado a adquirir um conhecimento profundo em outras áreas do processo de desenvolvimento."],
+  "aboutme": ["Sou um desenvolvedor frontend com quatro anos de experiência na área, dos quais três foram trabalhando remotamente com equipes dos Estados Unidos, o que me permitiu trabalhar com equipes de todo o mundo. Meus anos no desenvolvimento de software me permitiram conhecer todo tipo de pessoas, culturas e equipes."
+    , "Nos últimos anos, aprofundei-me nas seguintes tecnologias: React.js, TypeScript, Next.js, Vercel, Git, Sass, CSS e HTML. Isso me permitiu transformar designs do Figma em sites ajustados ao pixel."
+    , "Embora eu goste de trabalhar com React.js, estou seguindo o caminho dos web-components em JavaScript. No meu projeto mais recente, o jogo web."],
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "E-mail copiado para a área de transferência"

@@ -53,7 +53,7 @@
       "title": "Web game",
       "image": "/juego.png",
       "alt": "fullstack dev carlos raul amaro ovalle",
-      "body": "This is my first full-stack application, and this project challenged me while getting the app into production. I wanted an app with a simple frontend using HTML, CSS, and JavaScript, served by a backend language, Node.js, using my own VPS.",
+      "body": "This is my first full-stack application, this project challenged me while getting the app into production. I wanted an app with a simple frontend using HTML, CSS, and JavaScript vanilla, served by a backend language, Node.js, using my own VPS.",
       "link": {
         "href": "https://www.eduba.lat",
         "text": "Check on projects progress",

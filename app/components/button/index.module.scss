@@ -129,7 +129,6 @@
 
 .circle {
     border-radius: 50%;
-    @include key.bounceTop();
     height: 30px;
     width: 30px;
     border: 2px $silver-tint solid;
@@ -143,16 +142,25 @@
     @extend  .circle;
     background-color: $primary;
     border-color: $secondary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
 }
 
 .tertiary {
     @extend  .circle;
     background-color: $tertiary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
 }
 
 .secondary {
     @extend  .circle;
     background-color: $secondary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
 }
 
 .black {

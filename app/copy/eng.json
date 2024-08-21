@@ -121,8 +121,8 @@
             , "target": "_blank"
           }
           , {
-            "text": "Download resume",
-            "alt": "carlos raul amaro resume in pdf format"
+            "text": "Download resume"
+            , "alt": "carlos raul amaro resume in pdf format"
             , "href": "/carlos-amaro-resume-en.pdf"
             , "target": "_blank"
           }

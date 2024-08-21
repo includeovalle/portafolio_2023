@@ -123,9 +123,9 @@
              , "target": "_blank"
           }
           , {
-            "text": "currículum",
-            "alt": "carlos raul amaro resumen profesional en formato pdf ",
-            "href": "/carlos-amaro-resume.pdf"
+            "text": "currículum"
+            , "alt": "carlos raul amaro resumen profesional en formato pdf "
+            , "href": "/carlos-raul-amaro-resume-es.pdf"
             , "target": "_blank"
           }
         ]

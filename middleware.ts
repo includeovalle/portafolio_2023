@@ -28,14 +28,14 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
+  // // If you have one this is 18n mandatory
   if (
     [
       '/manifest.json',
       '/favicon.ico',
-      '/carlos-amaro-resume.pdf',
+      '/carlos-raul-amaro-resume-es.pdf',
       '/carlos-amaro-resume-en.pdf',
-      '/carlos-amaro-resume-pt.pdf',
+      '/carlos-raul-amaro-resume-pt.pdf',
       '/carlos.jpeg',
       '/email.svg',
       '/github.svg',

@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomImage, Ptag } from '../../';
 import LOGO from '/public/logo.png';
-import GAME from '/public/juego.png';
+import GAME from '/public/juego.webp';
 import BODA from '/public/boda.png';
 import  { Project} from "@/app/types/dictionary"
 
@@ -33,6 +33,7 @@ const Index = ({ theme, cards = [] }: Props) => { // Provide a default empty arr
               alt={alt}
               href={href}
               target={target}
+              width={200}
               links={true}
               figcaption={true}
             >

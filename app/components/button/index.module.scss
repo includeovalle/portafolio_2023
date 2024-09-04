@@ -17,11 +17,14 @@
     height: 32px;
 }
 
-.hamburger{
+.hamburger {
     @extend  .default;
     @include flex.col(flex-start, flex-start);
     width: $default-button-size;
+    @include key.bounceTop();
     height: $default-button-size;
+    background-image: url('../../../public/brush.svg');
+    background-size: contain;
     position: absolute;
     top: 1rem;
     right: 2rem;
@@ -37,28 +40,21 @@
         width: 100%;
         height: 100%;
         position: relative;
-        border-bottom: 2px solid $primary-light;
+        border-top: 2px solid $primary-light;
     }
     @media(width > 768px){
     display: none;
 }
-&__blue{
+&__primary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid $primary-light;
-    }
 }
-&__orange{
+&__tertiary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid crimson;
-    }
+    background-image: url('../../../public/brush-pink.svg');
 }
-&__purple{
+&__secondary{
     @extend  .hamburger;
-    &>span{
-        border-bottom: 2px solid $tertiary-tint;
-    }
+    background-image: url('../../../public/brush-blue.svg');
 }
 }
 
@@ -71,12 +67,12 @@
     top: 2em;
     height:$default-button-size;
     width: $default-button-size;
-    cursor: pointer;
+    cursor: crosshair;
     &>span{
         position: absolute;
         width: 100%;
         height: auto;
-        border-bottom: 2px solid $primary-tint;
+        border-top: 2px solid $primary-tint;
         &:nth-child(1){
             transform: rotate(45deg);
         }
@@ -84,7 +80,7 @@
             transform: rotate(-45deg);
         }
         @media (prefers-color-scheme: dark) {
-            border-bottom: 2px solid $silver;
+            border-top: 2px solid $silver;
         }
     }
     &:focus{
@@ -92,17 +88,36 @@
     }
 }
 
-.close-hamburger__blue{
+.close-hamburger__primary{
     @extend  .closeHamburger;
     > span{
         border-color: $primary-light;
     }
+    &:focus{
+        outline: 2px solid $silver;
+            >span{
+                @include key.Flash();
+            }
+    }
 }
 
-.close-hamburger__orange{
+.close-hamburger__tertiary{
     @extend  .closeHamburger;
     > span{
-        border-color: $silver-tint;
+        border-color: $tertiary-light;
+    }
+    &:focus{
+        outline: 2px solid $tertiary;
+            >span{
+                @include key.Flash();
+            }
+    }
+}
+
+.close-hamburger__secondary {
+    @extend  .closeHamburger;
+    > span{
+        border-color: $secondary-light;
     }
     &:focus{
         outline: 2px solid $secondary;
@@ -112,37 +127,40 @@
     }
 }
 
-.close-hamburger__purple {
-    @extend  .closeHamburger;
-    > span{
-        border-color: $silver;
-    }
-}
-
 .circle {
     border-radius: 50%;
     height: 30px;
     width: 30px;
     border: 2px $silver-tint solid;
-    cursor: pointer;
+    cursor: crosshair;
     &:focus{
         outline: 2px solid $white;
     }
 }
 
-.blue {
+.primary {
     @extend  .circle;
     background-color: $primary;
+    border-color: $secondary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
 }
 
-.orange {
-    @extend  .circle;
-    background-color: $secondary;
-}
-
-.purple {
+.tertiary {
     @extend  .circle;
     background-color: $tertiary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
+}
+
+.secondary {
+    @extend  .circle;
+    background-color: $secondary;
+    @media (width > 768px){
+    @include key.bounceTop();
+    }
 }
 
 .black {
@@ -156,7 +174,7 @@
     padding-bottom: 1rem;
     position: fixed;
     left: 0;
-    cursor: pointer;
+    cursor: crosshair;
     top: 40%;
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -196,7 +214,7 @@
     }
 }
 
-.copy-text__blue {
+.copy-text__primary {
     @extend  .copy-text;
     color: $primary-tint;
     @media (prefers-color-scheme: dark) {
@@ -212,21 +230,21 @@
     }
 }
 
-.copy-text__orange {
+.copy-text__tertiary {
     @extend  .copy-text;
     color: $tertiary-tint;
     border-color: $tertiary-tint;
     &:hover{
-        color: crimson;
+        color: primary-light;
     }
 }
 
-.copy-text__purple {
+.copy-text__secondary {
     @extend  .copy-text;
-    color: $purple;
-    border-color: $purple;
+    color: $secondary;
+    border-color: $secondary;
     @media (prefers-color-scheme: dark) {
-        color: $purple-tint;
+        color: $secondary-tint;
     }
     &:hover{
         color: $tertiary-tint;

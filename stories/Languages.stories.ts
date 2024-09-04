@@ -10,11 +10,11 @@ const meta = {
   argTypes: {
     className: {
       control: 'select'
-      , options: ['lang__blue', 'lang__purple', 'lang__orange']
+      , options: ['lang__primary', 'lang__secondary', 'lang__tertiary']
       , description: 'The class name of the component'
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'lang__blue' },
+        defaultValue: { summary: 'lang__primary' },
       },
     }
     , children: {
@@ -46,7 +46,7 @@ type Story = StoryObj<typeof meta>;
 
 export const EnglishLanguagesThemeStory: Story = {
   args: {
-    className: 'lang__blue'
+    className: 'lang__primary'
     , children: 'English'
     , title: 'on hover tag'
   },
@@ -54,7 +54,7 @@ export const EnglishLanguagesThemeStory: Story = {
 
 export const SpanishLanguagesThemeStory: Story = {
   args: {
-    className: 'lang__blue'
+    className: 'lang__primary'
     , children: 'Español'
     , title: 'tag de desplazamiento'
   },
@@ -62,7 +62,7 @@ export const SpanishLanguagesThemeStory: Story = {
 
 export const PortugueseLanguagesThemeStory: Story = {
   args: {
-    className: 'lang__orange'
+    className: 'lang__tertiary'
     , children: 'Português'
     , title: 'tag de deslocamento'
   },

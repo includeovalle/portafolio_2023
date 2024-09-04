@@ -3,10 +3,11 @@
     "projects": "Projetos",
     "languages": "Linguagens",
     "title": "Habilidades Técnicas",
+    "contact": "Contato",
     "aboutme": "Acerca de mim"
   },
   "header": {
-    "portrait": "Raul Amaro",
+    "portrait": "Raul Amaro ",
     "skills": [
       "Bash",
       "AWK",
@@ -25,41 +26,110 @@
       "storybook"
     ]
   },
-  "projects": {
-    "vic": {
+  "projects": [
+    {
       "title": "Vapor Ingenieria y Calderas",
       "image": "/public/logo.png",
       "alt": "projetos carlos raul amaro ovalle",
-      "body": "Nesta vez, o cliente precisava de um site para o seu negócio, criamos um site para ele com um design que se adequava à sua conveniência, seu negócio foi registrado no Google Negócio, configuramos seu e-mail profissional também.",
+      "body": "Um projeto no qual trabalhei de forma independente. Nesta ocasião, o cliente precisava de um site para o seu negócio. Criamos um site com um design ajustado às suas necessidades e, além disso, configuramos o e-mail com o domínio do site.",
       "link": {
         "href": "https://www.vaporingenieriaycalderas.mx/",
         "text": "Olhe o site",
         "target": "_blank"
       }
     }
-  },
-  "aboutme": "Como desenvolvedor de software focado principalmente na web, com três anos de experiência trabalhando remotamente, tenho uma paixão profunda pela aprendizagem contínua e pela implementação prática. Minha jornada no mundo do desenvolvimento de software transformou meu tempo livre de forma imperceptível: fiz a transição da leitura de romances clássicos para a imersão na documentação técnica e das redes sociais para a participação ativa em comunidades de desenvolvimento. Impulsionado por uma forte iniciativa pessoal, encontro imenso prazer em resolver problemas e encontrar soluções inovadoras.",
+    , {
+      "title": "Convite de casamento",
+      "image": "/boda.png",
+      "alt": "freelancer Carlos Raúl Amaro Ovalle",
+      "body": "Tive um papel fundamental na construção deste convite digital. Este projeto cumpriu seu propósito durante o evento e serviu como ponte para outros projetos. Este convite, em particular, tem um grande valor pessoal.",
+      "link": {
+        "href": "https://creacionesdigitales.mx/nuestra-boda-adriana-y-david/",
+        "text": "Confira o convite",
+        "target": "_blank"
+      }
+    }
+    , {
+      "title": "Jogo web",
+      "image": "/juego.png",
+      "alt": "desenvolvedor fullstack Carlos Raúl Amaro Ovalle",
+      "body": "Minha primeira aplicação fullstack, este projeto representou todo tipo de desafios para colocar o app em produção. Nesta ocasião, eu queria um app com um frontend simples em HTML, CSS e JavaScript, servido com uma linguagem de backend (Node.js) a partir de um VPS.",
+      "link": {
+        "href": "https://www.eduba.lat",
+        "text": "Verificar o progresso",
+        "target": "_blank"
+      }
+}
+  ],
+  "aboutme": ["Sou um desenvolvedor frontend com quatro anos de experiência na área, dos quais três foram trabalhando remotamente com equipes dos Estados Unidos, o que me permitiu trabalhar com equipes de todo o mundo. Meus anos no desenvolvimento de software me permitiram conhecer todo tipo de pessoas, culturas e equipes."
+    , "Nos últimos anos, aprofundei-me nas seguintes tecnologias: React.js, TypeScript, Next.js, Vercel, Git, Sass, CSS e HTML. Isso me permitiu transformar designs do Figma em sites ajustados ao pixel."
+    , "Embora eu goste de trabalhar com React.js, estou seguindo o caminho dos web-components em JavaScript. No meu projeto mais recente, o jogo web."],
   "networks": {
     "copyEmail": "Copiar email",
     "alert": "E-mail copiado para a área de transferência"
-  },
-  "footer": {
-    "languages": [
-      {
-        "title": "Língua Português",
-        "text": "pt",
-        "lang": "pt"
-      },
-      {
-        "title": "Língua Espanhola",
-        "text": "Mudar o idioma para ES",
-        "lang": "es"
-      },
-      {
-        "title": "Língua Inglesa",
-        "text": "Mudar o idioma para EN",
-        "lang": "en"
+  }
+  , "languages": [
+    {
+      "title": "Clica para mudar para idioma Inglês",
+      "href": "en",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
+    },
+    {
+      "title": "Clica para mudar para idioma Espanhol",
+      "href": "es",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
+    },
+    {
+      "title": "Idioma atual Português",
+      "href": "pt",
+      "ariaRole": "assistente para mudar idioma do aplicativo"
+    }
+  ]
+  , "footer": {
+    "title": "contato"
+    , "placeholder": "Digite sua mensagem"
+    , "button": "Enviar"
+    , "popup" : {
+      "email": "Enviar com e-mail do dispositivo"
+      , "whatsapp": "Enviar mensagem via whatsapp"
+      , "gmail": "Enviar mensagem via gmail web"
+    }
+    , "about": {
+      "project": {
+        "title": "Links do projeto",
+        "links": [
+          {
+            "text": "Github"
+            , "alt": "repositorio do projecto carlosraul.am",
+            "href": "https://github.com/includeovalle/portafolio_2023/"
+            , "target": "_blank"
+          }
+          , {
+            "text": "storybook"
+            , "alt": "pagina de storybook",
+            "href": "https://portafolio-2023-dayu.vercel.app/"
+            , "target": "_blank"
+          }
+        ]
       }
-    ]
+      , "aboutme":{
+        "title": "Meu perfil profissional"
+        , "links": [
+          {
+            "text":"linkedin"
+            , "alt":  "contacto linkedin carlos raul amaro dev"
+            ,"href": "https://www.linkedin.com/in/carlos-amaro-dev"
+            , "target": "_blank"
+          }
+          ,  {
+            "text":"resume"
+            , "alt":  "Currículo profissional"
+            , "href": "/carlos-raul-amaro-resume-pt.pdf"
+            , "target": "_blank"
+          }
+        ]
+      }
+
+    }
   }
 }

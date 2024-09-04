@@ -12,11 +12,11 @@ const meta = {
   argTypes: {
     theme: {
       control: 'select',
-      options: ['blue', 'purple', 'orange'],
-      description: "Inherited theme", default: 'purple'
+      options: ['primary', 'secondary', 'tertiary'],
+      description: "Inherited theme", default: 'secondary'
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'blue' },
+        defaultValue: { summary: 'primary' },
       }
     }
     , text: {
@@ -44,7 +44,7 @@ type Story = StoryObj<typeof meta>;
 
 export const HeaderH1ThemeStory: Story = {
   args: {
-    theme: 'blue',
+    theme: 'primary',
     text: 'skills',
     className: 'subtitle'
   },

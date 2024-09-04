@@ -7,8 +7,8 @@ interface IndexProps extends classNamesInterface {
   theme: string;
 };
 
-const H1 = ({ text, theme, className = "subtitle" }: IndexProps) => {
-  const currentTheme = `${className}__${theme}`;
+const H1 = ({ text, theme }: IndexProps) => {
+  const currentTheme = `${theme}`;
   return (
     <Htag type={1} className={currentTheme}> {text}</Htag>
   );

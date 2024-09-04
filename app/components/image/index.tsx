@@ -13,53 +13,64 @@ interface Props extends ImageInterface, LinkInterface {
 const Index = ({ src, alt, links, href, target, width, height, figcaption, children, className }: Props) => {
     const propStyle = className ? styles[className] : styles['default'];
 
+    if (links) {
+        return (
+            <Link className={propStyle} href={href || ''} target={target || '_self'} >
+                {width && (
+                    <figure >
+                        <Image
+                            src={src}
+                            alt={alt}
+                            width={width}
+                            height={height ? height : width / 3}
+                            priority
+                        />
+                        <figcaption>{children}</figcaption>
+                    </figure>
+                )}
+                {!width && (
+                    <figure>
+                        <Image
+                            src={src}
+                            alt={alt}
+                            fill
+                            priority
+                        />
+                        {<figcaption>{children}</figcaption>}
+                    </figure>
+                )}
+            </Link>
+        )
+    }
 
     return (
         <figure className={propStyle}>
-            {links && width && (
-                <Link href={href || ''}>
+            {width && (
+                <>
                     <Image
                         src={src}
                         alt={alt}
                         width={width}
-                        height={height? height : width/3}
+                        height={height ? height : width / 3}
                         priority
                     />
-                </Link>
+                    {figcaption && <figcaption>{children}</figcaption>}
+                </>
             )}
-            {links && !width && (
-                <Link href={href || ''}
-                target={target || '_self'}
-                >
+            {!width && (
+                <>
                     <Image
                         src={src}
                         alt={alt}
                         fill
+                        sizes="100%"
                         priority
                     />
-                </Link>
+                    {figcaption && <figcaption>{children}</figcaption>}
+                </>
             )}
-            {!links && width && (
-                <Image
-                    src={src}
-                    alt={alt}
-                    width={width}
-                    height={height? height : width/3}
-                    priority
-                />
-            )}
-            {!links && !width && (
-                <Image
-                    src={src}
-                    alt={alt}
-                    fill
-                    sizes="100%"
-                    priority
-                />
-            )}
-            {figcaption && <figcaption>{children}</figcaption>}
         </figure>
-    );
+    )
 };
 
 export default Index;

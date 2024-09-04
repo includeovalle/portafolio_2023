@@ -16,10 +16,8 @@ const Index = ({text, className}:IndexProps) => {
 
 
   return (
-    <CustomImage className={className} figcaption={true} src={picture} alt="carlos raul amaro ovalle">
-      <div className="overlay">
+    <CustomImage className={className} width={220} height={220}  figcaption={true} src={picture} alt="carlos raul amaro ovalle">
         <div className="spinning-text">
-          <p>
             { text && text.split("").map((letra, i) => (
               <span
                 key={i}
@@ -30,9 +28,7 @@ const Index = ({text, className}:IndexProps) => {
                 {letra}
               </span>
             ))}
-          </p>
         </div>
-      </div>
     </CustomImage>
   );
 };

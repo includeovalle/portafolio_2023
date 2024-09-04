@@ -21,22 +21,22 @@
     }
 }
 
-.blue{
+.primary{
     @extend .default;
     background-color: $primary-tint;
     border-color: $primary-light;
 }
 
-.orange {
+.tertiary {
     @extend .default;
-    background-color: $secondary-tint;
-    border-color: $secondary-light;
+    background-color: $tertiary;
+    border-color: $tertiary-light;
 }
 
-.purple {
+.secondary {
     @extend .default;
-    background-color: $tertiary-tint;
-    border-color: $tertiary-light;
+    background-color: $secondary;
+    border-color: $secondary-light;
 }
 
 .no-display{
@@ -44,3 +44,53 @@
     position: unset;
 }
 
+.input{
+    height:  min-content;
+    @include key.slideIN();
+    justify-content: flex-end;
+    width: min-content;
+    margin: 0;
+    width: 100%;
+    margin-top: 110dvi;
+    padding: clamp($default-padding-inset, 50vw, 1rem);
+    padding-top: $default-padding;
+    @media( width >= 768px ) {
+        width: min-content;
+        bottom: 0;
+        margin-top: 30%;
+        margin-left: calc(50vw + 100px);
+    }
+    & figure:nth-child(2){
+            margin-top: 3.5rem;
+        }
+}
+
+.input__primary{
+    @extend .primary;
+    @extend .input;
+
+    & a{
+        color: $primary;
+    }
+}
+
+.input__secondary{
+    @extend .secondary;
+    @extend .input;
+    & figure{
+    & a{
+        color: $tertiary;
+        & figcaption{
+            color: $tertiary;
+        }
+    }
+    }
+    }
+
+.input__tertiary{
+    @extend .tertiary;
+    @extend .input;
+    & a{
+        color: $tertiary;
+    }
+}

@@ -11,7 +11,7 @@ interface PropsInterface extends childrenInterface {
 
 const Index = ({ buttonText, children }: PropsInterface) => {
 
-  const bgColor = useSearchParams().get("theme") || "blue";
+  const bgColor = useSearchParams().get("theme") || "primary";
   const mediaRef = useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {

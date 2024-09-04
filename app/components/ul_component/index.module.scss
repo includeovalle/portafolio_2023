@@ -24,6 +24,297 @@
   }
 }
 
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  z-index: 0;
+}
+
+.background__primary {
+  @extend .background;
+  background-color: $primary;
+
+  & li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    @include keyframes.floatSquares();
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 0;
+    &:nth-child(1) {
+      left: 27%;
+      width: 193px;
+      height: 193px;
+      bottom: -193px;
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      left: 69%;
+      width: 100px;
+      height: 100px;
+      bottom: -100px;
+      animation-delay: 2s;
+    }
+    &:nth-child(3) {
+      left: 52%;
+      width: 122px;
+      height: 122px;
+      bottom: -122px;
+      animation-delay: 5s;
+    }
+    &:nth-child(4) {
+      left: 12%;
+      width: 102px;
+      height: 102px;
+      bottom: -102px;
+      animation-delay: 12s;
+    }
+    &:nth-child(5) {
+      left: 36%;
+      width: 134px;
+      height: 134px;
+      bottom: -134px;
+      animation-delay: 3s;
+    }
+    &:nth-child(6) {
+      left: 7%;
+      width: 148px;
+      height: 148px;
+      bottom: -148px;
+      animation-delay: 21s;
+    }
+    &:nth-child(7) {
+      left: 15%;
+      width: 111px;
+      height: 111px;
+      bottom: -111px;
+      animation-delay: 11s;
+    }
+    &:nth-child(8) {
+      left: 61%;
+      width: 166px;
+      height: 166px;
+      bottom: -166px;
+      animation-delay: 5s;
+    }
+    &:nth-child(9) {
+      left: 49%;
+      width: 103px;
+      height: 103px;
+      bottom: -103px;
+      animation-delay: 19s;
+    }
+    &:nth-child(10) {
+      left: 8%;
+      width: 80px;
+      height: 80px;
+      bottom: -103px;
+      animation-delay: 7s;
+    }
+  }
+}
+
+.background__secondary {
+  @extend .background;
+  background-color: $secondary;
+
+  & li{
+    position: absolute;
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 20vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    @include keyframes.blurredCircle();
+    z-index: 0;
+
+    &:nth-child(1) {
+      color: $primary;
+      top: 41%;
+      left: 78%;
+      animation-duration: 10s;
+      animation-delay: -43s;
+      transform-origin: 25vw 12vh;
+      box-shadow: -40vmin 0 5.6713446286643805vmin currentColor;
+    }
+    &:nth-child(2) {
+      color: $primary-tint;
+      top: 96%;
+      left: 1%;
+      animation-duration: 42s;
+      animation-delay: -30s;
+      transform-origin: -9vw -7vh;
+      box-shadow: -40vmin 0 5.9120757435571685vmin currentColor;
+    }
+    &:nth-child(3) {
+      color: $primary-light;
+      top: 17%;
+      left: 43%;
+      animation-duration: 46s;
+      animation-delay: -48s;
+      transform-origin: -13vw 21vh;
+      box-shadow: 40vmin 0 5.195437657554566vmin currentColor;
+    }
+    &:nth-child(4) {
+      color: $tertiary-light;
+      top: 35%;
+      left: 53%;
+      animation-duration: 20s;
+      animation-delay: -1s;
+      transform-origin: 6vw 15vh;
+      box-shadow: 40vmin 0 5.172671137950099vmin currentColor;
+    }
+    &:nth-child(5) {
+      color: $secondary-light;
+      top: 12%;
+      left: 19%;
+      animation-duration: 34s;
+      animation-delay: -35s;
+      transform-origin: 16vw -20vh;
+      box-shadow: -40vmin 0 5.085686542259639vmin currentColor;
+    }
+    &:nth-child(6) {
+      color: $tertiary;
+      top: 21%;
+      left: 5%;
+      animation-duration: 53s;
+      animation-delay: -24s;
+      transform-origin: -11vw -19vh;
+      box-shadow: 40vmin 0 5.965599733165659vmin currentColor;
+    }
+    &:nth-child(7) {
+      color: $tertiary-tint;
+      top: 30%;
+      left: 68%;
+      animation-duration: 21s;
+      animation-delay: -12s;
+      transform-origin: 20vw -8vh;
+      box-shadow: 40vmin 0 5.636591443166538vmin currentColor;
+    }
+    &:nth-child(8) {
+      color: $tertiary-light;
+      top: 49%;
+      left: 12%;
+      animation-duration: 31s;
+      animation-delay: -13s;
+      transform-origin: -9vw 6vh;
+      box-shadow: 40vmin 0 5.366056869962909vmin currentColor;
+    }
+    &:nth-child(9) {
+      color: $silver;
+      top: 27%;
+      left: 89%;
+      animation-duration: 52s;
+      animation-delay: -23s;
+      transform-origin: -2vw 25vh;
+      box-shadow: 40vmin 0 5.446273085386524vmin currentColor;
+    }
+    &:nth-child(10) {
+      color: $black;
+      top: 49%;
+      left: 85%;
+      animation-duration: 51s;
+      animation-delay: -13s;
+      transform-origin: -21vw -21vh;
+      box-shadow: 40vmin 0 5.700905882846684vmin currentColor;
+    }
+  }
+}
+
+.background__tertiary {
+  @extend .background;
+  background-color: $tertiary;
+
+  & li{
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #8e8e8e;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    @include keyframes.cube();
+    z-index: 0;
+
+
+    &:nth-child(1) {
+      animation-delay: 5s;
+      left: 46;
+      top: 95vh;
+      border-color: $primary-light;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 1s;
+      left: 46vw;
+      top: 70vh;
+      border-color: $primary;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 2s;
+      left: 0vw;
+      top: 15vh;
+      border-color: $secondary-tint;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 6s;
+      left: 91vw;
+      top: 88vh;
+      border-color: $secondary;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 4s;
+      left: 6vw;
+      top: 75vh;
+      border-color: $secondary-light;
+    }
+    &:nth-child(6) {
+      animation-delay: 0s;
+      left: 56vw;
+      top: 28vh;
+      border-color: $tertiary-light;
+    }
+    &:nth-child(7) {
+      animation-delay: 7s;
+      left: 6vw;
+      top: 85vh;
+      border-color: $tertiary-tint;
+    }
+    &:nth-child(8) {
+      animation-delay: 1s;
+      left: 77;
+      top: 55;
+      border-color: $tertiary-light;
+    }
+    &:nth-child(9) {
+      animation-delay: 8s;
+      left: 76vw;
+      top: 25vh;
+      border-color: $tertiary-light;
+    }
+    &:nth-child(10) {
+      animation-delay: 3s;
+      left: 26vw;
+      top: 45vh;
+      border-color: $primary;
+    }
+  }
+}
+
 .nav{ 
   @extend .default;
   display: none;
@@ -80,66 +371,79 @@
   @include flex.row(space-between, center);
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem;
-  @media(width > 768px){
-  }
+  padding: $default-padding-inset $default-padding $default-padding-inset $default-padding;
+  @include keyframes.bounceTop();
   li{
-    @include keyframes.bounceTop();
     flex: 0 0 calc(50% - 1rem);
     position: relative;
     border-bottom: 1px solid $primary;
     line-height: 1.5;
     padding: $default-padding-inset;
-      &:hover{
-        &:before{
-          content: '\01f4ab';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 32px;
-          height: 100%;
-          z-index: 1;
-        }
-        text-shadow: 0px 0px 20px $silver-tint;
-      }
-    @media(width > 768px){
-        &:before{
-          content: '\01f4ab';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 32px;
-          height: 100%;
-          z-index: 1;
-        }
-    flex: 0 0 calc(50% - 1rem - 2rem);
-      &:nth-child(odd){
-        margin-right: 1rem;
+    text-align: center;
+    &:nth-last-child(1){
+      border-bottom: none;
+    }
+    &:hover{
+      @include keyframes.growFont();
+      font-weight: 700;
+      &:before{
+        content: '\270e';
+        position: absolute;
+        font-weight: 500;
+        top: 10%;
+        left: 0;
+        font-size: 115%;
+        width: 32px;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+        z-index: 1;
       }
     }
+    @media(width > 768px){
+    &:before{
+      content: '\270F';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 100%;
+      z-index: 1;
+    }
+    flex: 0 0 calc(50% - 1rem - 2rem);
   }
 }
+}
 
-.blue {
+.primary {
   @extend .header;
   li{
     color: $primary-light;
     border-color: $primary-light;
+    &:hover{
+      color: $primary-light;
+    }
   }
 }
 
-.orange {
+.tertiary {
   @extend .header;
   li{
-    color: crimson;
-    border-color: $secondary-light;
+    color: $tertiary-light;
+    border-color: $tertiary-light;
+    &:hover{
+      color: $tertiary-tint;
+    }
   }
 }
 
-.purple {
+.secondary {
   @extend .header;
   li{
-    color: $silver;
-    border-color: $purple;
+    color: $secondary-light;
+    border-color: $secondary-tint;
+    text-align: center;
+    &:hover{
+      color: $secondary-tint;
+    }
   }
 }

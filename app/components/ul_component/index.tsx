@@ -40,7 +40,7 @@ const Ul = ({ className = "default", exact = false, lis, otherLis, onClick, link
         })
       }
       {!links &&
-        lis?.map((li: React.ReactNode, index: number) => {
+        lis?.sort().map((li: React.ReactNode, index: number) => {
           return <li key={index} onClick={onClick}>{li}</li>
         })
       }

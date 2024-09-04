@@ -6,159 +6,187 @@
 @use '/app/styles/_classes.scss';
 
 .portrait {
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   position: relative;
-  @media(width > 768px){
+  margin: 150px auto;
   @include key.shakeBottom();
+  @media(width >= 768px){
+  margin: 250px auto;
+
 }
 img{
   border-radius: 50%;
-  filter: drop-shadow(16px 6px 20px gray) invert(75%);
+  position: absolute;
 }
 figcaption{
-  &>div:nth-child(1) {
-    //overlay
-    position: relative;
-    left:0;
-    top:0;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
+  //overlay
+  position: relative;
+  left:0;
+  top:0;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  transition: 1.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(229, 137, 53, 1);
+  border-radius: 50%;
+  text-align: center; 
+  background: radial-gradient(circle, transparent 60%, rgba(95,95,93,.7) 10%);
+  &>div{
+    //spinning text
+    @include key.spin(70s);
     transition: 1.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(229, 137, 53, 1);
-    border-radius: 50%;
-    text-align: center; 
-    transform-origin:0px 150px;
-    background: radial-gradient(circle, transparent 62%, rgba(95,95,93,.7) 5%);
-    &>div{
-      //spinning text
-      @include key.spin(70s);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: $primary;
+    > span {
       transition: 1.5s ease;
       position: absolute;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      color: $silver;
-      >p {
-        > span {
-          transition: 1.5s ease;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform-origin:0px 150px;
-          &:first-letter {
-            font-size: .9rem;
-            text-transform: capitalize;
-          }
-        }
+      top: 0;
+      left: 50%;
+      transform-origin:0px 110px;
+      &:first-letter {
+        font-size: .9rem;
+        text-transform: capitalize;
       }
     }
   }
 }
 }
 
-.blue{
+.primary{
   @extend .portrait;
-  img{
-    filter: drop-shadow(0 -6mm 4mm $primary-light);
+  figcaption{
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $primary-light 80%);
+    }
   }
 }
 
-.orange{
+.tertiary {
   @extend .portrait;
-  img{
-    filter: drop-shadow(0 0 0.75rem crimson);
-  }
   figcaption{
-    &>div:nth-child(1) { &>div{ >p { > span {
-      color: gold;
-    }}}}}
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) { 
+      background: radial-gradient(circle, transparent 50%, $tertiary-light 80%);
+    }
+  }
 }
 
-.purple {
+.secondary {
   @extend .portrait;
-  img{
-    filter: drop-shadow(0 -6mm 4mm $purple);
-  }
   figcaption{
-    &>div:nth-child(1) { &>div{ >p { > span {
-      color: $silver-tint;
-    }}}}}
+    & span {
+      color: $white;
+      text-shadow: $default-text-shadow;
+    }
+    &>div:nth-child(1) {
+      background: radial-gradient(circle, transparent 50%, $secondary-light 80%);
+    }
+  }
 }
 
 .card {
-  position: relative;
-  cursor: pointer;
-  &:focus {
-    outline: 3px dashed $white;
-    border-radius: 2*$default-border-radius;
-    border: 3px solid $primary;
-  }
-
   @include flex.col(flex-start, center);
-  margin: 1rem 0;
+  position: relative;
+  cursor: crosshair;
+  margin: $default-padding 0;
   border-radius: 2*$default-border-radius;
-  background-color: $silver;
+  background-color: $silver-tint;
   gap: 1rem;
-  max-width: 295px;
-  padding: 1rem;
+  height: 100%;
+  padding: $default-padding-inset 2*$default-padding-inset;
   border: 1px solid $primary-light;
-  @media (prefers-color-scheme: dark) {
-    background-color: transparent;
+  min-width: 220px;
+  max-width: 235px;
 
-    figcaption{
-      > p {
-        color: $primary-light;
-        max-width: 320px;
-        @media( width > 768px ) {
-        }
-      }
+  @media( width >= 768px ) {
+    height: 500px;
+    & figure {
+      gap: .5rem;
     }
   }
   @media( width > 768px ) {
     flex-direction: column;
-    padding-bottom: unset;
+    max-width: 285px;
+    gap: 2rem;
   }
-  img {
+  &:focus {
+    outline: 3px dashed $white;
+    border-radius: 2*$default-border-radius;
+    border: 3px solid $primary;
+    & img {
+      transition: .75s ease-in-out;
+      border-radius: 2*$default-border-radius;
+    }
+  }
+
+  &:hover {
+    transition: .75s ease-in-out;
+    & img {
+      transition: .75s ease-in-out;
+      border-radius: 2*$default-border-radius;
+    }
+  }
+
+  & img {
     position: relative !important;
-    border-radius: 2*$default-border-radius 2*$default-border-radius 0 0;
-    max-height: 255px;
+    height: 100%;
+    max-height: 95px;
+    margin: 0 auto;
+    width: 100%;
     object-fit: contain;
-    @media(width > 768px){
-    border-radius: 2*$default-border-radius 0 0 2*$default-border-radius;
-    min-height: 125px;
+    margin-bottom: 2*$default-padding-inset;
+    flex: 1 1 25%;
+    @media(width >= 768px){
     max-height: 125px;
+    }
+    }
+    @media (prefers-color-scheme: dark) {
+    background-color: transparent;
+
+    figcaption{
+    > p {
+    color: $primary-light;
+    @media( width > 768px ) {
+    }
   }
 }
-figcaption {
-  height: 100%;
-  min-height: 20vh;
+}
+
+& figcaption {
+  min-height: 10vh;
   @include flex.col(space-around, flex-start);
   border-radius: 0 0 $default-border-radius $default-border-radius;
-  padding-left: 1rem;
 
   & p {
     padding: 1rem;
-    @media(width > 768px) {
-    padding: 1rem 0;
-    }
+    transition: 0.75s ease;
     &:last-of-type {
-      padding-bottom: 1rem;
+      padding: 0;
+      margin-bottom: 1rem;
     }
   }
-  @media(width > 768px){
   & h3 {
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    transition: 0.75s ease;
+    @media(width >= 768px){
     color: $primary-tint;
   }
-}
-& h3 {
-  text-transform: uppercase;
-  color: $black;
-  text-align: center;
 }
 a {
   color: $primary;
@@ -175,20 +203,19 @@ a {
 }
 }
 
-.card__blue {
+.card__primary {
   @extend .card;
   &:hover {
+    border-color: $secondary-light;
+    background-color: $silver;
     & figcaption {
       > h3 {
-        color: crimson;
         transition: 1.25s ease;
+        color: $secondary-light;
       }
       > p {
-        color: $primary-tint;
         transition: 1.75s ease;
-        &:last-of-type {
-          color: crimson;
-        }
+        color: $secondary-light;
       }
     }
   }
@@ -197,8 +224,9 @@ a {
       color: $primary-tint;
     }
     > p {
-      color: $primary;
+      color: $primary-tint;
       &:last-of-type {
+      color: $primary-tint;
         text-decoration: underline;
       }
     }
@@ -208,7 +236,7 @@ a {
   @media (prefers-color-scheme: dark) {
     & figcaption{
       > h3{
-        color: crimson;
+        color: primary-light;
       }
       >p {
         color: $primary-light;
@@ -220,31 +248,34 @@ a {
   }
 }
 
-.card__orange {
+.card__tertiary {
   @extend .card;
   background-color: $tertiary-light;
   border-color: $secondary-light;
   & figcaption {
     > h3{
-      color: crimson;
+      color: $tertiary;
     }
     > p {
-      color: $tertiary-tint;
+      color: $tertiary;
       &:last-of-type {
         text-decoration: underline;
+        color: $secondary-light;
       }
     }
   }
 
   &:hover{
+    background-color: $silver-tint;
     & figcaption{
       > h3{
         color: $secondary-light;
-        transition: 1s ease;
       }
       > p {
         color: $secondary-light;
-        transition: 1.75s ease;
+    &:last-of-type {
+          color: $black;
+        }
       }
     }
   }
@@ -266,13 +297,13 @@ a {
   }
 }
 
-.card__purple {
+.card__secondary {
   @extend .card;
-  background-color: $tertiary-light;
-  border-color: $purple;
+  background-color: transparent;
+  border-color: $secondary-light;
   figcaption {
     > h3{
-      color: $purple-tint;
+      color: $tertiary;
     }
     > p {
       color: $primary-light;
@@ -298,56 +329,64 @@ a {
     }
   }
   &:hover{
-    background-color: transparent;
-    transition: 2s ease;
+    border-color: $tertiary-light;
+    background-color: $tertiary-light;
     & figcaption{
       > h3{
-        color: $purple-tint;
+        color: $secondary-light;
       }
       > p {
-        color: $primary-light;
+        color: $secondary-light;
+    &:last-of-type {
+          color: $primary;
+        }
       }
       > a{
-        color: $purple-tint;
+        color: $secondary-tint;
         text-decoration-color: $silver-tint;
       }
     }
   }
   @media (prefers-color-scheme: dark) {
     background-color: transparent;
-    border-color: $purple-tint;
+    border-color: $secondary-tint;
   }
 }
 
 .icon{
-  position: relative;
-  margin-top: 1rem;
-  cursor: pointer;
-  min-width: 25px;
-  height: auto;
-  width: max-content;
   &:hover {
     transform: scale(1.05);
   }
-  &>a:focus {
+  &:focus {
     outline: 2px solid $white;
     >img{
       @include key.Flash();
     }
   }
-  a {
+  @include flex.row(flex-start, center);
+  position: relative;
+  background-color: transparent;
+  gap: 25px;
+  padding: $default-padding-inset;
+  transition: .3s;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: $default-border-radius;
+  & figure {
     @include flex.row(flex-start, center);
+    gap: $default-padding-inset;
     position: relative;
-    height: 100%;
-    width: 100%;
-    gap: 25px;
-    top: 0;
-    left: 0;
-    }
+    cursor: crosshair;
+    min-width: 25px;
+    width: max-content;
     img {
       position: relative !important;
       object-fit: contain;
+      background-color: transparent;
       object-position: left;
+      height: $default-button-size;
+      width: $default-button-size;
       max-width: 25px;
       @media(width > 768px){
       max-width: 30px;
@@ -363,3 +402,44 @@ a {
     }
     }
   }
+}
+
+.icon__primary {
+  @extend .icon;
+  &:hover {
+    background-color: $secondary;
+    border: 1px solid $secondary-tint;
+  }
+  & figure {
+    figcaption {
+      color: $secondary-tint;
+    }
+  }
+}
+
+.icon__tertiary {
+  @extend .icon;
+  &:hover {
+    background-color: $primary-tint;
+    border: 1px solid $primary;
+  }
+  & figure {
+    figcaption {
+      color: $primary-light;
+    }
+  }
+}
+
+.icon__secondary {
+  @extend .icon;
+  &:hover {
+    background-color: $tertiary-tint;
+    border: 1px solid $tertiary;
+    & figure {figcaption { color: $tertiary}}
+  }
+  & figure{
+    figcaption {
+      color: $tertiary-light;
+    } 
+  }
+}

@@ -1,13 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with nextjs 13 you can check the webpage at [CarlosRaul.am](https://carlosraul.am).
 
-It's primary focus is to show case my habilities as a Frontend developer:
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=includeovalle.portafolio_2023" alt="badge"/>
+
+This is a bootstrapped with nextjs 13.
+
+This was made to show case my habilities as a Frontend developer:
 
 - REACTJS
 - SASS
 - HTML
 - NEXTJS
 
-## Getting Started
+You can check the webpages at: 
+- [www.carlosraul.am](https://www.carlosraul.am).
+- [Storybook web page](https://portafolio-2023-dayu.vercel.app/)
+
+
+
+<h1 align="center">
+Getting Started
+</h1>
+
+This project posses an ```.nvmrc``` file.
+
+This means you can easily use the proper ```node version v20.11.1```
 
 First, run the development server:
 
@@ -37,4 +52,3 @@ pnpm storybook
 bun storybook
 ```
 
-or check []

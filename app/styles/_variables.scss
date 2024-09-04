@@ -2,25 +2,21 @@
 $white: #fff;
 
 $silver: #BEBFC5;
-$silver-tint: rgba(255, 255, 255, .8);
-$purple: rgb(160, 0, 210);
-$purple-tint: #e45cdd;
+$silver-tint: rgba(245, 245, 245, .7);
 
 $black: #343437;
 
-$primary: #031d44;
-$primary-tint: rgba(3, 40, 78, 0.64);
-$primary-light: rgba( 188, 220, 255, 0.9 );
+$secondary: #d9d9d9;
+$secondary-tint: #0E185F;
+$secondary-light: #204969;
 
-$secondary: rgb(253,157,2);
-$secondary-tint: rgba(255,183,6,0.78);
-$secondary-light: gold;
+$tertiary: #74747c;
+$tertiary-tint: #FAF0E6;
+$tertiary-light: lightpink;
 
-
-$tertiary: rgba(79, 28, 78, 1);
-$tertiary-tint: rgba(179, 29, 29, 0.7836134282814688);
-$tertiary-light: rgba(218, 73, 73, 0.43599438066242124);
-
+$primary: #0F6292;
+$primary-tint: #39B5E0;
+$primary-light: #C0EEE4;
 // $secondary: rgb(248, 31, 11);
 // $secondary-tint: rgba(227,61,51,.2);
 
@@ -35,7 +31,7 @@ $default-button-size: 2em;
 //border
 $default-border-radius: 8px;
 //padding
-$default-padding: 2em;
+$default-padding: 4em;
 $page-padding: .5em 2em;
 $page-max-width: 1200px;
 $default-padding-inset: .5em;
@@ -77,4 +73,6 @@ $breakpoints: (
 'xl': 1200px,
 'xxl': 1400px
 );
+
+
 

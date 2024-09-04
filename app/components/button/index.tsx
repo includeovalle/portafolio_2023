@@ -32,7 +32,7 @@ interface CloseButtonInterface extends ButtonInterface {
 export const CloseButton = ({ onClick, className = "close-hamburger", closeBtn, autoFocus }: CloseButtonInterface) => {
 
     const searchParams = useSearchParams();
-    const bgColor = searchParams.get("theme") || "blue";
+    const bgColor = searchParams.get("theme") || "primary";
 
      const closeBtnDefault = closeBtn ? closeBtn : <Spans />;
 

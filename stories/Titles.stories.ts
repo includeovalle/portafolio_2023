@@ -44,8 +44,15 @@ type Story = StoryObj<typeof meta>;
 
 export const HeaderH1ThemeStory: Story = {
   args: {
-    theme: 'primary',
+    theme: 'secondary',
     text: 'skills',
     className: 'subtitle'
+  },
+  parameters: {
+    docs: {
+      controls: {
+        exclude: ['className'],
+      },
+    },
   },
 };

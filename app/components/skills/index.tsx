@@ -1,38 +1,26 @@
 
 import React from "react";
-import { CustomImage} from "../";
-import picture from "@/public/carlos.webp";
-import { classNamesInterface } from "@/app/types/";
+import { CustomImage } from "../";
 
-
-
-  interface IndexProps extends classNamesInterface {
-  text: string;
+interface IMAGES {
+  name: string
+  image: string
 }
 
-const Index = ({text, className}:IndexProps) => {
 
-  const length = text.length;
-  const deg = 360 / length;
-
+const Index = ({ images, theme }: { images: IMAGES[]; theme: string }) => {
 
   return (
-    <CustomImage className={className} width={220} height={220}  figcaption={true} src={picture} alt="carlos raul amaro ovalle">
-        <div className="spinning-text">
-            { text && text.split("").map((letra, i) => (
-              <span
-                key={i}
-                style={{
-                  transform: `rotate(${deg * i}deg)`,
-                }}
-              >
-                {letra}
-              </span>
-            ))}
-        </div>
-    </CustomImage>
+    <>
+      {
+        images?.map((item: IMAGES) => (
+          <CustomImage className={`skills__${theme}`} key={item.name} width={50} height={50} figcaption={true} src={item.image} alt={`skills_${item.name}`} >
+            {item.name}
+          </CustomImage >
+        ))
+      }
+    </>
   );
 };
 
 export default Index;
-

@@ -16,4 +16,4 @@ export { InnerContainer as InnerContainer } from './section_container/index';
 export { default as SocialMedia } from './navbar-side/index';
 export { default as CopyButton } from './button/copyText';
 export { default as IfraModal } from './iframe-modal/'
-export { default as Skills } from './skills/'
+export { default as SkillsMap } from './skills/'

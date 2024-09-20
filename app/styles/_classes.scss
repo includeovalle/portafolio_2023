@@ -75,6 +75,9 @@ $font-size-first-cap-classes: create-font-size-first-cap-classes();
   }
 }
 
+
+
+
 //CLASSES
 .capital{
     @include cap();
@@ -89,3 +92,8 @@ $font-size-first-cap-classes: create-font-size-first-cap-classes();
  .title-cap-clamp{
     @include title-letter-clamp();
  }
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}

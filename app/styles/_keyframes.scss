@@ -11,14 +11,15 @@
 }
 
 @mixin cube() {
-  animation: cubes 7s ease-in forwards infinite;
+  animation: cubes 7s ease-in alternate-reverse infinite;
   @keyframes cubes {
   from {
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     opacity: 1;
   }
   to {
-    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    transform: scale(3) rotate(360deg) translate(-50%, -50%);
+    font-size: 16px;
     opacity: 0;
   }
   }

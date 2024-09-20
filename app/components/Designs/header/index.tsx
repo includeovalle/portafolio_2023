@@ -16,24 +16,24 @@ interface Props {
 }
 
 
-const Index = ({theme, languages, currentLang} : Props) => {
+const Index = ({ theme, languages, currentLang }: Props) => {
 
   const COLORS = ["primary", "secondary", "tertiary"];
 
   // colorHandler is a function that handles default theme
-  colorHandler( );
+  colorHandler();
 
   return (
 
     <Header className={theme} >
       <div>
-      <Languages theme={theme} languages={languages} currentLang={currentLang}/>
+        <Languages theme={theme} languages={languages} currentLang={currentLang} />
       </div>
       <div>
         {
           COLORS.map((color: string) => {
             return (
-              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
+              <Link key={color} aria-roledescription={"application-theme-handler"} className={ButtonStyle[color]} href={`?theme=${color}`}>
               </Link>
             )
           })
@@ -45,8 +45,8 @@ const Index = ({theme, languages, currentLang} : Props) => {
           {
             COLORS.map((color: string) => {
               return (
-              <Link key={color} aria-roledescription={"application-theme-handler"}  className={ButtonStyle[color]} href={`?theme=${color}`}>
-              </Link>
+                <Link key={color} aria-roledescription={"application-theme-handler"} className={ButtonStyle[color]} href={`?theme=${color}`}>
+                </Link>
               )
             })
           }

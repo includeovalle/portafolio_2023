@@ -18,9 +18,6 @@ const meta = {
     },
   }
   , parameters: {
-    docs: {
-      controls: { exclude: ['className', 'children'] },
-  },
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
@@ -35,18 +32,3 @@ export const MainContainerprimaryThemeStory: Story = {
     main: true,
   },
 };
-
-export const MainContainersecondaryThemeStory: Story = {
-  args: {
-    theme: 'secondary',
-    main: true,
-  },
-};
-
-export const MainContainertertiaryThemeStory: Story = {
-  args: {
-    theme: 'tertiary',
-    main: true,
-  },
-};
-

@@ -22,7 +22,7 @@ const Index = ({ theme, cards = [] }: Props) => { // Provide a default empty arr
     <RowContainer>
       {cards.length > 0 ? (
         cards.map((card, index) => {
-          const { alt, title, body, link, image } = card;
+          const { alt, title, body, link } = card;
           const { text, href, target } = link;
 
           return (

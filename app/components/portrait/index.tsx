@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomImage} from "../";
-import picture from "/public/carlos.webp";
+import picture from "@/public/carlos.webp";
 import { classNamesInterface } from "@/app/types/";
 
 
@@ -16,7 +16,7 @@ const Index = ({text, className}:IndexProps) => {
 
 
   return (
-    <CustomImage className={className} figcaption={true} src={picture} alt="carlos raul amaro ovalle">
+    <CustomImage className={className} width={220} height={220}  figcaption={true} src={picture} alt="carlos raul amaro ovalle">
         <div className="spinning-text">
             { text && text.split("").map((letra, i) => (
               <span

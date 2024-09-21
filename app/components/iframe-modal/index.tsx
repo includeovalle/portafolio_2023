@@ -5,32 +5,33 @@ import styles from "./index.module.scss";
 import { childrenInterface } from "@/app/types/"
 
 interface Props extends childrenInterface {
-  src: string
+  src: string;
+  className: string;
 }
 
-const Index = ({ children, src }: Props) => {
+const Index = ({ children, src, className }: Props) => {
 
 
-  const IFRAMEREF = useRef<HTMLDialogElement>(null);
+  const POPUPREF = useRef<HTMLDialogElement>(null);
 
   const hamburgerHandler = () => {
-    IFRAMEREF.current?.showModal();
+    POPUPREF.current?.showModal();
   };
 
   const closeModal = () => {
-    IFRAMEREF.current?.close();
+    POPUPREF.current?.close();
   };
 
 
   return (
     <>
-      <div onClick={() => hamburgerHandler()}>
+      <div className={styles[className]} onClick={() => hamburgerHandler()}>
         {children}
       </div>
 
-      <dialog className={styles["iframe"]} ref={IFRAMEREF} >
+      <dialog className={styles['modal']} ref={POPUPREF} >
         <CloseButton onClick={closeModal}></CloseButton>
-        <iframe title="curriculum" src={src} />
+        <object type="application/pdf" data={src} ></object>
       </dialog>
     </>
   );

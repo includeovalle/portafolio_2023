@@ -14,7 +14,7 @@ const meta = {
       description: "Inherited theme", default: 'secondary'
       , table: {
         type: { summary: 'string' },
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: 'secondary' },
       }
     }
     , text: {
@@ -41,7 +41,7 @@ type Story = StoryObj<typeof meta>;
 
 export const HeaderH2ThemeStory: Story = {
   args: {
-    theme: 'primary',
+    theme: 'secondary',
     text: 'Projects',
     className: 'subtitle'
   },

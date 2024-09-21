@@ -3,27 +3,14 @@
     "projects": "Proyectos",
     "languages": "Idiomas",
     "title": "Habilidades Técnicas",
-    "aboutme": "Acerca de mí",
+    "aboutme": "Acerca de Carlos Ovalle",
     "contact": "Contacto"
   },
   "header": {
     "portrait": "Carlos Raul Amaro Ovalle ",
     "skills": [
-      "Bash",
-      "AWK",
-      "Html",
-      "Styled-Components",
-      "Next-js",
-      "Gatsby-js",
-      "CSS",
-      "SASS",
-      "Javascript",
-      "Typescript",
-      "React-js",
-      "Node-js",
-      "Git",
-      "Github",
-      "storybook"
+      "Herramientas:"
+      , "Aprendiendo:"
     ]
   },
   "projects": [

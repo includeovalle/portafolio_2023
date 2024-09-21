@@ -4,26 +4,13 @@
     "languages": "Linguagens",
     "title": "Habilidades Técnicas",
     "contact": "Contato",
-    "aboutme": "Acerca de mim"
+    "aboutme": "Acerca de Carlos Raul Amaro"
   },
   "header": {
     "portrait": "Raul Amaro ",
     "skills": [
-      "Bash",
-      "AWK",
-      "Html",
-      "Styled-Components",
-      "Next-js",
-      "Gatsby-js",
-      "CSS",
-      "SASS",
-      "Javascript",
-      "Typescript",
-      "React-js",
-      "Node-js",
-      "Git",
-      "Github",
-      "storybook"
+      "Ferramentas"
+      , "Aprendendo"
     ]
   },
   "projects": [

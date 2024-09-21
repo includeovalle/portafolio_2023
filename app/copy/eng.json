@@ -2,28 +2,15 @@
   "titles": {
     "projects": "Projects",
     "languages": "Languages",
-    "aboutme": "About me",
+    "aboutme": "About Carlos Amaro",
     "contact": "Contact",
     "title": "Technical Skills"
   },
   "header": {
     "portrait": "Carlos Amaro ",
     "skills": [
-      "Bash",
-      "AWK",
-      "Html",
-      "Styled-Components",
-      "Next-js",
-      "Gatsby-js",
-      "CSS",
-      "SASS",
-      "Javascript",
-      "Typescript",
-      "React-js",
-      "Node-js",
-      "Git",
-      "Github",
-      "storybook"
+      "Tools:"
+      , "Learning:"
     ]
   },
   "projects": [

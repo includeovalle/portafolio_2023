@@ -5,6 +5,38 @@
 @use '/app/styles/_keyframes.scss' as key;
 @use '/app/styles/_classes.scss';
 
+
+.skills {
+  flex: 1 1 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & figcaption {
+    color: $black;
+  }
+}
+
+.skills__primary{
+  @extend .skills;
+  & figcaption{
+    color: $primary-light;
+  }
+}
+
+.skills__secondary {
+  @extend .skills;
+  & figcaption{
+    color: $secondary-light;
+  }
+}
+
+.skills__tertiary {
+  @extend .skills;
+  & figcaption{
+    color: $tertiary-light;
+  }
+}
+
 .portrait {
   width: 220px;
   height: 220px;
@@ -226,7 +258,7 @@ a {
     > p {
       color: $primary-tint;
       &:last-of-type {
-      color: $primary-tint;
+        color: $primary-tint;
         text-decoration: underline;
       }
     }
@@ -273,7 +305,7 @@ a {
       }
       > p {
         color: $secondary-light;
-    &:last-of-type {
+        &:last-of-type {
           color: $black;
         }
       }
@@ -337,7 +369,7 @@ a {
       }
       > p {
         color: $secondary-light;
-    &:last-of-type {
+        &:last-of-type {
           color: $primary;
         }
       }

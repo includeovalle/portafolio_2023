@@ -11,7 +11,7 @@
   height: 100%;
   max-width: $page-max-width;
   margin: 0 auto;
-    padding: $default-padding-inset $default-padding;
+  padding: $default-padding-inset $default-padding;
   @include flex.col(flex-start, center);
 }
 
@@ -25,16 +25,19 @@
   @include flex.col(flex-start, center);
   height: 100%;
   width: 100%;
+  gap: 1rem;
+  padding: $default-padding-inset $default-padding;
   @media (width >= 768px) {
-  flex-direction: row;
+    flex-direction: row;
     justify-content: space-around;
-}
+    flex-wrap: wrap;
+  }
 
 }
 .last{
   margin-bottom: 0;
 }
- 
+
 .secondary {
   background-color: $secondary;
   min-height: 30vh;
@@ -48,8 +51,69 @@
 }
 
 .inner-container{
-      max-width: $page-max-width;
-      background-color: transparent;
-      position: relative;
-      margin: 0 auto;
+  max-width: $page-max-width;
+  background-color: transparent;
+  position: relative;
+  margin: 0 auto;
+}
+
+.skills-container {
+  @extend .flex-around;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 2*$default-padding-inset;
+  border: 0;
+  border-radius: $default-border-radius;
+  box-shadow: 0 0 8px inset $silver-tint;
+    gap: 1rem;
+  @media( width >= 768px ) {
+    flex: 0 0 45%;
+  }
+
+  & h3 {
+    flex: 1 1 100%;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, $primary-light, $primary-tint);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  & figcaption {
+    text-align: center;
+  }
+}
+
+.skills-container__primary {
+  @extend .skills-container;
+}
+
+.skills-container__secondary {
+  @extend .skills-container;
+  & h3 {
+    background: linear-gradient(to bottom, $secondary-light, $primary-tint);
+    background-clip: text;
+  }
+  box-shadow: 0 0 8px inset $black;
+  @media( width >= 768px ) {
+    flex: 0 0 45%;
+  }
+}
+
+
+.skills-container__tertiary {
+  @extend .skills-container;
+
+  & h3 {
+    background: linear-gradient(to bottom, $tertiary-light, $tertiary-tint);
+    background-clip: text;
+  }
+  box-shadow: 0 0 8px inset $silver-tint;
+  @media( width >= 768px ) {
+    flex: 0 0 45%;
+  }
 }

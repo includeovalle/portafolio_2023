@@ -286,7 +286,7 @@ a {
   border-color: $secondary-light;
   & figcaption {
     > h3{
-      color: $tertiary;
+      color: $primary;
     }
     > p {
       color: $tertiary;
@@ -335,7 +335,7 @@ a {
   border-color: $secondary-light;
   figcaption {
     > h3{
-      color: $tertiary;
+      color: $tertiary-tint;
     }
     > p {
       color: $primary-light;

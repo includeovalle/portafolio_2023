@@ -1,5 +1,5 @@
 // pm2.config.js
-export default {
+module.exports ={
   apps: [
     {
       name: "storybook-server",

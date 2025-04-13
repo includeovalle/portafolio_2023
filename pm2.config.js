@@ -7,8 +7,10 @@ export default {
       interpreter: "node",
       env: {
         NODE_ENV: "production",
+        PORT: process.env.STORYPORT,
       }
     }
   ]
 };
+
 
